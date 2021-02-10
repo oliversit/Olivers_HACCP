@@ -11,6 +11,19 @@ app.get('/signin',function(req,res){
   res.render('signin',{pageTitle: title});
 });
 
+app.get('/test',function(req,res){
+  let title = 'HAACP'
+  res.render('test',{pageTitle: title});
+});
+
+app.get('/dash',function(req,res){
+  let title = 'Forms';
+  res.render('dash',{pageTitle: title});
+});
+
+
+
+
 
 
 
