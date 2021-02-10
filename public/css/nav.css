@@ -1,0 +1,35 @@
+.container-fluid{
+  background-color: #81b214;
+  /* padding:3% 15%; */
+}
+
+.navbar {
+  /* padding: 0 0 4.5rem; */
+}
+
+.navbar h1 {
+  font-size: 4em;
+}
+.navbar-brand{
+  font-family:"Ubuntu";
+  font-size:4rem;
+  font-weight:bold;
+  color: white;
+}
+
+
+.nav-item{
+  padding:0 30px;
+}
+
+.shade {
+  box-shadow: 0 0 10px 0 #000;
+}
+
+body {
+  /* background-image: url("../images/hor_steel.jpg"); */
+}
+
+h1 {
+  font-size: 1.5em;
+}
