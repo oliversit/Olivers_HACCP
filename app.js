@@ -1,11 +1,13 @@
+// Requirements
 const express = require('express');
 const app = express();
 
+// Declarations and Settings
 app.use(express.static("public"));
 app.use(express.urlencoded({extended:true}));
 app.set('view engine','ejs');
 
-
+// Rendering Callbacks
 app.get('/signin',function(req,res){
   let title = 'Sign In';
   res.render('signin',{pageTitle: title});
@@ -21,6 +23,12 @@ app.get('/dash',function(req,res){
   res.render('dash',{pageTitle: title});
 });
 
+app.get('/', function(req,res){
+  res.render('signin',{pageTitle: 'Sign In'});
+});
+
+
+// Post Callbacks
 
 
 
@@ -36,12 +44,7 @@ app.get('/dash',function(req,res){
 
 
 
-
-
-
-
-
-
+// Server Start
 app.listen(3000,function(){
   console.log('The Server is Running on Port 3000 ')
 });
