@@ -521,6 +521,24 @@ body {
   z-index: 23;
 }
 
+#Edit_Button {
+  font-size: 62px;
+  font-family: "Palatino Linotype";
+  color: rgb(255, 255, 255);
+  border-width: 1px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-radius: 10px;
+  background-color: rgb(163, 211, 156);
+  box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
+  position: absolute;
+  left: 517px;
+  top: 1700px;
+  width: 450px;
+  height: 140px;
+  z-index: 23;
+}
+
 /*------------------------------------------------------------------------------------------------------------------------ */
 
 
@@ -855,7 +873,7 @@ body {
   z-index: 15;
 }
 
-PButton_8 {
+#PButton_8 {
   background-image: url("Images/Document.png");
   background-repeat: no-repeat;
   background-position:center;
@@ -1054,6 +1072,75 @@ PButton_8 {
   z-index: 112;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*web test */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-align: center;
+  -ms-flex-pack: center;
+  -webkit-box-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: rgb(241, 241, 232);
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.btn-primary {
+  background-color: rgb(124, 197, 118);
+}
 
 
 
