@@ -1,17 +1,37 @@
-<%- include('header') %->
-<img Id="logo_login" src="images/index.png" width="315" height="153" alt=""/>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-<p Id="Haccp_Text">HACCP Monitoring Logs</p>
-<p Id="User">User Name</p>
-<p Id="Password">Password</p>
+    <title>Signin Template for Bootstrap</title>
 
-<form action="Dashboard.html" method="post">
-	<input Id="User_Input" type="text">
-	<input Id= "Password_Input" type="password">
-	<button  Id= "Login_Button" name="Var7" type="submit" value="$Actual_Id" >Login</button>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
 
-	</form>
-</body>
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- Custom styles for this template -->
+    <link href="styles.css" rel="stylesheet">
+  </head>
 
+  <body class="text-center">
+    <form class="form-signin" action="Dashboard.html" method="post">
+      <img class="mb-4" src="Images/logo_green.png"  alt="" width="315" height="153">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="text" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" value="remember-me"> Remember me
+        </label>
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+  </body>
 </html>
