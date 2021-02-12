@@ -12,22 +12,43 @@ body {
 }
 
 
-#Headerone{
-  border-width: 1px;
-  border-color: rgb(191, 220, 174);
-  border-style: solid;
+.bg-green{
   background-color: rgb(191, 220, 174);
-  height: 111px;
-  width: 100%;
-	position: absolute;
-  margin-top: 0;
-	  left: 0px;
-  top: 0px;
-  z-index: 2;
+
 	
 }
 
+.bg-darkgreen{	
+	font-size: 32px;
+  font-family: "Palatino Linotype";
+  color: rgb(32, 106, 93);
+}
 
+
+.Menu_Button {
+  background-image: url("Images/Menu.png");
+  background-repeat: no-repeat;
+  background-position:center;
+  border-style: solid;
+  border-color: rgb(191, 220, 174);
+  background-color: rgb(191, 220, 174);
+  width: 48px;
+  height: 40px;
+
+}
+
+
+
+.Row_header{
+  background-color: rgb(191, 220, 174);
+  height: 40px;	
+}
+
+
+
+.Row_3{
+  background-color: blue;	
+}
 .Header_space
 {
 	
@@ -45,6 +66,10 @@ body {
 }
 
 
+.Colum_Properties{
+	margin-top: 52;
+}
+
 .Menu_click {
 	  background-image: url("Images/Menu.png");
   background-repeat: no-repeat;
@@ -52,20 +77,38 @@ body {
   border-style: solid;
   border-color: rgb(191, 220, 174);
   background-color: rgb(191, 220, 174);
-
   width: 48px;
   height: 40px;
   z-index: 52;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .Page_text{
-	  font-size: 54px;
+	  font-size: 30px;
   font-family: "Palatino Linotype";
   color: rgb(115, 115, 104);
-  line-height: 1.2;
-  width: 450px;
-  height: 0px;
-  z-index: 25;
+
+ 
+
+
 }
 
 .Page_Text_Green{  
@@ -93,28 +136,25 @@ body {
 }
 
 .Page_Lines{
-	  font-size: 62px;
+	  font-size: 10px;
   font-family: "Palatino Linotype";
   color: rgb(32, 106, 93);
-  line-height: 1.2;
-  text-align: left;
-  width: 10px;
-  height: 0px;
-  z-index: 49;
+
+
+
+
 }
 
 .Form_Buttons
-{  background-image: url("Images/Document.png");
-  background-repeat: no-repeat;
-  background-position:center;
+{  
   border-width: 1px;
   border-color: rgb(1, 153, 158);
   border-style: solid;
   border-radius: 50%;
   background-color: rgb(1, 153, 158);
   box-shadow: 0px 3px 7px 0px rgba(0, 0, 0, 0.35);
-  width: 189px;
-  height: 189px;
+  width: 100px;
+  height: 100px;
   z-index: 15;
 }
 
@@ -218,6 +258,26 @@ justify-content: left;
 
 .flex-container4 > div {
   background-color:none;
+  margin: 1px;
+  padding: 1px;
+  font-size: 30px;
+	z-index: 21;
+}
+
+.flex-container_Form {
+  display: flex;
+  background-color:blue;
+	 flex-wrap: wrap;
+justify-content: left;
+	align-items: center;
+	align-content: space-around;
+	height: 1000px;
+	z-index: 21;
+	
+}
+
+.flex-container_Form > div {
+  background-color:grey;
   margin: 1px;
   padding: 1px;
   font-size: 30px;

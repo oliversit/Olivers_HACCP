@@ -13,4 +13,10 @@
 <file name="Menu_Expand.png" server="192.168.32.196//var/www/Haccp/" local="132573022405151498" remote="132573032320000000" Dst="1" />
 <file name="logo_green.png" server="192.168.32.196//var/www/Haccp/" local="132574520345163268" remote="132574529560000000" Dst="1" />
 <file name="User.png" server="192.168.32.196//var/www/Haccp/" local="132574581275769528" remote="132574581950000000" Dst="1" />
+<file name="Cold_Room.png" server="192.168.32.196//var/www/Haccp/" local="132575620030149008" remote="132575622650000000" Dst="1" />
+<file name="Cooler.png" server="192.168.32.196//var/www/Haccp/" local="132575623983137079" remote="132575628780000000" Dst="1" />
+<file name="Packing.png" server="192.168.32.196//var/www/Haccp/" local="132575617245132988" remote="132575622650000000" Dst="1" />
+<file name="Processing.png" server="192.168.32.196//var/www/Haccp/" local="132575619481090375" remote="132575622650000000" Dst="1" />
+<file name="Thermometer.png" server="192.168.32.196//var/www/Haccp/" local="132575601958159140" remote="132575611400000000" Dst="1" />
+<file name="Raw_Product.png" server="192.168.32.196//var/www/Haccp/" local="132575627852750811" remote="132575628780000000" Dst="1" />
 </dwsync>
