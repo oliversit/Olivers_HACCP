@@ -62,7 +62,7 @@
       <div class="row">
         
         <div class="col-md-12 order-md-1">
-      <p>Please circle “A” if condition is acceptable. Circle “R” if condition is rejected AND record corrective actions taken, by whom and the date and time correction was completed.</p>
+      <p>Please select “Acceptable” if condition is acceptable. Select “Rejected” if condition is rejected AND record corrective actions taken, by whom and the date and time correction was completed.</p>
 			</div> 
 		    </div>
 		
@@ -92,20 +92,16 @@
 			 
 <!-------Floors/grounds clean and free of trash.-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-12 mb-3">
                 <label for="Floor_Ground">Floors/grounds clean and free of trash</label>
-                  <select class="custom-select d-block w-100" id="Floor_Ground" required>
+                  <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" required>
                   <option value="">Choose...</option>
-                  <option>A</option>
-					<option>R</option>
+                  <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
-              </div>
-              <div class="col-md-6 mb-3">
-                       <button class="btn btn-primary btn-lg btn-block Grey"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" type="button">Corrective Action</button>
-      
               </div>
           
 			  
@@ -115,8 +111,8 @@
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
 			  
-			  <div class="collapse" id="Hide_row_Floor_Ground">
-			  <div class="row"  >
+			  <div  id="Hide_Floor_Ground" style="display:none">
+			  <div class="row">
 				  
 				  
 				  
@@ -160,21 +156,16 @@
 
 <!-------Area free of pest activity-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-12 mb-3">
                 <label for="Pest">Area free of pest activity</label>
-                  <select class="custom-select d-block w-100" id="Pest" required>
+                  <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()"  required>
                   <option value="">Choose...</option>
-                  <option>A</option>
-					<option>R</option>
+                  <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
-              </div>
-              <div class="col-md-6 mb-3">
-				 
-                       <button class="btn btn-primary btn-lg btn-block Grey"  data-toggle="collapse" data-target="#Hide_Pest" type="button">Corrective Action</button>
-      
               </div>
           
 			  
@@ -184,7 +175,7 @@
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
 			  
-			  <div class="collapse" id="Hide_Pest">
+			  <div  id="Hide_Pest" style="display:none">
 			  <div class="row"  >
 				  
 				  
@@ -229,23 +220,18 @@
 			  
 <!-------All packing material free of debris/insects under shroud-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-12 mb-3">
                 <label for="Debris">All packing material free of debris/insects under shroud</label>
-                  <select class="custom-select d-block w-100" id="Debris" required>
+                  <select class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" required>
                   <option value="">Choose...</option>
-                  <option>A</option>
-					<option>R</option>
+                  <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
               </div>
-              <div class="col-md-6 mb-3">
-				
-
-                       <button class="btn btn-primary btn-lg btn-block Grey"  data-toggle="collapse" data-target="#Hide_Debris" type="button">Corrective Action</button>
-      
-              </div>
+     
           
 			  
 			  </div>
@@ -254,7 +240,7 @@
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
 			  
-			  <div class="collapse" id="Hide_Debris">
+			  <div  id="Hide_Debris" style="display:none">
 			  <div class="row"  >
 				  
 				  
@@ -299,12 +285,12 @@
  
 <!-------All packing material are covered when not in use to prevent contamination-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-12 mb-3">
                 <label for="Covered">All packing material are covered when not in use to prevent contamination</label>
-                  <select class="custom-select d-block w-100" id="Covered" required>
+                  <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" required>
                   <option value="">Choose...</option>
-                  <option>A</option>
-					<option>R</option>
+                  <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -313,7 +299,6 @@
               <div class="col-md-6 mb-3">
 			
 	
-                       <button class="btn btn-primary btn-lg btn-block Grey"  data-toggle="collapse" data-target="#Hide_Covered" type="button">Corrective Action</button>
       
               </div>
           
@@ -324,7 +309,7 @@
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
 			  
-			  <div class="collapse" id="Hide_Covered">
+			  <div  id="Hide_Covered" style="display:none">
 			  <div class="row "  >
 				  
 				  
@@ -368,22 +353,16 @@
  
 <!-------Pallets/Boxes/stored away from the wall with enough space to inspect between. All boxes are stored off the ground----------->
             <div class="row align-items-end">
-              <div class="col-md-6 mb-3">
+              <div class="col-md-12 mb-3">
                 <label for="Stored">Pallets/Boxes/stored away from the wall with enough space to inspect between. All boxes are stored off the ground</label>
-                  <select class="custom-select d-block w-100" id="Stored" required>
+                  <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" required>
                   <option value="">Choose...</option>
-                  <option>A</option>
-					<option>R</option>
+                  <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
-              </div>
-              <div class="col-md-6 mb-3 ">
-			
-				
-                       <button class="btn btn-primary btn-lg btn-block Grey "  data-toggle="collapse" data-target="#Hide_Stored" type="button">Corrective Action</button>
-      
               </div>
           
 			  
@@ -393,14 +372,14 @@
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
 			  
-			  <div class="collapse" id="Hide_Stored">
+			  <div  id="Hide_Stored" style="display:none">
 			  <div class="row"  >
 				  
 				  
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Stored">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_Stored" placeholder="" value="" required>
+                <input type="text" class="form-control" id="Action_Stored" placeholder="" value=""  required>
 			     </div>
 				  
 			
@@ -507,6 +486,59 @@
         }, false);
       })();
     </script>
+	  
+	  <script>
+		  
+		  function Hide_Option_Floor_Ground(){	  
+		  if(document.getElementById('Floor_Ground').value == "R") {
+     
+		  document.getElementById('Hide_Floor_Ground').style.display='block'}
+								 
+		  if(document.getElementById('Floor_Ground').value == "A") {
+ 
+		  document.getElementById('Hide_Floor_Ground').style.display='none'}
+								 }
+		  function Hide_Option_Pest(){	  
+		  if(document.getElementById('Pest').value == "R") {
+     
+		  document.getElementById('Hide_Pest').style.display='block'}
+								 
+		  if(document.getElementById('Pest').value == "A") {
+ 
+		  document.getElementById('Hide_Pest').style.display='none'}
+								 }
+		  function Hide_Option_Debris(){	  
+		  if(document.getElementById('Debris').value == "R") {
+     
+		  document.getElementById('Hide_Debris').style.display='block'}
+								 
+		  if(document.getElementById('Debris').value == "A") {
+ 
+		  document.getElementById('Hide_Debris').style.display='none'}
+								 }
+		  function Hide_Option_Covered(){	  
+		  if(document.getElementById('Covered').value == "R") {
+     
+		  document.getElementById('Hide_Covered').style.display='block'}
+								 
+		  if(document.getElementById('Covered').value == "A") {
+ 
+		  document.getElementById('Hide_Covered').style.display='none'}
+								 }
+		  function Hide_Option_Stored(){	  
+		  if(document.getElementById('Stored').value == "R") {
+     
+		  document.getElementById('Hide_Stored').style.display='block'}
+								 
+		  if(document.getElementById('Stored').value == "A") {
+ 
+		  document.getElementById('Hide_Stored').style.display='none'}
+								 }
+		  
+		  
+	  </script>
+	  
+
 	  
   </body>
 </html>
