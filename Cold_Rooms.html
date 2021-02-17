@@ -29,7 +29,7 @@
   <body >
 	  
 <nav class="navbar bg-green navbar-dark">
-  <a class="bg-darkgreen" href="/Dashboard.html">Packing materials</a>
+  <a class="bg-darkgreen" href="Dashboard.html">Cold Rooms</a>
   <button class= "Menu_Button" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 
   </button>
@@ -91,13 +91,15 @@
 			  
 			  
 			 
-<!-------Floors/grounds clean and free of trash.-------------------------------------------------------------------------------------------------------->
+<!-------Floors free of product debris, trash, broken, moldy, or dirty
+pallets, broken, moldy or dirty boxes-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Floor_Ground">Floors/grounds clean and free of trash</label>
-                  <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" required>
+                <label for="Floor_Ground">Floors free of product debris, trash, broken, moldy, or dirty
+pallets, broken, moldy or dirty boxes</label>
+                  <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()"  required>
                   <option value="">Choose...</option>
-                  <option Value="A">Acceptable</option>
+                    <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
 				         <div class="invalid-feedback">
@@ -113,7 +115,7 @@
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
 			  
 			  <div  id="Hide_Floor_Ground" style="display:none">
-			  <div class="row">
+			  <div class="row"  >
 				  
 				  
 				  
@@ -155,13 +157,13 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 
-<!-------Area free of pest activity-------------------------------------------------------------------------------------------------------->
+<!-------Walls, ceilings, overhead lights, shields, and pipelinesclean and free of debris, mold and spider webs-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Pest">Area free of pest activity</label>
-                  <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()"  required>
+                <label for="Pest">Walls, ceilings, overhead lights, shields, and pipelinesclean and free of debris, mold and spider webs</label>
+                  <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" required>
                   <option value="">Choose...</option>
-                  <option Value="A">Acceptable</option>
+                    <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
 				         <div class="invalid-feedback">
@@ -219,20 +221,20 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 			  
-<!-------All packing material free of debris/insects under shroud-------------------------------------------------------------------------------------------------------->
+<!-------Correct temperature range (34-38° F)-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Debris">All packing material free of debris/insects under shroud</label>
+                <label for="Debris">Correct temperature range (34-38° F)</label>
                   <select class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" required>
                   <option value="">Choose...</option>
-                  <option Value="A">Acceptable</option>
+                    <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
               </div>
-     
+
           
 			  
 			  </div>
@@ -284,23 +286,18 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
   
  
-<!-------All packing material are covered when not in use to prevent contamination-------------------------------------------------------------------------------------------------------->
+<!-------Door curtains clean and intact and not touching the floor. Doors working properly.-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Covered">All packing material are covered when not in use to prevent contamination</label>
+                <label for="Covered">Door curtains clean and intact and not touching the floor. Doors working properly.</label>
                   <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" required>
                   <option value="">Choose...</option>
-                  <option Value="A">Acceptable</option>
+                    <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
-              </div>
-              <div class="col-md-6 mb-3">
-			
-	
-      
               </div>
           
 			  
@@ -352,19 +349,20 @@
 </div>
 <!----------------------------------------------------------------------------------------------------------------------------------->
  
-<!-------Pallets/Boxes/stored away from the wall with enough space to inspect between. All boxes are stored off the ground----------->
+<!-------All walls are inspected for holes.----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Stored">Pallets/Boxes/stored away from the wall with enough space to inspect between. All boxes are stored off the ground</label>
+                <label for="Stored">All walls are inspected for holes.</label>
                   <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" required>
                   <option value="">Choose...</option>
-                  <option Value="A">Acceptable</option>
+                    <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
               </div>
+
           
 			  
 			  </div>
@@ -380,7 +378,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Stored">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_Stored" placeholder="" value=""  required>
+                <input type="text" class="form-control" id="Action_Stored" placeholder="" value="" required>
 			     </div>
 				  
 			
@@ -414,6 +412,137 @@
 			  
 </div>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
+			  
+<!-------Pallets/Boxes of raw product are stored off the wall with enough space to inspect between. All finished product boxes are stored 6" off the ground.----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="sanitized">Pallets/Boxes of raw product are stored off the wall with enough space to inspect between. All finished product boxes are stored 6" off the ground.</label>
+                  <select class="custom-select d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" required>
+                  <option value="">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_sanitized" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_sanitized">Corrective Action </label>
+                <input type="text" class="form-control" id="Action_sanitized" placeholder="" value="" required>
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_sanitized">Date</label>
+                <input type="Date" class="form-control" id="Date_sanitized" placeholder="" value="" required>
+			     </div>
+			<div class="colmb-3">	
+				<label for="Time_sanitized">Time</label>
+                <input type="time" class="form-control" id="Time_sanitized" placeholder="" value="" required>
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_sanitized">Corrected By</label>
+                <input type="text" class="form-control" id="Corrected_sanitized" placeholder="" value="" required>
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+			  
+<!-------Drains clean.----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Trash">Drains clean.</label>
+                  <select class="custom-select d-block w-100" id="Trash" onchange="Hide_Option_Trash()" required>
+                  <option value="">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Trash" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Trash">Corrective Action </label>
+                <input type="text" class="form-control" id="Action_Trash" placeholder="" value="" required>
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Trash">Date</label>
+                <input type="Date" class="form-control" id="Date_Trash" placeholder="" value="" required>
+			     </div>
+			<div class="colmb-3">	
+				<label for="Time_Trash">Time</label>
+                <input type="time" class="form-control" id="Time_Trash" placeholder="" value="" required>
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Trash">Corrected By</label>
+                <input type="text" class="form-control" id="Corrected_Trash" placeholder="" value="" required>
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  	
+			  
+<!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
 			  <br>
 			  <hr class="mb-4">
 			
@@ -487,8 +616,7 @@
         }, false);
       })();
     </script>
-	  
-	  <script>
+	  	  <script>
 		  
 		  function Hide_Option_Floor_Ground(){	  
 		  if(document.getElementById('Floor_Ground').value == "R") {
@@ -535,11 +663,34 @@
  
 		  document.getElementById('Hide_Stored').style.display='none'}
 								 }
+			  
+			  function Hide_Option_sanitized(){	  
+		  if(document.getElementById('sanitized').value == "R") {
+     
+		  document.getElementById('Hide_sanitized').style.display='block'}
+								 
+		  if(document.getElementById('sanitized').value == "A") {
+ 
+		  document.getElementById('Hide_sanitized').style.display='none'}
+								 }
+
+
+function Hide_Option_Trash(){	  
+		  if(document.getElementById('Trash').value == "R") {
+     
+		  document.getElementById('Hide_Trash').style.display='block'}
+								 
+		  if(document.getElementById('Trash').value == "A") {
+ 
+		  document.getElementById('Hide_Trash').style.display='none'}
+								 }
+
+
+
+
+
 		  
 		  
 	  </script>
-	  
-
-	  
   </body>
 </html>

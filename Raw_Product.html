@@ -29,11 +29,12 @@
   <body >
 	  
 <nav class="navbar bg-green navbar-dark">
-  <a class="bg-darkgreen" href="#">Processing Room</a>
+  <a class="bg-darkgreen" href="/Dashboard.html">Raw Product</a>
   <button class= "Menu_Button" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 
   </button>
   <div class="collapse navbar-collapse " id="collapsibleNavbar">
+	  <hr class="mb-4">
     <ul class="navbar-nav">
       <li class="nav-item">
         <a class="bg-darkgreen2" href="Dashboard.html">Forms</a>
@@ -62,7 +63,7 @@
       <div class="row">
         
         <div class="col-md-12 order-md-1">
-      <p>Please select “Acceptable” if condition is acceptable. Select “Rejected” if condition is rejected AND record corrective actions taken, by whom and the date and time correction was completed.</p>
+      <p>Do not accept product that does not meet incoming product specifications (temperature, physical or pest damage, etc.)</p>
 			</div> 
 		    </div>
 		
@@ -90,14 +91,14 @@
 			  
 			  
 			 
-<!-------All lighting properly illuminating and shields intact. All shields free of debris and insect fragments-------------------------------------------------------------------------------------------------------->
+<!-------Date Received (Within 3 days of Date Packed?)-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Floor_Ground">All lighting properly illuminating and shields intact. All shields free of debris and insect fragments.</label>
+                <label for="Floor_Ground">Date Received (Within 3 days of Date Packed?)</label>
                   <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()"  required>
                   <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
+                    <option Value="">Yes</option>
+					<option Value="">No</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -154,17 +155,13 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 
-<!-------Floors free of all trash and debris-------------------------------------------------------------------------------------------------------->
+<!-------Time-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Pest">Floors free of all trash and debris</label>
-                  <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" required>
-                  <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
+                <label for="Pest">Time</label>
+                <input type="time" class="form-control" id="Pest" placeholder="" value="" required>
 				         <div class="invalid-feedback">
-                  Please select a valid Condition.
+                  Please select a valid Condition
                 </div>
               </div>
           
@@ -218,10 +215,10 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 			  
-<!-------Floors swept (clean and free of debris). Floor clean-------------------------------------------------------------------------------------------------------->
+<!-------Commodity-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Debris">Floors swept (clean and free of debris). Floor clean</label>
+                <label for="Debris">Commodity</label>
                   <select class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" required>
                   <option value="A">Choose...</option>
                     <option Value="A">Acceptable</option>
@@ -283,10 +280,10 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
   
  
-<!-------Walls, ceiling, overhead lights and pipelines clean and free of debris, mold, spider webs and dripping condensation-------------------------------------------------------------------------------------------------------->
+<!-------Vendor Name-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Covered">Walls, ceiling, overhead lights and pipelines clean and free of debris, mold, spider webs and dripping condensation</label>
+                <label for="Covered">Vendor Name</label>
                   <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" required>
                   <option value="A">Choose...</option>
                     <option Value="A">Acceptable</option>
@@ -346,15 +343,11 @@
 </div>
 <!----------------------------------------------------------------------------------------------------------------------------------->
  
-<!-------No excess of equipment lubrication on equipment----------->
+<!-------Order P.O#----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Stored">No excess of equipment lubrication on equipment</label>
-                  <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" required>
-                  <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
+                <label for="Stored">Order P.O#</label>
+    <input type="number" class="form-control" id="Stored" placeholder="" value="" required>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -410,15 +403,11 @@
 </div>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 			  
-<!-------ROP unit Equipment clean and sanitized.----------->
+<!-------Temp. <41° F.----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="sanitized">ROP unit Equipment clean and sanitized.</label>
-                  <select class="custom-select d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" required>
-                  <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
+                <label for="sanitized">Temp. &lt 41°</label>
+                      <input type="number" class="form-control" id="sanitized" placeholder="" value="" required>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -474,14 +463,14 @@
 </div>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 			  
-<!-------Trash cans empty, clean and lined----------->
+<!-------VisualEvidence of Physical Damage or Pest Contamination----------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Trash">Trash cans empty, clean and lined</label>
+                <label for="Trash">VisualEvidence of Physical Damage or Pest Contamination</label>
                   <select class="custom-select d-block w-100" id="Trash" onchange="Hide_Option_Trash()" required>
                   <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
+                    <option Value="">Yes</option>
+					<option Value="">No</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -538,14 +527,14 @@
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
-<!-------Employees use health, hygiene, good habits----------->
+<!-------Accept?----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Health">Employees use health, hygiene, good habits</label>
+                <label for="Health">Accept?</label>
                   <select class="custom-select d-block w-100" id="Health" onchange="Hide_Option_Health()" required>
                   <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
+                    <option Value="A">Yes</option>
+					<option Value="R">No</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -566,7 +555,7 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_Health">Corrective Action </label>
+			<label for="Action_Health">Corrective Action Taken for Rejected Conditions </label>
                 <input type="text" class="form-control" id="Action_Health" placeholder="" value="" required>
 			     </div>
 				  
@@ -585,12 +574,8 @@
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_Health">Date</label>
+	                <label for="Date_Health">Corrected Date</label>
                 <input type="Date" class="form-control" id="Date_Health" placeholder="" value="" required>
-			     </div>
-			<div class="colmb-3">	
-				<label for="Time_Health">Time</label>
-                <input type="time" class="form-control" id="Time_Health" placeholder="" value="" required>
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Health">Corrected By</label>
@@ -601,462 +586,32 @@
 			  
 </div>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
-	
-			  
-<!-------Employees are following GMPs (no chewing gum, leaving food out, wearing jewelry, etc.)----------->
+<!-------Received By:----------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="GMP">Employees are following GMPs (no chewing gum, leaving food out, wearing jewelry, etc.)</label>
-                  <select class="custom-select d-block w-100" id="GMP" onchange="Hide_Option_GMP()" required>
-                  <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
+                <label for="Comment">Received By:</label>
+                   <input type="text" class="form-control" id="Comment" placeholder="" value="" >
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
               </div>
 
-          
 			  
 			  </div>
 			  
-			 
-			  
- <!-- hidden Row --------------------------------------------------------------------------------------------------------->
-			  
-			  <div  id="Hide_GMP" style="display:none">
-			  <div class="row"  >
-				  
-				  
-				  
-			  		<div class="col mb-3">	
-			<label for="Action_GMP">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_GMP" placeholder="" value="" required>
-			     </div>
-				  
-			
-			  </div>
-			  
-
-	
-	
-              
-			  
-			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-	                <label for="Date_GMP">Date</label>
-                <input type="Date" class="form-control" id="Date_GMP" placeholder="" value="" required>
-			     </div>
-			<div class="colmb-3">	
-				<label for="Time_GMP">Time</label>
-                <input type="time" class="form-control" id="Time_GMP" placeholder="" value="" required>
-			     </div>
-				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_GMP">Corrected By</label>
-                <input type="text" class="form-control" id="Corrected_GMP" placeholder="" value="" required>
-			     </div>
-              </div> 
-			
-			  
-</div>
-<!-----------------------------------------------------------------------------------------------------------------------------------> 
-	
-			  
-<!-------No personal belongings in the area.----------->
+<!-------Comments----------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Belongings">No personal belongings in the area.</label>
-                  <select class="custom-select d-block w-100" id="Belongings" onchange="Hide_Option_Belongings()" required>
-                  <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
+                <label for="Comment">Comments</label>
+                   <input type="text" class="form-control" id="Comment2" placeholder="" value="" >
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
               </div>
 
-          
 			  
-			  </div>
-			  
-			 
-			  
- <!-- hidden Row --------------------------------------------------------------------------------------------------------->
-			  
-			  <div id="Hide_Belongings" style="display:none">
-			  <div class="row"  >
-				  
-				  
-				  
-			  		<div class="col mb-3">	
-			<label for="Action_Belongings">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_Belongings" placeholder="" value="" required>
-			     </div>
-				  
-			
-			  </div>
-			  
-
-	
-	
-              
-			  
-			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-	                <label for="Date_Belongings">Date</label>
-                <input type="Date" class="form-control" id="Date_Belongings" placeholder="" value="" required>
-			     </div>
-			<div class="colmb-3">	
-				<label for="Time_Belongings">Time</label>
-                <input type="time" class="form-control" id="Time_Belongings" placeholder="" value="" required>
-			     </div>
-				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Belongings">Corrected By</label>
-                <input type="text" class="form-control" id="Corrected_Belongings" placeholder="" value="" required>
-			     </div>
-              </div> 
-			
-			  
-</div>
-<!-----------------------------------------------------------------------------------------------------------------------------------> 
-	
-			  
-<!-------No temporary repairs in place----------->
-            <div class="row align-items-end">
-              <div class="col-md-12 mb-3">
-                <label for="Repairs">No temporary repairs in place</label>
-                  <select class="custom-select d-block w-100" id="Repairs" onchange="Hide_Option_Repairs()" required>
-                  <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
-              </div>
-
-          
-			  
-			  </div>
-			  
-			 
-			  
- <!-- hidden Row --------------------------------------------------------------------------------------------------------->
-			  
-			  <div  id="Hide_Repairs" style="display:none">
-			  <div class="row"  >
-				  
-				  
-				  
-			  		<div class="col mb-3">	
-			<label for="Action_Repairs">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_Repairs" placeholder="" value="" required>
-			     </div>
-				  
-			
-			  </div>
-			  
-
-	
-	
-              
-			  
-			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-	                <label for="Date_Repairs">Date</label>
-                <input type="Date" class="form-control" id="Date_Repairs" placeholder="" value="" required>
-			     </div>
-			<div class="colmb-3">	
-				<label for="Time_Repairs">Time</label>
-                <input type="time" class="form-control" id="Time_Repairs" placeholder="" value="" required>
-			     </div>
-				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Repairs">Corrected By</label>
-                <input type="text" class="form-control" id="Corrected_Repairs" placeholder="" value="" required>
-			     </div>
-              </div> 
-			
-			  
-</div>
-<!-----------------------------------------------------------------------------------------------------------------------------------> 
-	
-			  
-<!-------All signage is in place.----------->
-            <div class="row align-items-end">
-              <div class="col-md-12 mb-3">
-                <label for="Signage">All signage is in place.</label>
-                  <select class="custom-select d-block w-100" id="Signage" onchange="Hide_Option_Signage()" required>
-                  <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
-              </div>
-          
-			  
-			  </div>
-			  
-			 
-			  
- <!-- hidden Row --------------------------------------------------------------------------------------------------------->
-			  
-			  <div  id="Hide_Signage" style="display:none">
-			  <div class="row"  >
-				  
-				  
-				  
-			  		<div class="col mb-3">	
-			<label for="Action_Signage">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_Signage" placeholder="" value="" required>
-			     </div>
-				  
-			
-			  </div>
-			  
-
-	
-	
-              
-			  
-			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-	                <label for="Date_Signage">Date</label>
-                <input type="Date" class="form-control" id="Date_Signage" placeholder="" value="" required>
-			     </div>
-			<div class="colmb-3">	
-				<label for="Time_Signage">Time</label>
-                <input type="time" class="form-control" id="Time_Signage" placeholder="" value="" required>
-			     </div>
-				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Signage">Corrected By</label>
-                <input type="text" class="form-control" id="Corrected_Signage" placeholder="" value="" required>
-			     </div>
-              </div> 
-			
-			  
-</div>
-<!-----------------------------------------------------------------------------------------------------------------------------------> 
-	
-			  
-<!-------All walls are inspected for holes----------->
-            <div class="row align-items-end">
-              <div class="col-md-12 mb-3">
-                <label for="Walls">All walls are inspected for holes</label>
-                  <select class="custom-select d-block w-100" id="Walls" onchange="Hide_Option_Walls()" required>
-                  <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
-              </div>
-
-          
-			  
-			  </div>
-			  
-			 
-			  
- <!-- hidden Row --------------------------------------------------------------------------------------------------------->
-			  
-			  <div  id="Hide_Walls" style="display:none">
-			  <div class="row"  >
-				  
-				  
-				  
-			  		<div class="col mb-3">	
-			<label for="Action_Walls">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_Walls" placeholder="" value="" required>
-			     </div>
-				  
-			
-			  </div>
-			  
-
-	
-	
-              
-			  
-			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-	                <label for="Date_Walls">Date</label>
-                <input type="Date" class="form-control" id="Date_Walls" placeholder="" value="" required>
-			     </div>
-			<div class="colmb-3">	
-				<label for="Time_Walls">Time</label>
-                <input type="time" class="form-control" id="Time_Walls" placeholder="" value="" required>
-			     </div>
-				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Walls">Corrected By</label>
-                <input type="text" class="form-control" id="Corrected_Walls" placeholder="" value="" required>
-			     </div>
-              </div> 
-			
-			  
-</div>
-<!-----------------------------------------------------------------------------------------------------------------------------------> 
-	
-			  
-<!-------No cartons or packing material placed onto the floor----------->
-            <div class="row align-items-end">
-              <div class="col-md-12 mb-3">
-                <label for="Floor">No cartons or packing material placed onto the floor</label>
-                  <select class="custom-select d-block w-100" id="Floor" onchange="Hide_Option_Floor()" required>
-                  <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
-              </div>
-
-          
-			  
-			  </div>
-			  
-			 
-			  
- <!-- hidden Row --------------------------------------------------------------------------------------------------------->
-			  
-			  <div  id="Hide_Floor" style="display:none">
-			  <div class="row"  >
-				  
-				  
-				  
-			  		<div class="col mb-3">	
-			<label for="Action_Floor">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_Floor" placeholder="" value="" onchange="Hide_Option_Action_Floor()" required>
-			     </div>
-				  
-			
-			  </div>
-			  
-
-	
-	
-              
-			  
-			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-	                <label for="Date_Floor">Date</label>
-                <input type="Date" class="form-control" id="Date_Floor" placeholder="" value="" required>
-			     </div>
-			<div class="colmb-3">	
-				<label for="Time_Floor">Time</label>
-                <input type="time" class="form-control" id="Time_Floor" placeholder="" value="" required>
-			     </div>
-				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Floor">Corrected By</label>
-                <input type="text" class="form-control" id="Corrected_Floor" placeholder="" value="" required>
-			     </div>
-              </div> 
-			
-			  
-</div>
-<!-----------------------------------------------------------------------------------------------------------------------------------> 
-	
-			  
-<!-------All gloves and aprons need to be placed in a specific area prior to leaving the processing area----------->
-            <div class="row align-items-end">
-              <div class="col-md-12 mb-3">
-                <label for="Gloves">All gloves and aprons need to be placed in a specific area prior to leaving the processing area</label>
-                  <select class="custom-select d-block w-100" id="Gloves" onchange="Hide_Option_Action_Gloves()" required>
-                  <option value="A">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
-              </div>
-
-          
-			  
-			  </div>
-			  
-			 
-			  
- <!-- hidden Row --------------------------------------------------------------------------------------------------------->
-			  
-			  <div  id="Hide_Gloves" style="display:none">
-			  <div class="row"  >
-				  
-				  
-				  
-			  		<div class="col mb-3">	
-			<label for="Action_Gloves">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_Gloves" placeholder="" value="" required>
-			     </div>
-				  
-			
-			  </div>
-			  
-
-	
-	
-              
-			  
-			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-	                <label for="Date_Gloves">Date</label>
-                <input type="Date" class="form-control" id="Date_Gloves" placeholder="" value="" required>
-			     </div>
-			<div class="colmb-3">	
-				<label for="Time_Gloves">Time</label>
-                <input type="time" class="form-control" id="Time_Gloves" placeholder="" value="" required>
-			     </div>
-				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Gloves">Corrected By</label>
-                <input type="text" class="form-control" id="Corrected_Gloves" placeholder="" value="" required>
-			     </div>
-              </div> 
-			
-			  
-</div>
-<!-----------------------------------------------------------------------------------------------------------------------------------> 
-	
-			  
+			  </div>			  
+			 			  
 			  
 <!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
 			  <br>
