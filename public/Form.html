@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="styles.css" rel="stylesheet">
+
+	<title>Test</title>
+</head>
+	
+<header Id= "Headerone">
+</header>
+
+	
+
+	
+	
+<body>
+	
+ <!-- Menu Button---------------------------------------------------------------------------------------------------------------------------------------- --> 
+<button  Id= "Menu_Button" onclick="Menu_open_function()" name="Var7" type="submit" value="$Actual_Id" ></button>
+	
+
+<header Id= "Headermenu1" style="display:none"></header>
+		
+<button  Id= "Headermenuback" onclick="Menu_close_function()" style="display:none"  type="button"  ></button>	
+	
+<header Id= "Headermenu2" style="display:none" ></header>
+	
+    <p Id="Menu_Name" style="display:none">Cotati</p>	
+	
+    <form action="Settings_Page.html" method="post">
+	<button  Id= "Menu_Settings" style="display:none" type="submit" >• Account Settings  </button>
+	</form>
+	
+    <form action="Maint_Page.html" method="post">
+	<button  Id= "Menu_Maint" style="display:none" type="submit"  >• Maintenance </button>
+	</form>
+	
+    <form action="Support_Page.html" method="post">
+	<button  Id= "Menu_Support" style="display:none" type="submit" >• Support </button>
+	</form>
+	
+	<form action="Sign_out.html" method="post">
+	<button  Id= "Menu_Out" style="display:none" type="submit"  >• Log Out </button>
+	</form>
+	
+	
+	
+ <!-- Banner--------------------------------------------------------------------------------------------------------------------------------------------- --> 	
+<p Id="Haccp_Banner">HACCP Logs</p>
+		
+	
+<!-- Bottom Buttons Expand--------------------------------------------------------------------------------------------------------------------------------------- --> 
+		<form action="Test.html" method="post">
+	<button  Id= "Export_Button" name="Var7" style="display:none" type="submit" value="$Actual_Id" > Export</button>
+	</form>
+	
+   <form action="Test.html" method="post">
+	<button  Id= "Print_Button" style="display:none" type="submit" >Print</button>
+	</form>
+	
+	<form action="Dashboard.html" method="post">
+	<button  Id= "Dashboard_Button" name="Var7" style="display:none" type="submit" value="$Actual_Id" > Dashboard</button>
+	</form>
+	
+<form action="Reports.html" method="post">
+	<button  Id= "Less_Button" onclick="Bottom_close_function()" style="display:none" type="button" >•••</button>
+	</form>
+	
+	<!-- Bottom Buttons--------------------------------------------------------------------------------------------------------------------------------------- --> 
+	
+	<form action="Dashboard.html" method="post">
+	<button  Id= "More_Button" onclick="Bottom_open_function()" type="button" > •••</button>
+	</form>
+	 
+<form action="Form.html" method="post">
+	<button  Id= "Save_Button" type="submit" >Save</button>
+	</form>
+
+	
+
+	<!-- Scripto--------------------------------------------------------------------------------------------------------------------------------> 
+	<script>
+function Menu_open_function() {
+document.getElementById('Headermenu1').style.display='block'; 
+document.getElementById('Headermenu2').style.display='block'; 
+document.getElementById('Headermenuback').style.display='block';
+document.getElementById('Menu_Name').style.display='block';		
+document.getElementById('Menu_Settings').style.display='block';	
+document.getElementById('Menu_Maint').style.display='block';	
+document.getElementById('Menu_Support').style.display='block';	
+document.getElementById('Menu_Out').style.display='block';	
+	
+}
+		function Menu_close_function() {
+document.getElementById('Headermenu1').style.display='none'; 
+document.getElementById('Headermenu2').style.display='none'; 
+document.getElementById('Headermenuback').style.display='none';
+document.getElementById('Menu_Name').style.display='none';
+document.getElementById('Menu_Settings').style.display='none';	
+document.getElementById('Menu_Maint').style.display='none';	
+document.getElementById('Menu_Support').style.display='none';	
+document.getElementById('Menu_Out').style.display='none';	
+}
+</script>
+	
+<script>	
+		function Bottom_open_function() {
+document.getElementById('Export_Button').style.display='block'; 
+document.getElementById('Print_Button').style.display='block'; 
+document.getElementById('Dashboard_Button').style.display='block';
+document.getElementById('Less_Button').style.display='block';		
+document.getElementById('More_Button').style.display='none';	
+document.getElementById('Save_Button').style.display='none';	
+}
+		function Bottom_close_function() {
+document.getElementById('Export_Button').style.display='none'; 
+document.getElementById('Print_Button').style.display='none'; 
+document.getElementById('Dashboard_Button').style.display='none';
+document.getElementById('Less_Button').style.display='none';		
+document.getElementById('More_Button').style.display='block';	
+document.getElementById('Save_Button').style.display='block';	
+}
+</script>
+</body>
+</html>
