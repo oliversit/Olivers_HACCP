@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Fetch using MySQL and Node.js</title>
+</head>
+<body>
+    <div class="table-data">
+<h2>Display Data using Node.js & MySQL</h2>
+    <table border="1">
+        <tr>
+            <th>Row</th>
+            <th>Id</th>
+<th>Form_Name</th>
+<th>Date_Submitted</th>
+<th>Correction_Id</th>
+<th>Column_1</th>
+<th>Column_2</th>
+<th>Column_3</th>
+<th>Column_4</th>
+<th>Column_5</th>
+<th>Column_6</th>
+<th>Column_7</th>
+<th>Column_8</th>
+<th>Column_9</th>
+<th>Column_10</th>
+<th>Column_11</th>
+<th>Column_12</th>
+<th>Column_13</th>
+<th>Column_14</th>
+<th>Column_15</th>
+<th>Column_16</th>
+<th>Column_17</th>
+<th>Column_18</th>
+<th>Column_19</th>
+<th>Column_20</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        
+        <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+        <tr>
+            <td><%=i; %></td>
+<td><%=data.Id %></td>
+<td><%=data.Form_Name %></td>
+<td><%=data.Date %></td>
+<td><%=data.Correction_ID %></td>
+<td><%=data.Column_1 %></td>
+<td><%=data.Column_2 %></td>
+<td><%=data.Column_3 %></td>
+<td><%=data.Column_4 %></td>
+<td><%=data.Column_5 %></td>
+<td><%=data.Column_6 %></td>
+<td><%=data.Column_7 %></td>
+<td><%=data.Column_8 %></td>
+<td><%=data.Column_9 %></td>
+<td><%=data.Column_10 %></td>
+<td><%=data.Column_11 %></td>
+<td><%=data.Column_12 %></td>
+<td><%=data.Column_13 %></td>
+<td><%=data.Column_14 %></td>
+<td><%=data.Column_15 %></td>
+<td><%=data.Column_16 %></td>
+<td><%=data.Column_17 %></td>
+<td><%=data.Column_18 %></td>
+<td><%=data.Column_19 %></td>
+<td><%=data.Column_20 %></td>
+
+
+            <td><a href="/users/edit/<%=data.id%>">Edit</a></td>
+            <td><a href="/users/delete/<%=data.id%>">Delete</a></td>
+        </tr>
+        <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
+    </table>
+    </div>
+</body>
+</html>
