@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link href="../test.css" rel="stylesheet">
+</head>
+
+
+<body>
+<nav class="navbar bg-green navbar-dark">
+  <a class="bg-darkgreen" href="/Maint_Page.html"><%=formName %></a>
+  <button class= "Menu_Button" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+
+  </button>
+  <div class=" collapse navbar-collapse bg-none" id="collapsibleNavbar">
+	  <hr class="mb-4">
+    <ul class="navbar-nav">
+		   <li class="nav-item">
+        <a class="bg-darkgreen2" href="/Settings_Page.html">Forms</a>
+      </li>
+      <li class="nav-item">
+        <a class="bg-darkgreen2" href="/Settings_Page.html">Settings</a>
+      </li>
+      <li class="nav-item">
+        <a class="bg-darkgreen2" href="/Maint_Page.html">Maintenance</a>
+      </li>
+      <li class="nav-item">
+        <a class="bg-darkgreen2" href="Support_Page.html">Support</a>
+      </li>
+		      <li class="nav-item">
+        <a class="bg-darkgreen2" href="/">Log Out</a>
+      </li>   
+    </ul>
+  </div>  
+</nav>
+			    
+	
+	
+	<div class="container">
+
+   
+        
+<!-- Edit----------------------------------------------------------------------------------------------------------------> 	
+		
+			<%
+        if(userData.length!=0){
+        var T=1;
+        userData.forEach(function(data){
+        %>
+
+		<form class="needs-validation" action="/Frontend/List_Update" method="post">
+			<input id="Id_Value" name="Id" type="hidden" value=<%=data.Id %>>
+			<input id="Save" name="Type" type="hidden" value=<%=formName %>>
+           			<div class="row " >
+				
+		
+								<div class="col"  >
+										<br>
+										<br>
+			
+						<label for="Item">Name</label>
+               <input type="text" class="form-control" id="Item" Name="Name" Value="<%=data.Name %>">
+	</div>
+	</div>
+					
+						
+					<div class="row " >		
+			<div class="col mb-3"  >
+			
+	<br>
+        <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Cancel_Button" type="submit" value="$Actual_Id" > Save</button>		
+		</form>	
+				</div>
+						
+				<div class="col mb-3"  >		
+				<form class="needs-validation" action="/Frontend/List_Edit" method="post">			
+				<input id="Cancel" name="Type" type="hidden" value="<%=formName %>">
+		<br>
+        <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Save_Button" type="submit" value="$Actual_Id" > Cancel</button>		
+		</form>	
+			</div>
+						
+					
+						
+						
+</div>
+		
+			          <%  T++; }) %>
+        <% } 
+		
+		else{ %>
+
+        <% } %>			
+		
+	
+
+		
+<!-- Bottom Buttons --> 
+		<div class="row" >
+              <div class="col mb-3">
+				  
+				  <form action="Dashboard.html" class="button_height" method="post">
+					  <br>
+                       <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Dashboard</button>
+					  </form>
+      
+              </div>
+		
+              <div class="col  mb-3">
+				 
+				  <form action="Reports.html" class="button_height" method="post">
+					   <br>
+                       <button class="btn btn-block btn-primary btn-lg button_height  Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>
+       </form>
+              </div>
+		
+		
+	</div>
+		
+	</div>
+	
+	
+	</body>
+</html>
