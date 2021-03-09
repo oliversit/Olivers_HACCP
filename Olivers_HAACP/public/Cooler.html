@@ -7,7 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1">
+<script>
+if (screen.width < 400) {
+    var mvp = document.getElementById('myViewport');
+    mvp.setAttribute('content','initial-scale=.5');
+}
+	
+
+</script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -236,7 +244,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Covered">Location/ (Room #)</label>
                   <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_3">
-                  <option value="A">Choose...</option>
+                  <option value="Choose...">Choose...</option>
 <option Value="cooler">cooler</option>
 <option Value="case">case</option>
 <option Value="sausage">sausage</option>
@@ -303,7 +311,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Stored">Commodity</label>
     <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Covered()" name="Column_4">
-        <option value="A">Choose...</option>            
+        <option value="Choose...">Choose...</option>            
 		<option Value="beef">beef</option>
 					<option Value="pork">pork</option>
 					 <option Value="chicken">chicken</option>
@@ -431,7 +439,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Health">Accept?</label>
                   <select class="custom-select d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_6">
-                  <option value="A">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Yes</option>
 					<option Value="R">No</option>
                 </select>

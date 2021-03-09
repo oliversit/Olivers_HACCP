@@ -7,7 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1">
+<script>
+if (screen.width < 400) {
+    var mvp = document.getElementById('myViewport');
+    mvp.setAttribute('content','initial-scale=.5');
+}
+	
+
+</script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -23,7 +31,7 @@
 
 	
     <!-- Custom styles for this template -->
-    <link href="test.css" rel="stylesheet">
+    <link href="../test.css" rel="stylesheet">
   </head>
 
   <body >
@@ -69,7 +77,7 @@
 		
 		
           <form class="needs-validation" action="/data" method="post">
-			<input id="Form_Name" name="Form_Name" type="hidden" value="Cold Rooms"> 
+			<input id="Form_Name" name="Form_Name" type="hidden" value="Cold_Rooms"> 
 			  
 			  
 
@@ -98,7 +106,7 @@ pallets, broken, moldy or dirty boxes-------------------------------------------
                 <label for="Floor_Ground">Floors free of product debris, trash, broken, moldy, or dirty
 pallets, broken, moldy or dirty boxes</label>
                   <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1" >
-                  <option value="">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -162,7 +170,7 @@ pallets, broken, moldy or dirty boxes</label>
               <div class="col-md-12 mb-3">
                 <label for="Pest">Walls, ceilings, overhead lights, shields, and pipelinesclean and free of debris, mold and spider webs</label>
                   <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" name="Column_2">
-                  <option value="">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -226,7 +234,7 @@ pallets, broken, moldy or dirty boxes</label>
               <div class="col-md-12 mb-3">
                 <label for="Debris">Correct temperature range (34-38° F)</label>
                   <select class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3">
-                  <option value="">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -291,7 +299,7 @@ pallets, broken, moldy or dirty boxes</label>
               <div class="col-md-12 mb-3">
                 <label for="Covered">Door curtains clean and intact and not touching the floor. Doors working properly.</label>
                   <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4">
-                  <option value="">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -354,7 +362,7 @@ pallets, broken, moldy or dirty boxes</label>
               <div class="col-md-12 mb-3">
                 <label for="Stored">All walls are inspected for holes.</label>
                   <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5">
-                  <option value="">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -418,7 +426,7 @@ pallets, broken, moldy or dirty boxes</label>
               <div class="col-md-12 mb-3">
                 <label for="sanitized">Pallets/Boxes of raw product are stored off the wall with enough space to inspect between. All finished product boxes are stored 6" off the ground.</label>
                   <select class="custom-select d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" name="Column_6">
-                  <option value="">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -482,7 +490,7 @@ pallets, broken, moldy or dirty boxes</label>
               <div class="col-md-12 mb-3">
                 <label for="Trash">Drains clean.</label>
                   <select class="custom-select d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7">
-                  <option value="">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>

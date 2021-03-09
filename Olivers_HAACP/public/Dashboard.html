@@ -3,7 +3,18 @@
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1">
+<script>
+if (screen.width < 400) {
+    var mvp = document.getElementById('myViewport');
+    mvp.setAttribute('content','initial-scale=.5');
+}
+	
+
+</script>
+	
+	
+	
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -79,14 +90,14 @@
     </div>
 								
 <div class="col d-flex justify-content-center" >
-<form action="Raw_Product.html" >
+<form action="/Frontend/Raw_Product_Form_New" method="post">
 	<button  Id= "Button_5" class="Form_Buttons mt-5 Yellow Raw_Product" name="Var7" type="submit" value="$Actual_Id" ></button>
     </form>	  
 </div>
 								
 <div class="col d-flex justify-content-center" >
-<form action="Cooler.html" >
-	<button  Id= "Button_6" class="Form_Buttons mt-5 Green2 Cooler" name="Var7" type="submit" value="$Actual_Id" ></button>
+<form action="/Frontend/Cooler_Form_New" method="post" >
+	<button  Id= "Button_6" class="Form_Buttons mt-5 Green2 Cooler" type="submit"  ></button>
     </form>	 
 </div>
 										
@@ -186,10 +197,10 @@
 		
 
 				
-
+</div>
 		
 <!-- Bottom Buttons --> 
-		<div class="row" >
+		<div class="row fixed-bottom" >
               <div class="col mb-3">
 				  
 				  <form action="Previous_Form_Selection.html" class="button_height">
@@ -202,14 +213,14 @@
               <div class="col  mb-3">
 				 
 				  <form action="Reports.html" class="button_height" >
-					   <br>
+					<br>
                        <button class="btn btn-block btn-primary btn-lg button_height Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>
        </form>
               </div>
 		
 		
 	</div>
-	</div>
+	
 	
 
 	

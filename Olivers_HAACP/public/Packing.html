@@ -7,7 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1">
+<script>
+if (screen.width < 400) {
+    var mvp = document.getElementById('myViewport');
+    mvp.setAttribute('content','initial-scale=.5');
+}
+	
+
+</script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -101,7 +109,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Floor_Ground">Floors/grounds clean and free of trash</label>
                   <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1">
-                  <option value="">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                   <option Value="A" name="Column_1">Acceptable</option>
 					<option Value="R" name="Column_1">Rejected</option>
                 </select>
@@ -165,7 +173,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Pest">Area free of pest activity</label>
                   <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()"  name="Column_2">
-                  <option value="" >Choose...</option>
+                  <option value="Choose..." >Choose...</option>
                   <option Value="A" name="Column_2">Acceptable</option>
 					<option Value="R" name="Column_2">Rejected</option>
                 </select>
@@ -229,7 +237,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Debris">All packing material free of debris/insects under shroud</label>
                   <select class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3">
-                  <option value="">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                   <option Value="A" name="Column_3">Acceptable</option>
 					<option Value="R" name="Column_3">Rejected</option>
                 </select>
@@ -294,7 +302,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Covered">All packing material are covered when not in use to prevent contamination</label>
                   <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4">
-                  <option value="">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                   <option Value="A" name="Column_4">Acceptable</option>
 					<option Value="R" name="Column_4">Rejected</option>
                 </select>
@@ -420,6 +428,9 @@
 </div>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 			  <br>
+			  <br>
+			  <br>
+			  
 			  <hr class="mb-4">
 			
 			  			  <div class="row"  >

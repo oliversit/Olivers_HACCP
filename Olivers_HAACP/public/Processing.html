@@ -7,7 +7,15 @@
     <meta name="description" content="">
     <meta name="author" content="">
    <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1">
+<script>
+if (screen.width < 400) {
+    var mvp = document.getElementById('myViewport');
+    mvp.setAttribute('content','initial-scale=.5');
+}
+	
+
+</script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -96,7 +104,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Floor_Ground">All lighting properly illuminating and shields intact. All shields free of debris and insect fragments.</label>
                   <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1" >
-                  <option value="" >Choose...</option>
+                  <option value="Choose..." >Choose...</option>
                     <option Value="A" >Acceptable</option>
 					<option Value="R" >Rejected</option>
                 </select>
@@ -160,7 +168,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Pest">Floors free of all trash and debris</label>
                   <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" name="Column_2">
-                  <option value="">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A" >Acceptable</option>
 					<option Value="R" >Rejected</option>
                 </select>
@@ -224,7 +232,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Debris">Floors swept (clean and free of debris). Floor clean</label>
                   <select class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3">
-                  <option value="">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A" >Acceptable</option>
 					<option Value="R" >Rejected</option>
                 </select>
@@ -289,7 +297,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Covered">Walls, ceiling, overhead lights and pipelines clean and free of debris, mold, spider webs and dripping condensation</label>
                   <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4">
-                  <option value="A">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -352,7 +360,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Stored">No excess of equipment lubrication on equipment</label>
                   <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5">
-                  <option value="A">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -416,7 +424,7 @@
               <div class="col-md-12 mb-3">
                 <label for="sanitized">ROP unit Equipment clean and sanitized.</label>
                   <select class="custom-select d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" name="Column_6">
-                  <option value="A">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -480,7 +488,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Trash">Trash cans empty, clean and lined</label>
                   <select class="custom-select d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7">
-                  <option value="A">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -544,7 +552,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Health">Employees use health, hygiene, good habits</label>
                   <select class="custom-select d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_8">
-                  <option value="A">Choose...</option>
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -568,7 +576,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Health">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_Health" placeholder="" name="Column_9">
+                <input type="text" class="form-control" id="Action_Health" placeholder="" name="Action_Health">
 			     </div>
 				  
 			
@@ -608,8 +616,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="GMP">Employees are following GMPs (no chewing gum, leaving food out, wearing jewelry, etc.)</label>
-                  <select class="custom-select d-block w-100" id="GMP" onchange="Hide_Option_GMP()" name="Column_10">
-                  <option value="A">Choose...</option>
+                  <select class="custom-select d-block w-100" id="GMP" onchange="Hide_Option_GMP()" name="Column_9">
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -673,8 +681,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Belongings">No personal belongings in the area.</label>
-                  <select class="custom-select d-block w-100" id="Belongings" onchange="Hide_Option_Belongings()" name="Column_11">
-                  <option value="A">Choose...</option>
+                  <select class="custom-select d-block w-100" id="Belongings" onchange="Hide_Option_Belongings()" name="Column_10">
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -738,8 +746,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Repairs">No temporary repairs in place</label>
-                  <select class="custom-select d-block w-100" id="Repairs" onchange="Hide_Option_Repairs()" name="Column_12">
-                  <option value="A">Choose...</option>
+                  <select class="custom-select d-block w-100" id="Repairs" onchange="Hide_Option_Repairs()" name="Column_11">
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -803,8 +811,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Signage">All signage is in place.</label>
-                  <select class="custom-select d-block w-100" id="Signage" onchange="Hide_Option_Signage()" name="Column_13">
-                  <option value="A">Choose...</option>
+                  <select class="custom-select d-block w-100" id="Signage" onchange="Hide_Option_Signage()" name="Column_12">
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -867,8 +875,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Walls">All walls are inspected for holes</label>
-                  <select class="custom-select d-block w-100" id="Walls" onchange="Hide_Option_Walls()" name="Column_14">
-                  <option value="A">Choose...</option>
+                  <select class="custom-select d-block w-100" id="Walls" onchange="Hide_Option_Walls()" name="Column_13">
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -932,8 +940,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Floor">No cartons or packing material placed onto the floor</label>
-                  <select class="custom-select d-block w-100" id="Floor" onchange="Hide_Option_Floor()" name="Column_15">
-                  <option value="A">Choose...</option>
+                  <select class="custom-select d-block w-100" id="Floor" onchange="Hide_Option_Floor()" name="Column_14">
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -997,8 +1005,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Gloves">All gloves and aprons need to be placed in a specific area prior to leaving the processing area</label>
-                  <select class="custom-select d-block w-100" id="Gloves" onchange="Hide_Option_Action_Gloves()" name="Column_16">
-                  <option value="A">Choose...</option>
+                  <select class="custom-select d-block w-100" id="Gloves" onchange="Hide_Option_Action_Gloves()" name="Column_15">
+                  <option value="Choose...">Choose...</option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>

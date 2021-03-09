@@ -3,7 +3,15 @@
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1">
+<script>
+if (screen.width < 400) {
+    var mvp = document.getElementById('myViewport');
+    mvp.setAttribute('content','initial-scale=.5');
+}
+	
+
+</script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -58,10 +66,10 @@
               <div class="col-md-6 mb-3">
               </div>
 				</div>	   
-            </div>
+           
 	
 	
-	<div class="container">
+
 		
 		
 		
@@ -81,9 +89,9 @@
 </div>
 								
 <div class="col d-flex justify-content-center" >
-<form action="Cooler.html" method="post">
-	<button  Id= "Button_3" class="Form_Buttons mt-5 Orange Cold_Room" name="Var7" type="submit" value="$Actual_Id" ></button>
-    </form>	 
+
+	<button  Id= "Button_3" class="Form_Buttons mt-5 Orange Cold_Room" name="Form_Name" type="submit" value="Cold_Rooms" ></button>
+
 </div>
 										
 				
@@ -94,21 +102,21 @@
 	
 	
 <div class="col  d-flex justify-content-center"   >
-<form action="Thermometer_Calibration.html" method="post">
-	<button  Id= "Button_4" class="Form_Buttons mt-5 Green Thermometer" name="Var7" type="submit" value="$Actual_Id" ></button>
-    </form>	 
+
+	<button  Id= "Button_4" class="Form_Buttons mt-5 Green Thermometer" name="Form_Name" type="submit" value="Thermometer_Calibration" ></button>
+
     </div>
 								
 <div class="col d-flex justify-content-center" >
-<form action="Raw_Product.html" method="post">
-	<button  Id= "Button_5" class="Form_Buttons mt-5 Yellow Raw_Product" name="Var7" type="submit" value="$Actual_Id" ></button>
-    </form>	  
+
+	<button  Id= "Button_5" class="Form_Buttons mt-5 Yellow Raw_Product" name="Form_Name" type="submit" value="Raw_Product" ></button>
+   
 </div>
 								
 <div class="col d-flex justify-content-center" >
-<form action="Cooler.html" method="post">
-	<button  Id= "Button_6" class="Form_Buttons mt-5 Green2 Cooler" name="Var7" type="submit" value="$Actual_Id" ></button>
-    </form>	 
+
+	<button  Id= "Button_6" class="Form_Buttons mt-5 Green2 Cooler" name="Form_Name" type="submit" value="Cooler" ></button>
+
 </div>
 										
 				
@@ -119,21 +127,21 @@
 	
 	
 <div class="col d-flex justify-content-center"  >
-<form action="Form.html" method="post">
-	<button  Id= "Button_7" class="Form_Buttons mt-5 Blue" name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
-    </form>	 
+
+	<button  Id= "Button_7" class="Form_Buttons mt-5 Blue" name="Form_Name" type="submit" value="$Actual_Id" ></button>
+
     </div>
 								
 <div class="col d-flex justify-content-center" >
-<form action="Form.html" method="post">
-	<button  Id= "Button_8" class="Form_Buttons mt-5 Blue2" name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
-    </form>	  
+
+	<button  Id= "Button_8" class="Form_Buttons mt-5 Blue2" name="Form_Name" type="submit" value="$Actual_Id" ></button>
+
 </div>
 								
 <div class="col d-flex justify-content-center" >
-<form action="Form.html" method="post">
+
 	<button  Id= "Button_9" class="Form_Buttons mt-5 Red" name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
-    </form>	 
+
 </div>
 										
 				
@@ -145,64 +153,32 @@
 	
 	
 <div class="col d-flex justify-content-center"  >
-<form action="Form.html" method="post">
+
 	<button  Id= "Button_10" class="Form_Buttons mt-5 Orange2 " name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
-    </form>	 
+ 
     </div>
 								
 <div class="col d-flex justify-content-center" >
-<form action="Form.html" method="post">
+
 	<button  Id= "Button_11" class="Form_Buttons mt-5 Purple2" name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
-    </form>	  
+ 
 </div>
 								
 <div class="col d-flex justify-content-center" >
-<form action="Form.html" method="post">
+
 	<button  Id= "Button_12" class="Form_Buttons mt-5 Grey" name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
-    </form>	 
+
 </div>
 										
 				
   </div>
 		
+
+		
+		
+		
+		
 	
-
-		
-<!-- Bkank Row --> 
-			<div class="row" >
-			
-		<div class="col d-flex justify-content-center mt-5"  >
-
-	</div>
-		
-				<div class="col d-flex justify-content-center mt-5"   >
-		</div>
-		</div>
-		
-		
-		<!-- Bkank Row --> 
-			<div class="row" >
-			
-		<div class="col d-flex justify-content-center mt-5"  >
-
-	</div>
-		
-				<div class="col d-flex justify-content-center mt-5"   >
-		</div>
-		</div>
-		
-		
-		
-		<!-- Bkank Row --> 
-			<div class="row" >
-			
-		<div class="col d-flex justify-content-center mt-5"  >
-
-	</div>
-		
-				<div class="col d-flex justify-content-center mt-5"   >
-		</div>
-		</div>
 		
 					<!-- Bkank Row --> 
 			<div class="row" >
@@ -215,22 +191,21 @@
 		</div>
 		</div>
 				
-
-		
+</div>
+		</form>	
 <!-- Bottom Buttons --> 
-		<div class="row" >
+	
+		<div class="row fixed-bottom" >
               <div class="col mb-3">
 				  
-				  <form action="Dashboard.html" class="button_height">
+				  <form action="Dashboard.html" class="button_height" >
 					  <br>
                        <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Dashboard</button>
-					  <br>
-					 
 					  </form>
       
               </div>
 		
-              <div class="col  mb-3">
+              <div class="col mb-3">
 				 
 				  <form action="Reports.html" class="button_height" >
 					   <br>
@@ -241,8 +216,8 @@
 		
 	</div>
 		
-	</div>
-	</form>	
+	
+	
 
 	
 	</body>
