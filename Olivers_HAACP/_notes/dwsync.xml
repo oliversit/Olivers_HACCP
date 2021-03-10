@@ -15,4 +15,5 @@
 <file name="package-lock.json" server="10.105.17.120//var/www/Haccp/" local="132580618320000000" remote="132598884440000000" Dst="1" />
 <file name="package.json" server="10.105.17.120//var/www/Haccp/" local="132580618320000000" remote="132598884440000000" Dst="1" />
 <file name="Database.js" server="192.168.3.30//var/www/Haccp/" local="132585735652549008" remote="132594372440000000" Dst="1" />
+<file name="App.js" server="10.105.17.120//var/www/Haccp/" local="132598703448642449" remote="132598899040000000" Dst="1" />
 </dwsync>
