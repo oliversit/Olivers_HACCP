@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+<meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1">
+<script>
+if (screen.width < 400) {
+    var mvp = document.getElementById('myViewport');
+    mvp.setAttribute('content','initial-scale=.5');
+}
+	
+
+</script>
+	
+	
+	
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link href="../test.css" rel="stylesheet">
+</head>
+
+
+<body>
+
+	<%- include('../Partials/NavBar') -%>
+
+
+	<br>
+	 <p class="bg-Grey" >&nbsp; Welcome <%=userName %></p>
+	<div class="container">
+		
+		       
+		
+<div class="row Colum_Properties" >
+	
+	
+<div class="col d-flex justify-content-center"  >
+<form action="../Frontend/Packing_Form_New" method="post">
+	 <input id="username" name="username" type="hidden" value=<%=userName %>>
+	<button  Id= "Button_1" class="Form_Buttons mt-5 Pink Packing"  type="submit"  ></button>
+    </form>	 
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="../Frontend/Processing_Form_New" method="post">
+	 <input id="username" name="username" type="hidden" value=<%=userName %>>
+	<input id="username" name="username" type="hidden" value=<%=userName %>>
+	<button  Id= "Button_2" class="Form_Buttons mt-5 Purple Processing" type="submit" ></button>
+    </form>	  
+</div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="../Frontend/Cold_Rooms_Form_New" method="post">
+	 <input id="username" name="username" type="hidden" value=<%=userName %>>
+	<button  Id= "Button_3" class="Form_Buttons mt-5 Orange Cold_Room" name="Var7" type="submit" value="$Actual_Id" ></button>
+    </form>	 
+</div>
+										
+				
+  </div>
+		
+
+		<div class="row " >
+	
+	
+<div class="col  d-flex justify-content-center"   >
+<form action="../Frontend/Thermometer_Calibration_Form_New" method="post">
+	 <input id="username" name="username" type="hidden" value=<%=userName %>>
+	<button  Id= "Button_4" class="Form_Buttons mt-5 Green Thermometer" name="Var7" type="submit" value="$Actual_Id" ></button>
+    </form>	 
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="../Frontend/Raw_Product_Form_New" method="post">
+	 <input id="username" name="username" type="hidden" value=<%=userName %>>
+	<button  Id= "Button_5" class="Form_Buttons mt-5 Yellow Raw_Product" name="Var7" type="submit" value="$Actual_Id" ></button>
+    </form>	  
+</div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="../Frontend/Cooler_Form_New" method="post" >
+	 <input id="username" name="username" type="hidden" value=<%=userName %>>
+	<button  Id= "Button_6" class="Form_Buttons mt-5 Green2 Cooler" type="submit"  ></button>
+    </form>	 
+</div>
+										
+				
+  </div>
+		
+		
+		<div class="row " >
+	
+	
+<div class="col d-flex justify-content-center"  >
+<form action="Form_Form_New" method="post">
+	  <input id="username" name="username" type="hidden" value=<%=userName %>>
+	<button  Id= "Button_7" class="Form_Buttons mt-5 Blue" name="Var7" type="submit" value="$Actual_Id" ></button>
+    </form>	 
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="Test" >
+	  <input id="username" name="username" type="hidden" value=<%=userName %>>
+	<button  Id= "Button_8" class="Form_Buttons mt-5 Blue2" name="Var7" type="submit"  
+			></button>
+    </form>	  
+</div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="Form_Form_New" method="post">
+	  <input id="username" name="username" type="hidden" value=<%=userName %>>
+	<button  Id= "Button_9" class="Form_Buttons mt-5 Red" name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
+    </form>	 
+</div>
+										
+				
+  </div>
+		
+		
+		
+		<div class="row" >
+	
+	
+<div class="col d-flex justify-content-center"  >
+<form action="Form_Form_New" method="post">
+	  <input id="username" name="username" type="hidden" value=<%=userName %>>
+	<button  Id= "Button_10" class="Form_Buttons mt-5 Orange2 " name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
+    </form>	 
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="Form_Form_New" method="post">
+	  <input id="username" name="username" type="hidden" value=<%=userName %>>
+	<button  Id= "Button_11" class="Form_Buttons mt-5 Purple2" name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
+    </form>	  
+</div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="Form_Form_New" method="post">
+	  <input id="username" name="username" type="hidden" value=<%=userName %>>
+	<button  Id= "Button_12" class="Form_Buttons mt-5 Grey" name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
+    </form>	 
+</div>
+										
+				
+  </div>
+		
+	
+
+		
+<!-- Blank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+		
+		<!-- Blank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+		
+		
+		<!-- Blank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+
+				
+</div>
+		
+<!-- Bottom Buttons --> 
+		<div class="row fixed-bottom" >
+              <div class="col mb-3">
+				  
+				  <form action="../Frontend/Previous_Form_Selection_Form_New" class="button_height">
+					    <input id="username" name="username" type="hidden" value=<%=userName %>>
+					  <br>
+                       <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Previous Forms</button>
+					  </form>
+      
+              </div>
+		
+              <div class="col  mb-3">
+				 
+				  <form action="../Frontend/Reports_Form_New" class="button_height" >
+					    <input id="username" name="username" type="hidden" value=<%=userName %>>
+					<br>
+                       <button class="btn btn-block btn-primary btn-lg button_height Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>
+       </form>
+              </div>
+		
+		
+	</div>
+	
+	
+
+	
+	</body>
+</html>

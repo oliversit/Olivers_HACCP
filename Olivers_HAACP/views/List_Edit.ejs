@@ -17,6 +17,55 @@
 			    
 	
 	
+
+
+   
+<!---------------------------------------------------------------------------------------------------------------------->    
+
+		<div class="container">
+			<form class="needs-validation" action="/List" method="post">
+				  <input id="username" name="username" type="hidden" value=<%=userName %>>
+			<input id="Name" name="Type" type="hidden" value="<%=formName %>">
+           			<div class="row " >
+			
+							
+								<div class="col"  >
+										<br>
+										<br>
+						<label for="Item">Enter New Item</label>
+               <input type="text" class="form-control" id="Item" Name="Name">
+	</div>
+						
+								<div class="col"  >
+									
+										<br>
+										<br>
+										<br>
+		
+				     <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Add_Button" type="submit" >Add</button>
+	</div>
+									<div class="col"  >
+								
+										<br>
+										<br>
+										<br>
+
+</div>
+
+			</form>
+	
+						
+</div>
+		
+		</div>	
+			
+<!----------------------------------------------------------------------------------------------------------------------> 			
+	
+	
+	
+	
+	
+	
 	<div class="container">
 
    
@@ -29,64 +78,52 @@
 		
 		
 		
-           			<div class="row align-items-end" >
+           			<div class="row " >
 			
 
-			<div class="col-md-3"  >
+			<div class="col"  >
 				<br>
 					<br>
-			<label for="Number_selection">Form Number</label>
+			<label for="Number_selection"><%=formName %></label>
                 <p class="form-control" id="Number_selection" ><%=i; %></p>
 	</div>
 			
 	
-		
-								<div class="col-md-3"  >
-										<br>
-										<br>
-			<label for="Name_selection">Form</label>
-                <p class="form-control" id="Name_selection" ><%=data.Form_Name %></p>
-	</div>
-	
 						
-								<div class="col-md-3"  >
+								<div class="col"  >
 										<br>
 										<br>
-						<label for="Date_selection">Date</label>
-                <p class="form-control" id="Name_selection" ><%=data.Date %></p>
+						<label for="Date_selection">Name</label>
+                <p class="form-control" id="Name_selection" ><%=data.Name %></p>
 	</div>
 						
-								<div class="col-md-3 mb-3"  >
-			<form class="needs-validation" action="/Frontend/<%=data.Form_Name %>_Form" method="post">
+								<div class="col"  >
+									
+										<br>
+										<br>
+										<br>
+			<form class="needs-validation" action="/Frontend/List_Edit_Item" method="post">
 				  <input id="username" name="username" type="hidden" value=<%=userName %>>
-        <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Edit_Button" type="submit" value="$Actual_Id" > Edit</button>
-			 <input id="Id" name="Id" type="hidden" value="<%=data.Id %>">			
- <input id="Form_Name" name="Form_Name" type="hidden" value="<%=data.Form_Name %>">
- <input id="Date" name="Date" type="hidden" value="<%=data.Date %>">
- <input id="Correction_Id" name="Correction_Id" type="hidden" value="<%=data.Correction_Id %>">
- <input id="Column_1" name="Column_1" type="hidden" value="<%=data.Column_1 %>">
- <input id="Column_2" name="Column_2" type="hidden" value="<%=data.Column_2 %>">
- <input id="Column_3" name="Column_3" type="hidden" value="<%=data.Column_3 %>">
- <input id="Column_4" name="Column_4" type="hidden" value="<%=data.Column_4 %>">
- <input id="Column_5" name="Column_5" type="hidden" value="<%=data.Column_5 %>">
- <input id="Column_6" name="Column_6" type="hidden" value="<%=data.Column_6 %>">
- <input id="Column_7" name="Column_7" type="hidden" value="<%=data.Column_7 %>">
- <input id="Column_8" name="Column_8" type="hidden" value="<%=data.Column_8 %>">
- <input id="Column_9" name="Column_9" type="hidden" value="<%=data.Column_9 %>">
- <input id="Column_10" name="Column_10" type="hidden" value="<%=data.Column_10 %>">
- <input id="Column_11" name="Column_11" type="hidden" value="<%=data.Column_11 %>">
- <input id="Column_12" name="Column_12" type="hidden" value="<%=data.Column_12 %>">
- <input id="Column_13" name="Column_13" type="hidden" value="<%=data.Column_13 %>">
- <input id="Column_14" name="Column_14" type="hidden" value="<%=data.Column_14 %>">
- <input id="Column_15" name="Column_15" type="hidden" value="<%=data.Column_15 %>">
- <input id="Column_16" name="Column_16" type="hidden" value="<%=data.Column_16 %>">
- <input id="Column_17" name="Column_17" type="hidden" value="<%=data.Column_17 %>">
- <input id="Column_18" name="Column_18" type="hidden" value="<%=data.Column_18 %>">
- <input id="Column_19" name="Column_19" type="hidden" value="<%=data.Column_19 %>">
- <input id="Column_20" name="Column_20" type="hidden" value="<%=data.Column_20 %>">
-
-			</form>
+											<input id="Id_Value" name="Id" type="hidden" value="<%=data.Id %>">
+											<input id="Name_Form_Delete" name="Type" type="hidden" value="<%=formName %>">
+				     <button Class="btn btn-primary btn-lg btn-block Grey" Id= "the_Edit_Button" type="submit" value="$Actual_Id" > Edit</button>
+				</form>
 	</div>
+									<div class="col"  >
+								
+										<br>
+										<br>
+										<br>
+										<form class="needs-validation" action="/Frontend/List_Delete" method="post">
+											  <input id="username" name="username" type="hidden" value=<%=userName %>>
+											<input id="Id_Value" name="Id" type="hidden" value="<%=data.Id %>">
+											<input id="Name_Form_Delete" name="Type" type="hidden" value="<%=formName %>">
+        <button Class="btn btn-primary btn-lg btn-block Grey" Id= "the_Edit_Buttonw" type="submit" value="$Actual_Id" > Delete</button>
+											</form>
+</div>
+
+			
+	
 						
 </div>
 			
@@ -152,7 +189,7 @@
 		<div class="row" >
               <div class="col mb-3">
 				  
-				  <form action="Dashboard.html" class="button_height" method="post">
+				  <form action="Dashboard.html" class="button_height" >
 					    <input id="username" name="username" type="hidden" value=<%=userName %>>
 					  <br>
                        <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Dashboard</button>
@@ -162,7 +199,7 @@
 		
               <div class="col  mb-3">
 				 
-				  <form action="Reports.html" class="button_height" method="post">
+				  <form action="Reports.html" class="button_height" >
 					    <input id="username" name="username" type="hidden" value=<%=userName %>>
 					   <br>
                        <button class="btn btn-block btn-primary btn-lg button_height  Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>

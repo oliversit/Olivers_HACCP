@@ -36,49 +36,42 @@ if (screen.width < 400) {
 
   <body >
 	  
-<nav class="navbar bg-green navbar-dark">
-  <a class="bg-darkgreen" href="Dashboard.html">Cold Rooms</a>
-  <button class= "Menu_Button" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-
-  </button>
-  <div class="collapse navbar-collapse " id="collapsibleNavbar">
-	  <hr class="mb-4">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="bg-darkgreen2" href="Dashboard.html">Forms</a>
-      </li>
-		      <li class="nav-item">
-        <a class="bg-darkgreen2" href="Settings_Page.html">Settings</a>
-      </li>
-      <li class="nav-item">
-        <a class=" bg-darkgreen2" href="/Maint_Page.html">Maintenance</a>
-      </li>
-      <li class="nav-item">
-        <a class="bg-darkgreen2" href="Support_Page.html">Support</a>
-      </li>
-		      <li class="nav-item">
-        <a class="bg-darkgreen2" href="/">Log Out</a>
-      </li>   
-    </ul>
-  </div>  
-</nav>
+<%- include('../Partials/NavBar') -%>
 	  
 	  
 	  
     <div class="container">
   
 
-      <div class="row">
+        <div class="row " >
         
-        <div class="col-md-12 order-md-1">
-      <p>Please select “Acceptable” if condition is acceptable. Select “Rejected” if condition is rejected AND record corrective actions taken, by whom and the date and time correction was completed.</p>
+        <div class="col-md-10 mb-3" >
+      <p id="collapsetext">Acceptable temperature: Cooler storage and Sales display case 34-38˚F for Beef, Pork and Poultry. Monitoring requirement: Temperatures taken 2 times a day (Product must not exceed 41° F from time ofreceiving until 14 day “use-by”).</p>
+			
+			<p id="collapsetext2" style="display:none" >Expand Instructions...</p>
 			</div> 
+		          
+	
+		  
+		  <div class="col-md-2 mb-3">
+			
+  <button class= "btn btn-primary btn-lg Grey2" type="button" id="Up" style="display:Block" onclick="Hidetext()" >▲   
+
+  </button>
+			
+				  
+				  				  
+  <button class= "btn btn-primary btn-lg Grey2" type="button" Id="Down" style="display:none"  onclick="Showtext()" >▼
+
+  </button>
+			</div>
+		  
 		    </div>
 		
 		
           <form class="needs-validation" action="/data" method="post">
-			<input id="Form_Name" name="Form_Name" type="hidden" value="Cold_Rooms"> 
-			  <input id="username" name="username" type="hidden" value=<%=userName %>>
+			 <input id="Form_Name" name="Form_Name" type="hidden" value="Cooler">
+			    <input id="username" name="username" type="hidden" value=<%=userName %>>
 			  
 
 		  
@@ -99,83 +92,14 @@ if (screen.width < 400) {
 			  
 			  
 			 
-<!-------Floors free of product debris, trash, broken, moldy, or dirty
-pallets, broken, moldy or dirty boxes-------------------------------------------------------------------------------------------------------->
+
+<!-------Time-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Floor_Ground">Floors free of product debris, trash, broken, moldy, or dirty
-pallets, broken, moldy or dirty boxes</label>
-                  <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1" >
-                  <option value="Choose...">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
+                <label for="Pest">Time</label>
+                <input type="time" class="form-control" id="Pest" placeholder="" name="Column_1" >
 				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
-              </div>
-          
-			  
-			  </div>
-			  
-			 
-			  
- <!-- hidden Row --------------------------------------------------------------------------------------------------------->
-			  
-			  <div  id="Hide_Floor_Ground" style="display:none">
-			  <div class="row"  >
-				  
-				  
-				  
-			  		<div class="col mb-3">	
-			<label for="Action_Taken1">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_Taken_Floor_Ground" placeholder="" value="" >
-			     </div>
-				  
-			
-			  </div>
-			  
-
-	
-	
-              
-			  
-			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-	                <label for="Date_Floor_Ground">Date</label>
-                <input type="Date" class="form-control" id="Date_Floor_Ground" placeholder="" value="" >
-			     </div>
-			<div class="colmb-3">	
-				<label for="Time_Floor_Ground">Time</label>
-                <input type="time" class="form-control" id="Time_Floor_Ground" placeholder="" value="" >
-			     </div>
-				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_By_Floor_Ground">Corrected By</label>
-                <input type="text" class="form-control" id="Corrected_By_Floor_Ground" placeholder="" value="" >
-			     </div>
-              </div> 
-			
-			  
-</div>
-<!----------------------------------------------------------------------------------------------------------------------------------->
-
-
-<!-------Walls, ceilings, overhead lights, shields, and pipelinesclean and free of debris, mold and spider webs-------------------------------------------------------------------------------------------------------->
-            <div class="row align-items-end">
-              <div class="col-md-12 mb-3">
-                <label for="Pest">Walls, ceilings, overhead lights, shields, and pipelinesclean and free of debris, mold and spider webs</label>
-                  <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" name="Column_2">
-                  <option value="Choose...">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
+                  Please select a valid Condition
                 </div>
               </div>
           
@@ -214,7 +138,7 @@ pallets, broken, moldy or dirty boxes</label>
 	                <label for="Date_Pest">Date</label>
                 <input type="Date" class="form-control" id="Date_Pest" placeholder="" value="" >
 			     </div>
-			<div class="colmb-3">	
+			<div class="col mb-3">	
 				<label for="Time_Pest">Time</label>
                 <input type="time" class="form-control" id="Time_Pest" placeholder="" value="" >
 			     </div>
@@ -229,15 +153,11 @@ pallets, broken, moldy or dirty boxes</label>
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 			  
-<!-------Correct temperature range (34-38° F)-------------------------------------------------------------------------------------------------------->
+<!-------Initials-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Debris">Correct temperature range (34-38° F)</label>
-                  <select class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3">
-                  <option value="Choose...">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
+                <label for="Debris">Initials</label>
+<input type="text" class="form-control" id="Debris" placeholder="" name="Column_2" >
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -279,7 +199,7 @@ pallets, broken, moldy or dirty boxes</label>
 	                <label for="Date_Debris">Date</label>
                 <input type="Date" class="form-control" id="Date_Debris" placeholder="" value="" >
 			     </div>
-			<div class="colmb-3">	
+			<div class="col mb-3">	
 				<label for="Time_Debris">Time</label>
                 <input type="time" class="form-control" id="Time_Debris" placeholder="" value="" >
 			     </div>
@@ -294,14 +214,18 @@ pallets, broken, moldy or dirty boxes</label>
 <!----------------------------------------------------------------------------------------------------------------------------------->
   
  
-<!-------Door curtains clean and intact and not touching the floor. Doors working properly.-------------------------------------------------------------------------------------------------------->
+<!-------Location/ (Room #)-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Covered">Door curtains clean and intact and not touching the floor. Doors working properly.</label>
-                  <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4">
+                <label for="Covered">Location/ (Room #)</label>
+                  <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_3">
                   <option value="Choose...">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
+<option Value="cooler">cooler</option>
+<option Value="case">case</option>
+<option Value="sausage">sausage</option>
+<option Value="grab go GG">grab & go (G&G)</option>
+<option Value="knee knocker">knee knocker</option>
+<option Value="smoked">smoked</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -357,14 +281,24 @@ pallets, broken, moldy or dirty boxes</label>
 </div>
 <!----------------------------------------------------------------------------------------------------------------------------------->
  
-<!-------All walls are inspected for holes.----------->
+<!-------Commodity----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Stored">All walls are inspected for holes.</label>
-                  <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5">
-                  <option value="Choose...">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
+                <label for="Stored">Commodity</label>
+    <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Covered()" name="Column_4">
+        <option value="Choose...">Choose...</option>            
+	<%
+        if(userData.length!=0){
+        var T=1;
+        userData.forEach(function(data){
+        %>
+		<option Value=<%=data.Name %>><%=data.Name %></option>
+			          <%  T++; }) %>
+        <% } 
+		
+		else{ %>
+
+        <% } %>	
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -421,15 +355,11 @@ pallets, broken, moldy or dirty boxes</label>
 </div>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 			  
-<!-------Pallets/Boxes of raw product are stored off the wall with enough space to inspect between. All finished product boxes are stored 6" off the ground.----------->
+<!-------Room/ Case Temp° F----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="sanitized">Pallets/Boxes of raw product are stored off the wall with enough space to inspect between. All finished product boxes are stored 6" off the ground.</label>
-                  <select class="custom-select d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" name="Column_6">
-                  <option value="Choose...">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
+                <label for="sanitized">Room/ Case Temp° F</label>
+                      <input type="number" class="form-control" id="sanitized" placeholder="" name="Column_5" >
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -485,15 +415,78 @@ pallets, broken, moldy or dirty boxes</label>
 </div>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 			  
-<!-------Drains clean.----------->
+
+	
+			  
+<!-------Accept?----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Trash">Drains clean.</label>
-                  <select class="custom-select d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7">
+                <label for="Health">Accept?</label>
+                  <select class="custom-select d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_6">
                   <option value="Choose...">Choose...</option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
+                    <option Value="A">Yes</option>
+					<option Value="R">No</option>
                 </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Health" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Health">Corrective Action Taken for Rejected Conditions </label>
+                <input type="text" class="form-control" id="Action_Health" placeholder="" value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Health">Date</label>
+                <input type="Date" class="form-control" id="Date_Health" placeholder="" value="" >
+			     </div>
+			<div class="colmb-3">	
+				<label for="Time_Health">Time</label>
+                <input type="time" class="form-control" id="Time_Health" placeholder="" value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Health">Corrected By</label>
+                <input type="text" class="form-control" id="Corrected_Health" placeholder="" value="" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+<!-------Comments----------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Comment">Comments</label>
+                   <input type="text" class="form-control" id="Comment" placeholder="" name="Column_7" >
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -531,12 +524,8 @@ pallets, broken, moldy or dirty boxes</label>
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_Trash">Date</label>
+	                <label for="Date_Trash">Corrected Date</label>
                 <input type="Date" class="form-control" id="Date_Trash" placeholder="" value="" >
-			     </div>
-			<div class="colmb-3">	
-				<label for="Time_Trash">Time</label>
-                <input type="time" class="form-control" id="Time_Trash" placeholder="" value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Trash">Corrected By</label>
@@ -546,9 +535,7 @@ pallets, broken, moldy or dirty boxes</label>
 			
 			  
 </div>
-<!-----------------------------------------------------------------------------------------------------------------------------------> 
-	
-			  	
+<!-----------------------------------------------------------------------------------------------------------------------------------> 			 			  
 			  
 <!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
 			  <br>
@@ -625,6 +612,21 @@ pallets, broken, moldy or dirty boxes</label>
       })();
     </script>
 	  	  <script>
+			  			  function Hidetext(){	  
+	
+		  document.getElementById('collapsetext').style.display='none'
+		  document.getElementById('Up').style.display='none'
+		  document.getElementById('collapsetext2').style.display='Block'
+		  document.getElementById('Down').style.display='Block'
+								 }
+			  
+			  			  function Showtext(){	  
+	
+		  document.getElementById('collapsetext').style.display='Block'
+		  document.getElementById('Up').style.display='Block'
+		  document.getElementById('collapsetext2').style.display='none'
+		  document.getElementById('Down').style.display='none'
+								 }
 		  
 		  function Hide_Option_Floor_Ground(){	  
 		  if(document.getElementById('Floor_Ground').value == "R") {
@@ -693,6 +695,85 @@ function Hide_Option_Trash(){
 		  document.getElementById('Hide_Trash').style.display='none'}
 								 }
 
+function Hide_Option_Health(){	  
+		  if(document.getElementById('Health').value == "R") {
+     
+		  document.getElementById('Hide_Health').style.display='block'}
+								 
+		  if(document.getElementById('Health').value == "A") {
+ 
+		  document.getElementById('Hide_Health').style.display='none'}
+								 }
+
+function Hide_Option_GMP(){	  
+		  if(document.getElementById('GMP').value == "R") {
+     
+		  document.getElementById('Hide_GMP').style.display='block'}
+								 
+		  if(document.getElementById('GMP').value == "A") {
+ 
+		  document.getElementById('Hide_GMP').style.display='none'}
+								 }
+
+function Hide_Option_Belongings(){	  
+		  if(document.getElementById('Belongings').value == "R") {
+     
+		  document.getElementById('Hide_Belongings').style.display='block'}
+								 
+		  if(document.getElementById('Belongings').value == "A") {
+ 
+		  document.getElementById('Hide_Belongings').style.display='none'}
+								 }
+
+function Hide_Option_Repairs(){	  
+		  if(document.getElementById('Repairs').value == "R") {
+     
+		  document.getElementById('Hide_Repairs').style.display='block'}
+								 
+		  if(document.getElementById('Repairs').value == "A") {
+ 
+		  document.getElementById('Hide_Repairs').style.display='none'}
+								 }
+
+function Hide_Option_Signage(){	  
+		  if(document.getElementById('Signage').value == "R") {
+     
+		  document.getElementById('Hide_Signage').style.display='block'}
+								 
+		  if(document.getElementById('Signage').value == "A") {
+ 
+		  document.getElementById('Hide_Signage').style.display='none'}
+								 }
+
+function Hide_Option_Walls(){	  
+		  if(document.getElementById('Walls').value == "R") {
+     
+		  document.getElementById('Hide_Walls').style.display='block'}
+								 
+		  if(document.getElementById('Walls').value == "A") {
+ 
+		  document.getElementById('Hide_Walls').style.display='none'}
+								 }
+
+function Hide_Option_Floor(){	  
+		  if(document.getElementById('Floor').value == "R") {
+     
+		  document.getElementById('Hide_Floor').style.display='block'}
+								 
+		  if(document.getElementById('Floor').value == "A") {
+ 
+		  document.getElementById('Hide_Floor').style.display='none'}
+								 }
+
+function Hide_Option_Gloves(){	  
+		  if(document.getElementById('Gloves').value == "R") {
+     
+		  document.getElementById('Hide_Gloves').style.display='block'}
+								 
+		  if(document.getElementById('Gloves').value == "A") {
+ 
+		  document.getElementById('Hide_Gloves').style.display='none'}
+								 }
 
 
 

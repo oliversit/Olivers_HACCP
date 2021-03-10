@@ -26,46 +26,33 @@
     <link href="../test.css" rel="stylesheet">
   </head>
 
-  <body  >
-
+  <body >
 	  
-	  <%- include('../Partials/NavBar') -%>
+<%- include('../Partials/NavBar') -%>
 	  
-	  	  <%
-        if(userData.length!=0){
-        var i=1;
-        userData.forEach(function(data){
-        %>
-	 	  
-
+	  
 	  
     <div class="container">
   
 
       <div class="row">
         
-        <div class="col-md-12 order-md-1">	
-      <p>Please select “Acceptable” if condition is acceptable. Select “Rejected” if condition is rejected AND record corrective actions taken, by whom and the date and time correction was completed.</p>
+        <div class="col-md-12 order-md-1">
+      <p>Do not accept product that does not meet incoming product specifications (temperature, physical or pest damage, etc.)</p>
 			</div> 
 		    </div>
 		
 		
           <form class="needs-validation" action="/data" method="post">
-			    <input id="username" name="username" type="hidden" value=<%=userName %>>
-<input id="Form_Name" name="Form_Name" type="hidden" value="Packing">
-			  
-
-
-
-
-
+			 <input id="Form_Name" name="Form_Name" type="hidden" value="Raw_Product">
+			  <input id="username" name="username" type="hidden" value=<%=userName %>>
 			  
 
 		  
 		 <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="Date">Date</label>
-                <input type="Date" class="form-control" id="Date" name="Date" value="<%=data.Date %>" >
+                <input type="Date" class="form-control" id="Date" name="Date"  >
                 <div class="invalid-feedback">
                   Valid Date is .
                 </div>
@@ -79,14 +66,14 @@
 			  
 			  
 			 
-<!-------Floors/grounds clean and free of trash.-------------------------------------------------------------------------------------------------------->
+<!-------Date Received (Within 3 days of Date Packed?)-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Floor_Ground">Floors/grounds clean and free of trash</label>
-                  <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1"  >
-                  <option value="<%=data.Column_1 %>"><%=data.Column_1 %></option>
-                  <option Value="A" name="Column_1">Acceptable</option>
-					<option Value="R" name="Column_1">Rejected</option>
+                <label for="Floor_Ground">Date Received (Within 3 days of Date Packed?)</label>
+                  <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1" >
+                  <option value="A">Choose...</option>
+                    <option Value="">Yes</option>
+					<option Value="">No</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -101,7 +88,7 @@
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
 			  
 			  <div  id="Hide_Floor_Ground" style="display:none">
-			  <div class="row">
+			  <div class="row"  >
 				  
 				  
 				  
@@ -143,17 +130,13 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 
-<!-------Area free of pest activity-------------------------------------------------------------------------------------------------------->
+<!-------Time-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Pest">Area free of pest activity</label>
-                  <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()"  name="Column_2" >
-                  <option value="<%=data.Column_2 %>"><%=data.Column_2 %></option>
-                  <option Value="A" name="Column_2">Acceptable</option>
-					<option Value="R" name="Column_2">Rejected</option>
-                </select>
+                <label for="Pest">Time</label>
+                <input type="time" class="form-control" id="Pest" placeholder="" name="Column_2" >
 				         <div class="invalid-feedback">
-                  Please select a valid Condition.
+                  Please select a valid Condition
                 </div>
               </div>
           
@@ -207,20 +190,28 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 			  
-<!-------All packing material free of debris/insects under shroud-------------------------------------------------------------------------------------------------------->
+<!-------Commodity-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Debris">All packing material free of debris/insects under shroud</label>
-                  <select class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3" >
-                  <option value="<%=data.Column_3 %>"><%=data.Column_3 %></option>
-                  <option Value="A" name="Column_3">Acceptable</option>
-					<option Value="R" name="Column_3">Rejected</option>
+                <label for="Debris">Commodity</label>
+                  <select class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3">
+                  <option value="A">Choose...</option>
+	<%
+        if(userData2.length!=0){
+        var T=1;
+        userData2.forEach(function(data2){
+        %>
+		<option Value=<%=data2.Name %>><%=data2.Name %></option>
+			          <%  T++; }) %>
+        <% } else{ %>
+
+        <% } %>	
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
               </div>
-     
+
           
 			  
 			  </div>
@@ -272,26 +263,26 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
   
  
-<!-------All packing material are covered when not in use to prevent contamination-------------------------------------------------------------------------------------------------------->
-         	  	 
-			
-			  
-			  <div class="row align-items-end">
+<!-------Vendor Name-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Covered">All packing material are covered when not in use to prevent contamination</label>
-                  <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4" >
-                  <option value="<%=data.Column_4 %>" id="CoveredT"><%=data.Column_4 %></option>
-                  <option Value="A" name="Column_4">Acceptable</option>
-					<option Value="R" name="Column_4">Rejected</option>
+                <label for="Covered">Vendor Name</label>
+                  <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4">
+                  <option value="A">Choose...</option>
+	<%
+        if(userData3.length!=0){
+        var T=1;
+        userData3.forEach(function(data3){
+        %>
+		<option Value=<%=data3.Name %>><%=data3.Name %></option>
+			          <%  T++; }) %>
+        <% } else{ %>
+
+        <% } %>	
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
-              </div>
-              <div class="col-md-6 mb-3">
-			
-	
-      
               </div>
           
 			  
@@ -343,19 +334,16 @@
 </div>
 <!----------------------------------------------------------------------------------------------------------------------------------->
  
-<!-------Pallets/Boxes/stored away from the wall with enough space to inspect between. All boxes are stored off the ground----------->
+<!-------Order P.O#----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Stored">Pallets/Boxes/stored away from the wall with enough space to inspect between. All boxes are stored off the ground</label>
-                  <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5" >
-                  <option value="<%=data.Column_5 %>"><%=data.Column_5 %></option>
-                  <option Value="A" name="Column_5">Acceptable</option>
-					<option Value="R" name="Column_5">Rejected</option>
-                </select>
+                <label for="Stored">Order P.O#</label>
+    <input type="number" class="form-control" id="Stored" placeholder="" name="Column_5">
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
               </div>
+
           
 			  
 			  </div>
@@ -371,7 +359,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Stored">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_Stored" placeholder="" value=""  >
+                <input type="text" class="form-control" id="Action_Stored" placeholder="" value="" >
 			     </div>
 				  
 			
@@ -404,16 +392,219 @@
 			
 			  
 </div>
-			  
-			  
-			  
-			          <%  i++; }) %>
-        <% } else{ %>
-            <tr>
-                <td colspan="7">No Data Found</td>
-            </tr>
-        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
+			  
+<!-------Temp. <41° F.----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="sanitized">Temp. &lt 41°</label>
+                      <input type="number" class="form-control" id="sanitized" placeholder="" name="Column_6" >
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_sanitized" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_sanitized">Corrective Action </label>
+                <input type="text" class="form-control" id="Action_sanitized" placeholder="" value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_sanitized">Date</label>
+                <input type="Date" class="form-control" id="Date_sanitized" placeholder="" value="" >
+			     </div>
+			<div class="colmb-3">	
+				<label for="Time_sanitized">Time</label>
+                <input type="time" class="form-control" id="Time_sanitized" placeholder="" value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_sanitized">Corrected By</label>
+                <input type="text" class="form-control" id="Corrected_sanitized" placeholder="" value="" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+			  
+<!-------VisualEvidence of Physical Damage or Pest Contamination----------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Trash">VisualEvidence of Physical Damage or Pest Contamination</label>
+                  <select class="custom-select d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7">
+                  <option value="A">Choose...</option>
+                    <option Value="">Yes</option>
+					<option Value="">No</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Trash" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Trash">Corrective Action </label>
+                <input type="text" class="form-control" id="Action_Trash" placeholder="" value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Trash">Date</label>
+                <input type="Date" class="form-control" id="Date_Trash" placeholder="" value="" >
+			     </div>
+			<div class="colmb-3">	
+				<label for="Time_Trash">Time</label>
+                <input type="time" class="form-control" id="Time_Trash" placeholder="" value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Trash">Corrected By</label>
+                <input type="text" class="form-control" id="Corrected_Trash" placeholder="" value="" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  
+<!-------Accept?----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Health">Accept?</label>
+                  <select class="custom-select d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_8">
+                  <option value="A">Choose...</option>
+                    <option Value="A">Yes</option>
+					<option Value="R">No</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Health" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Health">Corrective Action Taken for Rejected Conditions </label>
+                <input type="text" class="form-control" id="Action_Health" placeholder="" value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Health">Corrected Date</label>
+                <input type="Date" class="form-control" id="Date_Health" placeholder="" value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Health">Corrected By</label>
+                <input type="text" class="form-control" id="Corrected_Health" placeholder="" value="" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+<!-------Received By:----------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Comment">Received By:</label>
+                   <input type="text" class="form-control" id="Comment" placeholder="" name="Column_9" >
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+			  
+			  </div>
+			  
+<!-------Comments----------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Comment">Comments</label>
+                   <input type="text" class="form-control" id="Comment2" placeholder="" name="Column_10" >
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+			  
+			  </div>			  
+			 			  
+			  
+<!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
 			  <br>
 			  <hr class="mb-4">
 			
@@ -486,46 +677,8 @@
           });
         }, false);
       })();
-		
-		
-	
-		
     </script>
-	  
-	  <script>
-		  
-		  
-		  		  if(document.getElementById('Floor_Ground').value == "R") {
-     
-		  document.getElementById('Hide_Floor_Ground').style.display='block'}
-								 
-
-		    
-		  if(document.getElementById('Pest').value == "R") {
-     
-		  document.getElementById('Hide_Pest').style.display='block'}
-								 
-
-		  
-		  if(document.getElementById('Debris').value == "R") {
-     
-		  document.getElementById('Hide_Debris').style.display='block'}
-
-		  
-
-		  if(document.getElementById('Covered').value == "R") {
-     
-		  document.getElementById('Hide_Covered').style.display='block'}
-								 
-	  
-		  if(document.getElementById('Stored').value == "R") {
-     
-		  document.getElementById('Hide_Stored').style.display='block'}
-		  
-		  
-		  
-		  
-		  
+	  	  <script>
 		  
 		  function Hide_Option_Floor_Ground(){	  
 		  if(document.getElementById('Floor_Ground').value == "R") {
@@ -572,29 +725,113 @@
  
 		  document.getElementById('Hide_Stored').style.display='none'}
 								 }
-		  
-		  
-		  
-		  		
-
+			  
+			  function Hide_Option_sanitized(){	  
+		  if(document.getElementById('sanitized').value == "R") {
+     
+		  document.getElementById('Hide_sanitized').style.display='block'}
 								 
+		  if(document.getElementById('sanitized').value == "A") {
+ 
+		  document.getElementById('Hide_sanitized').style.display='none'}
+								 }
 
-				
-		  
-		  
-		  
-		  
-		  
-		  
-  
 
+function Hide_Option_Trash(){	  
+		  if(document.getElementById('Trash').value == "R") {
+     
+		  document.getElementById('Hide_Trash').style.display='block'}
 								 
+		  if(document.getElementById('Trash').value == "A") {
+ 
+		  document.getElementById('Hide_Trash').style.display='none'}
+								 }
+
+function Hide_Option_Health(){	  
+		  if(document.getElementById('Health').value == "R") {
+     
+		  document.getElementById('Hide_Health').style.display='block'}
+								 
+		  if(document.getElementById('Health').value == "A") {
+ 
+		  document.getElementById('Hide_Health').style.display='none'}
+								 }
+
+function Hide_Option_GMP(){	  
+		  if(document.getElementById('GMP').value == "R") {
+     
+		  document.getElementById('Hide_GMP').style.display='block'}
+								 
+		  if(document.getElementById('GMP').value == "A") {
+ 
+		  document.getElementById('Hide_GMP').style.display='none'}
+								 }
+
+function Hide_Option_Belongings(){	  
+		  if(document.getElementById('Belongings').value == "R") {
+     
+		  document.getElementById('Hide_Belongings').style.display='block'}
+								 
+		  if(document.getElementById('Belongings').value == "A") {
+ 
+		  document.getElementById('Hide_Belongings').style.display='none'}
+								 }
+
+function Hide_Option_Repairs(){	  
+		  if(document.getElementById('Repairs').value == "R") {
+     
+		  document.getElementById('Hide_Repairs').style.display='block'}
+								 
+		  if(document.getElementById('Repairs').value == "A") {
+ 
+		  document.getElementById('Hide_Repairs').style.display='none'}
+								 }
+
+function Hide_Option_Signage(){	  
+		  if(document.getElementById('Signage').value == "R") {
+     
+		  document.getElementById('Hide_Signage').style.display='block'}
+								 
+		  if(document.getElementById('Signage').value == "A") {
+ 
+		  document.getElementById('Hide_Signage').style.display='none'}
+								 }
+
+function Hide_Option_Walls(){	  
+		  if(document.getElementById('Walls').value == "R") {
+     
+		  document.getElementById('Hide_Walls').style.display='block'}
+								 
+		  if(document.getElementById('Walls').value == "A") {
+ 
+		  document.getElementById('Hide_Walls').style.display='none'}
+								 }
+
+function Hide_Option_Floor(){	  
+		  if(document.getElementById('Floor').value == "R") {
+     
+		  document.getElementById('Hide_Floor').style.display='block'}
+								 
+		  if(document.getElementById('Floor').value == "A") {
+ 
+		  document.getElementById('Hide_Floor').style.display='none'}
+								 }
+
+function Hide_Option_Gloves(){	  
+		  if(document.getElementById('Gloves').value == "R") {
+     
+		  document.getElementById('Hide_Gloves').style.display='block'}
+								 
+		  if(document.getElementById('Gloves').value == "A") {
+ 
+		  document.getElementById('Hide_Gloves').style.display='none'}
+								 }
+
+
+
 
 		  
 		  
 	  </script>
-	  
-
-	  
   </body>
 </html>

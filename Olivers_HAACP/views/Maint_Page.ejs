@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+<meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1">
+<script>
+if (screen.width < 400) {
+    var mvp = document.getElementById('myViewport');
+    mvp.setAttribute('content','initial-scale=.5');
+}
+	
+
+</script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<link href="../test.css" rel="stylesheet">
+</head>
+
+
+<body>
+<%- include('../Partials/NavBar') -%>
+			    
+	
+	
+	<div class="container">
+
+   
+        
+<!-- Vendor Button --------------------------------------------------------------------------------------------------------------> 	
+		
+		
+		
+           			<div class="row align-items-end" >
+				
+		
+								<div class="col-md-3"  >
+										<br>
+										<br>
+			
+                <p class="form-control" id="Name_selection" >Vendors</p>
+	</div>
+	
+					
+						
+						
+			<div class="col-md-3 mb-3"  >
+			<form class="needs-validation" action="/Frontend/List_Edit" method="post">
+				<input id="Name_1" name="Type" type="hidden" value="Vendor">
+				<input id="username" name="username" type="hidden" value=<%=userName %>>
+        <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Edit_Button" type="submit" value="$Actual_Id" > Edit</button>		
+		</form>						
+			</div>
+					
+						
+						
+</div>
+		
+		
+		
+		
+<!-- Commodity Button --------------------------------------------------------------------------------------------------------------> 	
+		
+		
+		           			<div class="row align-items-end" >
+			
+			
+	
+		
+								<div class="col-md-3"  >
+										<br>
+										<br>
+		
+                <p class="form-control" id="Name_selectio_2" >Commodity</p>
+	</div>
+	
+						
+						
+						
+			<div class="col-md-3 mb-3"  >
+			<form class="needs-validation" action="/Frontend/List_Edit" method="post" >
+				<input id="Name_2" name="Type" type="hidden" value="Commodity">
+				<input id="username" name="username" type="hidden" value=<%=userName %>>
+        <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Edit_Button_2" type="submit" value="$Actual_Id" > Edit</button>		
+		</form>						
+			</div>
+					
+						
+						
+</div>
+		
+			
+ 					
+		
+		<!-- Bkank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+		
+		
+		<!-- Bkank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+					<!-- Bkank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+				
+
+		
+<!-- Bottom Buttons --> 
+		<div class="row fixed-bottom" >
+              <div class="col mb-3">
+				  
+				  <form action="Dashboard.html" class="button_height" method="post">
+					  <input id="username" name="username" type="hidden" value=<%=userName %>>
+					  <br>
+                       <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Dashboard</button>
+					  </form>
+      
+              </div>
+		
+              <div class="col  mb-3">
+				 
+				  <form action="Reports.html" class="button_height" method="post">
+					  <input id="username" name="username" type="hidden" value=<%=userName %>>
+					   <br>
+                       <button class="btn btn-block btn-primary btn-lg button_height  Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>
+       </form>
+              </div>
+		
+		
+	</div>
+		
+	</div>
+	
+	
+	</body>
+</html>

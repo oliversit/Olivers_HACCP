@@ -26,67 +26,86 @@
     <link href="../test.css" rel="stylesheet">
   </head>
 
-  <body  >
-
+  <body >
 	  
-	  <%- include('../Partials/NavBar') -%>
+<%- include('../Partials/NavBar') -%>
 	  
-	  	  <%
-        if(userData.length!=0){
-        var i=1;
-        userData.forEach(function(data){
-        %>
-	 	  
-
+	  
 	  
     <div class="container">
   
 
-      <div class="row">
+      <div class="row " >
         
-        <div class="col-md-12 order-md-1">	
-      <p>Please select “Acceptable” if condition is acceptable. Select “Rejected” if condition is rejected AND record corrective actions taken, by whom and the date and time correction was completed.</p>
+        <div class="col-md-10 mb-3" >
+      <p id="collapsetext">Checking Accuracy of Thermometer: <br><br>
+1. Place the thermometer in a container of ice water slurry (very little water/mostly ice). <br>
+2. Stir water continuously to ensure a uniform temperature during the reading <br>
+3. After the thermometer has stabilized record the temperature <br>
+4. If the reading is within 32.0 ± 2.0 o F, the calibration is complete <br>
+5. If the reading does not fall inside the above range the thermometer must be discarded. Each thermometer must be tagged with the calibratednumber. These numbers must be added or subtracted from the readings of the thermometers and recorded on each temperature log. <br>
+6. Calibration can also be performed by comparing probes and digital thermometers against a NIST thermometer. The NIST thermometer iscalibrated by the manufacturer on an annual basis. Occasional verification of accuracy will be confirmed by placing NIST thermometer inslurry of ice to determine if it meets the range listed above. If it does not, it will immediately be sent back to the manufacturer. Add NIST thermometer testing results to chart as well.</p>
+			
+			<p id="collapsetext2" style="display:none" >Expand Instructions...</p>
 			</div> 
+		          
+	
+		  
+		  <div class="col-md-2 mb-3">
+			
+  <button class= "btn btn-primary btn-lg Grey2" type="button" id="Up" style="display:Block" onclick="Hidetext()" >▲   
+
+  </button>
+			
+				  
+				  				  
+  <button class= "btn btn-primary btn-lg Grey2" type="button" Id="Down" style="display:none"  onclick="Showtext()" >▼
+
+  </button>
+			</div>
+		  
 		    </div>
 		
 		
           <form class="needs-validation" action="/data" method="post">
-			    <input id="username" name="username" type="hidden" value=<%=userName %>>
-<input id="Form_Name" name="Form_Name" type="hidden" value="Packing">
-			  
-
-
-
-
-
+			 <input id="Form_Name" name="Form_Name" type="hidden" value="Thermometer_Calibration">
+			  <input id="username" name="username" type="hidden" value=<%=userName %>>
 			  
 
 		  
 		 <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="Date">Date</label>
-                <input type="Date" class="form-control" id="Date" name="Date" value="<%=data.Date %>" >
+                <input type="Date" class="form-control" id="Date" placeholder="" value="" name="Date">
                 <div class="invalid-feedback">
                   Valid Date is .
                 </div>
               </div>
-					   
-					   
-              <div class="col-md-6 mb-3">
+			 
+			   <div class="col-md-6 mb-3">
+                <label for="Time">Time</label>
+                <input type="Time" class="form-control" id="Time" placeholder="" value="" >
+                <div class="invalid-feedback">
+                  Valid Time is .
+                </div>
               </div>
 					   
-            </div>
+					   
+				  
+              </div>
+					   
+           
 			  
 			  
 			 
-<!-------Floors/grounds clean and free of trash.-------------------------------------------------------------------------------------------------------->
+<!-------Location-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Floor_Ground">Floors/grounds clean and free of trash</label>
-                  <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1"  >
-                  <option value="<%=data.Column_1 %>"><%=data.Column_1 %></option>
-                  <option Value="A" name="Column_1">Acceptable</option>
-					<option Value="R" name="Column_1">Rejected</option>
+                <label for="Floor_Ground">Location</label>
+                  <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1" >
+                  <option value="A">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -101,7 +120,7 @@
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
 			  
 			  <div  id="Hide_Floor_Ground" style="display:none">
-			  <div class="row">
+			  <div class="row"  >
 				  
 				  
 				  
@@ -143,14 +162,14 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 
-<!-------Area free of pest activity-------------------------------------------------------------------------------------------------------->
+<!-------Therm. Or probe #s-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Pest">Area free of pest activity</label>
-                  <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()"  name="Column_2" >
-                  <option value="<%=data.Column_2 %>"><%=data.Column_2 %></option>
-                  <option Value="A" name="Column_2">Acceptable</option>
-					<option Value="R" name="Column_2">Rejected</option>
+                <label for="Pest">Therm. Or probe #</label>
+                  <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" name="Column_2" >
+                  <option value="A">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -207,20 +226,18 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 			  
-<!-------All packing material free of debris/insects under shroud-------------------------------------------------------------------------------------------------------->
+<!-------Temperature Registered
+˚F-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Debris">All packing material free of debris/insects under shroud</label>
-                  <select class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3" >
-                  <option value="<%=data.Column_3 %>"><%=data.Column_3 %></option>
-                  <option Value="A" name="Column_3">Acceptable</option>
-					<option Value="R" name="Column_3">Rejected</option>
-                </select>
+                <label for="Debris">Temperature Registered
+˚F</label>
+<input type="text" class= "form-control" id="Debris" name="Column_3">
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
               </div>
-     
+
           
 			  
 			  </div>
@@ -272,26 +289,16 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
   
  
-<!-------All packing material are covered when not in use to prevent contamination-------------------------------------------------------------------------------------------------------->
-         	  	 
-			
-			  
-			  <div class="row align-items-end">
+<!-------NIST Temperature
+˚F (Optional)-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Covered">All packing material are covered when not in use to prevent contamination</label>
-                  <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4" >
-                  <option value="<%=data.Column_4 %>" id="CoveredT"><%=data.Column_4 %></option>
-                  <option Value="A" name="Column_4">Acceptable</option>
-					<option Value="R" name="Column_4">Rejected</option>
-                </select>
+                <label for="Covered">NIST Temperature
+˚F (Optional)</label>
+<input type="text" class= "form-control" id="Covered" name="Column_4">
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
-              </div>
-              <div class="col-md-6 mb-3">
-			
-	
-      
               </div>
           
 			  
@@ -343,19 +350,20 @@
 </div>
 <!----------------------------------------------------------------------------------------------------------------------------------->
  
-<!-------Pallets/Boxes/stored away from the wall with enough space to inspect between. All boxes are stored off the ground----------->
+<!-------Corrective Action Needed?----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Stored">Pallets/Boxes/stored away from the wall with enough space to inspect between. All boxes are stored off the ground</label>
-                  <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5" >
-                  <option value="<%=data.Column_5 %>"><%=data.Column_5 %></option>
-                  <option Value="A" name="Column_5">Acceptable</option>
-					<option Value="R" name="Column_5">Rejected</option>
+                <label for="Stored">Corrective Action Needed?</label>
+                  <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5">
+                  <option value="A">Choose...</option>
+                    <option Value="A">No</option>
+					<option Value="R">Yes</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
               </div>
+
           
 			  
 			  </div>
@@ -371,49 +379,24 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Stored">Corrective Action </label>
-                <input type="text" class="form-control" id="Action_Stored" placeholder="" value=""  >
+                <input type="text" class="form-control" id="Action_Stored" placeholder="" value="" >
 			     </div>
-				  
+				 			  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Stored">Corrected By</label>
+                <input type="text" class="form-control" id="Corrected_Stored" placeholder="" value="" >
+			     </div> 
 			
 			  </div>
 			  
 
 	
-	
-              
-			  
-			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-	                <label for="Date_Stored">Date</label>
-                <input type="Date" class="form-control" id="Date_Stored" placeholder="" value="" >
-			     </div>
-			<div class="colmb-3">	
-				<label for="Time_Stored">Time</label>
-                <input type="time" class="form-control" id="Time_Stored" placeholder="" value="" >
-			     </div>
-				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Stored">Corrected By</label>
-                <input type="text" class="form-control" id="Corrected_Stored" placeholder="" value="" >
-			     </div>
-              </div> 
 			
 			  
 </div>
-			  
-			  
-			  
-			          <%  i++; }) %>
-        <% } else{ %>
-            <tr>
-                <td colspan="7">No Data Found</td>
-            </tr>
-        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
+			 			  
+			  
+<!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
 			  <br>
 			  <hr class="mb-4">
 			
@@ -486,47 +469,25 @@
           });
         }, false);
       })();
-		
-		
-	
-		
     </script>
-	  
-	  <script>
+	  	  <script>
 		  
-		  
-		  		  if(document.getElementById('Floor_Ground').value == "R") {
-     
-		  document.getElementById('Hide_Floor_Ground').style.display='block'}
-								 
-
-		    
-		  if(document.getElementById('Pest').value == "R") {
-     
-		  document.getElementById('Hide_Pest').style.display='block'}
-								 
-
-		  
-		  if(document.getElementById('Debris').value == "R") {
-     
-		  document.getElementById('Hide_Debris').style.display='block'}
-
-		  
-
-		  if(document.getElementById('Covered').value == "R") {
-     
-		  document.getElementById('Hide_Covered').style.display='block'}
-								 
-	  
-		  if(document.getElementById('Stored').value == "R") {
-     
-		  document.getElementById('Hide_Stored').style.display='block'}
-		  
-		  
-		  
-		  
-		  
-		  
+			  function Hidetext(){	  
+	
+		  document.getElementById('collapsetext').style.display='none'
+		  document.getElementById('Up').style.display='none'
+		  document.getElementById('collapsetext2').style.display='Block'
+		  document.getElementById('Down').style.display='Block'
+								 }
+			  
+			  			  function Showtext(){	  
+	
+		  document.getElementById('collapsetext').style.display='Block'
+		  document.getElementById('Up').style.display='Block'
+		  document.getElementById('collapsetext2').style.display='none'
+		  document.getElementById('Down').style.display='none'
+								 }
+			  
 		  function Hide_Option_Floor_Ground(){	  
 		  if(document.getElementById('Floor_Ground').value == "R") {
      
@@ -572,29 +533,113 @@
  
 		  document.getElementById('Hide_Stored').style.display='none'}
 								 }
-		  
-		  
-		  
-		  		
-
+			  
+			  function Hide_Option_sanitized(){	  
+		  if(document.getElementById('sanitized').value == "R") {
+     
+		  document.getElementById('Hide_sanitized').style.display='block'}
 								 
+		  if(document.getElementById('sanitized').value == "A") {
+ 
+		  document.getElementById('Hide_sanitized').style.display='none'}
+								 }
 
-				
-		  
-		  
-		  
-		  
-		  
-		  
-  
 
+function Hide_Option_Trash(){	  
+		  if(document.getElementById('Trash').value == "R") {
+     
+		  document.getElementById('Hide_Trash').style.display='block'}
 								 
+		  if(document.getElementById('Trash').value == "A") {
+ 
+		  document.getElementById('Hide_Trash').style.display='none'}
+								 }
+
+function Hide_Option_Health(){	  
+		  if(document.getElementById('Health').value == "R") {
+     
+		  document.getElementById('Hide_Health').style.display='block'}
+								 
+		  if(document.getElementById('Health').value == "A") {
+ 
+		  document.getElementById('Hide_Health').style.display='none'}
+								 }
+
+function Hide_Option_GMP(){	  
+		  if(document.getElementById('GMP').value == "R") {
+     
+		  document.getElementById('Hide_GMP').style.display='block'}
+								 
+		  if(document.getElementById('GMP').value == "A") {
+ 
+		  document.getElementById('Hide_GMP').style.display='none'}
+								 }
+
+function Hide_Option_Belongings(){	  
+		  if(document.getElementById('Belongings').value == "R") {
+     
+		  document.getElementById('Hide_Belongings').style.display='block'}
+								 
+		  if(document.getElementById('Belongings').value == "A") {
+ 
+		  document.getElementById('Hide_Belongings').style.display='none'}
+								 }
+
+function Hide_Option_Repairs(){	  
+		  if(document.getElementById('Repairs').value == "R") {
+     
+		  document.getElementById('Hide_Repairs').style.display='block'}
+								 
+		  if(document.getElementById('Repairs').value == "A") {
+ 
+		  document.getElementById('Hide_Repairs').style.display='none'}
+								 }
+
+function Hide_Option_Signage(){	  
+		  if(document.getElementById('Signage').value == "R") {
+     
+		  document.getElementById('Hide_Signage').style.display='block'}
+								 
+		  if(document.getElementById('Signage').value == "A") {
+ 
+		  document.getElementById('Hide_Signage').style.display='none'}
+								 }
+
+function Hide_Option_Walls(){	  
+		  if(document.getElementById('Walls').value == "R") {
+     
+		  document.getElementById('Hide_Walls').style.display='block'}
+								 
+		  if(document.getElementById('Walls').value == "A") {
+ 
+		  document.getElementById('Hide_Walls').style.display='none'}
+								 }
+
+function Hide_Option_Floor(){	  
+		  if(document.getElementById('Floor').value == "R") {
+     
+		  document.getElementById('Hide_Floor').style.display='block'}
+								 
+		  if(document.getElementById('Floor').value == "A") {
+ 
+		  document.getElementById('Hide_Floor').style.display='none'}
+								 }
+
+function Hide_Option_Gloves(){	  
+		  if(document.getElementById('Gloves').value == "R") {
+     
+		  document.getElementById('Hide_Gloves').style.display='block'}
+								 
+		  if(document.getElementById('Gloves').value == "A") {
+ 
+		  document.getElementById('Hide_Gloves').style.display='none'}
+								 }
+
+
+
 
 		  
 		  
 	  </script>
-	  
-
-	  
   </body>
 </html>
