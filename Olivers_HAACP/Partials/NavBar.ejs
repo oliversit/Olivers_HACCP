@@ -1,8 +1,9 @@
 <nav class="navbar bg-green navbar-dark">
  		  		  <form action="/Frontend/Dashboard" method="post">
 			  <input id="username" name="username" type="hidden" value=<%=userName %>>
+					  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
 		  	<button  Id= "LButton_1" class="LButton bg-darkgreen2" type="submit"  
-			><%=FormData %></button>
+			><%=FormTitle %></button>
 			  </form>
   <button class= "Menu_Button" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 
@@ -13,6 +14,7 @@
       <li class="nav-item">
 		  		  <form action="/Frontend/Settings" method="post">
 			  <input id="username" name="username" type="hidden" value=<%=userName %>>
+					  <input id="Form_Title2" name="Form_Title" type="hidden" value="Settings">
 		  	<button  Id= "LButton_1" class="LButton bg-darkgreen2" type="submit"  
 			>Settings</button>
 			  </form>
@@ -22,6 +24,7 @@
       <li class="nav-item">
 		  <form action="/Frontend/Maintenance" method="post">
 			  <input id="username" name="username" type="hidden" value=<%=userName %>>
+			  <input id="Form_Title3" name="Form_Title" type="hidden" value="Maintenance">
 		  	<button  Id= "LButton_2" class="LButton bg-darkgreen2" type="submit"  
 			>Maintenance</button>
 			  </form>
@@ -32,6 +35,7 @@
 		  
 		  <form action="/Frontend/Support" method="post">
 			  <input id="username" name="username" type="hidden" value=<%=userName %>>
+			  <input id="Form_Title" name="Form_Title" type="hidden" value="Support">
 		  	<button  Id= "LButton_3" class="LButton bg-darkgreen2" type="submit"  
 			>Support</button>
 			  </form>
@@ -42,6 +46,7 @@
 		      <li class="nav-item">
 				  		  <form action="/Frontend/Log_Out" method="post">
 			  <input id="username" name="username" type="hidden" value=<%=userName %>>
+			<input id="Form_Title" name="Form_Title" type="hidden" value="Log Out">
 		  	<button  Id= "LButton_4" class="LButton bg-darkgreen2" type="submit"  
 			>Log Out</button>
 			  </form>

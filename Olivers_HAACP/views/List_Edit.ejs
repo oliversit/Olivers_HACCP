@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link href="../test.css" rel="stylesheet">
-</head>
+<%- include('../Partials/MetaData') -%>
 
 
 <body>
@@ -26,6 +17,7 @@
 			<form class="needs-validation" action="/List" method="post">
 				  <input id="username" name="username" type="hidden" value=<%=userName %>>
 			<input id="Name" name="Type" type="hidden" value="<%=formName %>">
+				<input id="Form_Title" name="Form_Title" type="hidden" value=<%=formName %>>
            			<div class="row " >
 			
 							
@@ -104,8 +96,9 @@
 										<br>
 			<form class="needs-validation" action="/Frontend/List_Edit_Item" method="post">
 				  <input id="username" name="username" type="hidden" value=<%=userName %>>
-											<input id="Id_Value" name="Id" type="hidden" value="<%=data.Id %>">
-											<input id="Name_Form_Delete" name="Type" type="hidden" value="<%=formName %>">
+					<input id="Id_Value" name="Id" type="hidden" value="<%=data.Id %>">
+					<input id="Name_Form_Delete" name="Type" type="hidden" value="<%=formName %>">
+				<input id="Form_Title2" name="Form_Title" type="hidden" value=<%=formName %>>
 				     <button Class="btn btn-primary btn-lg btn-block Grey" Id= "the_Edit_Button" type="submit" value="$Actual_Id" > Edit</button>
 				</form>
 	</div>
@@ -117,7 +110,8 @@
 										<form class="needs-validation" action="/Frontend/List_Delete" method="post">
 											  <input id="username" name="username" type="hidden" value=<%=userName %>>
 											<input id="Id_Value" name="Id" type="hidden" value="<%=data.Id %>">
-											<input id="Name_Form_Delete" name="Type" type="hidden" value="<%=formName %>">
+											<input id="Name_Form_Delete2" name="Type" type="hidden" value="<%=formName %>">
+											<input id="Form_Title3" name="Form_Title" type="hidden" value=<%=formName %>>
         <button Class="btn btn-primary btn-lg btn-block Grey" Id= "the_Edit_Buttonw" type="submit" value="$Actual_Id" > Delete</button>
 											</form>
 </div>
@@ -186,7 +180,7 @@
 
 		
 <!-- Bottom Buttons --> 
-		<div class="row" >
+		<div class="row fixed-bottom" >
               <div class="col mb-3">
 				  
 				  <form action="Dashboard.html" class="button_height" >

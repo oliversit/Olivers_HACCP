@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../Partials/MetaData') -%>
+
+
+<body>
+<%- include('../Partials/NavBar') -%>
+			    <form class="needs-validation" action="/Frontend/Main_Result" method="post">
+					<input id="username" name="username" type="hidden" value=<%=userName %>>
+					<input id="Form_Title13" name="Form_Title" type="hidden" value="Previous Forms">
+	<div class="container">
+		
+
+				
+				
+			 <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="Date">Date</label>
+                <input type="Date" class="form-control" id="Date" name="Date" required>
+                <div class="invalid-feedback">
+                  Valid Date is required.
+                </div>
+              </div>
+					   
+					   
+              <div class="col-md-6 mb-3">
+              </div>
+				</div>	   
+           
+	
+	
+
+		
+		
+		
+<div class="row Colum_Properties" >
+	
+	
+<div class="col d-flex justify-content-center"  >
+
+	<button  Id= "Button_1" class="Form_Buttons mt-5 Pink Packing" name="Form_Name" type="submit" value="Packing" ></button>
+
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+
+	<button  Id= "Button_2" class="Form_Buttons mt-5 Purple Processing" name="Form_Name" type="submit" value="Processing" ></button>
+
+</div>
+								
+<div class="col d-flex justify-content-center" >
+
+	<button  Id= "Button_3" class="Form_Buttons mt-5 Orange Cold_Room" name="Form_Name" type="submit" value="Cold_Rooms" ></button>
+
+</div>
+										
+				
+  </div>
+		
+
+		<div class="row " >
+	
+	
+<div class="col  d-flex justify-content-center"   >
+
+	<button  Id= "Button_4" class="Form_Buttons mt-5 Green Thermometer" name="Form_Name" type="submit" value="Thermometer_Calibration" ></button>
+
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+
+	<button  Id= "Button_5" class="Form_Buttons mt-5 Yellow Raw_Product" name="Form_Name" type="submit" value="Raw_Product" ></button>
+   
+</div>
+								
+<div class="col d-flex justify-content-center" >
+
+	<button  Id= "Button_6" class="Form_Buttons mt-5 Green2 Cooler" name="Form_Name" type="submit" value="Cooler" ></button>
+
+</div>
+										
+				
+  </div>
+		
+		
+		<div class="row " >
+	
+	
+<div class="col d-flex justify-content-center"  >
+
+	<button  Id= "Button_7" class="Form_Buttons mt-5 Blue" name="Form_Name" type="submit" value="$Actual_Id" ></button>
+
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+
+	<button  Id= "Button_8" class="Form_Buttons mt-5 Blue2" name="Form_Name" type="submit" value="$Actual_Id" ></button>
+
+</div>
+								
+<div class="col d-flex justify-content-center" >
+
+	<button  Id= "Button_9" class="Form_Buttons mt-5 Red" name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
+
+</div>
+										
+				
+  </div>
+		
+		
+		
+		<div class="row" >
+	
+	
+<div class="col d-flex justify-content-center"  >
+
+	<button  Id= "Button_10" class="Form_Buttons mt-5 Orange2 " name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
+ 
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+
+	<button  Id= "Button_11" class="Form_Buttons mt-5 Purple2" name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
+ 
+</div>
+								
+<div class="col d-flex justify-content-center" >
+
+	<button  Id= "Button_12" class="Form_Buttons mt-5 Grey" name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
+
+</div>
+										
+				
+  </div>
+		
+
+		
+		
+		
+		
+	
+		
+					<!-- Bkank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+				
+</div>
+		</form>	
+<!-- Bottom Buttons --> 
+	
+		<div class="row fixed-bottom" >
+              <div class="col mb-3">
+				  
+				  <form action="Dashboard.html" class="button_height" >
+					  <br>
+                       <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Dashboard</button>
+					  </form>
+      
+              </div>
+		
+              <div class="col mb-3">
+				 
+				  <form action="Reports.html" class="button_height" >
+					   <br>
+                       <button class="btn btn-block btn-primary btn-lg button_height Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>
+       </form>
+              </div>
+		
+		
+	</div>
+		
+	
+	
+
+	
+	</body>
+</html>

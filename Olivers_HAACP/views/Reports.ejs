@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../Partials/MetaData') -%>
+
+  <body >
+	  
+<%- include('../Partials/NavBar') -%>
+	  
+	
+	<div class="container">
+						  <form action="../Frontend/Generate" class="button_height" method="post">
+					    <input id="username1" name="username" type="hidden" value=<%=userName %>>
+					  <input id="Form_Title13" name="Form_Title" type="hidden" value="Reports">
+			 <div class="row">
+              <div class="col mb-3">
+                <label for="Floor_Ground">Form Name</label>
+                   <select class="custom-select d-block w-100" id="Floor_Ground"  name="Form_Name" >
+                  <option value="A">Choose...</option>
+                    <option Value="Packing materials">Packing materials</option>
+					<option Value="Processing Room">Processing Room</option>
+					   <option Value="Cold Rooms">Cold Rooms</option>
+					   <option Value="Thermometer Calibration">Thermometer Calibration</option>
+					   <option Value="Raw Product">Raw Product</option>
+					   <option Value="Cooler Display">Cooler/Display Case Temp</option>
+					   
+                </select>
+                <div class="invalid-feedback">
+                  Valid Date is required.
+                </div>
+              </div>
+					   
+					   
+              <div class="col-md-6 mb-3">
+              </div>
+				</div>	
+		
+					 <div class="row">
+              <div class="col mb-3">
+                <label for="Date_From">Date From</label>
+                <input type="Date" class="form-control" id="Date_From" name="Date1" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid Date is required.
+                </div>
+              </div>
+					   
+					   
+              <div class="col-md-6 mb-3">
+              </div>
+				</div>	 
+		
+							 <div class="row">
+              <div class="col mb-3">
+                <label for="Date_To">Date To</label>
+                <input type="Date" class="form-control" id="Date_To" name="Date2" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid Date is required.
+                </div>
+              </div>
+					   
+					   
+              <div class="col-md-6 mb-3">
+              </div>
+								 
+								 </form>
+				</div>	
+		
+		
+      
+	
+	
+		
+	
+
+<!-- Bottom Buttons --> 
+		<div class="row fixed-bottom" >
+              <div class="col mb-3">
+				  
+				  <form action="../Frontend/Dashboard" class="button_height" method="post">
+					    <input id="username1" name="username" type="hidden" value=<%=userName %>>
+					  <input id="Form_Title13" name="Form_Title" type="hidden" value="Forms">
+					  <br>
+					  
+                       <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Dashboard</button>
+					  </form>
+      
+              </div>
+		
+              <div class="col  mb-3">
+				 
+				  <form action="../Frontend/Generate" class="button_height" method="post">
+					    <input id="username2" name="username" type="hidden" value=<%=userName %>>
+					  <input id="Form_Title14" name="Form_Title" type="hidden" value="Reports">
+					<br>
+                       <button class="btn btn-block btn-primary btn-lg button_height Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Generate</button>
+       </form>
+              </div>
+		
+		
+	</div>
+	</div>
+	
+
+	
+	</body>
+</html>

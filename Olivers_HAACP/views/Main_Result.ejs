@@ -1,15 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-<link href="../test.css" rel="stylesheet">
-</head>
+	
+<%- include('../Partials/MetaData') -%>
 
 
 <body>
@@ -45,7 +37,7 @@
 										<br>
 										<br>
 			<label for="Name_selection">Form</label>
-                <p class="form-control" id="Name_selection" ><%=data.Form_Name %></p>
+                <p class="form-control" id="Name_selection" ><%=FormBox %></p>
 	</div>
 	
 						
@@ -59,6 +51,7 @@
 								<div class="col-md-3 mb-3"  >
 			<form class="needs-validation" action="/Frontend/<%=data.Form_Name %>_Form" method="post">
 				  <input id="username" name="username" type="hidden" value=<%=userName %>>
+				<input id="Form_Title" name="Form_Title" type="hidden" value=<%=data.Form_Name %>>
         <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Edit_Button" type="submit" value="$Actual_Id" > Edit</button>
 			 <input id="Id" name="Id" type="hidden" value="<%=data.Id %>">			
  <input id="Form_Name" name="Form_Name" type="hidden" value="<%=data.Form_Name %>">
