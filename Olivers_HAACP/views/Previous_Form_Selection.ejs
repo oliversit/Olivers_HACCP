@@ -158,7 +158,9 @@
 		<div class="row fixed-bottom" >
               <div class="col mb-3">
 				  
-				  <form action="Dashboard.html" class="button_height" >
+				  <form action="../Frontend/Dashboard" class="button_height" method="post">
+					    <input id="username1" name="username" type="hidden" value=<%=userName %>>
+					  <input id="Form_Title13" name="Form_Title" type="hidden" value="Forms">
 					  <br>
                        <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Dashboard</button>
 					  </form>
@@ -167,7 +169,9 @@
 		
               <div class="col mb-3">
 				 
-				  <form action="Reports.html" class="button_height" >
+				  <form action="../Frontend/Reports" class="button_height" method="post">
+					    <input id="username" name="username" type="hidden" value=<%=userName %>>
+					  <input id="Form_Title14" name="Form_Title" type="hidden" value="Reports">
 					   <br>
                        <button class="btn btn-block btn-primary btn-lg button_height Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>
        </form>
