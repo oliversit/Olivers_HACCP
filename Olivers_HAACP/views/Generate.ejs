@@ -19,36 +19,38 @@
         userData.forEach(function(data){
         %>
 		
-		
-		
-           			<div class="row align-items-end" >
-			
-
-			<div class="col-md-3"  >
-				<br>
-					<br>
+					<div class="row" >
+						
+									<div class="col-md-3"  >
+				
 			<label for="Number_selection">Form Number</label>
                 <p class="form-control" id="Number_selection" ><%=i; %></p>
 	</div>
+						
+ 								<div class="col-md-9"  >
+									
+						<label for="Date_selection">Date</label>
+									
+                <p class="form-control" id="Name_selection" ><%=data.Date %></p>
+	</div>
+		</div>		
+		
+		
+           			<div class="row " >
+			
 			
 	
 		
-								<div class="col-md-3"  >
-										<br>
-										<br>
+								<div class="col"  >
+									
 			<label for="Name_selection">Form</label>
                 <p class="form-control" id="Name_selection" ><%=FormBox %></p>
 	</div>
 	
+					
 						
-								<div class="col-md-3"  >
-										<br>
-										<br>
-						<label for="Date_selection">Date</label>
-                <p class="form-control" id="Name_selection" ><%=data.Date %></p>
-	</div>
-						
-								<div class="col-md-3 mb-3"  >
+								<div class="col"  >
+							<br>
 			<form class="needs-validation" action="/Frontend/<%=data.Form_Name %>_Form" method="post">
 				  <input id="username" name="username" type="hidden" value=<%=userName %>>
 				<input id="Form_Title" name="Form_Title" type="hidden" value=<%=data.Form_Name %>>
@@ -82,8 +84,16 @@
 	</div>
 						
 </div>
+		
+           			<div class="row " >
 			
 			
+	
+		
+								<div class="col"  >								
+<br>
+	</div>
+		</div>	
 
         <%  i++; }) %>
         <% } else{ %>
@@ -98,8 +108,7 @@
               
             
         <% } %>
- 
-		
+
 	
 		
 		

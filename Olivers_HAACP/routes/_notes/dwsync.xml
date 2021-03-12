@@ -6,4 +6,6 @@
 <file name="Frontend.js" server="192.168.3.30//var/www/Haccp/" local="132597154422875779" remote="132597154470000000" Dst="1" />
 <file name="Login.js" server="192.168.4.220//var/www/Haccp/" local="132597872211117048" remote="132597872250000000" Dst="1" />
 <file name="Login.js" server="10.105.17.120//var/www/Haccp/" local="132598909490657390" remote="132598909750000000" Dst="1" />
+<file name="Frontend.js" server="192.168.2.224//var/www/Haccp/" local="132599823684559783" remote="132599823710000000" Dst="1" />
+<file name="Login.js" server="192.168.2.224//var/www/Haccp/" local="132598909490657390" remote="132599658650000000" Dst="1" />
 </dwsync>

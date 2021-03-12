@@ -121,14 +121,14 @@ var user= req.body.username;
 });
 
 
-router.post('/Generate', function(req, res, next) {
+	router.post('/Generate', function(req, res, next) {
 	var user= req.body.username;
 		var Title= req.body.Form_Title;	
 		var box=req.body.Form_Name;
 			if (box=="Raw_Product") {box="Raw Product"}
 		if (box=="Cold_Rooms") {box="Cold Rooms"}
 		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
-    connection.query('SELECT * FROM Submitted_Forms Where Date > ? and Date < ?', [req.body.Date1, req.body.Date2] ,function (err, data, fields) {
+    connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date >= ? and Date <= ?', [req.body.Form_Name, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
 		
     if (err) throw err;
     res.render('Generate', { title: 'Generate', userData: data, userName: user, FormTitle: Title, FormBox: box});	

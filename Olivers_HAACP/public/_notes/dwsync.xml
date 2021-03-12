@@ -20,4 +20,8 @@
 <file name="style.css" server="10.105.17.120//var/www/Haccp/" local="132598909490481487" remote="132598909750000000" Dst="1" />
 <file name="styles.css" server="10.105.17.120//var/www/Haccp/" local="132598909490520557" remote="132598909750000000" Dst="1" />
 <file name="test.css" server="10.105.17.120//var/www/Haccp/" local="132598909490549914" remote="132598909750000000" Dst="1" />
+<file name="index.html" server="192.168.2.224//var/www/Haccp/" local="132598909490471711" remote="132599658650000000" Dst="1" />
+<file name="style.css" server="192.168.2.224//var/www/Haccp/" local="132598909490481487" remote="132599658650000000" Dst="1" />
+<file name="styles.css" server="192.168.2.224//var/www/Haccp/" local="132598909490520557" remote="132599658650000000" Dst="1" />
+<file name="test.css" server="192.168.2.224//var/www/Haccp/" local="132598909490549914" remote="132599658650000000" Dst="1" />
 </dwsync>
