@@ -3,9 +3,10 @@
 <file name="Frontend.js" server="192.168.4.220//var/www/Haccp/" local="132598096277660753" remote="132598096360000000" Dst="1" />
 <file name="Frontend.js" server="192.168.2.64//var/www/Haccp/" local="132585880700045574" remote="132587720040000000" Dst="1" />
 <file name="Frontend.js" server="10.105.17.120//var/www/Haccp/" local="132598909490608557" remote="132598909750000000" Dst="1" />
-<file name="Frontend.js" server="192.168.3.30//var/www/Haccp/" local="132597154422875779" remote="132597154470000000" Dst="1" />
+<file name="Frontend.js" server="192.168.3.30//var/www/Haccp/" local="132599823684559783" remote="132603179260000000" Dst="2" />
 <file name="Login.js" server="192.168.4.220//var/www/Haccp/" local="132597872211117048" remote="132597872250000000" Dst="1" />
 <file name="Login.js" server="10.105.17.120//var/www/Haccp/" local="132598909490657390" remote="132598909750000000" Dst="1" />
-<file name="Frontend.js" server="192.168.2.224//var/www/Haccp/" local="132599823684559783" remote="132599823710000000" Dst="1" />
-<file name="Login.js" server="192.168.2.224//var/www/Haccp/" local="132598909490657390" remote="132599658650000000" Dst="1" />
+<file name="Frontend.js" server="192.168.2.224//var/www/Haccp/" local="132611877207306122" remote="132611879490000000" Dst="2" />
+<file name="Login.js" server="192.168.2.224//var/www/Haccp/" local="132598909490657390" remote="132611835780000000" Dst="2" />
+<file name="Login.js" server="192.168.3.30//var/www/Haccp/" local="132598909490657390" remote="132603179260000000" Dst="2" />
 </dwsync>
