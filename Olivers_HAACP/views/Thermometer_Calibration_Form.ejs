@@ -7,7 +7,13 @@
 	  
 <%- include('../Partials/NavBar') -%>
 	  
-	  
+	    <div class="container">
+  	  	  	  <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+	    
 	  
     <div class="container">
   
@@ -53,7 +59,7 @@
 		 <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="Date">Date</label>
-                <input type="Date" class="form-control" id="Date" placeholder="" value="" name="Date">
+                <input type="Date" class="form-control" id="Date" placeholder="" value="<%=data.Date %>" name="Date">
                 <div class="invalid-feedback">
                   Valid Date is .
                 </div>
@@ -61,7 +67,7 @@
 			 
 			   <div class="col-md-6 mb-3">
                 <label for="Time">Time</label>
-                <input type="Time" class="form-control" id="Time" placeholder="" value="" >
+                <input type="Time" class="form-control" id="Time" name="Column_1" placeholder="" value="<%=data.Column_1 %>" >
                 <div class="invalid-feedback">
                   Valid Time is .
                 </div>
@@ -79,8 +85,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Floor_Ground">Location</label>
-                  <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1" >
-                  <option value="A">Choose...</option>
+                  <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_2" >
+                  <option value="<%=data.Column_2 %>"><%=data.Column_2 %></option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -143,8 +149,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Pest">Therm. Or probe #</label>
-                  <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" name="Column_2" >
-                  <option value="A">Choose...</option>
+                  <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" name="Column_3" >
+                  <option value="<%=data.Column_3 %>"><%=data.Column_3 %></option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
                 </select>
@@ -209,7 +215,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Debris">Temperature Registered
 ˚F</label>
-<input type="text" class= "form-control" id="Debris" name="Column_3">
+<input type="text" class= "form-control" id="Debris" value="<%=data.Column_4 %>" name="Column_4">
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -272,7 +278,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Covered">NIST Temperature
 ˚F (Optional)</label>
-<input type="text" class= "form-control" id="Covered" name="Column_4">
+<input type="text" class= "form-control" id="Covered" value="<%=data.Column_5 %>" name="Column_5">
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -331,8 +337,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Stored">Corrective Action Needed?</label>
-                  <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5">
-                  <option value="A">Choose...</option>
+                  <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_6">
+                  <option value="<%=data.Column_6 %>"><%=data.Column_6 %></option>
                     <option Value="A">No</option>
 					<option Value="R">Yes</option>
                 </select>
@@ -370,6 +376,12 @@
 			
 			  
 </div>
+			  				          <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>	
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 			 			  
 			  

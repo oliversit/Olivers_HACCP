@@ -7,6 +7,12 @@
 	  
 <%- include('../Partials/NavBar') -%>
 	  
+	      <div class="container">
+  	  	  	  <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
 	  
 	  
     <div class="container">
@@ -29,7 +35,7 @@
 		 <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="Date">Date</label>
-                <input type="Date" class="form-control" id="Date" name="Date"  >
+                <input type="Date" class="form-control" id="Date" name="Date" value="<%=data.Date %>" >
                 <div class="invalid-feedback">
                   Valid Date is .
                 </div>
@@ -48,9 +54,9 @@
               <div class="col-md-12 mb-3">
                 <label for="Floor_Ground">Date Received (Within 3 days of Date Packed?)</label>
                   <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1" >
-                  <option value="A">Choose...</option>
-                    <option Value="">Yes</option>
-					<option Value="">No</option>
+                  <option value="<%=data.Column_1 %>"><%=data.Column_1 %></option>
+                    <option Value="Yes">Yes</option>
+					<option Value="No">No</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -111,7 +117,7 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Pest">Time</label>
-                <input type="time" class="form-control" id="Pest" placeholder="" name="Column_2" >
+                <input type="time" class="form-control" id="Pest" placeholder="" name="Column_2" value="<%=data.Column_2 %>">
 				         <div class="invalid-feedback">
                   Please select a valid Condition
                 </div>
@@ -172,7 +178,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Debris">Commodity</label>
                   <select class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3">
-                  <option value="A">Choose...</option>
+                  <option value="<%=data.Column_3 %>"><%=data.Column_3 %></option>
 	<%
         if(userData2.length!=0){
         var T=1;
@@ -245,7 +251,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Covered">Vendor Name</label>
                   <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4">
-                  <option value="A">Choose...</option>
+                 <option value="<%=data.Column_4 %>"><%=data.Column_4 %></option>
 	<%
         if(userData3.length!=0){
         var T=1;
@@ -315,7 +321,7 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Stored">Order P.O#</label>
-    <input type="number" class="form-control" id="Stored" placeholder="" name="Column_5">
+    <input type="number" class="form-control" id="Stored" placeholder="" name="Column_5" value="<%=data.Column_5 %>">
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -375,7 +381,7 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="sanitized">Temp. &lt 41°</label>
-                      <input type="number" class="form-control" id="sanitized" placeholder="" name="Column_6" >
+                      <input type="number" class="form-control" id="sanitized" placeholder="" value="<%=data.Column_6 %>" name="Column_6" >
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -435,10 +441,10 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Trash">VisualEvidence of Physical Damage or Pest Contamination</label>
-                  <select class="custom-select d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7">
-                  <option value="A">Choose...</option>
-                    <option Value="">Yes</option>
-					<option Value="">No</option>
+                  <select class="custom-select d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7" >
+                  <option value="<%=data.Column_7 %>"><%=data.Column_7 %></option>
+                    <option Value="Yes">Yes</option>
+					<option Value="No">No</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -500,7 +506,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Health">Accept?</label>
                   <select class="custom-select d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_8">
-                  <option value="A">Choose...</option>
+                  <option value="<%=data.Column_8 %>"><%=data.Column_8 %></option>
                     <option Value="A">Yes</option>
 					<option Value="R">No</option>
                 </select>
@@ -558,7 +564,7 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Comment">Received By:</label>
-                   <input type="text" class="form-control" id="Comment" placeholder="" name="Column_9" >
+                   <input type="text" class="form-control" id="Comment" placeholder="" name="Column_9" value="<%=data.Column_9 %>">
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -571,7 +577,7 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Comment">Comments</label>
-                   <input type="text" class="form-control" id="Comment2" placeholder="" name="Column_10" >
+                   <input type="text" class="form-control" id="Comment2" placeholder="" name="Column_10" value="<%=data.Column_10 %>" >
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -579,7 +585,12 @@
 
 			  
 			  </div>			  
-			 			  
+			 				          <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>				  
 			  
 <!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
 			  <br>

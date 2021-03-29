@@ -1,0 +1,184 @@
+<div id="container2">
+
+
+  <table id="data-table" class="Print_Table">
+    <tr>
+      <td>Form Number</td>
+		<td>Form</td>
+		
+			     <%
+        if(userData2.length!=0){
+        var l=1;
+        userData2.forEach(function(data2){
+        %>
+	<td><%=data2.Question %></td>
+			          <%  l++; }) %>
+        <% }
+		
+		else{ %>
+           			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+			<p>No Data Found</p>
+	</div>
+		
+	
+		</div>
+              
+            
+        <% } %>
+
+    </tr>
+
+<!-------------Packing----------------------------------------------------------------------------------------------------->	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Packing" ){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td><%=FormBox %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+
+		
+    </tr>
+	          <%  i++; }) %>
+        <% } %>
+<!------------------------------------------------------------------------------------------------------------------------->
+	  
+	
+	 
+<!-------------Processing-------------------------------------------------------------------------------------------------->	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Processing" ){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td><%=FormBox %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_6 %></td>
+		<td><%=data.Column_7 %></td>
+		<td><%=data.Column_8 %></td>
+		<td><%=data.Column_9 %></td>
+		<td><%=data.Column_10 %></td>
+		<td><%=data.Column_11 %></td>
+		<td><%=data.Column_12 %></td>		
+		<td><%=data.Column_13 %></td>
+		<td><%=data.Column_14 %></td>
+		<td><%=data.Column_15 %></td>
+		<td><%=data.Column_16 %></td>
+		
+    </tr>
+	          <%  i++; }) %>
+        <% } %>
+<!--------------------------------------------------------------------------------------------------------------------->
+	
+<!-------------Cold Rooms-------------------------------------------------------------------------------------------------->	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Cold_Rooms" ){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td><%=FormBox %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_6 %></td>
+		<td><%=data.Column_7 %></td>
+		
+    </tr>
+	          <%  i++; }) %>
+        <% } %>
+<!--------------------------------------------------------------------------------------------------------------------->
+
+<!-------------Thermometer Calibration--------------------------------------------------------------------------------->	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Thermometer_Calibration" ){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td><%=FormBox %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+
+		
+    </tr>
+	          <%  i++; }) %>
+        <% } %>
+<!------------------------------------------------------------------------------------------------------------------------->
+	 	  
+<!-------------Raw Product------------------------------------------------------------------------------------------------->	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Raw_Product" ){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td><%=FormBox %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_6 %></td>
+		<td><%=data.Column_7 %></td>
+		<td><%=data.Column_8 %></td>
+		<td><%=data.Column_9 %></td>
+		<td><%=data.Column_10 %></td>
+		
+    </tr>
+	          <%  i++; }) %>
+        <% } %>
+<!--------------------------------------------------------------------------------------------------------------------->
+
+<!-------------Cooler-------------------------------------------------------------------------------------------------->	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Cooler" ){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td><%=FormBox %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_6 %></td>
+		<td><%=data.Column_7 %></td>
+    </tr>
+	          <%  i++; }) %>
+        <% } %>
+<!--------------------------------------------------------------------------------------------------------------------->
+		  
+	  
+  </table>
+
+
+
+
+
+
+</div>
