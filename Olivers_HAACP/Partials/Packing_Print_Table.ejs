@@ -1,7 +1,225 @@
-<div id="container2">
+<div id="container2" class="hide-on-screen">
 
 
-  <table id="data-table" class="Print_Table">
+
+
+<!-------------Packing----------------------------------------------------------------------------------------------------->	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Packing" ){
+        %>
+		<table  class="row_border">
+  <tbody>
+    <tr>
+      <td><strong>OLIVER’S MARKET</strong>
+</td>
+    </tr>
+  </tbody>
+</table>
+	
+	<table  border="1" class="row_main">
+  <tbody>
+	  <tr >
+      <td ><strong>Doc #</strong><br> FORM 10.1A
+HACCP ROP</td>
+      <td><strong>Title:</strong> <br>
+Daily Pre-Operational Inspection Checklist (Packing Materials)</td>
+      <td><strong>Date Created:</strong><br>
+08-01-2019</td>
+    </tr>
+    <tr>
+      <td><strong>Version #:</strong><br>
+V 1.0</td>
+      <td><strong>Prepared By:</strong><br>
+John Matthews.</td>
+      <td><strong>Date Revised:</strong><br>
+N/A</td>
+    </tr>
+  </tbody>
+</table>
+	
+	
+		<table width="100%" >
+  <tbody>
+    <tr class="row_no_border">
+      <td >Month: Year:_________ Store Loc:_________________</td>
+		
+		
+		<td  >		
+	<table width="100%" class="row_border2">
+  <tbody>
+    <tr >
+		<td  >	<table width="100%" class="row_border3" >
+  <tbody>
+    <tr >
+		<td  ><strong>Complete</strong> checklist <strong>BEFORE</strong> starting production</td>
+		
+    </tr>
+  </tbody>
+</table></td>
+		
+    </tr>
+  </tbody>
+</table>
+		
+		</td>
+		
+    </tr>
+  </tbody>
+			
+			
+</table>
+	<p>Please circle “A” if condition is acceptable. Circle “R” if condition is rejected AND record corrective actions taken, by whom and the date and time correction was completed.</p>
+<table id="data-table" border="1" class="Print_Table">
+
+      <tr><td>Packing Material Storage Daily Pre-Operational
+Inspection Checklist</td>
+	  <td>Sun</td>	  
+	  <td>Mon</td>
+	  <td>Tues</td>
+	  <td>Wed</td>
+	  <td>Thu</td>
+	  <td>Fri</td>
+	  <td>Sat</td>
+	  </tr>
+	  
+		<tr>
+	  <td>Date of Inspection</td>
+		<%
+		userData.forEach(function(data){
+        %>
+
+		<td><%=data.Date %></td>
+
+	          <%  i++; }) %>
+	  </tr>
+		
+	  <tr>
+		  <td>"<%=userData2[1].Question %>"</td>	
+		
+		  <%
+		userData.forEach(function(data){
+        %>
+
+		<td><%=data.Column_1 %></td>
+
+		
+  
+	          <%  i++; }) %>
+	  </tr>
+	  
+	  <tr>
+		  <td>"<%=userData2[2].Question %>"</td>	
+		<%
+		userData.forEach(function(data){
+        %>
+		<td><%=data.Column_2 %></td>
+
+	          <%  i++; }) %> 
+	  </tr>
+	  
+	  	  <tr>
+			  <td>"<%=userData2[3].Question %>"</td>	
+		<%
+		userData.forEach(function(data){
+        %>
+		<td><%=data.Column_3 %></td>
+
+	          <%  i++; }) %>
+	  </tr>
+	  
+	  	  <tr>
+			  <td>"<%=userData2[4].Question %>"</td>	
+		<%
+		userData.forEach(function(data){
+        %>
+
+		<td><%=data.Column_4 %></td>
+	          <%  i++; }) %>		  
+	  </tr>
+	  
+	  	  <tr>
+			  <td>"<%=userData2[5].Question %>"</td>	
+		<%
+		userData.forEach(function(data){
+        %>
+
+		<td><%=data.Column_5 %></td>
+
+	          <%  i++; }) %>
+	  </tr>
+	</table>
+        <% } %>
+<!------------------------------------------------------------------------------------------------------------------------->
+	  
+	
+	 
+<!-------------Processing-------------------------------------------------------------------------------------------------->	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Processing" ){
+        var i=1;
+        %>
+	<table  class="row_border">
+  <tbody>
+    <tr>
+      <td><strong>OLIVER’S MARKET</strong>
+</td>
+    </tr>
+  </tbody>
+</table>
+	
+	<table  border="1" class="row_main">
+  <tbody>
+	  <tr >
+      <td ><strong>Doc #</strong><br> FORM 10.1C
+HACCP ROP</td>
+      <td><strong>Title:</strong> <br>
+Daily Pre-Operational Inspection Checklist (Processing Room)</td>
+      <td><strong>Date Created:</strong><br>
+08-01-2019</td>
+    </tr>
+    <tr>
+      <td><strong>Version #:</strong><br>
+V 2.0</td>
+      <td><strong>Prepared By:</strong><br>
+John Matthews.</td>
+      <td><strong>Date Revised:</strong><br>
+07-09-2020</td>
+    </tr>
+  </tbody>
+</table>
+	
+	
+		<table width="100%" >
+  <tbody>
+    <tr class="row_no_border">
+      <td >Month: Year:_________ Store Loc:_________________</td>
+		
+		
+		<td  >		
+	<table width="100%" class="row_border2">
+  <tbody>
+    <tr >
+		<td  >	<table width="100%" class="row_border3" >
+  <tbody>
+    <tr >
+		<td  ><strong>Complete</strong> checklist <strong>BEFORE</strong> starting production</td>
+		
+    </tr>
+  </tbody>
+</table></td>
+		
+    </tr>
+  </tbody>
+</table>
+		
+		</td>
+		
+    </tr>
+  </tbody>
+			
+			
+</table>
+	<p>Please circle “A” if condition is acceptable. Circle “R” if condition is rejected AND record corrective actions taken, by whom and the date and time correction was completed.</p>	
+	
+	    <table id="data-table2" border="1"  class="Print_Table">
     <tr>
       <td>Form Number</td>
 		<td>Form</td>
@@ -29,34 +247,11 @@
         <% } %>
 
     </tr>
-
-<!-------------Packing----------------------------------------------------------------------------------------------------->	  	     <%
-        if(userData.length!=0 && userData[0].Form_Name=="Packing" ){
-        var i=1;
-        userData.forEach(function(data){
-        %>
-    <tr>
-      <td><%=i; %></td>
-		<td><%=FormBox %></td>
-		<td>"<%=data.Date %>"</td>
-		<td><%=data.Column_1 %></td>
-		<td><%=data.Column_2 %></td>
-		<td><%=data.Column_3 %></td>
-		<td><%=data.Column_4 %></td>
-		<td><%=data.Column_5 %></td>
-
+	   <%        %>
 		
-    </tr>
-	          <%  i++; }) %>
-        <% } %>
-<!------------------------------------------------------------------------------------------------------------------------->
-	  
-	
-	 
-<!-------------Processing-------------------------------------------------------------------------------------------------->	  	     <%
-        if(userData.length!=0 && userData[0].Form_Name=="Processing" ){
-        var i=1;
-        userData.forEach(function(data){
+		
+		<%
+		userData.forEach(function(data){
         %>
     <tr>
       <td><%=i; %></td>
@@ -81,13 +276,109 @@
 		
     </tr>
 	          <%  i++; }) %>
+			</table>
         <% } %>
 <!--------------------------------------------------------------------------------------------------------------------->
 	
 <!-------------Cold Rooms-------------------------------------------------------------------------------------------------->	  	     <%
         if(userData.length!=0 && userData[0].Form_Name=="Cold_Rooms" ){
-        var i=1;
-        userData.forEach(function(data){
+        var i=1;        %>
+	
+		<table  class="row_border">
+  <tbody>
+    <tr>
+      <td><strong>OLIVER’S MARKET</strong>
+</td>
+    </tr>
+  </tbody>
+</table>
+	
+	<table  border="1" class="row_main">
+  <tbody>
+	  <tr >
+      <td ><strong>Doc #</strong><br> FORM 10.1C
+HACCP ROP</td>
+      <td><strong>Title:</strong> <br>
+Daily Pre-Operational Inspection Checklist (Cold Rooms)</td>
+      <td><strong>Date Created:</strong><br>
+08-01-2019</td>
+    </tr>
+    <tr>
+      <td><strong>Version #:</strong><br>
+V 2.0</td>
+      <td><strong>Prepared By:</strong><br>
+John Matthews.</td>
+      <td><strong>Date Revised:</strong><br>
+07-15-2020</td>
+    </tr>
+  </tbody>
+</table>
+	
+	
+		<table width="100%" >
+  <tbody>
+    <tr class="row_no_border">
+      <td >Month: Year:_________ Store Loc:_________________</td>
+		
+		
+		<td  >		
+	<table width="100%" class="row_border2">
+  <tbody>
+    <tr >
+		<td  >	<table width="100%" class="row_border3" >
+  <tbody>
+    <tr >
+		<td  ><strong>Complete</strong> checklist <strong>BEFORE</strong> starting production</td>
+		
+    </tr>
+  </tbody>
+</table></td>
+		
+    </tr>
+  </tbody>
+</table>
+		
+		</td>
+		
+    </tr>
+  </tbody>
+			
+			
+</table>
+	<p>Please circle “A” if condition is acceptable. Circle “R” if condition is rejected AND record corrective actions taken, by whom and the date and time correction was completed.</p>
+		
+	<table id="data-table3" border="1" class="Print_Table">
+    <tr>
+      <td>Form Number</td>
+		<td>Form</td>
+		
+			     <%
+        if(userData2.length!=0){
+        var l=1;
+        userData2.forEach(function(data2){
+        %>
+	<td><%=data2.Question %></td>
+			          <%  l++; }) %>
+        <% }
+		
+		else{ %>
+           			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+			<p>No Data Found</p>
+	</div>
+		
+	
+		</div>
+              
+            
+        <% } %>
+
+    </tr>
+	   <%        %>
+		
+		<%
+		userData.forEach(function(data){
         %>
     <tr>
       <td><%=i; %></td>
@@ -103,13 +394,85 @@
 		
     </tr>
 	          <%  i++; }) %>
+	</table>
         <% } %>
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <!-------------Thermometer Calibration--------------------------------------------------------------------------------->	  	     <%
         if(userData.length!=0 && userData[0].Form_Name=="Thermometer_Calibration" ){
-        var i=1;
-        userData.forEach(function(data){
+        var i=1;        %>
+		
+	<table  class="row_border">
+  <tbody>
+    <tr>
+      <td><strong>OLIVER’S MARKET</strong>
+</td>
+    </tr>
+  </tbody>
+</table>
+	
+	<table  border="1" class="row_main">
+  <tbody>
+	  <tr >
+      <td ><strong>Doc #</strong><br> FORM 10.3
+HACCP ROP</td>
+      <td><strong>Title:</strong> <br>
+Thermometer Calibration Log</td>
+      <td><strong>Date Created:</strong><br>
+08-01-2019</td>
+    </tr>
+    <tr>
+      <td><strong>Version #:</strong><br>
+V 1.0</td>
+      <td><strong>Prepared By:</strong><br>
+John Matthews.</td>
+      <td><strong>Date Revised:</strong><br>
+N/A</td>
+    </tr>
+  </tbody>
+</table>
+	
+
+	<p>Checking Accuracy of Thermometer:
+<br>1. &nbsp; &nbsp;Place the thermometer in a container of ice water slurry (very little water/mostly ice).
+<br>2. &nbsp; &nbsp;Stir water continuously to ensure a uniform temperature during the reading
+<br>3. &nbsp; &nbsp;After the thermometer has stabilized record the temperature
+<br>4. &nbsp; &nbsp;If the reading is within 32.0 ± 2.0 o F, the calibration is complete
+<br>5. &nbsp; &nbsp;If the reading does not fall inside the above range the thermometer must be discarded. Each thermometer must be tagged with the calibratednumber. These numbers must be added or subtracted from the readings of the thermometers and recorded on each temperature log.
+<br>6. &nbsp; &nbsp;Calibration can also be performed by comparing probes and digital thermometers against a NIST thermometer. The NIST thermometer iscalibrated by the manufacturer on an annual basis. Occasional verification of accuracy will be confirmed by placing NIST thermometer inslurry of ice to determine if it meets the range listed above. If it does not, it will immediately be sent back to the manufacturer. Add NISTthermometer testing results to chart as well.</p>
+		
+	<table id="data-table4" border="1" class="Print_Table">
+    <tr>
+      <td>Form Number</td>
+		<td>Form</td>
+		
+			     <%
+        if(userData2.length!=0){
+        var l=1;
+        userData2.forEach(function(data2){
+        %>
+	<td><%=data2.Question %></td>
+			          <%  l++; }) %>
+        <% }
+		
+		else{ %>
+           			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+			<p>No Data Found</p>
+	</div>
+		
+	
+		</div>
+              
+            
+        <% } %>
+
+    </tr>
+	   <%        %>
+		
+		<%
+		userData.forEach(function(data){
         %>
     <tr>
       <td><%=i; %></td>
@@ -124,13 +487,79 @@
 		
     </tr>
 	          <%  i++; }) %>
+</table>
         <% } %>
 <!------------------------------------------------------------------------------------------------------------------------->
 	 	  
 <!-------------Raw Product------------------------------------------------------------------------------------------------->	  	     <%
         if(userData.length!=0 && userData[0].Form_Name=="Raw_Product" ){
-        var i=1;
-        userData.forEach(function(data){
+        var i=1;        %>
+	
+		<table  class="row_border">
+  <tbody>
+    <tr>
+      <td><strong>OLIVER’S MARKET</strong>
+</td>
+    </tr>
+  </tbody>
+</table>
+	
+	<table  border="1" class="row_main">
+  <tbody>
+	  <tr >
+      <td ><strong>Doc #</strong><br> FORM 10.4
+HACCP ROP</td>
+      <td><strong>Title:</strong> <br>
+		  Incoming Raw Product Receiving Log <text style="color:red;">CCP-1</text></td>
+      <td><strong>Date Created:</strong><br>
+08-01-2019</td>
+    </tr>
+    <tr>
+      <td><strong>Version #:</strong><br>
+V 1.0</td>
+      <td><strong>Prepared By:</strong><br>
+John Matthews.</td>
+      <td><strong>Date Revised:</strong><br>
+07-15-2020</td>
+    </tr>
+  </tbody>
+</table>
+	
+
+	<p>Store Loc:_______________ <text style="color:red;">* Do not accept product that does not meet incoming product specifications (temperature, physical or pest damage, etc.)</text></p>
+		
+	<table id="data-table5" border="1" class="Print_Table">
+    <tr>
+      <td>Form Number</td>
+		<td>Form</td>
+		
+			     <%
+        if(userData2.length!=0){
+        var l=1;
+        userData2.forEach(function(data2){
+        %>
+	<td><%=data2.Question %></td>
+			          <%  l++; }) %>
+        <% }
+		
+		else{ %>
+           			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+			<p>No Data Found</p>
+	</div>
+		
+	
+		</div>
+              
+            
+        <% } %>
+
+    </tr>
+	   <%        %>
+		
+		<%
+		userData.forEach(function(data){
         %>
     <tr>
       <td><%=i; %></td>
@@ -149,13 +578,79 @@
 		
     </tr>
 	          <%  i++; }) %>
+</table>
         <% } %>
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <!-------------Cooler-------------------------------------------------------------------------------------------------->	  	     <%
         if(userData.length!=0 && userData[0].Form_Name=="Cooler" ){
-        var i=1;
-        userData.forEach(function(data){
+        var i=1;        %>
+	
+		<table  class="row_border">
+  <tbody>
+    <tr>
+      <td><strong>OLIVER’S MARKET</strong>
+</td>
+    </tr>
+  </tbody>
+</table>
+	
+	<table  border="1" class="row_main">
+  <tbody>
+	  <tr >
+      <td ><strong>Doc #</strong><br> FORM 10.14
+HACCP ROP</td>
+      <td><strong>Title:</strong> <br>
+		  Cooler Temperature and Display Case Temperature Log <text style="color:red;">CCP2 and CCP4</text></td>
+      <td><strong>Date Created:</strong><br>
+08-01-2019</td>
+    </tr>
+    <tr>
+      <td><strong>Version #:</strong><br>
+V 2.0</td>
+      <td><strong>Prepared By:</strong><br>
+John Matthews.</td>
+      <td><strong>Date Revised:</strong><br>
+07-15-2020</td>
+    </tr>
+  </tbody>
+</table>
+	
+
+	<p>Store Loc:_______________</p>
+		
+	<table id="data-table6" border="1" class="Print_Table">
+    <tr>
+      <td>Form Number</td>
+		<td>Form</td>
+		
+			     <%
+        if(userData2.length!=0){
+        var l=1;
+        userData2.forEach(function(data2){
+        %>
+	<td><%=data2.Question %></td>
+			          <%  l++; }) %>
+        <% }
+		
+		else{ %>
+           			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+			<p>No Data Found</p>
+	</div>
+		
+	
+		</div>
+              
+            
+        <% } %>
+
+    </tr>
+	   <%        %>
+		
+		<%
+		userData.forEach(function(data){
         %>
     <tr>
       <td><%=i; %></td>
@@ -170,11 +665,12 @@
 		<td><%=data.Column_7 %></td>
     </tr>
 	          <%  i++; }) %>
+</table>
         <% } %>
 <!--------------------------------------------------------------------------------------------------------------------->
 		  
 	  
-  </table>
+  
 
 
 

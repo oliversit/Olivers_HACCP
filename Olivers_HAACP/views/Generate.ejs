@@ -2,14 +2,29 @@
 <html lang="en">
 	
 <%- include('../Partials/MetaData') -%>
+	
+<style>
+.hide-on-screen {display:none;}
+.yesPrint, .noPrint {display:block;}
 
+@media print {
+   .hide-on-screen {display:block;}
+   .noPrint {display:none;}
+
+    body{
+        padding-top: 1px;
+        background: transparent;
+    }
+	}
+
+</style>
 
 <body>
 <%- include('../Partials/NavBar') -%>
 			    
 	
 	
-	<div class="container">
+	<div class="container noPrint">
 
    
         
@@ -194,6 +209,9 @@
 		
 	</div>
 	
+	<%- include('../Partials/Packing_Print_Table') -%>	
 	
 	</body>
 </html>
+
+<script></script>
