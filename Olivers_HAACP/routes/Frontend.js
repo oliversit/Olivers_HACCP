@@ -128,11 +128,13 @@ var user= req.body.username;
 			if (box=="Raw_Product") {box="Raw Product"}
 		if (box=="Cold_Rooms") {box="Cold Rooms"}
 		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
-    connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date >= ? and Date <= ?', [req.body.Form_Name, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
+   connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date >= ? and Date <= ?', [req.body.Form_Name, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
    connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {
+   connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date >= ? and Date <= ?', [req.body.Form_Name, req.body.Date1, req.body.Date2] ,function (err, data3, fields) {
 		
     if (err) throw err;
-    res.render('Generate', { title: 'Generate', userData: data, userData2: data2, userName: user, FormTitle: Title, FormBox: box});	
+    res.render('Generate', { title: 'Generate', userData: data, userData2: data2, userData3: data3, userName: user, FormTitle: Title, FormBox: box});	
+  });
   });
   });
 });
