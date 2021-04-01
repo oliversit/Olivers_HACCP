@@ -6,7 +6,7 @@
 <body>
 <%- include('../Partials/NavBar') -%>
 			    <form class="needs-validation" action="/Frontend/Generate" method="post">
-					<input id="username" name="username" type="hidden" value=<%=userName %>>
+					<%- include('../Partials/Global_Variables') -%>
 					<input id="Form_Title13" name="Form_Title" type="hidden" value="Previous Forms">
 	<div class="container">
 		
@@ -114,7 +114,7 @@
               <div class="col mb-3">
 				 
 				  <form action="../Frontend/Reports" class="button_height" method="post">
-					    <input id="username" name="username" type="hidden" value=<%=userName %>>
+					    <%- include('../Partials/Global_Variables') -%>
 					  <input id="Form_Title14" name="Form_Title" type="hidden" value="Reports">
 					   <br>
                        <button class="btn btn-block btn-primary btn-lg button_height Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>

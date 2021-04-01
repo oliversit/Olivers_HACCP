@@ -50,7 +50,7 @@
 						
 								<div class="col-md-3 mb-3"  >
 			<form class="needs-validation" action="/Frontend/<%=data.Form_Name %>_Form" method="post">
-				  <input id="username" name="username" type="hidden" value=<%=userName %>>
+				  <%- include('../Partials/Global_Variables') -%>
 				<input id="Form_Title" name="Form_Title" type="hidden" value=<%=data.Form_Name %>>
         <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Edit_Button" type="submit" value="$Actual_Id" > Edit</button>
 			 <input id="Id" name="Id" type="hidden" value="<%=data.Id %>">			
@@ -157,7 +157,7 @@
               <div class="col  mb-3">
 				 
 				  <form action="../Frontend/Reports" class="button_height" method="post">
-					    <input id="username" name="username" type="hidden" value=<%=userName %>>
+					    <%- include('../Partials/Global_Variables') -%>
 					  <input id="Form_Title14" name="Form_Title" type="hidden" value="Reports">
 					   <br>
                        <button class="btn btn-block btn-primary btn-lg button_height  Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>

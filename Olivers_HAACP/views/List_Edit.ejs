@@ -15,7 +15,7 @@
 
 		<div class="container">
 			<form class="needs-validation" action="/List" method="post">
-				  <input id="username" name="username" type="hidden" value=<%=userName %>>
+				  <%- include('../Partials/Global_Variables') -%>
 			<input id="Name" name="Type" type="hidden" value="<%=formName %>">
 				<input id="Form_Title" name="Form_Title" type="hidden" value=<%=formName %>>
            			<div class="row " >
@@ -95,7 +95,7 @@
 										<br>
 										<br>
 			<form class="needs-validation" action="/Frontend/List_Edit_Item" method="post">
-				  <input id="username" name="username" type="hidden" value=<%=userName %>>
+				  <%- include('../Partials/Global_Variables') -%>
 					<input id="Id_Value" name="Id" type="hidden" value="<%=data.Id %>">
 					<input id="Name_Form_Delete" name="Type" type="hidden" value="<%=formName %>">
 				<input id="Form_Title2" name="Form_Title" type="hidden" value=<%=formName %>>
@@ -108,7 +108,7 @@
 										<br>
 										<br>
 										<form class="needs-validation" action="/Frontend/List_Delete" method="post">
-											  <input id="username" name="username" type="hidden" value=<%=userName %>>
+											  <%- include('../Partials/Global_Variables') -%>
 											<input id="Id_Value" name="Id" type="hidden" value="<%=data.Id %>">
 											<input id="Name_Form_Delete2" name="Type" type="hidden" value="<%=formName %>">
 											<input id="Form_Title3" name="Form_Title" type="hidden" value=<%=formName %>>
@@ -195,7 +195,7 @@
               <div class="col  mb-3">
 				 
 				  <form action="../Frontend/Reports" class="button_height" method="post">
-					    <input id="username" name="username" type="hidden" value=<%=userName %>>
+					    <%- include('../Partials/Global_Variables') -%>
 					  <input id="Form_Title14" name="Form_Title" type="hidden" value="Reports">
 					   <br>
                        <button class="btn btn-block btn-primary btn-lg button_height  Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>

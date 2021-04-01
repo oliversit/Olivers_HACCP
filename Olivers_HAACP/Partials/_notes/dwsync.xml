@@ -20,6 +20,7 @@
 <file name="MetaData.ejs" server="192.168.75.162//var/www/Haccp/" local="132598909489357722" remote="132615061980000000" Dst="2" />
 <file name="NavBar.ejs" server="192.168.75.162//var/www/Haccp/" local="132598909489387733" remote="132615061990000000" Dst="2" />
 <file name="Packing_Print_Table.ejs" server="192.168.75.162//var/www/Haccp/" local="132617036012854690" remote="132617036050000000" Dst="2" />
-<file name="ScriptData.ejs" server="192.168.75.162//var/www/Haccp/" local="132599652329246883" remote="132615061990000000" Dst="2" />
-<file name="ScriptDataOnLoad.ejs" server="192.168.75.162//var/www/Haccp/" local="132599654641006183" remote="132615061990000000" Dst="2" />
+<file name="ScriptData.ejs" server="192.168.75.162//var/www/Haccp/" local="132617687817513744" remote="132617687960000000" Dst="2" />
+<file name="ScriptDataOnLoad.ejs" server="192.168.75.162//var/www/Haccp/" local="132617687903227313" remote="132617687960000000" Dst="2" />
+<file name="Global_Variables.ejs" server="192.168.75.162//var/www/Haccp/" local="132617690269278903" remote="132617852820000000" Dst="2" />
 </dwsync>

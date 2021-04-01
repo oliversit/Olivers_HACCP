@@ -209,9 +209,11 @@ router.post('/Packing_Form', function(req, res, next) {
 	var Title= req.body.Form_Title;	
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data2, fields) {
     if (err) throw err;
-    res.render('Packing_Form', { title: 'Packing_Form', userData: data, userName: user, FormTitle: Title});
+    res.render('Packing_Form', { title: 'Packing_Form', userData: data, userData2: data2, userName: user, FormTitle: Title});
   });
+	});
 });
 
 
@@ -236,9 +238,11 @@ router.post('/Processing_Form', function(req, res, next) {
 	var Title= req.body.Form_Title;	
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data2, fields) {
     if (err) throw err;
-    res.render('Processing_Form', { title: 'Processing_Form', userData: data, userName: user, FormTitle: Title});
+    res.render('Processing_Form', { title: 'Processing_Form', userData: data, userData2: data2, userName: user, FormTitle: Title});
   });
+	});
 });
 
 
