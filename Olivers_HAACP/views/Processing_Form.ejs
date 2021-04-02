@@ -70,6 +70,12 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+	
+			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_Floor_Ground" style="display:none">
 			  <div class="row"  >
@@ -78,7 +84,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Taken1">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_1" id="Action_Taken_Floor_Ground" placeholder="" value="<%=userData2[Corection_Number].Corection_1 %>" >
+                <input type="text" class="form-control" name="Corection_1" id="Action_Taken_Floor_Ground" placeholder="" value="<%=dataCor.Corection_1 %>" >
 			     </div>
 				  
 			
@@ -97,20 +103,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Floor_Ground">Date</label>
-                <input type="Date" class="form-control" name="Corection_2" id="Date_Floor_Ground" placeholder="" value="<%=userData2[Corection_Number].Corection_2 %>" >
+                <input type="Date" class="form-control" name="Corection_2" id="Date_Floor_Ground" placeholder="" value="<%=dataCor.Corection_2 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Floor_Ground">Time</label>
-                <input type="time" class="form-control" name="Corection_3" id="Time_Floor_Ground" placeholder="" value="<%=userData2[Corection_Number].Corection_3 %>" >
+                <input type="time" class="form-control" name="Corection_3" id="Time_Floor_Ground" placeholder="" value="<%=dataCor.Corection_3 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_By_Floor_Ground">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground" placeholder="" value="<%=userData2[Corection_Number].Corection_4 %>" >
+                <input type="text" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground" placeholder="" value="<%=dataCor.Corection_4 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 
@@ -134,6 +147,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_Pest" style="display:none">
 			  <div class="row"  >
@@ -142,7 +160,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Pest">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_5" id="Action_Pest" placeholder="" value="<%=userData2[Corection_Number].Corection_5 %>" >
+                <input type="text" class="form-control" name="Corection_5" id="Action_Pest" placeholder="" value="<%=dataCor.Corection_5 %>" >
 			     </div>
 				  
 			
@@ -161,20 +179,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Pest">Date</label>
-                <input type="Date" class="form-control" name="Corection_6" id="Date_Pest" placeholder="" value="<%=userData2[Corection_Number].Corection_6 %>" >
+                <input type="Date" class="form-control" name="Corection_6" id="Date_Pest" placeholder="" value="<%=dataCor.Corection_6 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Pest">Time</label>
-                <input type="time" class="form-control" name="Corection_7" id="Time_Pest" placeholder="" value="<%=userData2[Corection_Number].Corection_7 %>" >
+                <input type="time" class="form-control" name="Corection_7" id="Time_Pest" placeholder="" value="<%=dataCor.Corection_7 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Pest">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_8" id="Corrected_Pest" placeholder="" value="<%=userData2[Corection_Number].Corection_8 %>" >
+                <input type="text" class="form-control" name="Corection_8" id="Corrected_Pest" placeholder="" value="<%=dataCor.Corection_8 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 			  
@@ -199,6 +224,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+						  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_Debris" style="display:none">
 			  <div class="row"  >
@@ -207,7 +237,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Debris">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_9" id="Action_Debris" placeholder="" value="<%=userData2[Corection_Number].Corection_9 %>" >
+                <input type="text" class="form-control" name="Corection_9" id="Action_Debris" placeholder="" value="<%=dataCor.Corection_9 %>" >
 			     </div>
 				  
 			
@@ -226,20 +256,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Debris">Date</label>
-                <input type="Date" class="form-control" name="Corection_10" id="Date_Debris" placeholder="" value="<%=userData2[Corection_Number].Corection_10 %>" >
+                <input type="Date" class="form-control" name="Corection_10" id="Date_Debris" placeholder="" value="<%=dataCor.Corection_10 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Debris">Time</label>
-                <input type="time" class="form-control" name="Corection_11" id="Time_Debris" placeholder="" value="<%=userData2[Corection_Number].Corection_11 %>" >
+                <input type="time" class="form-control" name="Corection_11" id="Time_Debris" placeholder="" value="<%=dataCor.Corection_11 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Debris">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_12" id="Corrected_Debris" placeholder="" value="<%=userData2[Corection_Number].Corection_12 %>" >
+                <input type="text" class="form-control" name="Corection_12" id="Corrected_Debris" placeholder="" value="<%=dataCor.Corection_12 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!----------------------------------------------------------------------------------------------------------------------------------->
   
  
@@ -263,6 +300,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+					  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_Covered" style="display:none">
 			  <div class="row "  >
@@ -271,7 +313,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Covered">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_13" id="Action_Covered" placeholder="" value="<%=userData2[Corection_Number].Corection_13 %>" >
+                <input type="text" class="form-control" name="Corection_13" id="Action_Covered" placeholder="" value="<%=dataCor.Corection_13 %>" >
 			     </div>
 				  
 			
@@ -290,20 +332,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Covered">Date</label>
-                <input type="Date" class="form-control" name="Corection_14" id="Date_Covered" placeholder="" value="<%=userData2[Corection_Number].Corection_14 %>" >
+                <input type="Date" class="form-control" name="Corection_14" id="Date_Covered" placeholder="" value="<%=dataCor.Corection_14 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Covered">Time</label>
-                <input type="time" class="form-control" name="Corection_15" id="Time_Covered" placeholder="" value="<%=userData2[Corection_Number].Corection_15 %>" >
+                <input type="time" class="form-control" name="Corection_15" id="Time_Covered" placeholder="" value="<%=dataCor.Corection_15 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Covered">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_16" id="Corrected_Covered" placeholder="" value="<%=userData2[Corection_Number].Corection_16 %>" >
+                <input type="text" class="form-control" name="Corection_16" id="Corrected_Covered" placeholder="" value="<%=dataCor.Corection_16 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!----------------------------------------------------------------------------------------------------------------------------------->
  
 <!-------No excess of equipment lubrication on equipment----------->
@@ -327,6 +376,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_Stored" style="display:none">
 			  <div class="row"  >
@@ -335,7 +389,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Stored">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_17" id="Action_Stored" placeholder="" value="<%=userData2[Corection_Number].Corection_17 %>" >
+                <input type="text" class="form-control" name="Corection_17" id="Action_Stored" placeholder="" value="<%=dataCor.Corection_17 %>" >
 			     </div>
 				  
 			
@@ -354,20 +408,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Stored">Date</label>
-                <input type="Date" class="form-control" name="Corection_18" id="Date_Stored" placeholder="" value="<%=userData2[Corection_Number].Corection_18 %>" >
+                <input type="Date" class="form-control" name="Corection_18" id="Date_Stored" placeholder="" value="<%=dataCor.Corection_18 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Stored">Time</label>
-                <input type="time" class="form-control" name="Corection_19" id="Time_Stored" placeholder="" value="<%=userData2[Corection_Number].Corection_19 %>" >
+                <input type="time" class="form-control" name="Corection_19" id="Time_Stored" placeholder="" value="<%=dataCor.Corection_19 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Stored">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_20" id="Corrected_Stored" placeholder="" value="<%=userData2[Corection_Number].Corection_20 %>" >
+                <input type="text" class="form-control" name="Corection_20" id="Corrected_Stored" placeholder="" value="<%=dataCor.Corection_20 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 			  
 <!-------ROP unit Equipment clean and sanitized.----------->
@@ -391,6 +452,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_sanitized" style="display:none">
 			  <div class="row"  >
@@ -399,7 +465,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_sanitized">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_21" id="Action_sanitized" placeholder="" value="<%=userData2[Corection_Number].Corection_21 %>" >
+                <input type="text" class="form-control" name="Corection_21" id="Action_sanitized" placeholder="" value="<%=dataCor.Corection_21 %>" >
 			     </div>
 				  
 			
@@ -418,20 +484,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_sanitized">Date</label>
-                <input type="Date" class="form-control" name="Corection_22" id="Date_sanitized" placeholder="" value="<%=userData2[Corection_Number].Corection_22 %>" >
+                <input type="Date" class="form-control" name="Corection_22" id="Date_sanitized" placeholder="" value="<%=dataCor.Corection_22 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_sanitized">Time</label>
-                <input type="time" class="form-control" name="Corection_23" id="Time_sanitized" placeholder="" value="<%=userData2[Corection_Number].Corection_23 %>" >
+                <input type="time" class="form-control" name="Corection_23" id="Time_sanitized" placeholder="" value="<%=dataCor.Corection_23 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_sanitized">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_24" id="Corrected_sanitized" placeholder="" value="<%=userData2[Corection_Number].Corection_24 %>" >
+                <input type="text" class="form-control" name="Corection_24" id="Corrected_sanitized" placeholder="" value="<%=dataCor.Corection_24 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 			  
 <!-------Trash cans empty, clean and lined----------->
@@ -454,6 +527,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_Trash" style="display:none">
 			  <div class="row"  >
@@ -462,7 +540,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Trash">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_25" id="Action_Trash" placeholder="" value="<%=userData2[Corection_Number].Corection_25 %>" >
+                <input type="text" class="form-control" name="Corection_25" id="Action_Trash" placeholder="" value="<%=dataCor.Corection_25 %>" >
 			     </div>
 				  
 			
@@ -481,20 +559,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Trash">Date</label>
-                <input type="Date" class="form-control" name="Corection_26" id="Date_Trash" placeholder="" value="<%=userData2[Corection_Number].Corection_26 %>" >
+                <input type="Date" class="form-control" name="Corection_26" id="Date_Trash" placeholder="" value="<%=dataCor.Corection_26 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Trash">Time</label>
-                <input type="time" class="form-control" name="Corection_27" id="Time_Trash" placeholder="" value="<%=userData2[Corection_Number].Corection_27 %>" >
+                <input type="time" class="form-control" name="Corection_27" id="Time_Trash" placeholder="" value="<%=dataCor.Corection_27 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Trash">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_28" id="Corrected_Trash" placeholder="" value="<%=userData2[Corection_Number].Corection_28 %>" >
+                <input type="text" class="form-control" name="Corection_28" id="Corrected_Trash" placeholder="" value="<%=dataCor.Corection_28 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
@@ -519,6 +604,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_Health" style="display:none">
 			  <div class="row"  >
@@ -527,7 +617,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Health">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_29" id="Action_Health" placeholder="" name="Column_9" value="<%=userData2[Corection_Number].Corection_29 %>">
+                <input type="text" class="form-control" name="Corection_29" id="Action_Health" placeholder="" name="Column_9" value="<%=dataCor.Corection_29 %>">
 			     </div>
 				  
 			
@@ -546,20 +636,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Health">Date</label>
-                <input type="Date" class="form-control" name="Corection_30" id="Date_Health" placeholder="" value="<%=userData2[Corection_Number].Corection_30 %>" >
+                <input type="Date" class="form-control" name="Corection_30" id="Date_Health" placeholder="" value="<%=dataCor.Corection_30 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Health">Time</label>
-                <input type="time" class="form-control" name="Corection_31" id="Time_Health" placeholder="" value="<%=userData2[Corection_Number].Corection_31 %>" >
+                <input type="time" class="form-control" name="Corection_31" id="Time_Health" placeholder="" value="<%=dataCor.Corection_31 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Health">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_32" id="Corrected_Health" placeholder="" value="<%=userData2[Corection_Number].Corection_32 %>" >
+                <input type="text" class="form-control" name="Corection_32" id="Corrected_Health" placeholder="" value="<%=dataCor.Corection_32 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
@@ -584,6 +681,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_GMP" style="display:none">
 			  <div class="row"  >
@@ -592,7 +694,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_GMP">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_33" id="Action_GMP" placeholder="" value="<%=userData2[Corection_Number].Corection_33 %>" >
+                <input type="text" class="form-control" name="Corection_33" id="Action_GMP" placeholder="" value="<%=dataCor.Corection_33 %>" >
 			     </div>
 				  
 			
@@ -611,20 +713,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_GMP">Date</label>
-                <input type="Date" class="form-control" name="Corection_34" id="Date_GMP" placeholder="" value="<%=userData2[Corection_Number].Corection_34 %>" >
+                <input type="Date" class="form-control" name="Corection_34" id="Date_GMP" placeholder="" value="<%=dataCor.Corection_34 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_GMP">Time</label>
-                <input type="time" class="form-control" name="Corection_35" id="Time_GMP" placeholder="" value="<%=userData2[Corection_Number].Corection_35 %>" >
+                <input type="time" class="form-control" name="Corection_35" id="Time_GMP" placeholder="" value="<%=dataCor.Corection_35 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_GMP">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_36" id="Corrected_GMP" placeholder="" value="<%=userData2[Corection_Number].Corection_36 %>" >
+                <input type="text" class="form-control" name="Corection_36" id="Corrected_GMP" placeholder="" value="<%=dataCor.Corection_36 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
@@ -649,6 +758,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div id="Hide_Belongings" style="display:none">
 			  <div class="row"  >
@@ -657,7 +771,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Belongings">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_37" id="Action_Belongings" placeholder="" value="<%=userData2[Corection_Number].Corection_37 %>" >
+                <input type="text" class="form-control" name="Corection_37" id="Action_Belongings" placeholder="" value="<%=dataCor.Corection_37 %>" >
 			     </div>
 				  
 			
@@ -676,20 +790,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Belongings">Date</label>
-                <input type="Date" class="form-control" name="Corection_38" id="Date_Belongings" placeholder="" value="<%=userData2[Corection_Number].Corection_38 %>" >
+                <input type="Date" class="form-control" name="Corection_38" id="Date_Belongings" placeholder="" value="<%=dataCor.Corection_38 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Belongings">Time</label>
-                <input type="time" class="form-control" name="Corection_39" id="Time_Belongings" placeholder="" value="<%=userData2[Corection_Number].Corection_39 %>" >
+                <input type="time" class="form-control" name="Corection_39" id="Time_Belongings" placeholder="" value="<%=dataCor.Corection_39 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Belongings">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_40" id="Corrected_Belongings" placeholder="" value="<%=userData2[Corection_Number].Corection_40 %>" >
+                <input type="text" class="form-control" name="Corection_40" id="Corrected_Belongings" placeholder="" value="<%=dataCor.Corection_40 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
@@ -714,6 +835,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_Repairs" style="display:none">
 			  <div class="row"  >
@@ -722,7 +848,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Repairs">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_41" id="Action_Repairs" placeholder="" value="<%=userData2[Corection_Number].Corection_41 %>" >
+                <input type="text" class="form-control" name="Corection_41" id="Action_Repairs" placeholder="" value="<%=dataCor.Corection_41 %>" >
 			     </div>
 				  
 			
@@ -741,20 +867,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Repairs">Date</label>
-                <input type="Date" class="form-control" name="Corection_42" id="Date_Repairs" placeholder="" value="<%=userData2[Corection_Number].Corection_42 %>" >
+                <input type="Date" class="form-control" name="Corection_42" id="Date_Repairs" placeholder="" value="<%=dataCor.Corection_42 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Repairs">Time</label>
-                <input type="time" class="form-control" name="Corection_43" id="Time_Repairs" placeholder="" value="<%=userData2[Corection_Number].Corection_43 %>" >
+                <input type="time" class="form-control" name="Corection_43" id="Time_Repairs" placeholder="" value="<%=dataCor.Corection_43 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Repairs">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_44" id="Corrected_Repairs" placeholder="" value="<%=userData2[Corection_Number].Corection_44 %>" >
+                <input type="text" class="form-control" name="Corection_44" id="Corrected_Repairs" placeholder="" value="<%=dataCor.Corection_44 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
@@ -778,6 +911,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_Signage" style="display:none">
 			  <div class="row"  >
@@ -786,7 +924,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Signage">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_45" id="Action_Signage" placeholder="" value="<%=userData2[Corection_Number].Corection_45 %>" >
+                <input type="text" class="form-control" name="Corection_45" id="Action_Signage" placeholder="" value="<%=dataCor.Corection_45 %>" >
 			     </div>
 				  
 			
@@ -805,20 +943,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Signage">Date</label>
-                <input type="Date" class="form-control" name="Corection_46" id="Date_Signage" placeholder="" value="<%=userData2[Corection_Number].Corection_46 %>" >
+                <input type="Date" class="form-control" name="Corection_46" id="Date_Signage" placeholder="" value="<%=dataCor.Corection_46 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Signage">Time</label>
-                <input type="time" class="form-control" name="Corection_47" id="Time_Signage" placeholder="" value="<%=userData2[Corection_Number].Corection_47 %>" >
+                <input type="time" class="form-control" name="Corection_47" id="Time_Signage" placeholder="" value="<%=dataCor.Corection_47 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Signage">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_48" id="Corrected_Signage" placeholder="" value="<%=userData2[Corection_Number].Corection_48 %>" >
+                <input type="text" class="form-control" name="Corection_48" id="Corrected_Signage" placeholder="" value="<%=dataCor.Corection_48 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
@@ -843,6 +988,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_Walls" style="display:none">
 			  <div class="row"  >
@@ -851,7 +1001,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Walls">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_49" id="Action_Walls" placeholder="" value="<%=userData2[Corection_Number].Corection_49 %>" >
+                <input type="text" class="form-control" name="Corection_49" id="Action_Walls" placeholder="" value="<%=dataCor.Corection_49 %>" >
 			     </div>
 				  
 			
@@ -870,20 +1020,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Walls">Date</label>
-                <input type="Date" class="form-control" name="Corection_50"id="Date_Walls" placeholder="" value="<%=userData2[Corection_Number].Corection_50 %>" >
+                <input type="Date" class="form-control" name="Corection_50"id="Date_Walls" placeholder="" value="<%=dataCor.Corection_50 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Walls">Time</label>
-                <input type="time" class="form-control" name="Corection_51" id="Time_Walls" placeholder="" value="<%=userData2[Corection_Number].Corection_51 %>" >
+                <input type="time" class="form-control" name="Corection_51" id="Time_Walls" placeholder="" value="<%=dataCor.Corection_51 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Walls">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_52" id="Corrected_Walls" placeholder="" value="<%=userData2[Corection_Number].Corection_52 %>">
+                <input type="text" class="form-control" name="Corection_52" id="Corrected_Walls" placeholder="" value="<%=dataCor.Corection_52 %>">
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
@@ -908,6 +1065,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_Floor" style="display:none">
 			  <div class="row"  >
@@ -916,7 +1078,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Floor">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_53" id="Action_Floor" placeholder="" value="<%=userData2[Corection_Number].Corection_53 %>" onchange="Hide_Option_Action_Floor()" >
+                <input type="text" class="form-control" name="Corection_53" id="Action_Floor" placeholder="" value="<%=dataCor.Corection_53 %>" onchange="Hide_Option_Action_Floor()" >
 			     </div>
 				  
 			
@@ -935,20 +1097,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Floor">Date</label>
-                <input type="Date" class="form-control" name="Corection_54" id="Date_Floor" placeholder="" value="<%=userData2[Corection_Number].Corection_54 %>" >
+                <input type="Date" class="form-control" name="Corection_54" id="Date_Floor" placeholder="" value="<%=dataCor.Corection_54 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Floor">Time</label>
-                <input type="time" class="form-control" name="Corection_55" id="Time_Floor" placeholder="" value="<%=userData2[Corection_Number].Corection_55 %>" >
+                <input type="time" class="form-control" name="Corection_55" id="Time_Floor" placeholder="" value="<%=dataCor.Corection_55 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Floor">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_56" id="Corrected_Floor" placeholder="" value="<%=userData2[Corection_Number].Corection_56 %>">
+                <input type="text" class="form-control" name="Corection_56" id="Corrected_Floor" placeholder="" value="<%=dataCor.Corection_56 %>">
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
@@ -973,6 +1142,11 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
 			  
 			  <div  id="Hide_Gloves" style="display:none">
 			  <div class="row"  >
@@ -981,7 +1155,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Gloves">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_57" id="Action_Gloves" placeholder="" value="<%=userData2[Corection_Number].Corection_57 %>" >
+                <input type="text" class="form-control" name="Corection_57" id="Action_Gloves" placeholder="" value="<%=dataCor.Corection_57 %>" >
 			     </div>
 				  
 			
@@ -1000,20 +1174,27 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Gloves">Date</label>
-                <input type="Date" class="form-control" name="Corection_58" id="Date_Gloves" placeholder="" value="<%=userData2[Corection_Number].Corection_58 %>" >
+                <input type="Date" class="form-control" name="Corection_58" id="Date_Gloves" placeholder="" value="<%=dataCor.Corection_58 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Gloves">Time</label>
-                <input type="time" class="form-control" name="Corection_59" id="Time_Gloves" placeholder="" value="<%=userData2[Corection_Number].Corection_59 %>" >
+                <input type="time" class="form-control" name="Corection_59" id="Time_Gloves" placeholder="" value="<%=dataCor.Corection_59 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Gloves">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_60" id="Corrected_Gloves" placeholder="" value="<%=userData2[Corection_Number].Corection_60 %>" >
+                <input type="text" class="form-control" name="Corection_60" id="Corrected_Gloves" placeholder="" value="<%=dataCor.Corection_60 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 				          <%  Corection_Number++; }) %>

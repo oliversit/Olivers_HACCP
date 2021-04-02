@@ -172,8 +172,14 @@ Inspection Checklist</td>
     </tr>
 		
 			<%
-		var T=1;
+		var T=0;
 		userData3.forEach(function(data3){
+        %>
+		
+			     <%
+        if(data3.Corection_1!=0){
+         T++; 
+
         %>
     <tr>
 		<td><%=data3.Date %></td>
@@ -182,7 +188,7 @@ Inspection Checklist</td>
 		<td><%=data3.Corection_2 %></td>
 		<td><%=data3.Corection_3 %></td>		
     </tr>		
-	
+	<% }  %>
 			
 	     <%
         if(data3.Corection_5!=0){
@@ -245,6 +251,46 @@ Inspection Checklist</td>
 		
 	<%  i++; }) %>	
 		
+				<%
+        if(T==0){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+		
+					<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
 		
 		<%
         if(T==1){
@@ -480,6 +526,388 @@ John Matthews.</td>
     </tr>
 	          <%  i++; }) %>
 			</table>
+	
+			  	     <%
+        if(userData3.length!=0 && userData3[0].Form_Name=="Processing" ){
+			
+        %>
+	<br>
+	<table id="Correction-table" border="1" class="Print_Table">
+	    <tr>
+		<td>Date</td>
+		<td>Corrective Action Taken for Rejected Conditions</td>
+		<td>Corrected By</td>
+		<td>Date</td>
+		<td>Time</td>
+
+		
+    </tr>
+		
+			<%
+		var T=0;
+		userData3.forEach(function(data3){
+        %>
+		
+			     <%
+        if(data3.Corection_1!=0){
+         T++; 
+
+        %>
+    <tr>
+		<td><%=data3.Date %></td>
+		<td><%=data3.Corection_1 %></td>
+		<td><%=data3.Corection_4 %></td>
+		<td><%=data3.Corection_2 %></td>
+		<td><%=data3.Corection_3 %></td>		
+    </tr>		
+	<% }  %>
+			
+	     <%
+        if(data3.Corection_5!=0){
+         T++; 
+
+        %>
+		<tr>
+   <td><%=data3.Date %></td>
+			<td><%=data3.Corection_5 %></td>
+		<td><%=data3.Corection_8 %></td>
+		<td><%=data3.Corection_6 %></td>
+		<td><%=data3.Corection_7 %></td>		
+    </tr>    
+        <% }  %>
+
+
+		
+	     <%
+        if(data3.Corection_9!=0){
+         T++; 
+
+        %>
+			<tr>
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_9 %></td>
+		<td><%=data3.Corection_12 %></td>
+		<td><%=data3.Corection_10 %></td>
+		<td><%=data3.Corection_11 %></td>		
+    </tr>
+        <% } %>
+
+	
+	     <%
+        if(data3.Corection_13!=0){
+        T++; 
+
+        %>
+		<tr>
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_13 %></td>
+		<td><%=data3.Corection_16 %></td>
+		<td><%=data3.Corection_14 %></td>
+		<td><%=data3.Corection_15 %></td>		
+    </tr>
+        <% } %>
+
+		     <%
+        if(data3.Corection_17!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_17 %></td>
+		<td><%=data3.Corection_20 %></td>
+		<td><%=data3.Corection_18 %></td>
+		<td><%=data3.Corection_19 %></td>		
+    </tr>	
+        <% } %>
+		
+				     <%
+        if(data3.Corection_21!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_21 %></td>
+		<td><%=data3.Corection_24 %></td>
+		<td><%=data3.Corection_22 %></td>
+		<td><%=data3.Corection_23 %></td>		
+    </tr>	
+        <% } %>
+		
+						     <%
+        if(data3.Corection_25!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_25 %></td>
+		<td><%=data3.Corection_28 %></td>
+		<td><%=data3.Corection_26 %></td>
+		<td><%=data3.Corection_27 %></td>		
+    </tr>	
+        <% } %>
+		
+								     <%
+        if(data3.Corection_29!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_29 %></td>
+		<td><%=data3.Corection_32 %></td>
+		<td><%=data3.Corection_30 %></td>
+		<td><%=data3.Corection_31 %></td>		
+    </tr>	
+        <% } %>
+		
+										     <%
+        if(data3.Corection_33!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_33 %></td>
+		<td><%=data3.Corection_36 %></td>
+		<td><%=data3.Corection_34 %></td>
+		<td><%=data3.Corection_35 %></td>		
+    </tr>	
+        <% } %>
+		
+												     <%
+        if(data3.Corection_37!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_37 %></td>
+		<td><%=data3.Corection_40 %></td>
+		<td><%=data3.Corection_38 %></td>
+		<td><%=data3.Corection_39 %></td>		
+    </tr>	
+        <% } %>
+		
+														     <%
+        if(data3.Corection_41!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_41 %></td>
+		<td><%=data3.Corection_44 %></td>
+		<td><%=data3.Corection_42 %></td>
+		<td><%=data3.Corection_43 %></td>		
+    </tr>	
+        <% } %>
+		
+		<%
+        if(data3.Corection_45!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_45 %></td>
+		<td><%=data3.Corection_48 %></td>
+		<td><%=data3.Corection_46 %></td>
+		<td><%=data3.Corection_47 %></td>		
+    </tr>	
+        <% } %>
+		
+				<%
+        if(data3.Corection_49!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_49 %></td>
+		<td><%=data3.Corection_52 %></td>
+		<td><%=data3.Corection_50 %></td>
+		<td><%=data3.Corection_51 %></td>		
+    </tr>	
+        <% } %>
+		
+						<%
+        if(data3.Corection_53!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_53 %></td>
+		<td><%=data3.Corection_56 %></td>
+		<td><%=data3.Corection_54 %></td>
+		<td><%=data3.Corection_55 %></td>		
+    </tr>	
+        <% } %>
+		
+								<%
+        if(data3.Corection_57!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_57 %></td>
+		<td><%=data3.Corection_60 %></td>
+		<td><%=data3.Corection_58 %></td>
+		<td><%=data3.Corection_59 %></td>		
+    </tr>	
+        <% } %>			
+		
+	<%  i++; }) %>	
+		
+						<%
+        if(T==0){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+		
+					<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+		<%
+        if(T==1){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+					     <%
+        if(T==2){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+					     <%
+        if(T==3){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+
+        <% }  %>
+		
+					     <%
+        if(T==4){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+
+        <% }  %>
+
+	          
+	</table>
+	
+	<% } %>
+	<br>
+		<p>I have observed completion of the items checked above:</p>
+	<br>
+	<p>______________________________________/ __________________________________  Date: ___________</p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+	<br>
+	<p>Reviewed By:__________________________/ ___________________________________  Date:____________</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
         <% } %>
 <!--------------------------------------------------------------------------------------------------------------------->
 	
@@ -599,6 +1027,278 @@ John Matthews.</td>
 	          <%  i++; }) %>
 	</table>
         <% } %>
+	
+				  	     <%
+        if(userData3.length!=0 && userData3[0].Form_Name=="Cold_Rooms" ){
+			
+        %>
+	<br>
+	<table id="Correction-table" border="1" class="Print_Table">
+	    <tr>
+		<td>Date</td>
+		<td>Corrective Action Taken for Rejected Conditions</td>
+		<td>Corrected By</td>
+		<td>Date</td>
+		<td>Time</td>
+
+		
+    </tr>
+		
+			<%
+		var T=0;
+		userData3.forEach(function(data3){
+        %>
+		
+			     <%
+        if(data3.Corection_1!=0){
+         T++; 
+
+        %>
+    <tr>
+		<td><%=data3.Date %></td>
+		<td><%=data3.Corection_1 %></td>
+		<td><%=data3.Corection_4 %></td>
+		<td><%=data3.Corection_2 %></td>
+		<td><%=data3.Corection_3 %></td>		
+    </tr>		
+	<% }  %>
+			
+	     <%
+        if(data3.Corection_5!=0){
+         T++; 
+
+        %>
+		<tr>
+   <td><%=data3.Date %></td>
+			<td><%=data3.Corection_5 %></td>
+		<td><%=data3.Corection_8 %></td>
+		<td><%=data3.Corection_6 %></td>
+		<td><%=data3.Corection_7 %></td>		
+    </tr>    
+        <% }  %>
+
+
+		
+	     <%
+        if(data3.Corection_9!=0){
+         T++; 
+
+        %>
+			<tr>
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_9 %></td>
+		<td><%=data3.Corection_12 %></td>
+		<td><%=data3.Corection_10 %></td>
+		<td><%=data3.Corection_11 %></td>		
+    </tr>
+        <% } %>
+
+	
+	     <%
+        if(data3.Corection_13!=0){
+        T++; 
+
+        %>
+		<tr>
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_13 %></td>
+		<td><%=data3.Corection_16 %></td>
+		<td><%=data3.Corection_14 %></td>
+		<td><%=data3.Corection_15 %></td>		
+    </tr>
+        <% } %>
+
+		     <%
+        if(data3.Corection_17!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_17 %></td>
+		<td><%=data3.Corection_20 %></td>
+		<td><%=data3.Corection_18 %></td>
+		<td><%=data3.Corection_19 %></td>		
+    </tr>	
+        <% } %>
+		
+				     <%
+        if(data3.Corection_21!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_21 %></td>
+		<td><%=data3.Corection_24 %></td>
+		<td><%=data3.Corection_22 %></td>
+		<td><%=data3.Corection_23 %></td>		
+    </tr>	
+        <% } %>
+		
+						     <%
+        if(data3.Corection_25!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_25 %></td>
+		<td><%=data3.Corection_28 %></td>
+		<td><%=data3.Corection_26 %></td>
+		<td><%=data3.Corection_27 %></td>		
+    </tr>	
+        <% } %>			
+		
+	<%  i++; }) %>	
+		
+						<%
+        if(T==0){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+		
+					<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+		<%
+        if(T==1){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+					     <%
+        if(T==2){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+					     <%
+        if(T==3){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+
+        <% }  %>
+		
+					     <%
+        if(T==4){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+
+        <% }  %>
+
+	          
+	</table>
+	
+	
+	<br>
+		<p>I have observed completion of the items checked above:</p>
+	<br>
+	<p>______________________________________/ __________________________________  Date: ___________</p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+	<br>
+	<p>Reviewed By:__________________________/ ___________________________________  Date:____________</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+	
+	<% } %>
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <!-------------Thermometer Calibration--------------------------------------------------------------------------------->	  	     <%
@@ -692,6 +1392,249 @@ N/A</td>
 	          <%  i++; }) %>
 </table>
         <% } %>
+	
+				  	     <%
+        if(userData3.length!=0 && userData3[0].Form_Name=="Thermometer_Calibration" ){
+			
+        %>
+	<br>
+	<table id="Correction-table" border="1" class="Print_Table">
+	    <tr>
+		<td>Date</td>
+		<td>Corrective Action Taken for Rejected Conditions</td>
+		<td>Corrected By</td>
+		<td>Date</td>
+		<td>Time</td>
+
+		
+    </tr>
+		
+			<%
+		var T=0;
+		userData3.forEach(function(data3){
+        %>
+		
+			     <%
+        if(data3.Corection_1!=0){
+         T++; 
+
+        %>
+    <tr>
+		<td><%=data3.Date %></td>
+		<td><%=data3.Corection_1 %></td>
+		<td><%=data3.Corection_4 %></td>
+		<td><%=data3.Corection_2 %></td>
+		<td><%=data3.Corection_3 %></td>		
+    </tr>		
+	<% }  %>
+			
+	     <%
+        if(data3.Corection_5!=0){
+         T++; 
+
+        %>
+		<tr>
+   <td><%=data3.Date %></td>
+			<td><%=data3.Corection_5 %></td>
+		<td><%=data3.Corection_8 %></td>
+		<td><%=data3.Corection_6 %></td>
+		<td><%=data3.Corection_7 %></td>		
+    </tr>    
+        <% }  %>
+
+
+		
+	     <%
+        if(data3.Corection_9!=0){
+         T++; 
+
+        %>
+			<tr>
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_9 %></td>
+		<td><%=data3.Corection_12 %></td>
+		<td><%=data3.Corection_10 %></td>
+		<td><%=data3.Corection_11 %></td>		
+    </tr>
+        <% } %>
+
+	
+	     <%
+        if(data3.Corection_13!=0){
+        T++; 
+
+        %>
+		<tr>
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_13 %></td>
+		<td><%=data3.Corection_16 %></td>
+		<td><%=data3.Corection_14 %></td>
+		<td><%=data3.Corection_15 %></td>		
+    </tr>
+        <% } %>
+
+		     <%
+        if(data3.Corection_17!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_17 %></td>
+		<td><%=data3.Corection_20 %></td>
+		<td><%=data3.Corection_18 %></td>
+		<td><%=data3.Corection_19 %></td>		
+    </tr>	
+        <% } %>			
+		
+	<%  i++; }) %>	
+		
+						<%
+        if(T==0){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+		
+					<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+		<%
+        if(T==1){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+					     <%
+        if(T==2){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+					     <%
+        if(T==3){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+
+        <% }  %>
+		
+					     <%
+        if(T==4){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+
+        <% }  %>
+
+	          
+	</table>
+	
+	
+	<br>
+		<p>I have observed completion of the items checked above:</p>
+	<br>
+	<p>______________________________________/ __________________________________  Date: ___________</p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+	<br>
+	<p>Reviewed By:__________________________/ ___________________________________  Date:____________</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+	<% } %>
 <!------------------------------------------------------------------------------------------------------------------------->
 	 	  
 <!-------------Raw Product------------------------------------------------------------------------------------------------->	  	     <%
@@ -783,6 +1726,291 @@ John Matthews.</td>
 	          <%  i++; }) %>
 </table>
         <% } %>
+	
+				  	     <%
+        if(userData3.length!=0 && userData3[0].Form_Name=="Raw_Product" ){
+			
+        %>
+	<br>
+	<table id="Correction-table" border="1" class="Print_Table">
+	    <tr>
+		<td>Date</td>
+		<td>Corrective Action Taken for Rejected Conditions</td>
+		<td>Corrected By</td>
+		<td>Date</td>
+		<td>Time</td>
+
+		
+    </tr>
+		
+			<%
+		var T=0;
+		userData3.forEach(function(data3){
+        %>
+		
+			     <%
+        if(data3.Corection_1!=0){
+         T++; 
+
+        %>
+    <tr>
+		<td><%=data3.Date %></td>
+		<td><%=data3.Corection_1 %></td>
+		<td><%=data3.Corection_4 %></td>
+		<td><%=data3.Corection_2 %></td>
+		<td><%=data3.Corection_3 %></td>		
+    </tr>		
+	<% }  %>
+			
+	     <%
+        if(data3.Corection_5!=0){
+         T++; 
+
+        %>
+		<tr>
+   <td><%=data3.Date %></td>
+			<td><%=data3.Corection_5 %></td>
+		<td><%=data3.Corection_8 %></td>
+		<td><%=data3.Corection_6 %></td>
+		<td><%=data3.Corection_7 %></td>		
+    </tr>    
+        <% }  %>
+
+
+		
+	     <%
+        if(data3.Corection_9!=0){
+         T++; 
+
+        %>
+			<tr>
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_9 %></td>
+		<td><%=data3.Corection_12 %></td>
+		<td><%=data3.Corection_10 %></td>
+		<td><%=data3.Corection_11 %></td>		
+    </tr>
+        <% } %>
+
+	
+	     <%
+        if(data3.Corection_13!=0){
+        T++; 
+
+        %>
+		<tr>
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_13 %></td>
+		<td><%=data3.Corection_16 %></td>
+		<td><%=data3.Corection_14 %></td>
+		<td><%=data3.Corection_15 %></td>		
+    </tr>
+        <% } %>
+
+		     <%
+        if(data3.Corection_17!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_17 %></td>
+		<td><%=data3.Corection_20 %></td>
+		<td><%=data3.Corection_18 %></td>
+		<td><%=data3.Corection_19 %></td>		
+    </tr>	
+        <% } %>
+		
+				     <%
+        if(data3.Corection_21!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_21 %></td>
+		<td><%=data3.Corection_24 %></td>
+		<td><%=data3.Corection_22 %></td>
+		<td><%=data3.Corection_23 %></td>		
+    </tr>	
+        <% } %>
+		
+						     <%
+        if(data3.Corection_25!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_25 %></td>
+		<td><%=data3.Corection_28 %></td>
+		<td><%=data3.Corection_26 %></td>
+		<td><%=data3.Corection_27 %></td>		
+    </tr>	
+        <% } %>
+		
+								     <%
+        if(data3.Corection_29!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_29 %></td>
+		<td><%=data3.Corection_32 %></td>
+		<td><%=data3.Corection_30 %></td>
+		<td><%=data3.Corection_31 %></td>		
+    </tr>	
+        <% } %>
+				
+		
+	<%  i++; }) %>	
+		
+						<%
+        if(T==0){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+		
+					<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+		<%
+        if(T==1){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+					     <%
+        if(T==2){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+					     <%
+        if(T==3){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+
+        <% }  %>
+		
+					     <%
+        if(T==4){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+
+        <% }  %>
+
+	          
+	</table>
+	
+	<br>
+		<p>I have observed completion of the items checked above:</p>
+	<br>
+	<p>______________________________________/ __________________________________  Date: ___________</p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+	<br>
+	<p>Reviewed By:__________________________/ ___________________________________  Date:____________</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+	<% } %>
 <!--------------------------------------------------------------------------------------------------------------------->
 
 <!-------------Cooler-------------------------------------------------------------------------------------------------->	  	     <%
@@ -870,6 +2098,278 @@ John Matthews.</td>
 	          <%  i++; }) %>
 </table>
         <% } %>
+	
+				  	     <%
+        if(userData3.length!=0 && userData3[0].Form_Name=="Cooler" ){
+			
+        %>
+	<br>
+	<table id="Correction-table" border="1" class="Print_Table">
+	    <tr>
+		<td>Date</td>
+		<td>Corrective Action Taken for Rejected Conditions</td>
+		<td>Corrected By</td>
+		<td>Date</td>
+		<td>Time</td>
+
+		
+    </tr>
+		
+			<%
+		var T=0;
+		userData3.forEach(function(data3){
+        %>
+		
+			     <%
+        if(data3.Corection_1!=0){
+         T++; 
+
+        %>
+    <tr>
+		<td><%=data3.Date %></td>
+		<td><%=data3.Corection_1 %></td>
+		<td><%=data3.Corection_4 %></td>
+		<td><%=data3.Corection_2 %></td>
+		<td><%=data3.Corection_3 %></td>		
+    </tr>		
+	<% }  %>
+			
+	     <%
+        if(data3.Corection_5!=0){
+         T++; 
+
+        %>
+		<tr>
+   <td><%=data3.Date %></td>
+			<td><%=data3.Corection_5 %></td>
+		<td><%=data3.Corection_8 %></td>
+		<td><%=data3.Corection_6 %></td>
+		<td><%=data3.Corection_7 %></td>		
+    </tr>    
+        <% }  %>
+
+
+		
+	     <%
+        if(data3.Corection_9!=0){
+         T++; 
+
+        %>
+			<tr>
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_9 %></td>
+		<td><%=data3.Corection_12 %></td>
+		<td><%=data3.Corection_10 %></td>
+		<td><%=data3.Corection_11 %></td>		
+    </tr>
+        <% } %>
+
+	
+	     <%
+        if(data3.Corection_13!=0){
+        T++; 
+
+        %>
+		<tr>
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_13 %></td>
+		<td><%=data3.Corection_16 %></td>
+		<td><%=data3.Corection_14 %></td>
+		<td><%=data3.Corection_15 %></td>		
+    </tr>
+        <% } %>
+
+		     <%
+        if(data3.Corection_17!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_17 %></td>
+		<td><%=data3.Corection_20 %></td>
+		<td><%=data3.Corection_18 %></td>
+		<td><%=data3.Corection_19 %></td>		
+    </tr>	
+        <% } %>
+		
+				     <%
+        if(data3.Corection_21!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_21 %></td>
+		<td><%=data3.Corection_24 %></td>
+		<td><%=data3.Corection_22 %></td>
+		<td><%=data3.Corection_23 %></td>		
+    </tr>	
+        <% } %>
+		
+						     <%
+        if(data3.Corection_25!=0){
+         T++; 
+
+        %>
+		<tr>	
+   <td><%=data3.Date %></td>
+	    		<td><%=data3.Corection_25 %></td>
+		<td><%=data3.Corection_28 %></td>
+		<td><%=data3.Corection_26 %></td>
+		<td><%=data3.Corection_27 %></td>		
+    </tr>	
+        <% } %>
+					
+	<%  i++; }) %>	
+		
+						<%
+        if(T==0){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+		
+					<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+		<%
+        if(T==1){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+					     <%
+        if(T==2){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+					     <%
+        if(T==3){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+
+        <% }  %>
+		
+					     <%
+        if(T==4){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+
+        <% }  %>
+
+	          
+	</table>
+	
+	
+	<br>
+		<p>I have observed completion of the items checked above:</p>
+	<br>
+	<p>______________________________________/ __________________________________  Date: ___________</p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+	<br>
+	<p>Reviewed By:__________________________/ ___________________________________  Date:____________</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+	
+	<% } %>
 <!--------------------------------------------------------------------------------------------------------------------->
 		  
 	  

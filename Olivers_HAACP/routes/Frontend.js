@@ -209,9 +209,9 @@ router.post('/Packing_Form', function(req, res, next) {
 	var Title= req.body.Form_Title;	
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
-    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data2, fields) {
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Packing_Form', { title: 'Packing_Form', userData: data, userData2: data2, userName: user, FormTitle: Title});
+    res.render('Packing_Form', { title: 'Packing_Form', userData: data, userDataCor: dataCor, userName: user, FormTitle: Title});
   });
 	});
 });
@@ -224,10 +224,11 @@ router.post('/Cooler_Form', function(req, res, next) {
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
 		
     connection.query('SELECT * FROM Item_Maint Where Type="Commodity"',function (err, data2, fields) {
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Cooler_Form', { title: 'Cooler_Form', userData: data, userData2: data2, userName: user, FormTitle: Title});
-		
+        res.render('Cooler_Form', { title: 'Cooler_Form', userData: data, userData2: data2, userDataCor: dataCor, userName: user, FormTitle: Title});
   });
+	});
 					
   });
 });
@@ -238,9 +239,9 @@ router.post('/Processing_Form', function(req, res, next) {
 	var Title= req.body.Form_Title;	
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
-    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data2, fields) {
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Processing_Form', { title: 'Processing_Form', userData: data, userData2: data2, userName: user, FormTitle: Title});
+    res.render('Processing_Form', { title: 'Processing_Form', userData: data, userDataCor: dataCor, userName: user, FormTitle: Title});
   });
 	});
 });
@@ -256,7 +257,10 @@ router.post('/Raw_Product_Form', function(req, res, next) {
     if (err) throw err;
     connection.query('SELECT * FROM Item_Maint Where Type="Vendor"',function (err, data3, fields) {
     if (err) throw err;
-    res.render('Raw_Product_Form', { title: 'Raw_Product_Form', userData: data, userData2: data2, userData3: data3, userName: user, FormTitle: Title});
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+    if (err) throw err;
+                res.render('Raw_Product_Form', { title: 'Raw_Product_Form', userData: data, userData2: data2, userDataCor: dataCor, userData3: data3, userName: user, FormTitle: Title});
+  });
 		
   });
 		
@@ -272,7 +276,10 @@ router.post('/Cold_Rooms_Form', function(req, res, next) {
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     if (err) throw err;
-    res.render('Cold_Rooms_Form', { title: 'Cold_Rooms_Form', userData: data, userName: user, FormTitle: Title});
+        connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+    if (err) throw err;
+                res.render('Cold_Rooms_Form', { title: 'Cold_Rooms_Form', userData: data, userName: user, userDataCor: dataCor, FormTitle: Title});
+  });
   });
 });
 
@@ -283,7 +290,10 @@ router.post('/Thermometer_Calibration_Form', function(req, res, next) {
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     if (err) throw err;
-    res.render('Thermometer_Calibration_Form', { title: 'Thermometer_Calibration_Form', userData: data, userName: user, FormTitle: Title});
+        connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+    if (err) throw err;
+                res.render('Thermometer_Calibration_Form', { title: 'Thermometer_Calibration_Form', userData: data, userDataCor: dataCor, userName: user, FormTitle: Title});
+  });
   });
 });
 
