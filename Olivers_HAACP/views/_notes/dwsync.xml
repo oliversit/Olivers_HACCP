@@ -96,7 +96,7 @@
 <file name="Cooler_Form.ejs" server="192.168.75.162//var/www/Haccp/" local="132618726440061319" remote="132618726570000000" Dst="2" />
 <file name="Cooler_Form_New.ejs" server="192.168.75.162//var/www/Haccp/" local="132618726437890786" remote="132618726570000000" Dst="2" />
 <file name="Dashboard.ejs" server="192.168.75.162//var/www/Haccp/" local="132617681130212138" remote="132617682890000000" Dst="2" />
-<file name="Generate.ejs" server="192.168.75.162//var/www/Haccp/" local="132617681130292213" remote="132617682890000000" Dst="2" />
+<file name="Generate.ejs" server="192.168.75.162//var/www/Haccp/" local="132621106871521061" remote="132621112470000000" Dst="2" />
 <file name="List_Edit.ejs" server="192.168.75.162//var/www/Haccp/" local="132617681130392226" remote="132617682890000000" Dst="2" />
 <file name="List_Edit_Item.ejs" server="192.168.75.162//var/www/Haccp/" local="132617681130482268" remote="132617682900000000" Dst="2" />
 <file name="Maint_Page.ejs" server="192.168.75.162//var/www/Haccp/" local="132617681130680983" remote="132617682900000000" Dst="2" />
@@ -114,4 +114,6 @@
 <file name="Support_Page.ejs" server="192.168.75.162//var/www/Haccp/" local="132598950207307430" remote="132615062070000000" Dst="2" />
 <file name="Thermometer_Calibration_Form.ejs" server="192.168.75.162//var/www/Haccp/" local="132618726438981062" remote="132618726570000000" Dst="2" />
 <file name="Thermometer_Calibration_Form_New.ejs" server="192.168.75.162//var/www/Haccp/" local="132617681131521154" remote="132617682920000000" Dst="2" />
+<file name="Weekly_Generate.ejs" server="192.168.75.162//var/www/Haccp/" local="132621367177152896" remote="132621367310000000" Dst="2" />
+<file name="Weekly_Processing_Generate.ejs" server="192.168.75.162//var/www/Haccp/" local="132621323636509060" remote="132621323860000000" Dst="2" />
 </dwsync>

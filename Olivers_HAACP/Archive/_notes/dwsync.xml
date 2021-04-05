@@ -173,4 +173,5 @@
 <file name="Testserver1.html" server="192.168.75.162//var/www/Haccp/" local="132598909489016190" remote="132615061970000000" Dst="2" />
 <file name="testserverstyle.css" server="192.168.75.162//var/www/Haccp/" local="132598909489318629" remote="132615061970000000" Dst="2" />
 <file name="Thermometer_Calibration.html" server="192.168.75.162//var/www/Haccp/" local="132598909489054801" remote="132615061970000000" Dst="2" />
+<file name="Weekly_Print_Table - Copy.ejs" server="192.168.75.162//var/www/Haccp/" local="132621225168236019" remote="132621367270000000" Dst="2" />
 </dwsync>

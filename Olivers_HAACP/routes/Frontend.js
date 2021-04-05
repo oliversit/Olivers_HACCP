@@ -125,6 +125,7 @@ var user= req.body.username;
 	var user= req.body.username;
 		var Title= req.body.Form_Title;	
 		var box=req.body.Form_Name;
+		var Report_Select= req.body.Report_Type;
 			if (box=="Raw_Product") {box="Raw Product"}
 		if (box=="Cold_Rooms") {box="Cold Rooms"}
 		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
@@ -133,7 +134,10 @@ var user= req.body.username;
    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date >= ? and Date <= ?', [req.body.Form_Name, req.body.Date1, req.body.Date2] ,function (err, data3, fields) {
 		
     if (err) throw err;
-    res.render('Generate', { title: 'Generate', userData: data, userData2: data2, userData3: data3, userName: user, FormTitle: Title, FormBox: box});	
+	   if (Report_Select=="Weekly") {    res.render('Weekly_Generate', { title: 'Weekly_Generate', userData: data, userData2: data2, userData3: data3, userName: user, FormTitle: Title, FormBox: box});}
+	   	  
+	   if (Report_Select=="Range") {    res.render('Generate', { title: 'Generate', userData: data, userData2: data2, userData3: data3, userName: user, FormTitle: Title, FormBox: box});}
+	
   });
   });
   });

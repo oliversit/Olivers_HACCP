@@ -14,15 +14,17 @@
 <file name="Excel_Export.ejs" server="192.168.2.224//var/www/Haccp/" local="132611885843399479" remote="132611885870000000" Dst="2" />
 <file name="Excel_Export.ejs" server="192.168.3.30//var/www/Haccp/" local="132612590679316188" remote="132612590750000000" Dst="2" />
 <file name="Export_Table.ejs" server="192.168.3.30//var/www/Haccp/" local="132612578854681110" remote="132612578890000000" Dst="2" />
-<file name="Packing_Print_Table.ejs" server="192.168.3.30//var/www/Haccp/" local="132612586129164048" remote="132612587280000000" Dst="2" />
 <file name="Excel_Export.ejs" server="192.168.75.162//var/www/Haccp/" local="132616149332266804" remote="132616149380000000" Dst="2" />
 <file name="Export_Table.ejs" server="192.168.75.162//var/www/Haccp/" local="132617047272245225" remote="132617058260000000" Dst="2" />
 <file name="MetaData.ejs" server="192.168.75.162//var/www/Haccp/" local="132598909489357722" remote="132615061980000000" Dst="2" />
 <file name="NavBar.ejs" server="192.168.75.162//var/www/Haccp/" local="132598909489387733" remote="132615061990000000" Dst="2" />
-<file name="Packing_Print_Table.ejs" server="192.168.75.162//var/www/Haccp/" local="132618792477443692" remote="132618792730000000" Dst="2" />
 <file name="ScriptData.ejs" server="192.168.75.162//var/www/Haccp/" local="132617687817513744" remote="132617687960000000" Dst="2" />
 <file name="ScriptDataOnLoad.ejs" server="192.168.75.162//var/www/Haccp/" local="132617687903227313" remote="132617687960000000" Dst="2" />
 <file name="Global_Variables.ejs" server="192.168.75.162//var/www/Haccp/" local="132617690269278903" remote="132617852820000000" Dst="2" />
 <file name="If_Beginning.ejs" server="192.168.75.162//var/www/Haccp/" local="132618639623559741" remote="132618639660000000" Dst="2" />
 <file name="If_End.ejs" server="192.168.75.162//var/www/Haccp/" local="132618624513927822" remote="132618624550000000" Dst="2" />
+<file name="Print_Table.ejs" server="192.168.75.162//var/www/Haccp/" local="132618792477443692" remote="132621112440000000" Dst="2" />
+<file name="Weekly_Packing_Print_Table.ejs" server="192.168.75.162//var/www/Haccp/" local="132621331428460974" remote="132621331520000000" Dst="2" />
+<file name="Weekly_Processing_Print_Table.ejs" server="192.168.75.162//var/www/Haccp/" local="132621348061466875" remote="132621348100000000" Dst="2" />
+<file name="Weekly_Cold_Rooms_Print_Table.ejs" server="192.168.75.162//var/www/Haccp/" local="132621369623485142" remote="132621369680000000" Dst="2" />
 </dwsync>
