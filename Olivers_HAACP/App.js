@@ -31,6 +31,9 @@ connection.connect();
 
 app.post('/data', function(req, res){
 var user= req.body.username;
+	var datausr= req.body.usrrole;
+var datausrid =req.body.usrid;
+var datastore =req.body.usrstore;
 	var Title= req.body.Form_Title;	
     connection.query("INSERT INTO `Submitted_Forms` (Date,Form_Name, Corection_ID, Column_1, Column_2, Column_3, Column_4, Column_5, Column_6, Column_7, Column_8, Column_9, Column_10, Column_11, Column_12, Column_13, Column_14, Column_15, Column_16, Column_17, Column_18, Column_19, Column_20 ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? )", [req.body.Date, req.body.Form_Name, req.body.Corection_ID, req.body.Column_1, req.body.Column_2, req.body.Column_3, req.body.Column_4, req.body.Column_5, req.body.Column_6, req.body.Column_7, req.body.Column_8, req.body.Column_9, req.body.Column_10, req.body.Column_11, req.body.Column_12, req.body.Column_13, req.body.Column_14, req.body.Column_15, req.body.Column_16, req.body.Column_17, req.body.Column_18, req.body.Column_19, req.body.Column_20 ], function(err, result){
         if(err) throw err;
@@ -42,7 +45,7 @@ var user= req.body.username;
             console.log(" Correction inserted");
         });
 	
-res.render('Dashboard', { title: 'Dashboard', userName: user, FormTitle: Title});
+res.render('Dashboard', { title: 'Dashboard', userName: user, userRole: datausr,userId: datausrid, userStore: datastore, FormTitle: Title});
 	
 });
 
@@ -50,6 +53,9 @@ res.render('Dashboard', { title: 'Dashboard', userName: user, FormTitle: Title})
 
 app.post('/List', function(req, res){
 var user= req.body.username;
+	var datausr= req.body.usrrole;
+var datausrid =req.body.usrid;
+var datastore =req.body.usrstore;
 	var Title= req.body.Form_Title;
 	var form= req.body.Type;
     connection.query("INSERT INTO `Item_Maint` (Type,Name) VALUES (?,?)", [req.body.Type, req.body.Name], function(err, result){
@@ -60,7 +66,7 @@ var user= req.body.username;
 	    connection.query('SELECT * FROM Item_Maint Where Type=?', [req.body.Type],function (err, data, fields) {
 		var form=req.body.Type
     if (err) throw err;
-    res.render('List_Edit', { title: 'List_Edit', userData: data, formName: form, userName: user, FormTitle: Title});
+    res.render('List_Edit', { title: 'List_Edit', userData: data, formName: form,userId: datausrid, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
 		
   
 
@@ -68,7 +74,25 @@ var user= req.body.username;
 });
 
 
-
+app.post('/New', function(req, res){
+var user= req.body.username;
+	var datausr= req.body.usrrole;
+var datausrid =req.body.usrid;
+var datastore =req.body.usrstore;
+	var Title= req.body.Form_Title;
+	var form= req.body.Type;
+    connection.query("INSERT INTO `Users` (firstname, lastname, userName, passwd, email, role, store) VALUES (?,?,?,?, ?, ?, ?)", [req.body.firstname, req.body.lastname, req.body.userName, req.body.passwd, req.body.email, req.body.role, req.body.store], function(err, result){
+        if(err) throw err;
+            console.log("1 record inserted");
+        });
+	
+    connection.query('SELECT  Id, userName, role, store FROM Users',   function(err, data, fields) {
+		var form=req.body.Type
+    if (err) throw err;
+    res.render('User_List', { title: 'User_List', userData: data, formName: form, userName: user, userId: datausrid, userStore: datastore, userRole: datausr, FormTitle: Title});
+	
+  });
+});
 
 
 

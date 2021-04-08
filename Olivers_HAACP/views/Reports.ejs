@@ -13,9 +13,9 @@
 			 <div class="row">
               <div class="col mb-3">
 				  <label for="Floor_Ground2">Report Type</label>
-                   <select class="custom-select d-block w-100" id="Floor_Ground2"  name="Report_Type" >
-                  <option value="Weekly">Weekly</option>
-                    <option Value="Range">Range</option>			   
+                  <select class="custom-select d-block w-100" id="Report_Type" onchange="Hide_Form_Type()" name="Report_Type" >       
+                    <option Value="Weekly">Weekly</option>
+					<option Value="Range">Range</option>
                 </select>
 				    </div>
 					   
@@ -24,14 +24,30 @@
 				</div>	   
            
 				
+		<div  id="Weekly_Form" style="display:block">
 			 <div class="row">
               <div class="col mb-3">
 				  <label for="Floor_Ground">Form</label>
-                   <select class="custom-select d-block w-100" id="Floor_Ground"  name="Form_Name" >
-                  <option value="A">Choose...</option>
+                   <select class="custom-select d-block w-100" id="Weekly_Select"  name="Form_Name" >
+                  <option value="Range">Choose...</option>
                     <option Value="Packing">Packing materials</option>
 					<option Value="Processing">Processing Room</option>
 					   <option Value="Cold_Rooms">Cold Rooms</option>
+					   
+                </select>
+              </div>
+					   
+					   
+
+				</div>	   
+			</div>	
+           
+				<div  id="Range_Form" style="display:none">
+			 <div class="row">
+              <div class="col mb-3">
+				  <label for="Floor_Ground">Form</label>
+                   <select class="custom-select d-block w-100" id="Range_Select"  name="Form_Name1" >
+                  <option value="A">Choose...</option>
 					   <option Value="Thermometer_Calibration">Thermometer Calibration</option>
 					   <option Value="Raw_Product">Raw Product</option>
 					   <option Value="Cooler">Cooler/Display Case Temp</option>
@@ -42,7 +58,7 @@
 					   
 
 				</div>	   
-           
+			</div>	
 	
 	
 
@@ -90,7 +106,7 @@
 			<div class="row" >
 			
 		<div class="col  justify-content-center mt-5"  >
-
+</script>
 	</div>
 		
 				<div class="col  justify-content-center mt-5"   >
@@ -125,7 +141,7 @@
 	</div>
 		
 	
-	
+	<%- include('../Partials/ScriptData') -%>
 
 	
 	</body>

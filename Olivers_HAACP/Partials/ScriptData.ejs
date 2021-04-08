@@ -197,6 +197,23 @@ function Hide_Option_Gloves(){
 		  document.getElementById('Hide_Gloves').style.display='none'}
 								 }
 
+function Hide_Form_Type(){	
+			  if(document.getElementById('Report_Type').value == "Weekly") {
+ 
+		  document.getElementById('Range_Form').style.display='none';
+			  document.getElementById('Weekly_Form').style.display='block';
+}
+	
+		  if(document.getElementById('Report_Type').value == "Range") {
+     
+			  document.getElementById('Weekly_Form').style.display='none';
+		  document.getElementById('Range_Form').style.display='block';
+        var dropDown = document.getElementById("Weekly_Select");
+        dropDown.selectedIndex = 0;
+		 }								 
+								 }
+			  
+	
 
 
 

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<%- include('../Partials/MetaData') -%>
+	
+<style>
+.hide-on-screen {display:none;}
+.yesPrint, .noPrint {display:block;}
+
+@media print {
+   .hide-on-screen {display:block;}
+   .noPrint {display:none;}
+
+    body{
+        padding-top: 1px;
+        background: transparent;
+    }
+	}
+
+</style>
+
+<body>
+<%- include('../Partials/NavBar') -%>
+			    
+	
+	<div class="container noPrint">
+
+   
+        
+        <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+		
+					<div class="row" >
+						
+									<div class="col"  >
+				
+			<label for="Number_selection">&nbsp;</label>
+                <p class="form-control" id="Number_selection" ><%=i; %></p>
+	</div>
+						
+								<div class="col-md-3"  >
+									
+			<label for="Name_selection">Name</label>
+                <p class="form-control" id="Name_selection" ><%=data.userName %></p>
+	</div>
+				
+		
+		
+           		
+			
+			
+	
+		
+								<div class="col"  >
+									
+			<label for="Name_selection">Store</label>
+                <p class="form-control" id="Name_selection" ><%=data.store %></p>
+	</div>
+	
+					
+						
+								<div class="col"  >
+							<br>
+			<form class="needs-validation" action="/Frontend/User_List_Edit" method="post">
+				  <%- include('../Partials/Global_Variables') -%>
+        <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Edit_Button" type="submit" value="$Actual_Id" > Edit</button>
+				<input id="Form_Title2" name="Form_Title" type="hidden" value="Settings">
+			 <input id="Id" name="Id" type="hidden" value="<%=data.Id %>">			
+ <input id="Form_Name" name="userName" type="hidden" value="<%=data.userName %>">
+ <input id="Date" name="role" type="hidden" value="<%=data.role %>">
+ <input id="Correction_Id2" name="store" type="hidden" value="<%=data.store %>">
+			 <input id="Id2" name="firstname" type="hidden" value="<%=data.firstname %>">			
+ <input id="Form_Name2" name="lastname" type="hidden" value="<%=data.lastname %>">
+
+			</form>
+	</div>
+		
+														<div class="col"  >
+							<br>
+			<form class="needs-validation" action="/Frontend/User_List_Delete" method="post">
+				  <%- include('../Partials/Global_Variables') -%>
+				<input id="Form_Title" name="Form_Title" type="hidden" value=<%=data.Form_Name %>>
+        <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Edit_Button" type="submit" value="$Actual_Id" > Delete</button>
+			 <input id="Id" name="Id" type="hidden" value="<%=data.Id %>">			
+ <input id="Form_Name" name="userName" type="hidden" value="<%=data.userName %>">
+ <input id="Date" name="role" type="hidden" value="<%=data.role %>">
+ <input id="Correction_Id2" name="store" type="hidden" value="<%=data.store %>">
+			 <input id="Id2" name="firstname" type="hidden" value="<%=data.firstname %>">			
+ <input id="Form_Name2" name="lastname" type="hidden" value="<%=data.lastname %>">
+
+			</form>
+	</div>
+						
+</div>
+		
+           			<div class="row " >
+			
+			
+	
+		
+								<div class="col"  >								
+<br>
+	</div>
+		</div>	
+
+        <%  i++; }) %>
+        <% } else{ %>
+           			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+			<p>No Data Found</p>
+	</div>
+		
+	
+		</div>
+              
+            
+        <% } %>
+
+	
+
+		
+		
+		<!-- Bkank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+		
+		
+		<!-- Bkank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+					<!-- Bkank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+				
+
+		
+<!-- Bottom Buttons --> 
+
+				
+		<div class="row" >
+              <div class="col mb-3">
+				  
+				  <form action="../Frontend/Dashboard" class="button_height" method="post">
+					    <%- include('../Partials/Global_Variables') -%>
+					  <input id="Form_Title13" name="Form_Title" type="hidden" value="Forms">
+					  <br>
+					  
+                       <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Dashboard</button>
+					  </form>
+      
+              </div>
+		
+              <div class="col  mb-3">
+				 
+				  <form action="../Frontend/New_User" class="button_height" method="post">
+					    <%- include('../Partials/Global_Variables') -%>
+					  <input id="Form_Title14" name="Form_Title" type="hidden" value="Reports">
+					   <br>
+                       <button class="btn btn-block btn-primary btn-lg button_height  Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Add User</button>
+       </form>
+              </div>
+		
+		
+	</div>
+		
+	</div>
+	
+
+	
+	</body>
+</html>
+
+<script></script>
