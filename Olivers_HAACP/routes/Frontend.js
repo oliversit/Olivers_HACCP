@@ -565,7 +565,27 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= req.body.Form_Title;	
-    res.render('Previous_Form_Selection', { title: 'Previous_Form_Selection', userName: user, userId: datauserId, userStore: datastore, userRole: datausr, FormTitle: Title});
+	var Today = new Date();
+var dd = String(Today.getDate()).padStart(2, '0');
+var mm = String(Today.getMonth() + 1).padStart(2, '0'); 
+var yyyy = Today.getFullYear();
+Today = yyyy + '-' + mm + '-' + dd;
+    res.render('Previous_Form_Selection', { title: 'Previous_Form_Selection', userName: user, userId: datauserId, userStore: datastore, TodaysDate: Today, userRole: datausr, FormTitle: Title});
+
+});
+
+router.post('/Previous_Form_Selection2', function(req, res, next) {
+	var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= req.body.Form_Title;	
+		var Today = new Date();
+var dd = String(Today.getDate()).padStart(2, '0');
+var mm = String(Today.getMonth() + 1).padStart(2, '0'); 
+var yyyy = Today.getFullYear();
+Today = yyyy + '-' + mm + '-' + dd;
+    res.render('Previous_Form_Selection2', { title: 'Previous_Form_Selection2', userName: user, userId: datauserId, userStore: datastore, TodaysDate: Today, userRole: datausr, FormTitle: Title});
 
 });
 

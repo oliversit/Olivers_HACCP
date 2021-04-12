@@ -12,6 +12,10 @@ body {
 	height: 100%;
 }
 
+.content_continter2 {margin-top:-2px;}
+
+.content_continter {margin-top:-46px;}
+
 
 .Print_Table
 {
@@ -140,8 +144,64 @@ margin-top:100%;
 }
 
 
+
+.Button_Index2
+{
+	
+	  border-width: 1px;
+
+  z-index: 2;
+	
+}
+
+.Button_Index1
+{
+	position: relative;
+	margin-top:-15px;
+  z-index: 3;
+
+}
+
+.Form_text
+{  
+	color: rgb(241, 241, 232);
+	font-size: 10.5px;
+margin-left:15px;
+	text-align: center;
+	  border-width: 3px;
+  border-style: solid;
+  border-radius: 30%;
+  width: 75px;
+  height: 36px;
+	background-color: grey;
+	border-color: rgb(241, 241, 232);
+}
+
+
+.Form_textL
+{  
+	color: rgb(241, 241, 232);
+	font-size: 12px;
+margin-left:15px;
+	text-align: center;
+	  border-width: 3px;
+  border-style: solid;
+  border-radius: 30%;
+  width: 75px;
+  height: 36px;
+	background-color: grey;
+	border-color: rgb(241, 241, 232);
+}
+
+
+.input4 {z-index: 99;}
+
 .Colum_Properties{
 	margin-top: 52;
+}
+
+.Colum_Properties2{
+	margin-top:-20px;
 }
 
 .Menu_click {
@@ -150,7 +210,7 @@ margin-top:100%;
   background-position:center;
   border-style: solid;
   border-color: rgb(191, 220, 174);
-  background-color: rgb(191, 220, 174);
+    background-color: rgb(241, 241, 232);
   width: 48px;
   height: 40px;
   z-index: 52;
@@ -172,7 +232,11 @@ margin-top:100%;
   width: 100px;
   height: 100px;
   z-index: 15;
+	
 }
+
+
+
 
 
 .button_height{
@@ -294,6 +358,69 @@ margin-top:100%;
 
 .Cooler {
   background-image: url("Images/Cooler.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Incoming_Materials {
+  background-image: url("Images/Incoming_Materials.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Brittle_Plastics {
+  background-image: url("Images/Brittle_Plastics.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Preventative_Maintenance {
+  background-image: url("Images/Preventative_Maintenance.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.NUOCA {
+  background-image: url("Images/NUOCA.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Work_Order {
+  background-image: url("Images/Work_Order.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Rejected_Material {
+  background-image: url("Images/Rejected_Material.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Foreign_Materials {
+  background-image: url("Images/Foreign_Materials.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Back_Button {
+  background-image: url("Images/Back.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Next_Button {
+  background-image: url("Images/Next.png");
   background-repeat: no-repeat;
   background-position:center;
 

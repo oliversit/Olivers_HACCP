@@ -8,15 +8,15 @@
 			    <form class="needs-validation" action="/Frontend/Main_Result" method="post">
 					<%- include('../Partials/Global_Variables') -%>
 					<input id="Form_Title13" name="Form_Title" type="hidden" value="Previous Forms">
-	<div class="container ">
+	<div class="container">
 		
 
 				
 				
-			 <div class="row ">
-              <div class="col-md-12 mb-3">
+			 <div class="row">
+              <div class="col-md-6 mb-3">
                 <label for="Date">Date</label>
-                <input type="Date" class="form-control input4" id="Date" name="Date" value="<%=TodaysDate %>" required>
+                <input type="Date" class="form-control" id="Date" name="Date" required>
                 <div class="invalid-feedback">
                   Valid Date is required.
                 </div>
@@ -33,87 +33,80 @@
 		
 		
 		
-<div class="row content_continter" >
+<div class="row Colum_Properties" >
 	
 	
 <div class="col d-flex justify-content-center"  >
-<div>
-	<button  Id= "Button_1" class="Form_Buttons mt-5 Pink Packing" name="Form_Name" type="submit" value="Packing" ></button>
-<P  Id= "Button_139" class=" Form_text Button_Index1" name="Var7">Packing</P>
-    </div>
-		</div>						
-<div class="col d-flex justify-content-center" >
-<div>
-	<button  Id= "Button_2" class="Form_Buttons mt-5 Purple Processing" name="Form_Name" type="submit" value="Processing" ></button>
-<P  Id= "Button_138" class=" Form_text Button_Index1" name="Var7">Processing</P>	
-</div>
-		</div>						
-<div class="col d-flex justify-content-center" >
-<div>
-	<button  Id= "Button_3" class="Form_Buttons mt-5 Orange Cold_Room" name="Form_Name" type="submit" value="Cold_Rooms" ></button>
-<P  Id= "Button_137" class=" Form_text Button_Index1" name="Var7">Cold <br>Rooms</P>	
-</div>
-	</div>									
-				
-  </div>
-		
 
-		<div class="row Colum_Properties2" >
-	
-	
-<div class="col  d-flex justify-content-center"   >
-<div>
-	<button  Id= "Button_4" class="Form_Buttons mt-5 Green Thermometer" name="Form_Name" type="submit" value="Thermometer_Calibration" ></button>
-<P  Id= "Button_136" class=" Form_text Button_Index1" name="Var7">Thermometer Calibration</P>
+	<button  Id= "Button_1" class="Form_Buttons mt-5 Pink Packing" name="Form_Name" type="submit" value="Packing" ></button>
+
     </div>
-	</div>
 								
 <div class="col d-flex justify-content-center" >
-<div>
-	<button  Id= "Button_5" class="Form_Buttons mt-5 Yellow Raw_Product" name="Form_Name" type="submit" value="Raw_Product" ></button>
- <P  Id= "Button_135" class=" Form_text Button_Index1" name="Var7">Raw <br>Product</P>	  
+
+	<button  Id= "Button_2" class="Form_Buttons mt-5 Purple Processing" name="Form_Name" type="submit" value="Processing" ></button>
+
 </div>
-		</div>
 								
 <div class="col d-flex justify-content-center" >
-<div>
-	<button  Id= "Button_6" class="Form_Buttons mt-5 Green2 Cooler" name="Form_Name" type="submit" value="Cooler" ></button>
-<P  Id= "Button_134" class=" Form_text Button_Index1" name="Var7">Cooler</P>
+
+	<button  Id= "Button_3" class="Form_Buttons mt-5 Orange Cold_Room" name="Form_Name" type="submit" value="Cold_Rooms" ></button>
+
 </div>
-	</div>
 										
 				
   </div>
 		
-		<div class="row Colum_Properties2" >
+
+		<div class="row " >
 	
 	
-<div class="col d-flex justify-content-center"  >
-	<div>
-	<button  Id= "Button_7" class="Form_Buttons mt-5 Incoming_Materials Blue" name="Var7" type="submit" value="$Actual_Id" ></button>
-	<P  Id= "Button_133" class=" Form_text Button_Index1" name="Var7">Incoming Materials</P>	
-</div>
+<div class="col  d-flex justify-content-center"   >
+
+	<button  Id= "Button_4" class="Form_Buttons mt-5 Green Thermometer" name="Form_Name" type="submit" value="Thermometer_Calibration" ></button>
+
     </div>
 								
 <div class="col d-flex justify-content-center" >
-	<div>
-	<button  Id= "Button_8" class="Form_Buttons mt-5 Brittle_Plastics Blue2" name="Var7" type="submit"  
-			></button>
-	<P  Id= "Button_132" class=" Form_text Button_Index1" name="Var7">Glass/<br>Plastics </P>	
+
+	<button  Id= "Button_5" class="Form_Buttons mt-5 Yellow Raw_Product" name="Form_Name" type="submit" value="Raw_Product" ></button>
+   
 </div>
-	</div>	
-			
-			</form>	
-		
+								
 <div class="col d-flex justify-content-center" >
-<form action="../Frontend/Previous_Form_Selection2" method="post">
-	  <%- include('../Partials/Global_Variables') -%>
-	<input id="Form_Title9" name="Form_Title" type="hidden" value="Previous Forms">
-	<button  Id= "Button_9" class="Form_Buttons mt-5 Next_Button Red" name="Var7" type="submit" value="$Actual_Id" ></button>
-	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Next<br>Page </P>	
-    </form>	 
+
+	<button  Id= "Button_6" class="Form_Buttons mt-5 Green2 Cooler" name="Form_Name" type="submit" value="Cooler" ></button>
+
 </div>
-	 </div>	
+										
+				
+  </div>
+		
+		
+		<div class="row " >
+	
+	
+<div class="col d-flex justify-content-center"  >
+
+	<button  Id= "Button_7" class="Form_Buttons mt-5 Blue" name="Form_Name" type="submit" value="$Actual_Id" ></button>
+
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+
+	<button  Id= "Button_8" class="Form_Buttons mt-5 Blue2" name="Form_Name" type="submit" value="$Actual_Id" ></button>
+
+</div>
+								
+<div class="col d-flex justify-content-center" >
+
+	<button  Id= "Button_9" class="Form_Buttons mt-5 Red" name="Var7" type="submit" value="$Actual_Id" style="display:none"></button>
+
+</div>
+										
+				
+  </div>
+		
 		
 		
 		<div class="row" >
@@ -159,7 +152,7 @@
 		</div>
 				
 </div>
-		
+		</form>	
 <!-- Bottom Buttons --> 
 	
 		<div class="row fixed-bottom" >

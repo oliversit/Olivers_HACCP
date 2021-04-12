@@ -6,11 +6,9 @@
 <body>
 
 	<%- include('../Partials/NavBar') -%>
-
-
 	<br>
-	 <p class="bg-Grey" >&nbsp; Welcome <%=userName %></p>
-	<div class="container">
+	 <p class="bg-Grey content_continter2" >&nbsp; Welcome <%=userName %></p>
+	<div class="container content_continter">
 		
 		       
 		
@@ -21,7 +19,8 @@
 <form action="../Frontend/Packing_Form_New" method="post">
 	 <%- include('../Partials/Global_Variables') -%>
 	<input id="Form_Title1" name="Form_Title" type="hidden" value="Packing">
-	<button  Id= "Button_1" class="Form_Buttons mt-5 Pink Packing"  type="submit"  ></button>
+	<button  Id= "Button_1" class="Form_Buttons mt-5 Pink Packing Button_Index2"  type="submit"  ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Packing</P>
     </form>	 
     </div>
 								
@@ -30,6 +29,7 @@
 	 <%- include('../Partials/Global_Variables') -%>
 	<input id="Form_Title2" name="Form_Title" type="hidden" value="Processing">
 	<button  Id= "Button_2" class="Form_Buttons mt-5 Purple Processing" type="submit" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Processing</P>	
     </form>	  
 </div>
 								
@@ -38,6 +38,7 @@
 	 <%- include('../Partials/Global_Variables') -%>
 	<input id="Form_Title3" name="Form_Title" type="hidden" value="Cold Rooms">
 	<button  Id= "Button_3" class="Form_Buttons mt-5 Orange Cold_Room" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Cold <br>Rooms</P>	
     </form>	 
 </div>
 										
@@ -53,6 +54,7 @@
 	 <%- include('../Partials/Global_Variables') -%>
 	<input id="Form_Title4" name="Form_Title" type="hidden" value="Thermometer Calibration">
 	<button  Id= "Button_4" class="Form_Buttons mt-5 Green Thermometer" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Thermometer Calibration</P>
     </form>	 
     </div>
 								
@@ -61,6 +63,7 @@
 	 <%- include('../Partials/Global_Variables') -%>
 	<input id="Form_Title5" name="Form_Title" type="hidden" value="Raw Product">
 	<button  Id= "Button_5" class="Form_Buttons mt-5 Yellow Raw_Product" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Raw <br>Product</P>	
     </form>	  
 </div>
 								
@@ -69,6 +72,7 @@
 	 <%- include('../Partials/Global_Variables') -%>
 	<input id="Form_Title6" name="Form_Title" type="hidden" value="Cooler">
 	<button  Id= "Button_6" class="Form_Buttons mt-5 Green2 Cooler" type="submit"  ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Cooler</P>
     </form>	 
 </div>
 										
@@ -83,7 +87,8 @@
 <form action="Form_Form_New" method="post">
 	  <%- include('../Partials/Global_Variables') -%>
 	<input id="Form_Title7" name="Form_Title" type="hidden" value="Forms">
-	<button  Id= "Button_7" class="Form_Buttons mt-5 Blue" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<button  Id= "Button_7" class="Form_Buttons mt-5 Incoming_Materials Blue" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Incoming Materials</P>	
     </form>	 
     </div>
 								
@@ -91,8 +96,9 @@
 <form action="Test" >
 	  <%- include('../Partials/Global_Variables') -%>
 	<input id="Form_Title8" name="Form_Title" type="hidden" value="Forms">
-	<button  Id= "Button_8" class="Form_Buttons mt-5 Blue2" name="Var7" type="submit"  
+	<button  Id= "Button_8" class="Form_Buttons mt-5 Brittle_Plastics Blue2" name="Var7" type="submit"  
 			></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Glass/<br>Plastics </P>	
     </form>	  
 </div>
 								
@@ -100,7 +106,8 @@
 <form action="../Frontend/Dashboard2" method="post">
 	  <%- include('../Partials/Global_Variables') -%>
 	<input id="Form_Title9" name="Form_Title" type="hidden" value="Forms">
-	<button  Id= "Button_9" class="Form_Buttons mt-5 Red" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<button  Id= "Button_9" class="Form_Buttons mt-5 Next_Button Red" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Next<br>Page </P>	
     </form>	 
 </div>
 										
