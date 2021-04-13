@@ -9,7 +9,7 @@ var app = express();
 var user= req.body.username;
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
-var datastore =req.body.usrstore;
+var datastore =req.body.userstore;
 var Title= req.body.Form_Title;	
 var form= req.body.Type;	   
     
@@ -380,6 +380,50 @@ var datastore =req.body.userstore;
   });		
 });
 
+router.post('/Incoming_Materials_Form_New', function(req, res, next) {
+var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= req.body.Form_Title;	
+    res.render('Incoming_Materials_Form_New', { title: 'Incoming_Materials_Form_New',FormTitle: Title, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title });		
+});
+
+router.post('/Brittle_Plastics_Form_New', function(req, res, next) {
+var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= req.body.Form_Title;	
+    res.render('Brittle_Plastics_Form_New', { title: 'Brittle_Plastics_Form_New',FormTitle: Title, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title });		
+});
+
+router.post('/Preventative_Maintenance_Form_New', function(req, res, next) {
+var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= req.body.Form_Title;	
+    res.render('Preventative_Maintenance_Form_New', { title: 'Preventative_Maintenance_Form_New', FormTitle: Title, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title });		
+});
+
+router.post('/NUOCA_Form_New', function(req, res, next) {
+var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= req.body.Form_Title;	
+    res.render('NUOCA_Form_New', { title: 'NUOCA_Form_New', FormTitle: Title, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title });		
+});
+
+router.post('/Work_Order_Form_New', function(req, res, next) {
+var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= req.body.Form_Title;	
+    res.render('Work_Order_Form_New', { title: 'Work_Order_Form_New', FormTitle: Title, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title });		
+});
 //-------------------------------------------Submitted Forms ------------------------------------------------------------>
 
 

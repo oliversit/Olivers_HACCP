@@ -44,6 +44,18 @@
 					   
 					   
               <div class="col-md-6 mb-3">
+				  				  				                  <label for="country">Store Location</label>
+                <select class="custom-select d-block w-100" id="country" name="FormStore" required>
+                 <option value="<%=data.store %>"><%=data.store %></option>
+                  <option value="Cotati">Cotati</option>
+					<option value="Montecito">Montecito</option>
+					<option value="Stony Point">Stony Point</option>
+					<option value="Windsor">Windsor</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid Store.
+          
+              </div>
               </div>
 					   
             </div>

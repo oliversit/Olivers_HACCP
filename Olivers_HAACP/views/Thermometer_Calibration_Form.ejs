@@ -66,18 +66,36 @@
               </div>
 			 
 			   <div class="col-md-6 mb-3">
-                <label for="Time">Time</label>
-                <input type="Time" class="form-control" id="Time" name="Column_1" placeholder="" value="<%=data.Column_1 %>" >
+				                  <label for="country">Store Location</label>
+                <select class="custom-select d-block w-100" id="country" name="FormStore" required>
+                 <option value="<%=data.store %>"><%=data.store %></option>
+                  <option value="Cotati">Cotati</option>
+					<option value="Montecito">Montecito</option>
+					<option value="Stony Point">Stony Point</option>
+					<option value="Windsor">Windsor</option>
+                </select>
                 <div class="invalid-feedback">
-                  Valid Time is .
-                </div>
+                  Please select a valid Store.
+          
+              </div>
               </div>
 					   
 					   
 				  
               </div>
 					   
-           
+     <!-------Time-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Pest">Time</label>
+                <input type="time" class="form-control" id="Pest" placeholder="" name="Column_1" >
+				         <div class="invalid-feedback">
+                  Please select a valid Condition
+                </div>
+              </div>
+          
+			  
+			  </div>                 
 			  
 			  
 			 
