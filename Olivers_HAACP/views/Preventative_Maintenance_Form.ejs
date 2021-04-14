@@ -7,39 +7,29 @@
 	  
 <%- include('../Partials/NavBar') -%>
 	  
-	  
+	  	  	  <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>	  
 	  
     <div class="container">
   
 
-        <div class="row " >
+      <div class="row " >
         
         <div class="col-md-10 mb-3" >
-      <p id="collapsetext">Record unusual/infrequent events that might or might not temporarily affect production (e.g. foreign object findings, chemical spills, power outages, glass breakage, etc.), since at a later date, if there are product issues, these events might be of significance.</p>
+      <p id="collapsetext">
+All maintenance of ROP units performed according to manufacturer’s instructions contained in operating manual.</p>
 			
-			<p id="collapsetext2" style="display:none" >Expand Instructions...</p>
 			</div> 
 		          
-	
-		  
-		  <div class="col-md-2 mb-3">
-			
-  <button class= "btn btn-primary btn-lg Grey2" type="button" id="Up" style="display:Block" onclick="Hidetext()" >▲   
-
-  </button>
-			
-				  
-				  				  
-  <button class= "btn btn-primary btn-lg Grey2" type="button" Id="Down" style="display:none"  onclick="Showtext()" >▼
-
-  </button>
-			</div>
 		  
 		    </div>
 		
 		
           <form class="needs-validation" action="/data" method="post">
-			 <input id="Form_Name" name="Form_Name" type="hidden" value="NUOCA">
+			 <input id="Form_Name" name="Form_Name" type="hidden" value="Preventative_Maintenance">
 <%- include('../Partials/Global_Variables') -%>
 			  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
 
@@ -47,7 +37,7 @@
 		 <div class="row">
               <div class="col-md-6 mb-3 mt-3">
                 <label for="Date">Date</label>
-                <input type="Date" class="form-control" id="Date"  name="Date" >
+                <input type="Date" class="form-control" id="Date"  name="Date" value="<%=data.Date %>">
                 <div class="invalid-feedback">
                   Valid Date is .
                 </div>
@@ -57,7 +47,7 @@
               <div class="col-md-6 mb-3 mt-3">
 				  				                  <label for="country">Store Location</label>
                 <select class="custom-select d-block w-100" id="country" name="FormStore" required>
-                 <option value="<%=userStore %>"><%=userStore %></option>
+                 <option value="<%=data.store %>"><%=data.store %></option>
                   <option value="Cotati">Cotati</option>
 					<option value="Montecito">Montecito</option>
 					<option value="Stony Point">Stony Point</option>
@@ -73,11 +63,18 @@
 			  
 			  
 			 
-<!-------Description of Occurrence-------------------------------------------------------------------------------------------------------->
+<!-------ROP Equipment-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3 mt-3">
-                <label for="Floor_Ground">Description of Occurrence</label>
-                  <input type="text" class="custom-select d-block w-100" id="Floor_Ground" name="Column_1" >
+                <label for="Floor_Ground">ROP Equipment</label>
+                  <select class="custom-select d-block w-100" id="Floor_Ground" name="Column_1" >
+                  <option value="<%=data.Column_1 %>" ><%=data.Column_1 %></option>
+                    <option Value="A" >MINIPACK-TORRE</option>
+					<option Value="R" >UltraSource</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
               </div>
           
 			  
@@ -130,11 +127,11 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 
-<!-------Corrective Actions (include date completed)-------------------------------------------------------------------------------------------------------->
+<!-------Maintenance Required/Instruction-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3 mt-3">
-				  				  			<label for="Action_Taken1">Corrective Actions</label>
-                <input type="text" class="form-control" name="Column_2" id="Column_2"  value="" >
+				  				  			<label for="Action_Taken1">Maintenance Required/Instruction </label>
+                <input type="text" class="form-control" name="Column_2" id="Column_2"  value="<%=data.Column_2 %>" >
               </div>
           
 			  
@@ -191,7 +188,7 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3 mt-3">
                 <label for="Date">Date Completed</label>
-                <input type="Date" class="form-control" id="Column_3"  name="Column_3" >
+                <input type="Date" class="form-control" id="Column_3"  name="Column_3" value="<%=data.Column_3 %>">
               </div>
 
           
@@ -245,11 +242,11 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
   
  
-<!-------Preventative Actions---------------------------------------------------------------------------------------->
+<!-------Comments/Corrective Actions----------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3 mt-3">
-	<label for="Action_Taken1">Preventative Actions</label>
-                <input type="text" class="form-control" name="Column_4" id="Column_4"  value="" >
+	<label for="Action_Taken1">Comments/Corrective Actions</label>
+                <input type="text" class="form-control" name="Column_4" id="Column_4"  value="<%=data.Column_4 %>" >
               </div>
           
 			  
@@ -301,18 +298,24 @@
 </div>
 <!----------------------------------------------------------------------------------------------------------------------------------->
  
-<!-------Reported By------------------------------------------------------------------------------------------------->
+<!-------Completed By------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3 mt-3">
               
 
-          						<label for="Column_5">Reported By</label>
-                <input type="text" class="form-control" name="Column_5" id="Corrected_Stored"  value=<%=userName %> >
+          						<label for="Column_5">Completed By</label>
+                <input type="text" class="form-control" name="Column_5" id="Corrected_Stored"  value="<%=data.Column_5 %>" >
 			  </div>
 			  </div>
 			
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
-		
+			  
+			          <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>				
 			  
 <!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
 			  <br>

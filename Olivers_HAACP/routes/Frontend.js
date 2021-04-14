@@ -261,6 +261,10 @@ var datastore =req.body.userstore;
 			if (box=="Raw_Product") {box="Raw Product"}
 		if (box=="Cold_Rooms") {box="Cold Rooms"}
 		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
     connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ?', [req.body.Form_Name, req.body.Date] ,function (err, data, fields) {
 		
     if (err) throw err;
@@ -284,6 +288,10 @@ var datastore =req.body.userstore;
 		if (box=="Raw_Product") {box="Raw Product"}
 		if (box=="Cold_Rooms") {box="Cold Rooms"}
 		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
    connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
    connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [Form_Type] ,function (err, data2, fields) {
    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data3, fields) {
@@ -424,6 +432,24 @@ var datastore =req.body.userstore;
 	var Title= req.body.Form_Title;	
     res.render('Work_Order_Form_New', { title: 'Work_Order_Form_New', FormTitle: Title, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title });		
 });
+
+router.post('/Released_Material_Form_New', function(req, res, next) {
+var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= req.body.Form_Title;	
+    res.render('Released_Material_Form_New', { title: 'Released_Material_Form_New', FormTitle: Title, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title });		
+});
+
+router.post('/Foreign_Materials_Form_New', function(req, res, next) {
+var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= req.body.Form_Title;	
+    res.render('Foreign_Materials_Form_New', { title: 'Foreign_Materials_Form_New', FormTitle: Title, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title });		
+});
 //-------------------------------------------Submitted Forms ------------------------------------------------------------>
 
 
@@ -539,6 +565,110 @@ var datastore =req.body.userstore;
   });
 });
 
+router.post('/Incoming_Materials_Form', function(req, res, next) {
+	var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= "Incoming Materials";
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+    if (err) throw err;
+    res.render('Incoming_Materials_Form', { title: 'Incoming_Materials_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+  });
+	});
+});
+
+router.post('/Brittle_Plastics_Form', function(req, res, next) {
+	var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= "Brittle Plastics";
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+    if (err) throw err;
+    res.render('Brittle_Plastics_Form', { title: 'Brittle_Plastics_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+  });
+	});
+});
+
+router.post('/Preventative_Maintenance_Form', function(req, res, next) {
+	var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= "Preventative Maintenance";
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+    if (err) throw err;
+    res.render('Preventative_Maintenance_Form', { title: 'Preventative_Maintenance_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+  });
+	});
+});
+
+router.post('/NUOCA_Form', function(req, res, next) {
+	var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= req.body.Form_Title;	
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+    if (err) throw err;
+    res.render('NUOCA_Form', { title: 'NUOCA_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+  });
+	});
+});
+
+router.post('/Work_Order_Form', function(req, res, next) {
+	var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= "Work Order";
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+    if (err) throw err;
+    res.render('Work_Order_Form', { title: 'Work_Order_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+  });
+	});
+});
+
+router.post('/Released_Material_Form', function(req, res, next) {
+	var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= "Released Material";
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+    if (err) throw err;
+    res.render('Released_Material_Form', { title: 'Released_Material_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+  });
+	});
+});
+
+router.post('/Foreign_Materials_Form', function(req, res, next) {
+	var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var Title= "Foreign Materials";
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
+    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+    if (err) throw err;
+    res.render('Foreign_Materials_Form', { title: 'Foreign_Materials_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+  });
+	});
+});
 
 //-------------------------------------------Nav Bar ------------------------------------------------------------>
 

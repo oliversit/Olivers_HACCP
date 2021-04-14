@@ -1,13 +1,155 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <%- include('../Partials/MetaData') -%>
-<%- include('../Partials/NavBar') -%>
+
+
 <body>
-	<a href="Dashboard.html">--Home</a>
-<br/>
-	<br/>
-	Support Page
 	
+<%- include('../Partials/NavBar') -%>
+			    <form class="needs-validation" action="/Frontend/Dashboard" method="post">
+					<%- include('../Partials/Global_Variables') -%>
+					<input id="Form_Title13" name="Form_Title" type="hidden" value="Forms">
+<p>Submit Ticket</p>
+					
+				<div class="container ">	
+								  
+			  <div  id="Hide_Pest" >
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3 mt-3">	
+			<label for="Action_Pest">Help Topic </label>
+                <input type="text" class="form-control" name="Corection_5" id="Action_Pest"  value="" >
+			     </div>
+				  
+			
+			  </div>
+			  	
+				  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3 mt-3">	
+			<label for="Action_Pest">Comments </label>
+                <input type="text" class="form-control" name="Corection_5" id="Action_Pest"  value="" >
+			     </div>
+				  
+			
+			  </div>
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3 mt-3">	
+	                <label for="Date_Pest">Date</label>
+                <input type="Date" class="form-control" name="Corection_6" id="Date_Pest"  value="" >
+			     </div>
+			<div class="colmb-3 mt-3">	
+				<label for="Time_Pest">Time</label>
+                <input type="time" class="form-control" name="Corection_7" id="Time_Pest"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3 mt-3">	
+						<label for="Corrected_Pest">Submitted By</label>
+                <input type="text" class="form-control" name="Corection_8" id="Corrected_Pest"  value=<%=userName %> >
+			     </div>
+              </div> 
+			
+			  
+</div>
+					
+												           <div class="row"  >
+            <div class="col mb-3 mt-3">	
+            
+           
+            
+				
+				   </div> 
+			   </div> 
+				
+					
+																	           <div class="row"  >
+            <div class="col mb-3 mt-3">	
+            
+           
+            
+				
+				   </div> 
+			   </div> 
+					
+					
+					
+																	           <div class="row"  >
+            <div class="col mb-3 mt-3">	
+            
+           
+            
+				
+				   </div> 
+			   </div> 
+					
+																	           <div class="row"  >
+            <div class="col mb-3 mt-3">	
+            
+           
+            
+				
+				   </div> 
+			   </div> 
+					
+																	           <div class="row"  >
+            <div class="col mb-3 mt-3">	
+            
+           
+            
+				
+				   </div> 
+			   </div> 
+					
+
+					
+					
+								           <div class="row"  >
+            <div class="col mb-3 mt-3">	
+            
+           
+            <button class="btn btn-primary btn-lg btn-block Green_Button" type="submit">Submit</button>
+				
+				   </div> 
+			   </div> 
+					</div>
+<!-- Bottom Buttons --> 
 	
-</body>
+		<div class="row fixed-bottom" >
+              <div class="col mb-3">
+				  
+		
+					  <br>
+                       <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Dashoard</button>
+					  </form>
+      
+              </div>
+		
+              <div class="col mb-3">
+				 
+				  <form action="../Frontend/Reports" class="button_height" method="post">
+					    <%- include('../Partials/Global_Variables') -%>
+					  <input id="Form_Title14" name="Form_Title" type="hidden" value="Reports">
+					   <br>
+                       <button class="btn btn-block btn-primary btn-lg button_height Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>
+       </form>
+              </div>
+		
+		
+	</div>
+		
+	
+	<%- include('../Partials/ScriptData') -%>
+
+	
+	</body>
 </html>

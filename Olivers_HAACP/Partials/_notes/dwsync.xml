@@ -19,10 +19,8 @@
 <file name="MetaData.ejs" server="192.168.75.162//var/www/Haccp/" local="132598909489357722" remote="132615061980000000" Dst="2" />
 <file name="NavBar.ejs" server="192.168.75.162//var/www/Haccp/" local="132623939315771495" remote="132623939350000000" Dst="2" />
 <file name="ScriptData.ejs" server="192.168.75.162//var/www/Haccp/" local="132622890415776210" remote="132622890530000000" Dst="2" />
-<file name="ScriptDataOnLoad.ejs" server="192.168.75.162//var/www/Haccp/" local="132617687903227313" remote="132617687960000000" Dst="2" />
+<file name="ScriptDataOnLoad.ejs" server="192.168.75.162//var/www/Haccp/" local="132629037806088654" remote="132629037840000000" Dst="2" />
 <file name="Global_Variables.ejs" server="192.168.75.162//var/www/Haccp/" local="132623922732138558" remote="132623922770000000" Dst="2" />
-<file name="If_Beginning.ejs" server="192.168.75.162//var/www/Haccp/" local="132618639623559741" remote="132618639660000000" Dst="2" />
-<file name="If_End.ejs" server="192.168.75.162//var/www/Haccp/" local="132618624513927822" remote="132618624550000000" Dst="2" />
 <file name="Print_Table.ejs" server="192.168.75.162//var/www/Haccp/" local="132618792477443692" remote="132621112440000000" Dst="2" />
 <file name="Weekly_Packing_Print_Table.ejs" server="192.168.75.162//var/www/Haccp/" local="132621331428460974" remote="132621331520000000" Dst="2" />
 <file name="Weekly_Processing_Print_Table.ejs" server="192.168.75.162//var/www/Haccp/" local="132621348061466875" remote="132621348100000000" Dst="2" />

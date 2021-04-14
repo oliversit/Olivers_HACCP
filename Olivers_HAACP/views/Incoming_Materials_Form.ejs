@@ -6,7 +6,12 @@
   <body >
 	  
 <%- include('../Partials/NavBar') -%>
-	  
+
+	  	  	  <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>	  
 	  
 	  
     <div class="container">
@@ -29,7 +34,7 @@
 		 <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="Date">Date</label>
-                <input type="Date" class="form-control" id="Date" name="Date"  >
+                <input type="Date" class="form-control" id="Date" value="<%=data.Date %>" name="Date"  >
                 <div class="invalid-feedback">
                   Valid Date is .
                 </div>
@@ -39,7 +44,7 @@
               <div class="col-md-6 mb-3">
 				  				                  <label for="country">Store Location</label>
                 <select class="custom-select d-block w-100" id="country" name="FormStore" required>
-                 <option value="<%=userStore %>"><%=userStore %></option>
+                 <option value="<%=data.store %>"><%=data.store %></option>
                   <option value="Cotati">Cotati</option>
 					<option value="Montecito">Montecito</option>
 					<option value="Stony Point">Stony Point</option>
@@ -59,12 +64,12 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Floor_Ground">Material(s) Name</label>
-                <input type="text" class="form-control Floor_Ground" name="Column_1" id="Action_Taken_Floor_Ground" placeholder="" value="" >
+                <input type="text" class="form-control Floor_Ground" name="Column_1" id="Action_Taken_Floor_Ground" placeholder="" value="<%=data.Column_1 %>" >
               </div>
           
 				              <div class="col-md-12 mb-3">
                 <label for="Floor_Ground">Approved Supplier Name</label>
-                <input type="text" class="form-control Floor_Ground" name="Column_2" id="Column_2" placeholder="" value="" >
+                <input type="text" class="form-control Floor_Ground" name="Column_2" id="Column_2" placeholder="" value="<%=data.Column_2 %>" >
               </div>
           
 			  
@@ -77,7 +82,7 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Stored">PO #</label>
-    <input type="number" class="form-control" id="Column_3" placeholder="" name="Column_3">
+    <input type="number" class="form-control" id="Column_3" value="<%=data.Column_3 %>" name="Column_3">
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -96,7 +101,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Debris">Clean & Odor free trailer Yes/No</label>
                   <select class="custom-select d-block w-100" id="Column_4" name="Column_4">
-                  <option value="Choose...">Choose...</option>
+                  <option value="<%=data.Column_4 %>"><%=data.Column_4 %></option>
 		<option value="Yes">Yes</option>
 					  <option value="No">No</option>
                 </select>
@@ -117,7 +122,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Debris">Safety/Security/Quality Issues Yes/No</label>
                   <select class="custom-select d-block w-100" id="Column_5" name="Column_5">
-                  <option value="Choose...">Choose...</option>
+                  <option value="<%=data.Column_5 %>"><%=data.Column_5 %></option>
 		<option value="Yes">Yes</option>
 					  <option value="No">No</option>
                 </select>
@@ -137,8 +142,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Health">Accept?</label>
-                  <select class="custom-select d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_6">
-                  <option value="Choose...">Choose...</option>
+                  <select class="custom-select d-block w-100" id="Health" value="<%=data.Column_6 %>" onchange="Hide_Option_Health()" name="Column_6">
+                  <option value="<%=data.Column_6 %>"><%=data.Column_6 %></option>
                     <option Value="A">Yes</option>
 					<option Value="R">No</option>
                 </select>
@@ -154,15 +159,20 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
-			  
+
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	
 			  <div  id="Hide_Health" style="display:none">
 			  <div class="row"  >
 				  
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_Health">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_1" id="Action_Health" placeholder="" value="" >
+			<label for="Action_Health">Corrective Action Taken</label>
+                <input type="text" class="form-control" name="Corection_1" id="Action_Health" placeholder="" value="<%=dataCor.Corection_1 %>" >
 			     </div>
 				  
 			
@@ -181,23 +191,30 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Health">Corrected Date</label>
-                <input type="Date" class="form-control" name="Corection_2" id="Date_Health" placeholder="" value="" >
+                <input type="Date" class="form-control" name="Corection_2" id="Date_Health" placeholder="" value="<%=dataCor.Corection_2 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Health">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_3" id="Corrected_Health" placeholder="" value=<%=userName %> >
+                <input type="text" class="form-control" name="Corection_3" id="Corrected_Health" placeholder="" value="<%=dataCor.Corection_3 %>" >
 			     </div>
               </div> 
 			
 			  
 </div>
+
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %> 
 <!---------------------------------------------------------------------------------------------------------------------> 
 
 <!-------Received By:----------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Comment">Received By:</label>
-                   <input type="text" class="form-control" id="Comment" placeholder="" name="Column_7" >
+                   <input type="text" class="form-control" id="Comment" placeholder="" value="<%=data.Column_ %>" name="Column_7" >
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -206,7 +223,12 @@
 			  
 			  </div>		  
 		  
-			 			  
+			          <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>					 			  
 			  
 <!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
 			  <br>
@@ -252,7 +274,7 @@
 
     </div>
 
-<%- include('../Partials/ScriptData') -%>
+<%- include('../Partials/ScriptDataOnLoad') -%>
 	  
   </body>
 </html>
