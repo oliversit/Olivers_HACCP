@@ -21,14 +21,3 @@
 •	Pg. 24: Work order and Maintenance Repair Record
 •	Pg. 81: On Hold, Rejected, & Released Material Log
 •	Pg. 102: Foreign Materials Inspection Log
-
-
-background-color: rgb(241, 241, 232);
-
-
-  border-width: 1px;
-  border-style: solid;
-  border-radius: 30%;
-  width: 70px;
-  height: 25px;
-	background-color: rgb(191, 220, 174);	

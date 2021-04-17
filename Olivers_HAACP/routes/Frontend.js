@@ -265,6 +265,8 @@ var datastore =req.body.userstore;
 		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
 		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
 		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ?', [req.body.Form_Name, req.body.Date] ,function (err, data, fields) {
 		
     if (err) throw err;
@@ -292,6 +294,8 @@ var datastore =req.body.userstore;
 		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
 		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
 		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
    connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
    connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [Form_Type] ,function (err, data2, fields) {
    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data3, fields) {

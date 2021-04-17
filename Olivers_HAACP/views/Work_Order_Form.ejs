@@ -7,7 +7,11 @@
 	  
 <%- include('../Partials/NavBar') -%>
 	  
-	  
+	  	  	  <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>	  
 	  
     <div class="container">
   
@@ -15,13 +19,13 @@
       <div class="row">
         
         <div class="col-md-12 order-md-1">
-      <p>On Hold, Reject & Released Material Disposition Log</p>
+      <p>Any equipment under temporary repair that does not pose a food safety or injury threat will be labeled and permanently repaired in a timely fashion.</p>
 			</div> 
 		    </div>
 		
 		
           <form class="needs-validation" action="/data" method="post">
-			 <input id="Form_Name" name="Form_Name" type="hidden" value="Released_Material">
+			 <input id="Form_Name" name="Form_Name" type="hidden" value="Work_Order">
 <%- include('../Partials/Global_Variables') -%>
 			  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
 
@@ -29,7 +33,7 @@
 		 <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="Date">Date</label>
-                <input type="Date" class="form-control" id="Date"  name="Date" >
+                <input type="Date" class="form-control" id="Date"  name="Date" value="<%=data.Date %>">
                 <div class="invalid-feedback">
                   Valid Date is .
                 </div>
@@ -39,7 +43,7 @@
               <div class="col-md-6 mb-3">
 				  				                  <label for="country">Store Location</label>
                 <select class="custom-select d-block w-100" id="country" name="FormStore" required>
-                 <option value="<%=userStore %>"><%=userStore %></option>
+                 <option value="<%=data.store %>"><%=data.store %></option>
                   <option value="Cotati">Cotati</option>
 					<option value="Montecito">Montecito</option>
 					<option value="Stony Point">Stony Point</option>
@@ -55,11 +59,11 @@
 			  
 			  
 			 
-<!-------Product-------------------------------------------------------------------------------------------------------->
+<!-------Time-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Floor_Ground">Product</label>
-                  <input type="text" class="form-control d-block w-100" id="Floor_Ground" name="Column_1" >
+                <label for="Floor_Ground">Time</label>
+                  <input type="time" class="form-control d-block w-100" id="Floor_Ground" name="Column_1" value="<%=data.Column_1 %>">
               </div>
           
 			  
@@ -112,11 +116,11 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 
-<!-------Supplier-------------------------------------------------------------------------------------------------------->
+<!-------Requested By-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Pest">Supplier</label>
-                  <input type="text" class="form-control d-block w-100" id="Pest" name="Column_2">
+                <label for="Pest">Requested By</label>
+                  <input type="text" class="form-control d-block w-100" id="Pest" value="<%=data.Column_2 %>" name="Column_2">
               </div>
           
 			  
@@ -169,11 +173,11 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
 
 			  
-<!-------Lot Code-------------------------------------------------------------------------------------------------------->
+<!-------Problem or Concern-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Debris">Lot Code</label>
-                  <input type="text"  class="form-control d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3">
+                <label for="Debris">Problem or Concern</label>
+                  <input type="text"  class="form-control d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3" value="<%=data.Column_3 %>">
               </div>
 
           
@@ -227,11 +231,20 @@
 <!----------------------------------------------------------------------------------------------------------------------------------->
   
  
-<!-------On-Hold Date-------------------------------------------------------------------------------------------------------->
+<!-------Priority-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Covered">On-Hold Date</label>
-                  <input type="Date" class="form-control d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4">
+                <label for="Covered">Priority</label>
+                  <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4" >
+                  <option value="<%=data.Column_4 %>"><%=data.Column_4 %></option>
+                    <option Value="1">1</option>
+					<option Value="2">2</option>
+					  <option Value="3">3</option>
+					  <option Value="4">4</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
               </div>
           
 			  
@@ -283,11 +296,19 @@
 </div>
 <!----------------------------------------------------------------------------------------------------------------------------------->
  
-<!-------Time----------------------------------------------------------------------------------------------------------->
+<!-------Dept. Responsible----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Stored">Time</label>
-                   <input type="time" class="form-control d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5">
+                <label for="Stored">Dept. Responsible</label>
+                  <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5">
+                  <option value="<%=data.Column_5 %>"><%=data.Column_5 %></option>
+                    <option Value="Meat">Meat</option>
+					<option Value="Deli">Deli</option>
+					  <option Value="Cheese">Cheese</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
               </div>
 
           
@@ -340,11 +361,28 @@
 </div>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 			  
-<!-------Amount of product---------------------------------------------------------------------------------------------->
+<!-------Category----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="sanitized">Amount of product</label>
-                  <input type="number" class="form-control d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" name="Column_6">
+                <label for="sanitized">Category</label>
+                  <select class="custom-select d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" name="Column_6">
+                  <option value="<%=data.Column_6 %>"><%=data.Column_6 %></option>
+                    <option Value="ROP UNIT">ROP UNIT</option>
+					<option Value="LABEL PRINTER">LABEL PRINTER</option>
+					  <option Value="COMPUTER">COMPUTER</option>
+					  <option Value="RECEIVING">RECEIVING</option>
+					  <option Value="OUTSIDE GROUNDS">OUTSIDE GROUNDS</option>
+					  <option Value="STORAGE">STORAGE</option>
+					  <option Value="BATHROOMS">BATHROOMS</option>
+					  <option Value="PROCESSING ROOM">PROCESSING ROOM</option>
+					  <option Value="REFRIGERATION">REFRIGERATION</option>
+					  <option Value="COLD ROOMS">COLD ROOMS</option>
+					  <option Value="TEMP GUAGES">TEMP GUAGES</option>
+					  <option Value="OTHER">OTHER</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
               </div>
 
           
@@ -397,11 +435,11 @@
 </div>
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 			  
-<!-------Rejection Date------------------------------------------------------------------------------------------------->
+<!-------Start Date:----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Trash">Rejection Date</label>
-                  <input type="Date" class="form-control d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7">
+                <label for="Trash">Start Date</label>
+                  <input type="Date" class="form-control d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7" value="<%=data.Column_7 %>">
               </div>
 
 			  
@@ -454,11 +492,11 @@
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
-<!-------Hold By----------------------------------------------------------------------------------------------------------->
+<!-------Start Time----------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Health">Hold By</label>
-                   <input type="text" class="form-control d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_8">
+                <label for="Health">Time</label>
+                   <input type="time" class="form-control d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_8" value="<%=data.Column_8 %>">
               </div>
 
           
@@ -512,11 +550,11 @@
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
-<!-------Reason for Hold/Rejection---------------------------------------------------------------------------------------------------->
+<!-------Complete Date---------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="GMP">Reason for Hold/Rejection</label>
-                  <input type="text"  class="form-control d-block w-100" id="GMP" onchange="Hide_Option_GMP()" name="Column_9">
+                <label for="GMP">Complete Date</label>
+                  <input type="Date"  class="form-control d-block w-100" id="GMP" onchange="Hide_Option_GMP()" name="Column_9" value="<%=data.Column_9 %>">
               </div>
 
           
@@ -524,25 +562,25 @@
 			  </div>
 			  
 			 
- <!-- Corrective Actions (including Release or Disposal details) --------------------------------------------------------------------------------------------------------->			  
-
 			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
 			  
+			  <div  id="Hide_GMP" style="display:none">
 			  <div class="row"  >
 				  
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_GMP">Corrective Actions (including Release or Disposal details) </label>
-                <input type="text" class="form-control" name="Column_14" id="Action_GMP"  value="" >
+			<label for="Action_GMP">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_33" id="Action_GMP"  value="" >
 			     </div>
 				  
 			
 			  </div>
 			  
- <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+
 	
-	<div  id="Hide_GMP" style="display:none">
+	
               
 			  
 			  <div class="row"  >
@@ -570,11 +608,11 @@
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
-<!-------Release Date------------------------------------------------------------------------------------------------>
+<!-------Completion Time------------------------------------------------------------------------------------------------>
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Belongings">Release Date</label>
-                  <input type="Date" class="form-control d-block w-100" id="Belongings" onchange="Hide_Option_Belongings()" name="Column_10">
+                <label for="Belongings">Time</label>
+                  <input type="time" class="form-control d-block w-100" id="Belongings" onchange="Hide_Option_Belongings()" name="Column_10" value="<%=data.Column_10 %>">
               </div>
 
           
@@ -628,11 +666,18 @@
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
-<!-------Released By---------------------------------------------------------------------------------------------------->
+<!-------All tools and parts accounted for?----------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Repairs">Released By</label>
-                  <input type="text" class="form-control d-block w-100" id="Repairs" onchange="Hide_Option_Repairs()" name="Column_11">
+                <label for="Repairs">All tools and parts accounted for?</label>
+                  <select class="custom-select d-block w-100" id="Repairs" onchange="Hide_Option_Repairs()" name="Column_11" >
+                  <option value="<%=data.Column_11 %>"><%=data.Column_11 %></option>
+                    <option Value="A">Yes</option>
+					<option Value="R">No</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
               </div>
 
           
@@ -650,7 +695,10 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Repairs">Explanation: </label>
-                <input type="text" class="form-control" name="Corection_41" id="Action_Repairs"  value="" >
+                <input type="text" class="form-control" name="Column_18" id="Action_Repairs"  value="<%=data.Column_18 %>" >
+						<input type="hidden" class="form-control"  id="Date_Repairs" placeholder="" value="" >
+						<input type="hidden" class="form-control"  id="Time_Repairs" placeholder="" value="" >
+						<input type="hidden" class="form-control"  id="Corrected_Repairs" placeholder="" value="" >
 			     </div>
 				  
 			
@@ -661,12 +709,12 @@
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
-<!-------Certificate of Destruction on File--------------------------------------------------------------------->
+<!-------All guards in place and safety devices tested?--------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Signage">Certificate of Destruction on File</label>
+                <label for="Signage">All guards in place and safety devices tested?</label>
                   <select class="custom-select d-block w-100" id="Signage" onchange="Hide_Option_Signage()" name="Column_12">
-                  <option value="Choose...">Choose...</option>
+                  <option value="<%=data.Column_12 %>"><%=data.Column_12 %></option>
                     <option Value="Yes">Yes</option>
 					<option Value="No">No</option>
                 </select>
@@ -725,19 +773,192 @@
 <!-----------------------------------------------------------------------------------------------------------------------------------> 
 	
 			  
-<!-------Comments------------------------------------------------------------------------------------------------------->
+<!-------All tools cleaned?----------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Walls">Comments</label>
-                  <input type="text" class="form-control d-block w-100" id="Walls" onchange="Hide_Option_Walls()" name="Column_13">
+                <label for="Walls">All tools cleaned?</label>
+                  <select class="custom-select d-block w-100" id="Walls" onchange="Hide_Option_Walls()" name="Column_13">
+                  <option value="<%=data.Column_13 %>"><%=data.Column_13 %></option>
+                    <option Value="Yes">Yes</option>
+					<option Value="No">No</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
               </div>
 
           
 			  
 			  </div>
-			   
-<!----------------------------------------------------------------------------------------------------------------------> 	
 			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Walls" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Walls">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_49" id="Action_Walls"  value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Walls">Date</label>
+                <input type="Date" class="form-control" name="Corection_50" id="Date_Walls"  value="" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Walls">Time</label>
+                <input type="time" class="form-control" name="Corection_51" id="Time_Walls"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Walls">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_52" id="Corrected_Walls"  value=<%=userName %> >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  
+<!------Area cleaned and ready for production?----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Floor">Area cleaned and ready for production?</label>
+                  <select class="custom-select d-block w-100" id="Floor" onchange="Hide_Option_Floor()" name="Column_14">
+                  <option value="<%=data.Column_14 %>"><%=data.Column_14 %></option>
+                    <option Value="Yes">Yes</option>
+					<option Value="No">No</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Floor" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Floor">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_53" id="Action_Floor"  value="" onchange="Hide_Option_Action_Floor()" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Floor">Date</label>
+                <input type="Date" class="form-control" name="Corection_54" id="Date_Floor"  value="" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Floor">Time</label>
+                <input type="time" class="form-control" name="Corection_55" id="Time_Floor"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Floor">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_56" id="Corrected_Floor"  value=<%=userName %> >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  
+<!-------Area sanitized and ready for production?----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Gloves">Area sanitized and ready for production?</label>
+                  <select class="custom-select d-block w-100" id="Gloves" onchange="Hide_Option_Action_Gloves()" name="Column_15">
+                  <option value="<%=data.Column_15 %>"><%=data.Column_15 %></option>
+                    <option Value="Yes">Yes</option>
+					<option Value="No">No</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- Initials--------------------------------------------------------------------------------------------------------->
+			  
+			  
+			  			  
+			  <div class="row"  >
+
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Gloves">Initials</label>
+                <input type="text" class="form-control" name="Column_16" id="Column_16" value="<%=data.Column_16 %>">
+			     </div>
+              </div> 
+		 <!-- Initials--------------------------------------------------------------------------------------------------------->
+	
+		<!-- Corrective Action--------------------------------------------------------------------------------------------------------->
+	
+			  
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Gloves">Corrective Action </label>
+                <input type="text" class="form-control" name="Column_17" id="Action_Gloves"  value="<%=data.Column_17 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+<!----------------------------------------------------------------------------------------------------------------------->
+	
+			          <%  i++; }) %>
+        <% } else{ %>
+            <tr>
+                <td colspan="7">No Data Found</td>
+            </tr>
+        <% } %>				  
 			  
 <!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
 			  <br>
@@ -783,7 +1004,7 @@
 
     </div>
 
-<%- include('../Partials/ScriptData') -%>
+<%- include('../Partials/ScriptDataOnLoad') -%>
 	  
   </body>
 </html>

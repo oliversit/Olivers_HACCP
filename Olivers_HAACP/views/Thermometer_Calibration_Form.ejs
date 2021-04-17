@@ -50,7 +50,7 @@
 		    </div>
 		
 		
-          <form class="needs-validation" action="/data" method="post">
+          <form class="needs-validation" action="/data_update" method="post">
 			 <input id="Form_Name" name="Form_Name" type="hidden" value="Thermometer_Calibration">
 			  <%- include('../Partials/Global_Variables') -%>
 			  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
@@ -132,7 +132,7 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Taken1">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_1" id="Action_Taken_Floor_Ground" placeholder="" value=<%=dataCor.Corection_1 %> >
+                <input type="text" class="form-control" name="Corection_1" id="Action_Floor_Ground" placeholder="" value=<%=dataCor.Corection_1 %> >
 			     </div>
 				  
 			
@@ -433,11 +433,15 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Stored">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_17" id="Action_Stored" placeholder="" value=<%=dataCor.Corection_17 %> >
+                <input type="text" class="form-control" name="Column_7" id="Action_Stored" placeholder="" value=<%=dataCor.Corection_17 %> >
+						                <input type="hidden" class="form-control" id="Date_Stored" placeholder="" value="" >
+	
+		
+                <input type="hidden" class="form-control"  id="Time_Stored" placeholder="" value="" >
 			     </div>
 				 			  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Stored">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_20" id="Corrected_Stored" placeholder="" value=<%=dataCor.Corection_20 %> >
+                <input type="text" class="form-control" name="Column_8" id="Corrected_Stored" placeholder="" value=<%=dataCor.Corection_20 %> >
 			     </div> 
 			
 			  </div>

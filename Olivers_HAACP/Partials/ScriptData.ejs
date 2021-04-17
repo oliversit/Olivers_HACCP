@@ -47,15 +47,19 @@ function Showtext(){
 		  document.getElementById('Up').style.display='Block'
 		  document.getElementById('collapsetext2').style.display='none'
 		  document.getElementById('Down').style.display='none'
-								 }	  
+								 }	
+			  
 function Hide_Option_Floor_Ground(){	  
 		  if(document.getElementById('Floor_Ground').value == "R") {
      
 		  document.getElementById('Hide_Floor_Ground').style.display='block'}
 								 
 		  if(document.getElementById('Floor_Ground').value == "A") {
- 
-		  document.getElementById('Hide_Floor_Ground').style.display='none'}
+			  
+			document.getElementById('Action_Floor_Ground').value= "";
+			  document.getElementById('Date_Floor_Ground').value= "";
+			  document.getElementById('Time_Floor_Ground').value= "";
+		      document.getElementById('Hide_Floor_Ground').style.display='none'}
 								 }
 function Hide_Option_Pest(){	  
 		  if(document.getElementById('Pest').value == "R") {
@@ -63,8 +67,10 @@ function Hide_Option_Pest(){
 		  document.getElementById('Hide_Pest').style.display='block'}
 								 
 		  if(document.getElementById('Pest').value == "A") {
- 
-		  document.getElementById('Hide_Pest').style.display='none'}
+			  document.getElementById('Action_Pest').value= "";
+			  document.getElementById('Date_Pest').value= "";
+			  document.getElementById('Time_Pest').value= "";
+			  document.getElementById('Hide_Pest').style.display='none'}
 								 }
 function Hide_Option_Debris(){	  
 		  if(document.getElementById('Debris').value == "R") {
@@ -72,8 +78,10 @@ function Hide_Option_Debris(){
 		  document.getElementById('Hide_Debris').style.display='block'}
 								 
 		  if(document.getElementById('Debris').value == "A") {
- 
-		  document.getElementById('Hide_Debris').style.display='none'}
+			  document.getElementById('Action_Debris').value= "";
+			  document.getElementById('Date_Debris').value= "";
+			  document.getElementById('Time_Debris').value= "";
+		      document.getElementById('Hide_Debris').style.display='none'}
 								 }
 function Hide_Option_Covered(){	  
 		  if(document.getElementById('Covered').value == "R") {
@@ -81,8 +89,10 @@ function Hide_Option_Covered(){
 		  document.getElementById('Hide_Covered').style.display='block'}
 								 
 		  if(document.getElementById('Covered').value == "A") {
- 
-		  document.getElementById('Hide_Covered').style.display='none'}
+ 			  document.getElementById('Action_Covered').value= "";
+			  document.getElementById('Date_Covered').value= "";
+			  document.getElementById('Time_Covered').value= "";
+		      document.getElementById('Hide_Covered').style.display='none'}
 								 }
 function Hide_Option_Stored(){	  
 		  if(document.getElementById('Stored').value == "R") {
@@ -90,8 +100,10 @@ function Hide_Option_Stored(){
 		  document.getElementById('Hide_Stored').style.display='block'}
 								 
 		  if(document.getElementById('Stored').value == "A") {
- 
-		  document.getElementById('Hide_Stored').style.display='none'}
+ 			  document.getElementById('Action_Stored').value= "";
+			  document.getElementById('Date_Stored').value= "";
+			  document.getElementById('Time_Stored').value= "";
+		      document.getElementById('Hide_Stored').style.display='none'}
 								 }
 function Hide_Option_sanitized(){	  
 		  if(document.getElementById('sanitized').value == "R") {
@@ -99,8 +111,10 @@ function Hide_Option_sanitized(){
 		  document.getElementById('Hide_sanitized').style.display='block'}
 								 
 		  if(document.getElementById('sanitized').value == "A") {
- 
-		  document.getElementById('Hide_sanitized').style.display='none'}
+ 			  document.getElementById('Action_sanitized').value= "";
+			  document.getElementById('Date_sanitized').value= "";
+			  document.getElementById('Time_sanitized').value= "";
+		      document.getElementById('Hide_sanitized').style.display='none'}
 								 }
 function Hide_Option_Trash(){	  
 		  if(document.getElementById('Trash').value == "R") {
@@ -108,8 +122,10 @@ function Hide_Option_Trash(){
 		  document.getElementById('Hide_Trash').style.display='block'}
 								 
 		  if(document.getElementById('Trash').value == "A") {
- 
-		  document.getElementById('Hide_Trash').style.display='none'}
+ 			  document.getElementById('Action_Trash').value= "";
+			  document.getElementById('Date_Trash').value= "";
+			  document.getElementById('Time_Trash').value= "";
+		      document.getElementById('Hide_Trash').style.display='none'}
 								 }
 function Hide_Option_Health(){	  
 		  if(document.getElementById('Health').value == "R") {
@@ -117,8 +133,10 @@ function Hide_Option_Health(){
 		  document.getElementById('Hide_Health').style.display='block'}
 								 
 		  if(document.getElementById('Health').value == "A") {
- 
-		  document.getElementById('Hide_Health').style.display='none'}
+ 			  document.getElementById('Action_Health').value= "";
+			  document.getElementById('Date_Health').value= "";
+			  document.getElementById('Time_Health').value= "";
+		      document.getElementById('Hide_Health').style.display='none'}
 								 }
 function Hide_Option_GMP(){	  
 		  if(document.getElementById('GMP').value == "R") {
@@ -126,8 +144,10 @@ function Hide_Option_GMP(){
 		  document.getElementById('Hide_GMP').style.display='block'}
 								 
 		  if(document.getElementById('GMP').value == "A") {
- 
-		  document.getElementById('Hide_GMP').style.display='none'}
+ 			  document.getElementById('Action_GMP').value= "";
+			  document.getElementById('Date_GMP').value= "";
+			  document.getElementById('Time_GMP').value= "";
+		      document.getElementById('Hide_GMP').style.display='none'}
 								 }
 function Hide_Option_Belongings(){	  
 		  if(document.getElementById('Belongings').value == "R") {
@@ -135,8 +155,10 @@ function Hide_Option_Belongings(){
 		  document.getElementById('Hide_Belongings').style.display='block'}
 								 
 		  if(document.getElementById('Belongings').value == "A") {
- 
-		  document.getElementById('Hide_Belongings').style.display='none'}
+ 			  document.getElementById('Action_Belongings').value= "";
+			  document.getElementById('Date_Belongings').value= "";
+			  document.getElementById('Time_Belongings').value= "";
+		      document.getElementById('Hide_Belongings').style.display='none'}
 								 }
 function Hide_Option_Repairs(){	  
 		  if(document.getElementById('Repairs').value == "R") {
@@ -144,8 +166,10 @@ function Hide_Option_Repairs(){
 		  document.getElementById('Hide_Repairs').style.display='block'}
 								 
 		  if(document.getElementById('Repairs').value == "A") {
- 
-		  document.getElementById('Hide_Repairs').style.display='none'}
+ 			  document.getElementById('Action_Repairs').value= "";
+			  document.getElementById('Date_Repairs').value= "";
+			  document.getElementById('Time_Repairs').value= "";
+		      document.getElementById('Hide_Repairs').style.display='none'}
 								 }
 function Hide_Option_Signage(){	  
 		  if(document.getElementById('Signage').value == "R") {
@@ -153,8 +177,10 @@ function Hide_Option_Signage(){
 		  document.getElementById('Hide_Signage').style.display='block'}
 								 
 		  if(document.getElementById('Signage').value == "A") {
- 
-		  document.getElementById('Hide_Signage').style.display='none'}
+ 			  document.getElementById('Action_Signage').value= "";
+			  document.getElementById('Date_Signage').value= "";
+			  document.getElementById('Time_Signage').value= "";
+		      document.getElementById('Hide_Signage').style.display='none'}
 								 }
 function Hide_Option_Walls(){	  
 		  if(document.getElementById('Walls').value == "R") {
@@ -162,8 +188,10 @@ function Hide_Option_Walls(){
 		  document.getElementById('Hide_Walls').style.display='block'}
 								 
 		  if(document.getElementById('Walls').value == "A") {
- 
-		  document.getElementById('Hide_Walls').style.display='none'}
+ 			  document.getElementById('Action_Walls').value= "";
+			  document.getElementById('Date_Walls').value= "";
+			  document.getElementById('Time_Walls').value= "";
+		      document.getElementById('Hide_Walls').style.display='none'}
 								 }
 function Hide_Option_Floor(){	  
 		  if(document.getElementById('Floor').value == "R") {
@@ -171,32 +199,33 @@ function Hide_Option_Floor(){
 		  document.getElementById('Hide_Floor').style.display='block'}
 								 
 		  if(document.getElementById('Floor').value == "A") {
- 
-		  document.getElementById('Hide_Floor').style.display='none'}
+ 			  document.getElementById('Action_Floor').value= "";
+			  document.getElementById('Date_Floor').value= "";
+		 	  document.getElementById('Time_Floor').value= "";
+		      document.getElementById('Hide_Floor').style.display='none'}
 								 }
-			  
-			  
-			  function Hide_Option_Action_Gloves(){	  
+function Hide_Option_Action_Gloves(){	  
 		  if(document.getElementById('Gloves').value == "R") {
      
 		  document.getElementById('Hide_Gloves').style.display='block'}
 								 
 		  if(document.getElementById('Gloves').value == "A") {
- 
-		  document.getElementById('Hide_Gloves').style.display='none'}
-								 }
-			  
-			  
+ 			  document.getElementById('Action_Gloves').value= "";
+			  document.getElementById('Date_Gloves').value= "";
+			  document.getElementById('Time_Gloves').value= "";
+		      document.getElementById('Hide_Gloves').style.display='none'}
+								 }			
 function Hide_Option_Gloves(){	  
 		  if(document.getElementById('Gloves').value == "R") {
      
 		  document.getElementById('Hide_Gloves').style.display='block'}
 								 
 		  if(document.getElementById('Gloves').value == "A") {
- 
-		  document.getElementById('Hide_Gloves').style.display='none'}
+ 			  document.getElementById('Action_Gloves').value= "";
+			  document.getElementById('Date_Gloves').value= "";
+			  document.getElementById('Time_Gloves').value= "";
+		      document.getElementById('Hide_Gloves').style.display='none'}
 								 }
-
 function Hide_Form_Type(){	
 			  if(document.getElementById('Report_Type').value == "Weekly") {
  
