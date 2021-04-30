@@ -16,7 +16,8 @@
 			 <div class="row ">
               <div class="col-md-12 mb-3">
                 <label for="Date">Date</label>
-                <input type="Date" class="form-control input4" id="Date" name="Date" value="<%=TodaysDate %>" required>
+                <input type="hidden" class="form-control input4" id="Date" name="Date" value="<%=TodaysDate %>">
+				  <p class="form-control input4"><%=TodaysDate %></p>
                 <div class="invalid-feedback">
                   Valid Date is required.
                 </div>

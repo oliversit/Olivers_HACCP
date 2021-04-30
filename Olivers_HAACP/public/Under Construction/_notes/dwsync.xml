@@ -28,4 +28,8 @@
 <file name="gridtest.html" server="192.168.75.162//var/www/Haccp/" local="132598909490365256" remote="132615062030000000" Dst="2" />
 <file name="Settings_Page.html" server="192.168.75.162//var/www/Haccp/" local="132598909490228459" remote="132615062030000000" Dst="2" />
 <file name="style.css" server="192.168.75.162//var/www/Haccp/" local="132598909490383769" remote="132615062030000000" Dst="2" />
+<file name="grid.css" server="192.168.75.61//var/www/Haccp/" local="132598909490326268" remote="132642031800000000" Dst="2" />
+<file name="gridtest.html" server="192.168.75.61//var/www/Haccp/" local="132598909490365256" remote="132642031800000000" Dst="2" />
+<file name="Settings_Page.html" server="192.168.75.61//var/www/Haccp/" local="132598909490228459" remote="132642031800000000" Dst="2" />
+<file name="style.css" server="192.168.75.61//var/www/Haccp/" local="132598909490383769" remote="132642031800000000" Dst="2" />
 </dwsync>
