@@ -25,7 +25,7 @@
 		    </div>
 		
 		
-          <form class="needs-validation" action="/data_update" method="post">
+          <form class="needs-validation" action="../Frontend/Dashboard" method="post">
 			 <input id="Form_Name" name="Form_Name" type="hidden" value="Incoming_Materials">
 			   <%- include('../Partials/Global_Variables') -%>
 			  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
@@ -34,7 +34,8 @@
 		 <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="Date">Date</label>
-                <input type="Date" class="form-control" id="Date" value="<%=data.Date %>" name="Date"  >
+				  <p class="form-control"><%=data.Date %></p>
+                <input type="hidden" class="form-control" id="Date" value="<%=data.Date %>" name="Date"  >
                 <div class="invalid-feedback">
                   Valid Date is .
                 </div>
@@ -42,18 +43,9 @@
 					   
 					   
               <div class="col-md-6 mb-3">
-				  				                  <label for="country">Store Location</label>
-                <select class="custom-select d-block w-100" id="country" name="FormStore" required>
-                 <option value="<%=data.store %>"><%=data.store %></option>
-                  <option value="Cotati">Cotati</option>
-					<option value="Montecito">Montecito</option>
-					<option value="Stony Point">Stony Point</option>
-					<option value="Windsor">Windsor</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a valid Store.
-          
-              </div>
+				<label for="country">Store Location</label>
+				  <p class="form-control"><%=data.store %></p>
+                <input type="hidden" class="custom-select d-block w-100" id="country" name="FormStore" value="<%=data.store %>">
               </div>
 					   
             </div>
@@ -64,12 +56,14 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Floor_Ground">Material(s) Name</label>
-                <input type="text" class="form-control Floor_Ground" name="Column_1" id="Action_Taken_Floor_Ground" placeholder="" value="<%=data.Column_1 %>" >
+				  <p class="form-control"><%=data.Column_1 %></p>
+                <input type="hidden" class="form-control Floor_Ground" name="Column_1" id="Action_Taken_Floor_Ground" placeholder="" value="<%=data.Column_1 %>" >
               </div>
           
 				              <div class="col-md-12 mb-3">
                 <label for="Floor_Ground">Approved Supplier Name</label>
-                <input type="text" class="form-control Floor_Ground" name="Column_2" id="Column_2" placeholder="" value="<%=data.Column_2 %>" >
+								  <p class="form-control"><%=data.Column_2 %></p>
+                <input type="hidden" class="form-control Floor_Ground" name="Column_2" id="Column_2" placeholder="" value="<%=data.Column_2 %>" >
               </div>
           
 			  
@@ -82,6 +76,7 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Stored">PO #</label>
+				  <p class="form-control"><%=data.Column_3 %></p>
     <input type="number" class="form-control" id="Column_3" value="<%=data.Column_3 %>" name="Column_3">
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -100,14 +95,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Debris">Clean & Odor free trailer Yes/No</label>
-                  <select class="custom-select d-block w-100" id="Column_4" name="Column_4">
-                  <option value="<%=data.Column_4 %>"><%=data.Column_4 %></option>
-		<option value="Yes">Yes</option>
-					  <option value="No">No</option>
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
+				  <p class="form-control"><%=data.Column_4 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Column_4" name="Column_4" value="<%=data.Column_4 %>" >
               </div>
 
           
@@ -121,14 +110,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Debris">Safety/Security/Quality Issues Yes/No</label>
-                  <select class="custom-select d-block w-100" id="Column_5" name="Column_5">
-                  <option value="<%=data.Column_5 %>"><%=data.Column_5 %></option>
-		<option value="Yes">Yes</option>
-					  <option value="No">No</option>
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
+				  <p class="form-control"><%=data.Column_5 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Column_5" name="Column_5">
               </div>
 
           
@@ -142,14 +125,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Health">Accept?</label>
-                  <select class="custom-select d-block w-100" id="Health" value="<%=data.Column_6 %>" onchange="Hide_Option_Health()" name="Column_6">
-                  <option value="<%=data.Column_6 %>"><%=data.Column_6 %></option>
-                    <option Value="A">Yes</option>
-					<option Value="R">No</option>
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
+				  <p class="form-control"><%=data.Column_6 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Health" value="<%=data.Column_6 %>" onchange="Hide_Option_Health()" name="Column_6">
               </div>
 
           
@@ -172,7 +149,8 @@
 				  
 			  		<div class="col mb-3">	
 			<label for="Action_Health">Corrective Action Taken</label>
-                <input type="text" class="form-control" name="Corection_1" id="Action_Health" placeholder="" value="<%=dataCor.Corection_1 %>" >
+						<p class="form-control"><%=dataCor.Corection_1 %></p>
+                <input type="hidden" class="form-control" name="Corection_1" id="Action_Health" placeholder="" value="<%=dataCor.Corection_1 %>" >
 			     </div>
 				  
 			
@@ -191,12 +169,14 @@
 				  
 			<div class="col mb-3">	
 	                <label for="Date_Health">Corrected Date</label>
-                <input type="Date" class="form-control" name="Corection_2" id="Date_Health" placeholder="" value="<%=dataCor.Corection_2 %>" >
+				<p class="form-control"><%=dataCor.Corection_2 %></P>
+                <input type="hidden" class="form-control" name="Corection_2" id="Date_Health" placeholder="" value="<%=dataCor.Corection_2 %>" >
 				<input type="hidden" class="form-control"  id="Time_Health" placeholder="" value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Health">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_3" id="Corrected_Health" placeholder="" value="<%=dataCor.Corection_3 %>" >
+				<p class="form-control"><%=dataCor.Corection_3 %></p>
+                <input type="hidden" class="form-control" name="Corection_3" id="Corrected_Health" placeholder="" value="<%=dataCor.Corection_3 %>" >
 			     </div>
               </div> 
 			
@@ -215,7 +195,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Comment">Received By:</label>
-                   <input type="text" class="form-control" id="Comment" placeholder="" value="<%=data.Column_ %>" name="Column_7" >
+				  <p class="form-control"><%=data.Column_7 %></P>
+                   <input type="hidden" class="form-control" id="Comment" placeholder="" value="<%=data.Column_7 %>" name="Column_7" >
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -243,7 +224,7 @@
 				  
 			<div class="col mb-3">	
 				
-	                                      <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" type="button">Export</button>
+	                                      <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" type="submit">Dashboard</button>
 					
 			     </div>
 		
@@ -251,22 +232,11 @@
 													
 													<div class="test">
 						                       <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" 
-													    onclick="window.print();return false;"
-													   type="button">Print</button>
+											   type="button" 
+											   onclick="window.print();return false;">Print</button>
 														</div>
 			     </div>
               </div> 
-      
-			  
-			  
-			           <div class="row"  >
-            <div class="col mb-3">	
-            
-           
-            <button class="btn btn-primary btn-lg btn-block Green_Button" type="submit">Save</button>
-				
-				   </div> 
-			   </div> 
 			  
           </form>
         

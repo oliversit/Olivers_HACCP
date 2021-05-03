@@ -731,7 +731,7 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= req.body.Form_Title;	
-    var sql='SELECT * FROM Submitted_Standard_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
 		
     connection.query('SELECT * FROM Item_Maint Where Type="Commodity"',function (err, data2, fields) {
@@ -751,7 +751,7 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= req.body.Form_Title;	
-    var sql='SELECT * FROM Submitted_Standard_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
@@ -767,7 +767,7 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Raw Product";	
-    var sql='SELECT * FROM Submitted_Standard_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     if (err) throw err;
     connection.query('SELECT * FROM Item_Maint Where Type="Commodity"',function (err, data2, fields) {
@@ -793,7 +793,7 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Cold Rooms";	
-    var sql='SELECT * FROM Submitted_Standard_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     if (err) throw err;
         connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
@@ -810,7 +810,7 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Thermometer Calibration";	
-    var sql='SELECT * FROM Submitted_Standard_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     if (err) throw err;
         connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
@@ -826,7 +826,7 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Incoming Materials";
-    var sql='SELECT * FROM Submitted_Standard_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
@@ -841,7 +841,7 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Brittle Plastics";
-    var sql='SELECT * FROM Submitted_Standard_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
@@ -856,7 +856,7 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Preventative Maintenance";
-    var sql='SELECT * FROM Submitted_Standard_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
@@ -871,7 +871,7 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= req.body.Form_Title;	
-    var sql='SELECT * FROM Submitted_Standard_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
@@ -886,7 +886,7 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Work Order";
-    var sql='SELECT * FROM Submitted_Standard_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
@@ -901,7 +901,7 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Released Material";
-    var sql='SELECT * FROM Submitted_Standard_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
@@ -916,7 +916,7 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Foreign Materials";
-    var sql='SELECT * FROM Submitted_Standard_Forms Where Form_Name= ? and Date = ? and Id= ?';
+    var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
