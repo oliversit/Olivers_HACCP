@@ -24,7 +24,7 @@
 		    </div>
 		
 		
-          <form class="needs-validation" action="/data" method="post">
+          <form class="needs-validation" action="../Frontend/Dashboard" method="post">
 			 <input id="Form_Name" name="Form_Name" type="hidden" value="Released_Material">
 <%- include('../Partials/Global_Variables') -%>
 			  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
@@ -32,8 +32,10 @@
 		  
 		 <div class="row">
               <div class="col-md-6 mb-3">
-                <label for="Date">Date</label>
-                <input type="Date" class="form-control" id="Date"  name="Date" value="<%=data.Date %>">
+                <label for="Date">Date
+				 </label>
+				  <p class="form-control"><%=data.Date %></P>
+                <input type="hidden" class="form-control" id="Date"  name="Date" value="<%=data.Date %>">
                 <div class="invalid-feedback">
                   Valid Date is .
                 </div>
@@ -41,18 +43,10 @@
 					   
 					   
               <div class="col-md-6 mb-3">
-				  				                  <label for="country">Store Location</label>
-                <select class="custom-select d-block w-100" id="country" name="FormStore" required>
-                 <option value="<%=data.store %>"><%=data.store %></option>
-                  <option value="Cotati">Cotati</option>
-					<option value="Montecito">Montecito</option>
-					<option value="Stony Point">Stony Point</option>
-					<option value="Windsor">Windsor</option>
-                </select>
-                <div class="invalid-feedback">
-                  Please select a valid Store.
-          
-              </div>
+				  				                  <label for="country">Store Location
+				 </label>
+				  <p class="form-control"><%=data.store %></P>
+                <input type="hidden" class="custom-select d-block w-100" id="country" name="FormStore" value="<%=data.store %>">
               </div>
 					   
             </div>
@@ -62,8 +56,10 @@
 <!-------Product-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Floor_Ground">Product</label>
-                  <input type="text" class="form-control d-block w-100" id="Floor_Ground" name="Column_1" value="<%=data.Column_1 %>">
+                <label for="Floor_Ground">Product
+				 </label>
+				  <p class="form-control"><%=data.Column_1 %></P>
+                  <input type="hidden" class="form-control d-block w-100" id="Floor_Ground" name="Column_1" value="<%=data.Column_1 %>">
               </div>
           
 			  
@@ -79,8 +75,9 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_Taken1">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_1" id="Action_Taken_Floor_Ground"  value="" >
+			<label for="Action_Taken1">Corrective Action 
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_1" id="Action_Taken_Floor_Ground"  value="" >
 			     </div>
 				  
 			
@@ -98,16 +95,19 @@
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_Floor_Ground">Date</label>
-                <input type="Date" class="form-control" name="Corection_2" id="Date_Floor_Ground"  value="" >
+	                <label for="Date_Floor_Ground">Date
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_2" id="Date_Floor_Ground"  value="" >
 			     </div>
 			<div class="col mb-3">	
-				<label for="Time_Floor_Ground">Time</label>
-                <input type="time" class="form-control" name="Corection_3" id="Time_Floor_Ground"  value="" >
+				<label for="Time_Floor_Ground">Time
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_3" id="Time_Floor_Ground"  value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_By_Floor_Ground">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground"  value=<%=userName %> >
+						<label for="Corrected_By_Floor_Ground">Corrected By
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground"  value=<%=userName %> >
 			     </div>
               </div> 
 			
@@ -119,8 +119,10 @@
 <!-------Supplier-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Pest">Supplier</label>
-                  <input type="text" class="form-control d-block w-100" id="Pest" name="Column_2" value="<%=data.Column_2 %>">
+                <label for="Pest">Supplier
+				 </label>
+				  <p class="form-control"><%=data.Column_2 %></P>
+                  <input type="hidden" class="form-control d-block w-100" id="Pest" name="Column_2" value="<%=data.Column_2 %>">
               </div>
           
 			  
@@ -136,8 +138,9 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_Pest">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_5" id="Action_Pest"  value="" >
+			<label for="Action_Pest">Corrective Action 
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_5" id="Action_Pest"  value="" >
 			     </div>
 				  
 			
@@ -155,16 +158,19 @@
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_Pest">Date</label>
-                <input type="Date" class="form-control" name="Corection_6" id="Date_Pest"  value="" >
+	                <label for="Date_Pest">Date
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_6" id="Date_Pest"  value="" >
 			     </div>
 			<div class="col mb-3">	
-				<label for="Time_Pest">Time</label>
-                <input type="time" class="form-control" name="Corection_7" id="Time_Pest"  value="" >
+				<label for="Time_Pest">Time
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_7" id="Time_Pest"  value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Pest">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_8" id="Corrected_Pest"  value=<%=userName %> >
+						<label for="Corrected_Pest">Corrected By
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_8" id="Corrected_Pest"  value=<%=userName %> >
 			     </div>
               </div> 
 			
@@ -176,8 +182,10 @@
 <!-------Lot Code-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Debris">Lot Code</label>
-                  <input type="text"  class="form-control d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3" value="<%=data.Column_3 %>">
+                <label for="Debris">Lot Code
+				 </label>
+				  <p class="form-control"><%=data.Column_3 %></P>
+                  <input type="hidden"  class="form-control d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3" value="<%=data.Column_3 %>">
               </div>
 
           
@@ -194,8 +202,9 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_Debris">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_9" id="Action_Debris"  value="" >
+			<label for="Action_Debris">Corrective Action 
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_9" id="Action_Debris"  value="" >
 			     </div>
 				  
 			
@@ -213,16 +222,19 @@
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_Debris">Date</label>
-                <input type="Date" class="form-control" name="Corection_10" id="Date_Debris"  value="" >
+	                <label for="Date_Debris">Date
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_10" id="Date_Debris"  value="" >
 			     </div>
 			<div class="col mb-3">	
-				<label for="Time_Debris">Time</label>
-                <input type="time" class="form-control" name="Corection_11" id="Time_Debris"  value="" >
+				<label for="Time_Debris">Time
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_11" id="Time_Debris"  value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Debris">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_12" id="Corrected_Debris"  value=<%=userName %> >
+						<label for="Corrected_Debris">Corrected By
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_12" id="Corrected_Debris"  value=<%=userName %> >
 			     </div>
               </div> 
 			
@@ -234,8 +246,10 @@
 <!-------On-Hold Date-------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Covered">On-Hold Date</label>
-                  <input type="Date" class="form-control d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4" value="<%=data.Column_4 %>">
+                <label for="Covered">On-Hold Date
+				 </label>
+				  <p class="form-control"><%=data.Column_4 %></P>
+                  <input type="hidden" class="form-control d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4" value="<%=data.Column_4 %>">
               </div>
           
 			  
@@ -251,8 +265,9 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_Covered">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_13" id="Action_Covered"  value="" >
+			<label for="Action_Covered">Corrective Action 
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_13" id="Action_Covered"  value="" >
 			     </div>
 				  
 			
@@ -270,16 +285,19 @@
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_Covered">Date</label>
-                <input type="Date" class="form-control" name="Corection_14" id="Date_Covered"  value="" >
+	                <label for="Date_Covered">Date
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_14" id="Date_Covered"  value="" >
 			     </div>
 			<div class="col mb-3">	
-				<label for="Time_Covered">Time</label>
-                <input type="time" class="form-control" name="Corection_15" id="Time_Covered"  value="" >
+				<label for="Time_Covered">Time
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_15" id="Time_Covered"  value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Covered">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_16" id="Corrected_Covered"  value=<%=userName %> >
+						<label for="Corrected_Covered">Corrected By
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_16" id="Corrected_Covered"  value=<%=userName %> >
 			     </div>
               </div> 
 			
@@ -290,8 +308,10 @@
 <!-------Time----------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Stored">Time</label>
-                   <input type="time" class="form-control d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5" value="<%=data.Column_5 %>">
+                <label for="Stored">Time
+				 </label>
+				  <p class="form-control"><%=data.Column_5 %></P>
+                   <input type="hidden" class="form-control d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5" value="<%=data.Column_5 %>">
               </div>
 
           
@@ -308,8 +328,9 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_Stored">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_17" id="Action_Stored"  value="" >
+			<label for="Action_Stored">Corrective Action 
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_17" id="Action_Stored"  value="" >
 			     </div>
 				  
 			
@@ -327,16 +348,19 @@
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_Stored">Date</label>
-                <input type="Date" class="form-control" name="Corection_18" id="Date_Stored"  value="" >
+	                <label for="Date_Stored">Date
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_18" id="Date_Stored"  value="" >
 			     </div>
 			<div class="col mb-3">	
-				<label for="Time_Stored">Time</label>
-                <input type="time" class="form-control" name="Corection_19" id="Time_Stored"  value="" >
+				<label for="Time_Stored">Time
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_19" id="Time_Stored"  value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Stored">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_20" id="Corrected_Stored"  value=<%=userName %> >
+						<label for="Corrected_Stored">Corrected By
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_20" id="Corrected_Stored"  value=<%=userName %> >
 			     </div>
               </div> 
 			
@@ -347,7 +371,9 @@
 <!-------Amount of product---------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="sanitized">Amount of product</label>
+                <label for="sanitized">Amount of product
+				 </label>
+				  <p class="form-control"><%=data.Column_6 %></P>
                   <input type="number" class="form-control d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" name="Column_6" value="<%=data.Column_6 %>">
               </div>
 
@@ -365,8 +391,9 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_sanitized">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_21" id="Action_sanitized"  value="" >
+			<label for="Action_sanitized">Corrective Action 
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_21" id="Action_sanitized"  value="" >
 			     </div>
 				  
 			
@@ -384,16 +411,19 @@
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_sanitized">Date</label>
-                <input type="Date" class="form-control" name="Corection_22" id="Date_sanitized"  value="" >
+	                <label for="Date_sanitized">Date
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_22" id="Date_sanitized"  value="" >
 			     </div>
 			<div class="col mb-3">	
-				<label for="Time_sanitized">Time</label>
-                <input type="time" class="form-control" name="Corection_23" id="Time_sanitized"  value="" >
+				<label for="Time_sanitized">Time
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_23" id="Time_sanitized"  value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_sanitized">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_24" id="Corrected_sanitized"  value=<%=userName %>>
+						<label for="Corrected_sanitized">Corrected By
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_24" id="Corrected_sanitized"  value=<%=userName %>>
 			     </div>
               </div> 
 			
@@ -404,8 +434,10 @@
 <!-------Rejection Date------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Trash">Rejection Date</label>
-                  <input type="Date" class="form-control d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7" value="<%=data.Column_7 %>">
+                <label for="Trash">Rejection Date
+				 </label>
+				  <p class="form-control"><%=data.Column_7 %></P>
+                  <input type="hidden" class="form-control d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7" value="<%=data.Column_7 %>">
               </div>
 
 			  
@@ -421,8 +453,9 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_Trash">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_25" id="Action_Trash"  value="" >
+			<label for="Action_Trash">Corrective Action 
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_25" id="Action_Trash"  value="" >
 			     </div>
 				  
 			
@@ -440,16 +473,19 @@
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_Trash">Date</label>
-                <input type="Date" class="form-control" name="Corection_26" id="Date_Trash"  value="" >
+	                <label for="Date_Trash">Date
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_26" id="Date_Trash"  value="" >
 			     </div>
 			<div class="col mb-3">	
-				<label for="Time_Trash">Time</label>
-                <input type="time" class="form-control" name="Corection_27" id="Time_Trash"  value="" >
+				<label for="Time_Trash">Time
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_27" id="Time_Trash"  value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Trash">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_28" id="Corrected_Trash"  value=<%=userName %> >
+						<label for="Corrected_Trash">Corrected By
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_28" id="Corrected_Trash"  value=<%=userName %> >
 			     </div>
               </div> 
 			
@@ -461,8 +497,10 @@
 <!-------Hold By----------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Health">Hold By</label>
-                   <input type="text" class="form-control d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_8" value="<%=data.Column_8 %>">
+                <label for="Health">Hold By
+				 </label>
+				  <p class="form-control"><%=data.Column_8 %></P>
+                   <input type="hidden" class="form-control d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_8" value="<%=data.Column_8 %>">
               </div>
 
           
@@ -479,8 +517,9 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_Health">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_29" id="Action_Health"  name="Action_Health">
+			<label for="Action_Health">Corrective Action 
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_29" id="Action_Health"  name="Action_Health">
 			     </div>
 				  
 			
@@ -498,16 +537,19 @@
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_Health">Date</label>
-                <input type="Date" class="form-control" name="Corection_30" id="Date_Health"  value="" >
+	                <label for="Date_Health">Date
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_30" id="Date_Health"  value="" >
 			     </div>
 			<div class="col mb-3">	
-				<label for="Time_Health">Time</label>
-                <input type="time" class="form-control" name="Corection_31" id="Time_Health"  value="" >
+				<label for="Time_Health">Time
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_31" id="Time_Health"  value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Health">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_32" id="Corrected_Health"  value=<%=userName %> >
+						<label for="Corrected_Health">Corrected By
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_32" id="Corrected_Health"  value=<%=userName %> >
 			     </div>
               </div> 
 			
@@ -519,8 +561,10 @@
 <!-------Reason for Hold/Rejection---------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="GMP">Reason for Hold/Rejection</label>
-                  <input type="text"  class="form-control d-block w-100" id="GMP" onchange="Hide_Option_GMP()" name="Column_9" value="<%=data.Column_9 %>">
+                <label for="GMP">Reason for Hold/Rejection
+				 </label>
+				  <p class="form-control"><%=data.Column_9 %></P>
+                  <input type="hidden"  class="form-control d-block w-100" id="GMP" onchange="Hide_Option_GMP()" name="Column_9" value="<%=data.Column_9 %>">
               </div>
 
           
@@ -537,8 +581,10 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_GMP">Corrective Actions (including Release or Disposal details) </label>
-                <input type="text" class="form-control" name="Column_14" id="Action_GMP"  value="<%=data.Column_14 %>" >
+			<label for="Action_GMP">Corrective Actions (including Release or Disposal details) 
+				 </label>
+				  <p class="form-control"><%=data.Column_14 %></P>
+                <input type="hidden" class="form-control" name="Column_14" id="Action_GMP"  value="<%=data.Column_14 %>" >
 			     </div>
 				  
 			
@@ -556,16 +602,19 @@
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_GMP">Date</label>
-                <input type="Date" class="form-control" name="Corection_34" id="Date_GMP"  value="" >
+	                <label for="Date_GMP">Date
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_34" id="Date_GMP"  value="" >
 			     </div>
 			<div class="col mb-3">	
-				<label for="Time_GMP">Time</label>
-                <input type="time" class="form-control" name="Corection_35" id="Time_GMP"  value="" >
+				<label for="Time_GMP">Time
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_35" id="Time_GMP"  value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_GMP">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_36" id="Corrected_GMP"  value=<%=userName %> >
+						<label for="Corrected_GMP">Corrected By
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_36" id="Corrected_GMP"  value=<%=userName %> >
 			     </div>
               </div> 
 			
@@ -577,8 +626,10 @@
 <!-------Release Date------------------------------------------------------------------------------------------------>
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Belongings">Release Date</label>
-                  <input type="Date" class="form-control d-block w-100" id="Belongings" onchange="Hide_Option_Belongings()" name="Column_10" value="<%=data.Column_10 %>">
+                <label for="Belongings">Release Date
+				 </label>
+				  <p class="form-control"><%=data.Column_10 %></P>
+                  <input type="hidden" class="form-control d-block w-100" id="Belongings" onchange="Hide_Option_Belongings()" name="Column_10" value="<%=data.Column_10 %>">
               </div>
 
           
@@ -595,8 +646,9 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_Belongings">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_37" id="Action_Belongings"  value="" >
+			<label for="Action_Belongings">Corrective Action 
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_37" id="Action_Belongings"  value="" >
 			     </div>
 				  
 			
@@ -614,16 +666,19 @@
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_Belongings">Date</label>
-                <input type="Date" class="form-control" name="Corection_38" id="Date_Belongings"  value="" >
+	                <label for="Date_Belongings">Date
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_38" id="Date_Belongings"  value="" >
 			     </div>
 			<div class="col mb-3">	
-				<label for="Time_Belongings">Time</label>
-                <input type="time" class="form-control" name="Corection_39" id="Time_Belongings"  value="" >
+				<label for="Time_Belongings">Time
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_39" id="Time_Belongings"  value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Belongings">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_40" id="Corrected_Belongings"  value=<%=userName %> >
+						<label for="Corrected_Belongings">Corrected By
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_40" id="Corrected_Belongings"  value=<%=userName %> >
 			     </div>
               </div> 
 			
@@ -635,8 +690,10 @@
 <!-------Released By---------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Repairs">Released By</label>
-                  <input type="text" class="form-control d-block w-100" id="Repairs" onchange="Hide_Option_Repairs()" name="Column_11" value="<%=data.Column_11 %>">
+                <label for="Repairs">Released By
+				 </label>
+				  <p class="form-control"><%=data.Column_11 %></P>
+                  <input type="hidden" class="form-control d-block w-100" id="Repairs" onchange="Hide_Option_Repairs()" name="Column_11" value="<%=data.Column_11 %>">
               </div>
 
           
@@ -653,8 +710,9 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_Repairs">Explanation: </label>
-                <input type="text" class="form-control" name="Corection_41" id="Action_Repairs"  value="" >
+			<label for="Action_Repairs">Explanation: 
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_41" id="Action_Repairs"  value="" >
 			     </div>
 				  
 			
@@ -668,8 +726,10 @@
 <!-------Certificate of Destruction on File--------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Signage">Certificate of Destruction on File</label>
-                  <select class="custom-select d-block w-100" id="Signage" onchange="Hide_Option_Signage()" name="Column_12" >
+                <label for="Signage">Certificate of Destruction on File
+				 </label>
+				  <p class="form-control"><%=data.Column_12 %></P>
+                  <input type="hidden" class="custom-select d-block w-100" id="Signage" onchange="Hide_Option_Signage()" name="Column_12" >
                   <option value="<%=data.Column_12 %>"><%=data.Column_12 %></option>
                     <option Value="Yes">Yes</option>
 					<option Value="No">No</option>
@@ -692,8 +752,9 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_Signage">Corrective Action </label>
-                <input type="text" class="form-control" name="Corection_45" id="Action_Signage"  value="" >
+			<label for="Action_Signage">Corrective Action 
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_45" id="Action_Signage"  value="" >
 			     </div>
 				  
 			
@@ -711,16 +772,19 @@
 
 				  
 			<div class="col mb-3">	
-	                <label for="Date_Signage">Date</label>
-                <input type="Date" class="form-control" name="Corection_46" id="Date_Signage"  value="" >
+	                <label for="Date_Signage">Date
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_46" id="Date_Signage"  value="" >
 			     </div>
 			<div class="col mb-3">	
-				<label for="Time_Signage">Time</label>
-                <input type="time" class="form-control" name="Corection_47" id="Time_Signage"  value="" >
+				<label for="Time_Signage">Time
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_47" id="Time_Signage"  value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_Signage">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_48" id="Corrected_Signage"  value=<%=userName %> >
+						<label for="Corrected_Signage">Corrected By
+				 <p class="form-control"></P>
+                <input type="hidden" class="form-control" name="Corection_48" id="Corrected_Signage"  value=<%=userName %> >
 			     </div>
               </div> 
 			
@@ -732,8 +796,10 @@
 <!-------Comments------------------------------------------------------------------------------------------------------->
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
-                <label for="Walls">Comments</label>
-                  <input type="text" class="form-control d-block w-100" id="Walls" onchange="Hide_Option_Walls()" name="Column_13" <%=data.Column_13 %>>
+                <label for="Walls">Comments
+				 </label>
+				  <p class="form-control"><%=data.Column_13 %></P>
+                  <input type="hidden" class="form-control d-block w-100" id="Walls" onchange="Hide_Option_Walls()" name="Column_13" value="<%=data.Column_13 %>">
               </div>
 
           
@@ -760,7 +826,7 @@
 				  
 			<div class="col mb-3">	
 				
-	                                      <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" type="button">Export</button>
+	                                      <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" type="submit">Dashboard</button>
 					
 			     </div>
 		
@@ -768,22 +834,11 @@
 													
 													<div class="test">
 						                       <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" 
-													   
-													   type="button">Print</button>
+											   type="button" 
+											   onclick="window.print();return false;">Print</button>
 														</div>
 			     </div>
               </div> 
-      
-			  
-			  
-			           <div class="row"  >
-            <div class="col mb-3">	
-            
-           
-            <button class="btn btn-primary btn-lg btn-block Green_Button" type="submit">Save</button>
-				
-				   </div> 
-			   </div> 
 			  
           </form>
         
