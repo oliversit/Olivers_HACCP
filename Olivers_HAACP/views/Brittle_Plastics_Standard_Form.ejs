@@ -56,7 +56,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 		 <div class="row">
               <div class="col-md-6 mb-3 mt-3">
                 <label for="Date">Date</label>
-				  <P><%=data.Date %></P>
+				  <p class="form-control"><%=data.Date %></P>
                 <input type="hidden" class="form-control" id="Date"  value="<%=data.Date %>" name="Date" >
                 <div class="invalid-feedback">
                   Valid Date is .
@@ -66,7 +66,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 					   
               <div class="col-md-6 mb-3 mt-3">
 				  <label for="country">Store Location</label>
-				  <P><%=data.store %></P>
+				  <p class="form-control"><%=data.store %></P>
                 <input type="hidden" class="custom-select d-block w-100" id="country" name="FormStore" value="<%=data.store %>">
               </div>
 					   
@@ -80,10 +80,10 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  <br>
 				  <p>Overhead Lights:</p>
 				  			<label for="Action_Taken1">Location </label>
-				  <P><%=data.Column_1 %></P>
+				  <p class="form-control"><%=data.Column_1 %></P>
                 <input type="hidden" class="form-control" name="Column_1" id="Column_1"  value="<%=data.Column_1 %>" >
                 <label for="Floor_Ground">Status</label>
-			<P><%=data.Column_2 %></P>
+			<p class="form-control"><%=data.Column_2 %></P>
                   <input type="hidden" class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_2" value="<%=data.Column_2 %>">
               </div>
           
@@ -105,7 +105,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			  		<div class="col mb-3 mt-3">	
 			<label for="Action_Taken1">Corrective Action </label>
-						<P><%=dataCor.Corection_1 %></P>
+						<p class="form-control"><%=dataCor.Corection_1 %></P>
                 <input type="hidden" class="form-control" name="Corection_1" id="Action_Floor_Ground"  value="<%=dataCor.Corection_1 %>" >
 			     </div>
 				  
@@ -130,12 +130,12 @@ be replaced by less dangerous materials will be included in this registry. This 
 			     </div>
 			<div class="colmb-3 mt-3">	
 				<label for="Time_Floor_Ground">Time</label>
-				<P><%=dataCor.Corection_3 %></P>
+				<p class="form-control"><%=dataCor.Corection_3 %></P>
                 <input type="hidden" class="form-control" name="Corection_3" id="Time_Floor_Ground"  value="<%=dataCor.Corection_3 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_By_Floor_Ground">Corrected By</label>
-				<P><%=dataCor.Corection_4 %></P>
+				<p class="form-control"><%=dataCor.Corection_4 %></P>
                 <input type="hidden" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground"  value="<%=dataCor.Corection_4 %>" >
 			     </div>
               </div> 
@@ -157,10 +157,10 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  <br>
 				  <p>Clocks:</p>
 				  				  			<label for="Action_Taken1">Location </label>
-				  <P><%=data.Column_3 %></P>
+				  <p class="form-control"><%=data.Column_3 %></P>
                 <input type="hidden" class="form-control" name="Column_3" id="Column_3"  value="<%=data.Column_3 %>" >
                 <label for="Pest">Status</label>
-				  <P><%=data.Column_4 %></P>
+				  <p class="form-control"><%=data.Column_4 %></P>
                   <input type="hidden" class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" name="Column_4" value="<%=data.Column_4 %>">
               </div>
           
@@ -182,7 +182,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			  		<div class="col mb-3 mt-3">	
 			<label for="Action_Pest">Corrective Action </label>
-						<P><%=dataCor.Corection_5 %></P>
+						<p class="form-control"><%=dataCor.Corection_5 %></P>
                 <input type="hidden" class="form-control" name="Corection_5" id="Action_Pest"  value="<%=dataCor.Corection_5 %>" >
 			     </div>
 				  
@@ -202,17 +202,17 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			<div class="col mb-3 mt-3">	
 	                <label for="Date_Pest">Date</label>
-				<P><%=dataCor.Corection_6 %></P>
+				<p class="form-control"><%=dataCor.Corection_6 %></P>
                 <input type="hidden" class="form-control" name="Corection_6" id="Date_Pest"  value="<%=dataCor.Corection_6 %>" >
 			     </div>
 			<div class="colmb-3 mt-3">	
 				<label for="Time_Pest">Time</label>
-				<P><%=dataCor.Corection_7 %></P>
+				<p class="form-control"><%=dataCor.Corection_7 %></P>
                 <input type="hidden" class="form-control" name="Corection_7" id="Time_Pest"  value="<%=dataCor.Corection_7 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_Pest">Corrected By</label>
-				<P><%=dataCor.Corection_8 %></P>
+				<p class="form-control"><%=dataCor.Corection_8 %></P>
                 <input type="hidden" class="form-control" name="Corection_8" id="Corrected_Pest"  value="<%=dataCor.Corection_8 %>"> >
 			     </div>
               </div> 
@@ -234,10 +234,10 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  <br>
 				  <p>Windows:</p>
 				<label for="Action_Taken1">Location </label>
-				  <P><%=data.Column_5 %></P>
+				  <p class="form-control"><%=data.Column_5 %></P>
                 <input type="hidden" class="form-control" name="Column_5" id="Column_5"  value="<%=data.Column_5 %>" >
                 <label for="Debris">Status</label>
-				  <P><%=data.Column_6 %></P>
+				  <p class="form-control"><%=data.Column_6 %></P>
                   <input type="hidden" class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_6" value="<%=data.Column_6 %>">
               </div>
 
@@ -260,7 +260,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			  		<div class="col mb-3 mt-3">	
 			<label for="Action_Debris">Corrective Action </label>
-						<P><%=dataCor.Corection_9 %></P>
+						<p class="form-control"><%=dataCor.Corection_9 %></P>
                 <input type="hidden" class="form-control" name="Corection_9" id="Action_Debris"  value="<%=dataCor.Corection_9 %>" >
 			     </div>
 				  
@@ -280,17 +280,17 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			<div class="col mb-3 mt-3">	
 	                <label for="Date_Debris">Date</label>
-				<P><%=dataCor.Corection_10 %></P>
+				<p class="form-control"><%=dataCor.Corection_10 %></P>
                 <input type="hidden" class="form-control" name="Corection_10" id="Date_Debris"  value="<%=dataCor.Corection_10 %>" >
 			     </div>
 			<div class="colmb-3 mt-3">	
 				<label for="Time_Debris">Time</label>
-				<P><%=dataCor.Corection_11 %></P>
+				<p class="form-control"><%=dataCor.Corection_11 %></P>
                 <input type="hidden" class="form-control" name="Corection_11" id="Time_Debris"  value="<%=dataCor.Corection_11 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_Debris">Corrected By</label>
-													<P><%=dataCor.Corection_12 %></P>
+													<p class="form-control"><%=dataCor.Corection_12 %></P>
                 <input type="hidden" class="form-control" name="Corection_12" id="Corrected_Debris"  value="<%=dataCor.Corection_12 %>" >
 			     </div>
               </div> 
@@ -312,10 +312,10 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  <br>
 				  <p>Doors:</p>
 	<label for="Action_Taken1">Location </label>
-				  <P><%=data.Column_7 %></P>
+				  <p class="form-control"><%=data.Column_7 %></P>
                 <input type="hidden" class="form-control" name="Column_7" id="Column_7"  value="<%=data.Column_7 %>" >
                 <label for="Covered">Status</label>
-				  <P><%=data.Column_8 %></P>
+				  <p class="form-control"><%=data.Column_8 %></P>
                   <input type="hidden" class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_8" value="<%=data.Column_8 %>">
               </div>
           
@@ -337,7 +337,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			  		<div class="col mb-3 mt-3">	
 			<label for="Action_Covered">Corrective Action </label>
-						<P><%=dataCor.Corection_13 %></P>
+						<p class="form-control"><%=dataCor.Corection_13 %></P>
                 <input type="hidden" class="form-control" name="Corection_13" id="Action_Covered"  value="<%=dataCor.Corection_13 %>" >
 			     </div>
 				  
@@ -357,17 +357,17 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			<div class="col mb-3 mt-3">	
 	                <label for="Date_Covered">Date</label>
-				<P><%=dataCor.Corection_14 %></P>
+				<p class="form-control"><%=dataCor.Corection_14 %></P>
                 <input type="hidden" class="form-control" name="Corection_14" id="Date_Covered"  value="<%=dataCor.Corection_14 %>" >
 			     </div>
 			<div class="colmb-3 mt-3">	
 				<label for="Time_Covered">Time</label>
-				<P><%=dataCor.Corection_15 %></P>
+				<p class="form-control"><%=dataCor.Corection_15 %></P>
                 <input type="hidden" class="form-control" name="Corection_15" id="Time_Covered"  value="<%=dataCor.Corection_15 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_Covered">Corrected By</label>
-													<P><%=dataCor.Corection_16 %></P>
+													<p class="form-control"><%=dataCor.Corection_16 %></P>
                 <input type="hidden" class="form-control" name="Corection_16" id="Corrected_Covered"  value="<%=dataCor.Corection_16 %>" >
 			     </div>
               </div> 
@@ -388,10 +388,10 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  <br>
 				  <p>Hand Sanitizers:</p>
 				  	<label for="Action_Taken1">Location </label>
-				  <P><%=data.Column_9 %></P>
+				  <p class="form-control"><%=data.Column_9 %></P>
                 <input type="hidden" class="form-control" name="Column_9" id="Column_9"  value="<%=data.Column_9 %>" >
                 <label for="Stored">Status</label>
-				  <P><%=data.Column_10 %></P>
+				  <p class="form-control"><%=data.Column_10 %></P>
                   <input type="hidden" class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_10" value="<%=data.Column_10 %>">
               </div>
 
@@ -414,7 +414,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			  		<div class="col mb-3 mt-3">	
 			<label for="Action_Stored">Corrective Action </label>
-						<P><%=dataCor.Corection_17 %></P>
+						<p class="form-control"><%=dataCor.Corection_17 %></P>
                 <input type="hidden" class="form-control" name="Corection_17" id="Action_Stored"  value="<%=dataCor.Corection_17 %>" >
 			     </div>
 				  
@@ -434,17 +434,17 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			<div class="col mb-3 mt-3">	
 	                <label for="Date_Stored">Date</label>
-				<P><%=dataCor.Corection_18 %></P>
+				<p class="form-control"><%=dataCor.Corection_18 %></P>
                 <input type="hidden" class="form-control" name="Corection_18" id="Date_Stored"  value="<%=dataCor.Corection_18 %>" >
 			     </div>
 			<div class="colmb-3 mt-3">	
 				<label for="Time_Stored">Time</label>
-				<P><%=dataCor.Corection_19 %></P>
+				<p class="form-control"><%=dataCor.Corection_19 %></P>
                 <input type="hidden" class="form-control" name="Corection_19" id="Time_Stored"  value="<%=dataCor.Corection_19 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_Stored">Corrected By</label>
-													<P><%=dataCor.Corection_20 %></P>
+													<p class="form-control"><%=dataCor.Corection_20 %></P>
                 <input type="hidden" class="form-control" name="Corection_20" id="Corrected_Stored"  value="<%=dataCor.Corection_20 %>" >
 			     </div>
               </div> 
@@ -465,10 +465,10 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  <br>
 				  <p>Machine Guards:</p>
 				<label for="Action_Taken1">Location </label>
-				  <P><%=data.Column_11 %></P>
+				  <p class="form-control"><%=data.Column_11 %></P>
                 <input type="hidden" class="form-control" name="Column_11" id="Column_11"  value="<%=data.Column_11 %>" >
                 <label for="sanitized">Status</label>
-				  <P><%=data.Column_12 %></P>
+				  <p class="form-control"><%=data.Column_12 %></P>
                   <input type="hidden" class="custom-select d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" name="Column_12" value="<%=data.Column_12 %>">
               </div>
 
@@ -491,7 +491,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			  		<div class="col mb-3 mt-3">	
 			<label for="Action_sanitized">Corrective Action </label>
-						<p><%=dataCor.Corection_21 %></p>
+						<p class="form-control"><%=dataCor.Corection_21 %></p>
                 <input type="hidden" class="form-control" name="Corection_21" id="Action_sanitized"  value="<%=dataCor.Corection_21 %>" >
 			     </div>
 				  
@@ -511,17 +511,17 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			<div class="col mb-3 mt-3">	
 	                <label for="Date_sanitized">Date</label>
-				<P><%=dataCor.Corection_22 %></P>
+				<p class="form-control"><%=dataCor.Corection_22 %></P>
                 <input type="hidden" class="form-control" name="Corection_22" id="Date_sanitized"  value="<%=dataCor.Corection_22 %>" >
 			     </div>
 			<div class="colmb-3 mt-3">	
 				<label for="Time_sanitized">Time</label>
-				<P><%=dataCor.Corection_23 %></P>
+				<p class="form-control"><%=dataCor.Corection_23 %></P>
                 <input type="hidden" class="form-control" name="Corection_23" id="Time_sanitized"  value="<%=dataCor.Corection_23 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_sanitized">Corrected By</label>
-													<P><%=dataCor.Corection_24 %></P>
+													<p class="form-control"><%=dataCor.Corection_24 %></P>
                 <input type="hidden" class="form-control" name="Corection_24" id="Corrected_sanitized"  value=<%=dataCor.Corection_24 %>>
 			     </div>
               </div> 
@@ -542,10 +542,10 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  <br>
 				  <p>Scale Faces:</p>
 				<label for="Action_Taken1">Location </label>
-				  <p><%=data.Column_13 %></p>
+				  <p class="form-control"><%=data.Column_13 %></p>
                 <input type="hidden" class="form-control" name="Column_13" id="Column_13"  value="<%=data.Column_13 %>" >
                 <label for="Trash">Status</label>
-				  <P><%=data.Column_14 %></P>
+				  <p class="form-control"><%=data.Column_14 %></P>
                   <input type="hidden" class="custom-select d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_14" value="<%=data.Column_14 %>">
                   <option value="<%=data.Column_14 %>"><%=data.Column_14 %></option>
               </div>
@@ -568,7 +568,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			  		<div class="col mb-3 mt-3">	
 			<label for="Action_Trash">Corrective Action </label>
-						<P><%=dataCor.Corection_25 %></P>
+						<p class="form-control"><%=dataCor.Corection_25 %></P>
                 <input type="hidden" class="form-control" name="Corection_25" id="Action_Trash"  value="<%=dataCor.Corection_25 %>" >
 			     </div>
 				  
@@ -588,17 +588,17 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			<div class="col mb-3 mt-3">	
 	                <label for="Date_Trash">Date</label>
-				<P><%=dataCor.Corection_26 %></P>
+				<p class="form-control"><%=dataCor.Corection_26 %></P>
                 <input type="hidden" class="form-control" name="Corection_26" id="Date_Trash"  value="<%=dataCor.Corection_26 %>" >
 			     </div>
 			<div class="colmb-3 mt-3">	
 				<label for="Time_Trash">Time</label>
-				<P><%=dataCor.Corection_27 %></P>
+				<p class="form-control"><%=dataCor.Corection_27 %></P>
                 <input type="hidden" class="form-control" name="Corection_27" id="Time_Trash"  value="<%=dataCor.Corection_27 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_Trash">Corrected By</label>
-				<P><%=dataCor.Corection_28 %></P>
+				<p class="form-control"><%=dataCor.Corection_28 %></P>
                 <input type="hidden" class="form-control" name="Corection_28" id="Corrected_Trash"  value="<%=dataCor.Corection_28 %>" >
 			     </div>
               </div> 
@@ -620,10 +620,10 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  <br>
 				  <p>Display Cases:</p>
 				<label for="Action_Taken1">Location </label>
-				  <P><%=data.Column_15 %></P>
+				  <p class="form-control"><%=data.Column_15 %></P>
                 <input type="hidden" class="form-control" name="Column_15" id="Column_15"  value="<%=data.Column_15 %>" >
                 <label for="Health">Status</label>
-				  <P><%=data.Column_16 %></P>
+				  <p class="form-control"><%=data.Column_16 %></P>
                   <input type="hidden" class="custom-select d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_16" value="<%=data.Column_16 %>">
               </div>
 
@@ -646,7 +646,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			  		<div class="col mb-3 mt-3">	
 			<label for="Action_Health">Corrective Action </label>
-						<P><%=dataCor.Corection_29 %></P>
+						<p class="form-control"><%=dataCor.Corection_29 %></P>
                 <input type="hidden" class="form-control" name="Corection_29" id="Action_Health"  name="Action_Health" value="<%=dataCor.Corection_29 %>">
 			     </div>
 				  
@@ -666,17 +666,17 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			<div class="col mb-3 mt-3">	
 	                <label for="Date_Health">Date</label>
-				<P><%=dataCor.Corection_30 %></P>
+				<p class="form-control"><%=dataCor.Corection_30 %></P>
                 <input type="hidden" class="form-control" name="Corection_30" id="Date_Health"  value="<%=dataCor.Corection_30 %>" >
 			     </div>
 			<div class="colmb-3 mt-3">	
 				<label for="Time_Health">Time</label>
-				<P><%=dataCor.Corection_31 %></P>
+				<p class="form-control"><%=dataCor.Corection_31 %></P>
                 <input type="hidden" class="form-control" name="Corection_31" id="Time_Health"  value="<%=dataCor.Corection_31 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_Health">Corrected By</label>
-													<P><%=dataCor.Corection_32 %></P>
+													<p class="form-control"><%=dataCor.Corection_32 %></P>
                 <input type="hidden" class="form-control" name="Corection_32" id="Corrected_Health"  value="<%=dataCor.Corection_32 %>" >
 			     </div>
               </div> 
@@ -697,10 +697,12 @@ be replaced by less dangerous materials will be included in this registry. This 
               <div class="col-md-12 mb-3 mt-3">
 				  <br>
 				  <p>Other:<input type="hidden" class="form-control" name="Column_17" id="Column_17"  value="<%=data.Column_17 %>" placholder="Enter Text Here" ></p>
+				  <p class="form-control"><%=data.Column_17 %></p>
 				  <label for="Column_18">loaction</label>
+				  <p class="form-control"><%=data.Column_18 %></p>
 				  <input type="hidden" class="form-control" name="Column_18" id="Column_18" value="<%=data.Column_18 %>" placholder="Enter Text Here" >
                 <label for="GMP">Status</label>
-				  <p><%=data.Column_19 %></p>
+				  <p class="form-control"><%=data.Column_19 %></p>
                   <input type="hidden" class="custom-select d-block w-100" id="GMP" onchange="Hide_Option_GMP()" name="Column_19" value="<%=data.Column_19 %>">
               </div>
 
@@ -723,7 +725,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			  		<div class="col mb-3 mt-3">	
 			<label for="Action_GMP">Corrective Action </label>
-						<p><%=dataCor.Corection_33 %></p>
+						<p class="form-control"><%=dataCor.Corection_33 %></p>
                 <input type="hidden" class="form-control" name="Corection_33" id="Action_GMP"  value="<%=dataCor.Corection_33 %>" >
 			     </div>
 				  
@@ -743,17 +745,17 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  
 			<div class="col mb-3 mt-3">	
 	                <label for="Date_GMP">Date</label>
-				<p><%=dataCor.Corection_34 %></p>
+				<p class="form-control"><%=dataCor.Corection_34 %></p>
                 <input type="hidden" class="form-control" name="Corection_34" id="Date_GMP"  value="<%=dataCor.Corection_34 %>" >
 			     </div>
 			<div class="colmb-3 mt-3">	
 				<label for="Time_GMP">Time</label>
-				<p><%=dataCor.Corection_35 %></p>
+				<p class="form-control"><%=dataCor.Corection_35 %></p>
                 <input type="hidden" class="form-control" name="Corection_35" id="Time_GMP"  value="<%=dataCor.Corection_35 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_GMP">Corrected By</label>
-				<p><%=dataCor.Corection_36 %></p>
+				<p class="form-control"><%=dataCor.Corection_36 %></p>
                 <input type="hidden" class="form-control" name="Corection_36" id="Corrected_GMP"  value="<%=dataCor.Corection_36 %>" >
 			     </div>
               </div> 

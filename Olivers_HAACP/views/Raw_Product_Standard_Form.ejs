@@ -35,7 +35,7 @@
 		 <div class="row">
               <div class="col-md-6 mb-3">
                 <label for="Date">Date</label>
-				  <p></p>
+				  <p class="form-control"><%=data.Date %></p>
                 <input type="hidden" class="form-control" id="Date" name="Date" value="<%=data.Date %>" >
                 <div class="invalid-feedback">
                   Valid Date is .
@@ -283,22 +283,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Covered">Vendor Name</label>
 				  <p class="form-control"><%=data.Column_4 %></P>
-                  <input type="hidden" class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4">
-                 <option value="<%=data.Column_4 %>"><%=data.Column_4 %></option>
-	<%
-        if(userData3.length!=0){
-        var T=1;
-        userData3.forEach(function(data3){
-        %>
-		<option Value=<%=data3.Name %>><%=data3.Name %></option>
-			          <%  T++; }) %>
-        <% } else{ %>
-
-        <% } %>	
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
+                  <input type="hidden" class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4" value="<%=data.Column_4 %>">
               </div>
           
 			  
@@ -371,7 +356,7 @@
               <div class="col-md-12 mb-3">
                 <label for="Stored">Order P.O#</label>
 				  <p class="form-control"><%=data.Column_5 %></P>
-    <input type="number" class="form-control" id="Stored" placeholder="" name="Column_5" value="<%=data.Column_5 %>">
+    <input type="hidden" class="form-control" id="Stored" placeholder="" name="Column_5" value="<%=data.Column_5 %>">
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>
@@ -448,7 +433,7 @@
               <div class="col-md-12 mb-3">
                 <label for="sanitized">Temp. &lt 41°</label>
 				  <p class="form-control"><%=data.Column_6 %></P>
-                      <input type="number" class="form-control" id="sanitized" placeholder="" value="<%=data.Column_6 %>" name="Column_6" >
+                      <input type="hidden" class="form-control" id="sanitized" placeholder="" value="<%=data.Column_6 %>" name="Column_6" >
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
                 </div>

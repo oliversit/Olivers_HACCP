@@ -1344,7 +1344,7 @@ N/A</td>
 <br>5. &nbsp; &nbsp;If the reading does not fall inside the above range the thermometer must be discarded. Each thermometer must be tagged with the calibratednumber. These numbers must be added or subtracted from the readings of the thermometers and recorded on each temperature log.
 <br>6. &nbsp; &nbsp;Calibration can also be performed by comparing probes and digital thermometers against a NIST thermometer. The NIST thermometer iscalibrated by the manufacturer on an annual basis. Occasional verification of accuracy will be confirmed by placing NIST thermometer inslurry of ice to determine if it meets the range listed above. If it does not, it will immediately be sent back to the manufacturer. Add NISTthermometer testing results to chart as well.</p>
 		
-	<table id="data-table4" border="1" class="Print_Table">
+	<table id="data-table4" border="1" class="Print_Table Center_Print">
     <tr>
       <td>Room Location/Therm. Or probe #</td>
 		<td>Date/Time</td>
@@ -1380,6 +1380,21 @@ N/A</td>
         <% } %>
 	</tr>
 	          <%  i++; }) %>
+		
+		<%
+		var count=userData.length
+		while (count < 16) {
+		%>
+		<tr>
+		<td>/</td>
+		<td>/</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		
+		<%  count++; } %>
 </table>
        
 		
@@ -1434,17 +1449,32 @@ John Matthews.</td>
 		
 	<table id="data-table5" border="1" class="Print_Table">
     <tr>
-      <td>Form Number</td>
-		<td>Form</td>
 		
 			     <%
         if(userData2.length!=0){
-        var l=1;
+        var l=0;
         userData2.forEach(function(data2){
         %>
+		
+		
+		<%
+		if(l !=0) {
+		%>
+		
+		<%
+		if(l==1 || l==7 || l==8) {
+		%>
+			<td style="color:red;"><%=data2.Question %></td>
+	<% } else{ %>
+	
 	<td><%=data2.Question %></td>
+		<% } %>
+			<% } %>
+		
+		
+		
 			          <%  l++; }) %>
-        <% }
+        <% } 
 		
 		else{ %>
            			<div class="row" >
@@ -1466,9 +1496,6 @@ John Matthews.</td>
 		userData.forEach(function(data){
         %>
     <tr>
-      <td><%=i; %></td>
-		<td><%=FormBox %></td>
-		<td>"<%=data.Date %>"</td>
 		<td><%=data.Column_1 %></td>
 		<td><%=data.Column_2 %></td>
 		<td><%=data.Column_3 %></td>
@@ -1482,6 +1509,25 @@ John Matthews.</td>
 		
     </tr>
 	          <%  i++; }) %>
+		
+				<%
+		var count=userData.length
+		while (count < 20) {
+		%>
+		<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		</tr>
+		
+		<%  count++; } %>
 </table>
         <% } %>
 	
@@ -1808,18 +1854,28 @@ John Matthews.</td>
 
 	<p>Store Loc:_______________</p>
 		
-	<table id="data-table6" border="1" class="Print_Table">
+	<table id="data-table6" border="1" class="Print_Table Center_Print">
     <tr>
-      <td>Form Number</td>
-		<td>Form</td>
 		
 			     <%
         if(userData2.length!=0){
         var l=1;
         userData2.forEach(function(data2){
         %>
-	<td><%=data2.Question %></td>
-			          <%  l++; }) %>
+		
+		<%
+		if(l==6)
+		{ %>
+		
+		<td style="color:red;"><%=data2.Question %></td>
+		
+		<% } else { %>
+		
+	   <td><%=data2.Question %></td>
+			    
+		<% } %>
+		
+		<%  l++; }) %>
         <% }
 		
 		else{ %>
@@ -1842,9 +1898,7 @@ John Matthews.</td>
 		userData.forEach(function(data){
         %>
     <tr>
-      <td><%=i; %></td>
-		<td><%=FormBox %></td>
-		<td>"<%=data.Date %>"</td>
+		<td><%=data.Date %></td>
 		<td><%=data.Column_1 %></td>
 		<td><%=data.Column_2 %></td>
 		<td><%=data.Column_3 %></td>
@@ -1854,14 +1908,38 @@ John Matthews.</td>
 		<td><%=data.Column_7 %></td>
     </tr>
 	          <%  i++; }) %>
+		
+		<%		var count=userData.length
+		while (count < 30) {
+		%>
+		<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;R</td>
+		<td>&nbsp;</td>
+		</tr>
+		
+		<%  count++; } %>
+		
 </table>
-        <% } %>
+		<p style="color:red;">Legend: Acceptable temperature: Cooler storage and Sales display case 34-38˚F for Beef, Pork and Poultry. Monitoring requirement: Temperatures taken 2 times a day (Product must not exceed 41° F from time ofreceiving until 14 day “use-by”).</p>
 	
+		<p>I have observed completion of the items checked above:</p>
+	<br>
+	<p>______________________________________/ __________________________________  Date: ___________</p>
+	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+	
+	<% } %>
+	
+
 				  	     <%
         if(userData3.length!=0 && userData3[0].Form_Name=="Cooler" ){
 			
         %>
-	<br>
 	<table id="Correction-table" border="1" class="Print_Table">
 	    <tr>
 		<td>Date</td>
@@ -2117,12 +2195,6 @@ John Matthews.</td>
 	          
 	</table>
 	
-	
-	<br>
-		<p>I have observed completion of the items checked above:</p>
-	<br>
-	<p>______________________________________/ __________________________________  Date: ___________</p>
-	<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
 	<br>
 	<p>Reviewed By:__________________________/ ___________________________________  Date:____________</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
@@ -2130,7 +2202,213 @@ John Matthews.</td>
 	<% } %>
 <!--------------------------------------------------------------------------------------------------------------------->
 		  
-	  
+<!-------------Incoming Material-------------------------------------------------------------------------------------------------->	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Incoming_Materials" ){
+        var i=1;        %>
+	
+		<table  class="row_border">
+  <tbody>
+    <tr>
+      <td><strong>OLIVER’S MARKET</strong>
+</td>
+    </tr>
+  </tbody>
+</table>
+	
+	<table  border="1" class="row_main">
+  <tbody>
+	  <tr >
+      <td ><strong>Doc #</strong><br> FORM 10.5
+HACCP ROP</td>
+      <td><strong>Title:</strong> <br>
+		  Incoming Materials Inspection Log  <text style="color:red;">CP-9</text></td>
+      <td><strong>Date Created:</strong><br>
+08-01-2019</td>
+    </tr>
+    <tr>
+      <td><strong>Version #:</strong><br>
+V 2.0</td>
+      <td><strong>Prepared By:</strong><br>
+John Matthews.</td>
+      <td><strong>Date Revised:</strong><br>
+07-15-2020</td>
+    </tr>
+  </tbody>
+</table>
+	
+
+	<p>Store Loc:_______________<text style="color:red;">*Materials cannot be received if PO# is not provided, trailer is not clean and odor free and/or there are safety/security issues.</text></p>
+		
+	<table id="data-table6" border="1" class="Print_Table Center_Print">
+    <tr>
+		
+			     <%
+        if(userData2.length!=0){
+        var l=1;
+        userData2.forEach(function(data2){
+        %>
+		
+		<%
+		if(l==3 || l==4 || l==5)
+		{ %>
+		
+		<td style="color:red;"><%=data2.Question %></td>
+		
+		<% } else { %>
+		
+	   <td><%=data2.Question %></td>
+			    
+		<% } %>
+		
+		<%  l++; }) %>
+        <% }
+		
+		else{ %>
+           			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+			<p>No Data Found</p>
+	</div>
+		
+	
+		</div>
+              
+            
+        <% } %>
+
+    </tr>
+	   <%        %>
+		
+		<%
+		userData.forEach(function(data){
+        %>
+    <tr>
+		<td><%=data.Date %></td>
+		<td><%=data.Column_1 %>&nbsp;<%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_6 %></td>
+		<td><%=data.Column_7 %></td>
+    </tr>
+	          <%  i++; }) %>
+		
+		<%		var count=userData.length
+		while (count < 12) {
+		%>
+		<tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		</tr>
+		
+		<%  count++; } %>
+		
+</table>
+	
+	<% } %>
+	
+	<br>
+
+				  	     <%
+        if(userData3.length!=0 && userData3[0].Form_Name=="Incoming_Materials" ){
+			
+        %>
+	<table id="Correction-table" border="1" class="Print_Table">
+	    <tr>
+		<td>Material & PO#</td>
+		<td>Corrective Action Taken</td>
+		<td>Correction Date</td>
+		<td>Corrected By</td>		
+    </tr>
+		
+			<%
+		var T=0;
+		userData3.forEach(function(data3){
+        %>
+		
+			     <%
+        if(data3.Corection_1!=0){
+         T++; 
+
+        %>
+    <tr>
+		
+		<td><%=data3.Corection_1 %></td>
+		<td><%=data3.Corection_2 %></td>
+		<td><%=data3.Date %></td>
+		<td><%=data3.Corection_3 %></td>		
+    </tr>		
+	<% }  %>			
+					
+	<%  i++; }) %>	
+		
+						<%
+        if(T==0){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+		
+        <% }  %>
+		
+		<%
+        if(T==1){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+			<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+		
+					     <%
+        if(T==2){
+        %>
+		<tr>
+        <td>&nbsp;</td>	
+        <td>&nbsp;</td>	
+		<td>&nbsp;</td>	
+		<td>&nbsp;</td>		
+      </tr>
+        <% }  %>
+			
+
+	          
+	</table>
+	
+	<br>
+	<p>Reviewed By:__________________________/ ___________________________________  Date:____________</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+	
+	<% } %>
+<!--------------------------------------------------------------------------------------------------------------------->	  
   
 
 

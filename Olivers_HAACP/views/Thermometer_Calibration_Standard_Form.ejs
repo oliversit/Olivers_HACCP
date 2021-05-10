@@ -101,14 +101,7 @@
 				  <label for="Floor_Ground">Location</label>
 				  </label>
 				  <p class="form-control"><%=data.Column_2 %></P>
-                  <input type="hidden" class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_2" >
-                  <option value="<%=data.Column_2 %>"><%=data.Column_2 %></option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
+                  <input type="hidden" class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_2" value="<%=data.Column_2 %>">
               </div>
           
 			  

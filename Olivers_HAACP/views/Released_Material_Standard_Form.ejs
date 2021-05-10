@@ -729,14 +729,7 @@
                 <label for="Signage">Certificate of Destruction on File
 				 </label>
 				  <p class="form-control"><%=data.Column_12 %></P>
-                  <input type="hidden" class="custom-select d-block w-100" id="Signage" onchange="Hide_Option_Signage()" name="Column_12" >
-                  <option value="<%=data.Column_12 %>"><%=data.Column_12 %></option>
-                    <option Value="Yes">Yes</option>
-					<option Value="No">No</option>
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
+                  <input type="hidden" class="custom-select d-block w-100" id="Signage" onchange="Hide_Option_Signage()" name="Column_12" value="<%=data.Column_12 %>">
               </div>
           
 			  
