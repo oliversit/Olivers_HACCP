@@ -2409,7 +2409,164 @@ John Matthews.</td>
 	
 	<% } %>
 <!--------------------------------------------------------------------------------------------------------------------->	  
-  
+<!-------------Brittle Plastics--------------------------------------------------------------------------------->	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Brittle_Plastics" ){
+        var i=1;        %>
+		
+	<table  class="row_border">
+  <tbody>
+    <tr>
+      <td><strong>OLIVER’S MARKET</strong>
+</td>
+    </tr>
+  </tbody>
+</table>
+	
+	<table  border="1" class="row_main">
+  <tbody>
+	  <tr >
+      <td ><strong>Doc #</strong><br> FORM 10.6
+HACCP ROP</td>
+      <td><strong>Title:</strong> <br>
+Glass/Brittle Plastics Register</td>
+      <td><strong>Date Created:</strong><br>
+08-01-2019</td>
+    </tr>
+    <tr>
+      <td><strong>Version #:</strong><br>
+V 1.0</td>
+      <td><strong>Prepared By:</strong><br>
+John Matthews.</td>
+      <td><strong>Date Revised:</strong><br>
+N/A</td>
+    </tr>
+  </tbody>
+</table>
+	
+
+	<p>Note: <text style="color:red;">This registry is to include all fixed items made of glass/brittle plastic</text><text style="text-decoration: underline;"> contained within control point locations in the ROP
+HACCP flow chart .</text> This includes; Receiving area, Coolers, Supply Storage and the Processing/ ROP packaging area. All items residing
+above, within or adjacent to those areas including display cases, scale faces and the ROP equipment itself (if applicable) that cannot
+be replaced by less dangerous materials will be included in this registry. <text style="text-decoration: underline;">This register is updated monthly.</text><br>Month:_________ Year:_________ Store Loc:_________________</p>
+		
+	<table id="data-table4" border="1" class="Print_Table Center_Print">
+    <tr>
+      <td>Description</td>
+
+		
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->		
+<td>
+	<table border="1" class="Print_Table Center_Print">
+		<tr><td>Location</td></tr>
+		</table>
+		<table border="1" class="Print_Table Center_Print">
+		<tr><td>&nbsp;</td></tr>
+	</table>
+		
+</td>
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->		
+<td>
+	<table border="1" class="Print_Table Center_Print">
+		<tr><td>Status</td></tr>
+		</table>
+	<table border="1" class="Print_Table Center_Print">
+		<tr>
+			<td><strong>A</strong></td>
+			<td><strong>R</strong></td>
+		</tr>
+	</table>
+		
+</td>
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+		
+		
+  <td>Corrective Action</td>
+<td>Corrected By</td>
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->		
+<td>
+	<table border="1" class="Print_Table Center_Print">
+		<tr><td>Correction</td></tr>
+		</table>
+	<table border="1" class="Print_Table Center_Print">
+		<tr>
+			<td>Date</td>
+			<td>Time</td>
+		</tr>
+	</table>
+		
+</td>
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+<td>Correction Review By</td>
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->		
+<td>
+	<table border="1" class="Print_Table Center_Print">
+		<tr><td>Status</td></tr>
+		</table>
+	<table border="1" class="Print_Table Center_Print">
+		<tr>
+			<td><strong>A</strong></td>
+			<td><strong>R</strong></td>
+		</tr>
+	</table>
+		
+</td>
+<!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    </tr>
+	   <%        %>
+		
+		<%
+		userData.forEach(function(data){
+        %>
+    <tr>
+		<td><%=data.Column_2 %>/<%=data.Column_3 %></td>
+		<td><%=data.Date %>/<%=data.Column_1 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_7 %></td>
+								 
+		<%
+        if(data.Column_7!=0){
+         T++; 
+
+        %>
+		<td><%=data.Column_8 %></td>
+		
+		           <% } else{ %>
+           
+                <td></td>
+           
+        <% } %>
+			<td>t</td>
+		<td>t</td>
+	</tr>
+	          <%  i++; }) %>
+		
+		<%
+		var count=userData.length
+		while (count < 16) {
+		%>
+		<tr>
+		<td>/</td>
+		<td>/</td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		</tr>
+		
+		<%  count++; } %>
+</table>
+       
+
+	<br>
+	<p>Reviewed By:__________________________/ ___________________________________  Date:____________</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+	 <% } %>
+<!-------------------------------------------------------------------------------------------------------------------------> 
 
 
 

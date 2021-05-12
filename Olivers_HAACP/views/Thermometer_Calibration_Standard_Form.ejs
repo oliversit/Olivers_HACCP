@@ -437,11 +437,7 @@
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
-			  			  	  <%
-        if(userDataCor.length!=0){
-        var T=1;
-        userDataCor.forEach(function(dataCor){
-        %>	
+
 			  
 			  <div  id="Hide_Stored" style="display:none">
 			  <div class="row"  >
@@ -451,8 +447,8 @@
 			  		<div class="col mb-3">	
 			<label for="Action_Stored">Corrective Action 
 				  </label>
-				  <p class="form-control"><%=dataCor.Corection_17 %></P>
-                <input type="hidden" class="form-control" name="Column_7" id="Action_Stored" placeholder="" value=<%=dataCor.Corection_17 %> >
+				  <p class="form-control"><%=data.Column_7 %></P>
+                <input type="hidden" class="form-control" name="Column_7" id="Action_Stored" placeholder="" value=<%=data.Column_7 %> >
 						                <input type="hidden" class="form-control" id="Date_Stored" placeholder="" value="" >
 	
 		
@@ -461,8 +457,8 @@
 				 			  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Stored">Corrected By
 				  </label>
-				  <p class="form-control"><%=dataCor.Corection_20 %></P>
-                <input type="hidden" class="form-control" name="Column_8" id="Corrected_Stored" placeholder="" value=<%=dataCor.Corection_20 %> >
+				  <p class="form-control"><%=data.Column_8 %></P>
+                <input type="hidden" class="form-control" name="Column_8" id="Corrected_Stored" placeholder="" value=<%=data.Column_8 %> >
 			     </div> 
 			
 			  </div>
@@ -473,12 +469,6 @@
 			  
 </div>
 			  
-			  			  			          <%  T++; }) %>
-        <% } else{ %>
-            <tr>
-                <td colspan="7">No Data Found</td>
-            </tr>
-        <% } %>
 			  
 			  				          <%  i++; }) %>
         <% } else{ %>
