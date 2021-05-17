@@ -362,7 +362,8 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="sanitized">Category</label>
-				  <p class="form-control"><%=data.Column_6 %></P><input type="hidden" class="custom-select d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" name="Column_6" value="<%=data.Column_6 %>">
+				  <p class="form-control"><%=data.Column_6 %></P>
+				<input type="hidden" class="custom-select d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" name="Column_6" value="<%=data.Column_6 %>">
               </div>
 
           
@@ -379,9 +380,9 @@
 				  
 				  
 			  		<div class="col mb-3">	
-			<label for="Action_sanitized">Corrective Action </label>
-				  <p class="form-control"></P>
-                <input type="hidden" class="form-control" name="Corection_21" id="Action_sanitized"  value="" >
+			<label for="Action_sanitized">Location </label>
+				<p class="form-control"><%=data.Column_17 %></P>
+                <input type="hidden" class="form-control" name="Column_17" id="Action_sanitized"  value="<%=data.Column_17 %>" >
 			     </div>
 				  
 			
@@ -391,29 +392,6 @@
 	
 	
               
-			  
-			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-	                <label for="Date_sanitized">Date</label>
-				  <p class="form-control"></P>
-                <input type="hidden" class="form-control" name="Corection_22" id="Date_sanitized"  value="" >
-			     </div>
-			<div class="col mb-3">	
-				<label for="Time_sanitized">Time</label>
-				  <p class="form-control"></P>
-                <input type="hidden" class="form-control" name="Corection_23" id="Time_sanitized"  value="" >
-			     </div>
-				  				  	  			<div class="col mb-3">	
-						<label for="Corrected_sanitized">Corrected By</label>
-				  <p class="form-control"></P>
-                <input type="hidden" class="form-control" name="Corection_24" id="Corrected_sanitized"  value=<%=userName %>>
-			     </div>
-              </div> 
 			
 			  
 </div>

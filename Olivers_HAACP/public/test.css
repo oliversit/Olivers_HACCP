@@ -17,6 +17,23 @@ body {
 .content_continter {margin-top:-46px;}
 
 
+.Print_Table_Underline
+{
+  border-bottom: 1px solid black;
+  border-collapse: collapse;
+  width:100%
+	
+}
+
+.Print_Table_85
+{
+
+  border-collapse: collapse;
+  margin-left: auto; 
+  margin-right: auto;
+  width:85%	
+}
+
 .Print_Table
 {
   border: 1px solid black;
@@ -25,12 +42,20 @@ body {
 	
 }
 
+.Print_Table_No_Border
+{
+  border-collapse: collapse;
+  width:100%
+	
+}
+
+
 .Center_Print
 {
 	text-align: center;
 }
 
-.row_main
+.Row_main
 {
   border: 1px solid black;
   border-collapse: collapse;
@@ -39,7 +64,7 @@ body {
   width: 95%
 }
 
-.row_border
+.Row_border
 {
   text-align: center;
   border: 1px solid black;
@@ -49,14 +74,14 @@ body {
   width: 95%;
 }
 
-.row_border2
+.Row_border2
 {  
 	text-align: center;
 	border: 3px solid black;
 	padding-top: 4px;
   padding-bottom: 4px;}
 
-.row_border3
+.Row_border3
 {
 	text-align: center;
 	border: 1px solid black;
@@ -66,7 +91,7 @@ background-color:#CACACA;
  
 
 
-.row_no_border
+.Row_no_border
 {border: none;}
 
 .bg-green{

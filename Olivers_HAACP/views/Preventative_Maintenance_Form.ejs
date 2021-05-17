@@ -28,11 +28,11 @@ All maintenance of ROP units performed according to manufacturer’s instruction
 		    </div>
 		
 		
-          <form class="needs-validation" action="/data" method="post">
+          <form class="needs-validation" action="/data_update" method="post">
 			 <input id="Form_Name" name="Form_Name" type="hidden" value="Preventative_Maintenance">
 <%- include('../Partials/Global_Variables') -%>
 			  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
-
+<input id="Form_Id" name="Id" type="hidden" value="<%=data.Id %>">
 		  
 		 <div class="row">
               <div class="col-md-6 mb-3 mt-3">
@@ -69,8 +69,8 @@ All maintenance of ROP units performed according to manufacturer’s instruction
                 <label for="Floor_Ground">ROP Equipment</label>
                   <select class="custom-select d-block w-100" id="Floor_Ground" name="Column_1" >
                   <option value="<%=data.Column_1 %>" ><%=data.Column_1 %></option>
-                    <option Value="A" >MINIPACK-TORRE</option>
-					<option Value="R" >UltraSource</option>
+                    <option Value="MINIPACK-TORRE" >MINIPACK-TORRE</option>
+					<option Value="UltraSource" >UltraSource</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
