@@ -3450,6 +3450,13 @@ N/A</td>
 		<%
 		userData.forEach(function(data){
         %>
+	<br>
+				<table id="data-table5" class="Print_Table_No_Border Row_Color_Grey2">
+				
+				<tr><td></text></td></tr>
+	</table>
+<br>
+	
 	<table id="data-table5"  class="Print_Table_Underline">
 	
 	<tr>
@@ -3484,7 +3491,7 @@ N/A</td>
 
 		<br>
 	
-		<table id="data-table6" class="Print_Table_No_Border">
+		<table id="data-table6" class="Print_Table_No_Border Row_Color_Grey">
 			<tr>
 			<td >&nbsp;</td>
 		    <td style="border-top: 1px solid Black;">&nbsp;</td>
@@ -3677,7 +3684,7 @@ N/A</td>
          T++; 
 
         %>
-		<text style="border: 1px solid Black;">&nbsp;X&nbsp;</text> OTHER __<%=data.Column_17 %>__
+		<text style="border: 1px solid Black;">&nbsp;X&nbsp;</text> OTHER __<%=data.Column_19 %>__
 		
 		           <% } else{ %>
            
@@ -3702,12 +3709,12 @@ N/A</td>
 	</table>	
 
 			<table id="data-table5" class="Print_Table_Underline">
-					<tr>
+					<tr style="border-bottom: 1px solid Black;">
 		<td>&nbsp;</td>
 		</tr>
 	</table>
-<table id="data-table7" class="Print_Table_Underline">
-	<tr >
+<table id="data-table27" class="Print_Table_No_Border Row_Color_Grey">
+	<tr>
 	<td>All <strong>tools and parts</strong> accounted for?</td>
 		
 								<td>		<%
@@ -3741,14 +3748,16 @@ N/A</td>
 
 </table>
 			
-			<table id="data-table5" class="Print_Table_Underline">
-					<tr>
+			<table id="data-table5" class="Print_Table_No_Border Row_Color_Grey">
+					<tr style="border-top: 1px solid Black; border-bottom: 1px solid Black;">
 		<td>&nbsp;</td>
 		</tr>
+				
 	</table>
 
-<table id="data-table8"  class="Print_Table_No_Border">
-<tr>
+
+<table id="data-table8"  class="Print_Table_No_Border Row_Color_Grey">
+<tr >
 	<td>All guards in place and safety devices tested?</td>
     <td></td>
 	<td></td>
@@ -3762,11 +3771,11 @@ N/A</td>
          T++; 
 
         %>
-		Yes <text style="border: 1px solid Black;">&nbsp;X&nbsp;</text> 
+		Yes <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;X&nbsp;</text> 
 		
 		           <% } else{ %>
            
-                Yes <text style="border: 1px solid Black;">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
+                Yes <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
            
         <% } %></td>
 		
@@ -3775,11 +3784,11 @@ N/A</td>
          T++; 
 
         %>
-		No <text style="border: 1px solid Black;">&nbsp;X&nbsp;</text> 
+		No <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;X&nbsp;</text> 
 		
 		           <% } else{ %>
            
-                No <text style="border: 1px solid Black;">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
+                No <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
            
         <% } %></td>
 	<td>____<%=data.Column_16 %>Initials____Initials</td>
@@ -3799,11 +3808,11 @@ N/A</td>
          T++; 
 
         %>
-		Yes <text style="border: 1px solid Black;">&nbsp;X&nbsp;</text> 
+		Yes <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;X&nbsp;</text> 
 		
 		           <% } else{ %>
            
-                Yes <text style="border: 1px solid Black;">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
+                Yes <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
            
         <% } %></td>
 		
@@ -3812,11 +3821,11 @@ N/A</td>
          T++; 
 
         %>
-		No <text style="border: 1px solid Black;">&nbsp;X&nbsp;</text> 
+		No <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;X&nbsp;</text> 
 		
 		           <% } else{ %>
            
-                No <text style="border: 1px solid Black;">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
+                No <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
            
         <% } %></td>
 	<td>____<%=data.Column_16 %>Initials____Initials</td>
@@ -3836,11 +3845,11 @@ N/A</td>
          T++; 
 
         %>
-		Yes <text style="border: 1px solid Black;">&nbsp;X&nbsp;</text> 
+		Yes <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;X&nbsp;</text> 
 		
 		           <% } else{ %>
            
-                Yes <text style="border: 1px solid Black;">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
+                Yes <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
            
         <% } %></td>
 		
@@ -3849,11 +3858,11 @@ N/A</td>
          T++; 
 
         %>
-		No <text style="border: 1px solid Black;">&nbsp;X&nbsp;</text> 
+		No <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;X&nbsp;</text> 
 		
 		           <% } else{ %>
            
-                No <text style="border: 1px solid Black;">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
+                No <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
            
         <% } %></td>
 	<td>____<%=data.Column_16 %>Initials____Initials</td>
@@ -3866,18 +3875,18 @@ N/A</td>
 	<td></td>
 </tr>
 	
-<tr>
+<tr >
 	<td></td>
 								<td>		<%
         if(data.Column_15=="Yes"){
          T++; 
 
         %>
-		Yes <text style="border: 1px solid Black;">&nbsp;X&nbsp;</text> 
+		Yes <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;X&nbsp;</text> 
 		
 		           <% } else{ %>
            
-                Yes <text style="border: 1px solid Black;">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
+                Yes <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
            
         <% } %></td>
 		
@@ -3886,21 +3895,68 @@ N/A</td>
          T++; 
 
         %>
-		No <text style="border: 1px solid Black;">&nbsp;X&nbsp;</text> 
+		No <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;X&nbsp;</text> 
 		
 		           <% } else{ %>
            
-                No <text style="border: 1px solid Black;">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
+                No <text style="border: 1px solid Black;" class="Row_Color_White">&nbsp;&nbsp;&nbsp;&nbsp;</text> 
            
         <% } %></td>
 	<td>____<%=data.Column_16 %>Initials____Initials</td>
 </tr>
 </table>
 
+		<table id="data-table8" class="Print_Table_No_Border Row_Color_Grey">
+		<tr >
+		<td>&nbsp;</td>
+		</tr>
+	</table>
+
+		<table id="data-table5" class="Print_Table_Underline">
+		<tr style="border-top: 1px solid Black;">
+		<td>Corrective Action: <%=data.Column_17 %> </td>
+		</tr>
+	</table>
+	
+			<table id="data-table5" class="Print_Table_Underline">
+					<tr>
+		<td>&nbsp;</td>
+		</tr>
+	</table>
+
+<br>
+			<table id="data-table5" class="Print_Table_No_Border">
+					<tr>
+		<td style="border-top: 1px solid Black;">Mechanic/Technician Signature</td>
+		<td>&nbsp;</td>
+		<td style="border-top: 1px solid Black;">Production Lead/Supervisor Signature</td>
+		</tr>
+				<tr><td></td></tr>
+				
+				<tr>
+						<td style="border-top: 1px solid Black;">Maintenance Lead Signature</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		</tr>
+				
+	</table>
+
+<br>
+			<table id="data-table5" class="Print_Table_No_Border">
+				
+				<tr><td><text style="color:red;">Any equipment under temporary repair that does not pose a food safety or injury threat will be labeled and permanently repaired in a timely fashion.</text></td></tr>
+	</table>
+
+<br>
+
+			<table id="data-table5" class="Print_Table_No_Border Row_Color_Grey2">
+				
+				<tr><td></text></td></tr>
+	</table>
+
+
 	 <% }) %>
-	<br>
-	<p>Reviewed By:__________________________/ ___________________________________  Date:____________</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signature&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Printed Name</p>
+
 	 <% } %>
 <!------------------------------------------------------------------------------------------------------------------------->
 
