@@ -132,20 +132,20 @@
 <file name="Foreign_Materials_Form.ejs" server="192.168.75.162//var/www/Haccp/" local="132633463182562571" remote="132633463940000000" Dst="2" />
 <file name="Released_Material_Form.ejs" server="192.168.75.162//var/www/Haccp/" local="132629820661689168" remote="132629821750000000" Dst="2" />
 <file name="Work_Order_Form.ejs" server="192.168.75.162//var/www/Haccp/" local="132633462523035919" remote="132633463950000000" Dst="2" />
-<file name="Brittle_Plastics_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132654199250254467" remote="132654199340000000" Dst="2" />
-<file name="Brittle_Plastics_Form_New.ejs" server="192.168.75.61//var/www/Haccp/" local="132629978546353142" remote="132642031820000000" Dst="2" />
+<file name="Brittle_Plastics_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132661011257775856" remote="132661015730000000" Dst="2" />
+<file name="Brittle_Plastics_Form_New.ejs" server="192.168.75.61//var/www/Haccp/" local="132661011232811461" remote="132661015730000000" Dst="2" />
 <file name="Cold_Rooms_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658339777936468" remote="132658340240000000" Dst="2" />
 <file name="Cold_Rooms_Form_New.ejs" server="192.168.75.61//var/www/Haccp/" local="132629957294899810" remote="132642031830000000" Dst="2" />
 <file name="Cooler_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658339567739551" remote="132658340240000000" Dst="2" />
 <file name="Cooler_Form_New.ejs" server="192.168.75.61//var/www/Haccp/" local="132629969498171719" remote="132642031830000000" Dst="2" />
 <file name="Dashboard.ejs" server="192.168.75.61//var/www/Haccp/" local="132628205086806085" remote="132642031830000000" Dst="2" />
 <file name="Dashboard2.ejs" server="192.168.75.61//var/www/Haccp/" local="132628928732532013" remote="132642031830000000" Dst="2" />
-<file name="Foreign_Materials_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658338731373001" remote="132658340240000000" Dst="2" />
+<file name="Foreign_Materials_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132659193750131575" remote="132659194440000000" Dst="2" />
 <file name="Foreign_Materials_Form_New.ejs" server="192.168.75.61//var/www/Haccp/" local="132629140080943092" remote="132642031840000000" Dst="2" />
 <file name="Form Pages.txt" server="192.168.75.61//var/www/Haccp/" local="132629768521909363" remote="132642031840000000" Dst="2" />
 <file name="Generate.ejs" server="192.168.75.61//var/www/Haccp/" local="132653329533566681" remote="132653329530000000" Dst="2" />
 <file name="Incoming_Materials_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658338450345460" remote="132658340250000000" Dst="2" />
-<file name="Incoming_Materials_Form_New.ejs" server="192.168.75.61//var/www/Haccp/" local="132629973886641285" remote="132642031840000000" Dst="2" />
+<file name="Incoming_Materials_Form_New.ejs" server="192.168.75.61//var/www/Haccp/" local="132660017332705543" remote="132660017350000000" Dst="2" />
 <file name="List_Edit.ejs" server="192.168.75.61//var/www/Haccp/" local="132617681130392226" remote="132642031850000000" Dst="2" />
 <file name="List_Edit_Item.ejs" server="192.168.75.61//var/www/Haccp/" local="132617681130482268" remote="132642031850000000" Dst="2" />
 <file name="Maint_Page.ejs" server="192.168.75.61//var/www/Haccp/" local="132617681130680983" remote="132642031850000000" Dst="2" />
@@ -165,15 +165,15 @@
 <file name="Raw_Product_Form_New.ejs" server="192.168.75.61//var/www/Haccp/" local="132629967773207760" remote="132642031870000000" Dst="2" />
 <file name="Released_Material_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658336917954919" remote="132658340260000000" Dst="2" />
 <file name="Released_Material_Form_New.ejs" server="192.168.75.61//var/www/Haccp/" local="132629786562309463" remote="132642031870000000" Dst="2" />
-<file name="Reports.ejs" server="192.168.75.61//var/www/Haccp/" local="132647998365107259" remote="132647998470000000" Dst="2" />
+<file name="Reports.ejs" server="192.168.75.61//var/www/Haccp/" local="132661015786136369" remote="132661015780000000" Dst="2" />
 <file name="Settings_Page_Admin.ejs" server="192.168.75.61//var/www/Haccp/" local="132623914021391711" remote="132642031880000000" Dst="2" />
 <file name="Settings_Page_Standard.ejs" server="192.168.75.61//var/www/Haccp/" local="132627424951607864" remote="132642031880000000" Dst="2" />
 <file name="Sign_Incorrect.ejs" server="192.168.75.61//var/www/Haccp/" local="132648154057491007" remote="132648154250000000" Dst="2" />
 <file name="Support_Page.ejs" server="192.168.75.61//var/www/Haccp/" local="132629162668806981" remote="132642031880000000" Dst="2" />
-<file name="Thermometer_Calibration_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658337075134982" remote="132658340260000000" Dst="2" />
-<file name="Thermometer_Calibration_Form_New.ejs" server="192.168.75.61//var/www/Haccp/" local="132630811223521183" remote="132642031890000000" Dst="2" />
+<file name="Thermometer_Calibration_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132661013994989861" remote="132661015790000000" Dst="2" />
+<file name="Thermometer_Calibration_Form_New.ejs" server="192.168.75.61//var/www/Haccp/" local="132661013995790053" remote="132661015790000000" Dst="2" />
 <file name="User_List.ejs" server="192.168.75.61//var/www/Haccp/" local="132627434396009971" remote="132642031890000000" Dst="2" />
-<file name="Weekly_Generate.ejs" server="192.168.75.61//var/www/Haccp/" local="132642924706898926" remote="132642924820000000" Dst="2" />
+<file name="Weekly_Generate.ejs" server="192.168.75.61//var/www/Haccp/" local="132660242275711283" remote="132660242350000000" Dst="2" />
 <file name="Weekly_Processing_Generate.ejs" server="192.168.75.61//var/www/Haccp/" local="132621323636509060" remote="132642031890000000" Dst="2" />
 <file name="Work_Order_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658334977484765" remote="132658335070000000" Dst="2" />
 <file name="Work_Order_Form_New.ejs" server="192.168.75.61//var/www/Haccp/" local="132658333587765998" remote="132658333670000000" Dst="2" />
@@ -183,15 +183,18 @@
 <file name="Processing_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658338016637661" remote="132658340250000000" Dst="2" />
 <file name="Generate_Standard.ejs" server="192.168.75.61//var/www/Haccp/" local="132642924709859673" remote="132642924810000000" Dst="2" />
 <file name="Weekly_Generate_Standard.ejs" server="192.168.75.61//var/www/Haccp/" local="132642924707729142" remote="132642924820000000" Dst="2" />
-<file name="Brittle_Plastics_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132654198905176346" remote="132654199350000000" Dst="2" />
+<file name="Brittle_Plastics_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132661011203133139" remote="132661015740000000" Dst="2" />
 <file name="Cold_Rooms_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658339664355221" remote="132658340240000000" Dst="2" />
 <file name="Cooler_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658338879416325" remote="132658340240000000" Dst="2" />
-<file name="Foreign_Materials_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658338539668027" remote="132658340250000000" Dst="2" />
+<file name="Foreign_Materials_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132659194359384847" remote="132659194440000000" Dst="2" />
 <file name="Incoming_Materials_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658338350985867" remote="132658340250000000" Dst="2" />
 <file name="NUOCA_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132654895642899256" remote="132654895720000000" Dst="2" />
 <file name="Raw_Product_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658337920212151" remote="132658340260000000" Dst="2" />
-<file name="Thermometer_Calibration_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658337554283371" remote="132658340260000000" Dst="2" />
+<file name="Thermometer_Calibration_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132661014493191156" remote="132661015790000000" Dst="2" />
 <file name="Work_Order_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658334976564576" remote="132658335080000000" Dst="2" />
 <file name="Released_Material_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132658337276886530" remote="132658340260000000" Dst="2" />
 <file name="Preventative_Maintenance_Standard_Form.ejs" server="192.168.75.61//var/www/Haccp/" local="132657494588061605" remote="132657494880000000" Dst="2" />
+<file name="Export.ejs" server="192.168.75.61//var/www/Haccp/" local="132661051351338432" remote="132661051430000000" Dst="2" />
+<file name="Print.ejs" server="192.168.75.61//var/www/Haccp/" local="132660258189396053" remote="132660258260000000" Dst="2" />
+<file name="Export - Copy.ejs" server="192.168.75.61//var/www/Haccp/" local="132661046354635569" remote="132661049290000000" Dst="2" />
 </dwsync>

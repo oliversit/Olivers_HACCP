@@ -100,22 +100,9 @@
 			  
 			 
 <!-------Location-------------------------------------------------------------------------------------------------------->
-            <div class="row align-items-end">
-              <div class="col-md-12 mb-3">
-                <label for="Floor_Ground">Location</label>
-                  <select class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_2" >
-                  <option value="<%=data.Column_2 %>"><%=data.Column_2 %></option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
-                </select>
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
-              </div>
-          
-			  
-			  </div>
-			  
+
+                  <input type="hidden" class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_2" value="<%=data.Column_2 %>">
+
 			 
 			  
  <!-- hidden Row --------------------------------------------------------------------------------------------------------->
@@ -181,8 +168,9 @@
                 <label for="Pest">Therm. Or probe #</label>
                   <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" name="Column_3" >
                   <option value="<%=data.Column_3 %>"><%=data.Column_3 %></option>
-                    <option Value="A">Acceptable</option>
-					<option Value="R">Rejected</option>
+                    <option Value="Digital">Digital</option>
+					<option Value="Analog">Analog</option>
+		            <option Value="Infrared">Infrared</option>
                 </select>
 				         <div class="invalid-feedback">
                   Please select a valid Condition.
@@ -328,18 +316,7 @@
  
 <!-------NIST Temperature
 ˚F (Optional)-------------------------------------------------------------------------------------------------------->
-            <div class="row align-items-end">
-              <div class="col-md-12 mb-3">
-                <label for="Covered">NIST Temperature
-˚F (Optional)</label>
-<input type="text" class= "form-control" id="Covered" value="<%=data.Column_5 %>" name="Column_5">
-				         <div class="invalid-feedback">
-                  Please select a valid Condition.
-                </div>
-              </div>
-          
-			  
-			  </div>
+<input type="hidden" class= "form-control" id="Covered" value="<%=data.Column_5 %>" name="Column_5">
 			  
 			 
 			  

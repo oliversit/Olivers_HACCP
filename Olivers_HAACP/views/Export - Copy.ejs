@@ -19,8 +19,9 @@
 
 </style>
 
-<body>
-<%- include('../Partials/NavBar') -%>		    
+<body onload="doit('xlsx');">
+<%- include('../Partials/NavBar') -%>
+<%- include('../Partials/Excel_Export') -%>			    
 	
 	
 	<div class="container noPrint">
@@ -168,9 +169,14 @@
 <!-- Bottom Buttons --> 
 		<div class="row" >
 			<div class="col mb-3">
-				
-				<form action="../Frontend/Export" class="button_height" method="post">
-		<input type="submit" class="btn btn-primary btn-lg btn-block Grey2" value="Export">
+		<input type="submit" class="btn btn-primary btn-lg btn-block Grey2" value="Export" onclick="doit('xlsx');">
+					</div>
+			
+				  			<div class="col mb-3">
+													
+													<div class="test">
+							<form action="../Frontend/Print" class="button_height" method="post">
+						  <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" type="submit" >Print</button>
 					<%- include('../Partials/Global_Variables') -%>
 					<input id="Form_Title14" name="Form_Title" type="hidden" value="Reports">
 				 <input id="Form_Name" name="Form_Name" type="hidden" value="<%=AForm %>">
@@ -179,14 +185,6 @@
 					<input id="Report1" name="Report_Type" type="hidden" value="<%=ReportType %>">
 					<input id="Action_Id" name="Action" type="hidden" value="Export">
 					</form>
-					</div>
-			
-				  			<div class="col mb-3">
-													
-													<div class="test">
-						                       <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" 
-													   
-													   type="button" onclick="window.print();return false;">Print</button>
 														</div>
 			     </div>
 			</div>
@@ -219,28 +217,12 @@
 		
 	</div>
 	
-	
-	
-	
-			<%
-        if(FormBox=="Packing"){
-        %>	
-	<%- include('../Partials/Weekly_Packing_Print_Table') -%>
-		<% }  %>
-			
-				<%
-        if(FormBox=="Processing"){
-        %>	
-	<%- include('../Partials/Weekly_Processing_Print_Table') -%>
-		<% }  %>
-	
-				<%
-        if(FormBox=="Cold Rooms"){
-        %>	
-	<%- include('../Partials/Weekly_Cold_Rooms_Print_Table') -%>
-		<% }  %>	
+
 
 	</body>
 </html>
 
-<script></script>
+<script>
+
+
+</script>

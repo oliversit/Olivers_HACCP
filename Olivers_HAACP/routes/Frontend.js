@@ -282,6 +282,8 @@ var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 		var AForm_Name= req.body.Form_Name;
 		var Form_Type = req.body.Form_Name;
+		var D1 = req.body.Date1;
+		var D2 = req.body.Date2;
 		var Title= req.body.Form_Title;	
 		var box= req.body.Form_Name;
 		var Report_Select= req.body.Report_Type;
@@ -309,14 +311,14 @@ var datastore =req.body.userstore;
 	   if (Report_Select=="Weekly") { 
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Weekly_Generate', { title: 'Weekly_Generate', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name});
+		   res.render('Weekly_Generate', { title: 'Weekly_Generate', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, Dateone: D1, Datetwo: D2, ReportType: Report_Select});
 	   }
 	   
 	   else {
 		   
 		   
 	   }
-	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name});
+	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, Dateone: D1, Datetwo: D2, ReportType: Report_Select});
 	   
 	   }
 	   	  
@@ -342,6 +344,144 @@ var datastore =req.body.userstore;
 });
 
 
+router.post('/Export', function(req, res, next) {
+	var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+		var AForm_Name= req.body.Form_Name;
+		var Form_Type = req.body.Form_Name;
+		var D1 = req.body.Date1;
+		var D2 = req.body.Date2;
+	var Action_Type=req.body.Action;
+		var Title= req.body.Form_Title;	
+		var box= req.body.Form_Name;
+		var Report_Select= req.body.Report_Type;
+		if (Report_Select=="Range") {
+		Form_Type= req.body.Form_Name1;
+		box= req.body.Form_Name1;
+		AForm_Name= req.body.Form_Name1;
+		}
+		
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
+		if (datausr=="Store Level") {AForm_Name=AForm_Name+"_Standard"}
+   connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
+   connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [Form_Type] ,function (err, data2, fields) {
+   connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data3, fields) {
+		
+    if (err) throw err;
+	   if (Report_Select=="Weekly") { 
+		   
+		   if (datausr=="Administrator"){
+		   res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select});
+	   }
+	   
+	   else {
+		   
+		   
+	   }
+	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, Dateone: D1, Datetwo: D2, ActionType: Action_Type});
+	   
+	   }
+	   	  
+	   if (Report_Select=="Range") {    
+		   
+		   if (datausr=="Administrator"){
+		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name});
+		   }
+		   
+		   
+		   else {
+			   
+					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name});   
+			   
+		   }
+	   
+	   
+	   }
+	
+  });
+  });
+  });
+});
+
+
+router.post('/Print', function(req, res, next) {
+	var user= req.body.username;
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+		var AForm_Name= req.body.Form_Name;
+		var Form_Type = req.body.Form_Name;
+		var D1 = req.body.Date1;
+		var D2 = req.body.Date2;
+	var Action_Type=req.body.Action;
+		var Title= req.body.Form_Title;	
+		var box= req.body.Form_Name;
+		var Report_Select= req.body.Report_Type;
+		if (Report_Select=="Range") {
+		Form_Type= req.body.Form_Name1;
+		box= req.body.Form_Name1;
+		AForm_Name= req.body.Form_Name1;
+		}
+		
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
+		if (datausr=="Store Level") {AForm_Name=AForm_Name+"_Standard"}
+   connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
+   connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [Form_Type] ,function (err, data2, fields) {
+   connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data3, fields) {
+		
+    if (err) throw err;
+	   if (Report_Select=="Weekly") { 
+		   
+		   if (datausr=="Administrator"){
+		   res.render('Print', { title: 'Print', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select});
+	   }
+	   
+	   else {
+		   
+		   
+	   }
+	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, Dateone: D1, Datetwo: D2, ActionType: Action_Type});
+	   
+	   }
+	   	  
+	   if (Report_Select=="Range") {    
+		   
+		   if (datausr=="Administrator"){
+		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name});
+		   }
+		   
+		   
+		   else {
+			   
+					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name});   
+			   
+		   }
+	   
+	   
+	   }
+	
+  });
+  });
+  });
+});
 //-------------------------------------------New Forms ------------------------------------------------------------>
 
 router.post('/Packing_Form_New', function(req, res, next) {

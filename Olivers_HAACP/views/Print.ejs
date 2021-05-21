@@ -19,10 +19,8 @@
 
 </style>
 
-<body>
-<%- include('../Partials/NavBar') -%>		    
-	
-	
+<body onload="window.print();return false;">
+<%- include('../Partials/NavBar') -%>    
 	<div class="container noPrint">
 
    
@@ -219,9 +217,6 @@
 		
 	</div>
 	
-	
-	
-	
 			<%
         if(FormBox=="Packing"){
         %>	
@@ -240,7 +235,11 @@
 	<%- include('../Partials/Weekly_Cold_Rooms_Print_Table') -%>
 		<% }  %>	
 
+
 	</body>
 </html>
 
-<script></script>
+<script>
+
+
+</script>
