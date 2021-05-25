@@ -12,10 +12,10 @@
         %>
 	  
 <%- include('../Partials/NavBar') -%>
+<%- include('../Partials/Print_Style') -%>  
 	  
 	  
-	  
-    <div class="container">
+    <div class="container noPrint">
   
 
       <div class="row">
@@ -603,24 +603,8 @@ pallets, broken, moldy or dirty boxes</label>
 			
 			  			  <div class="row"  >
 
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-				
-	                                      <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" type="button">Export</button>
-					
-			     </div>
-		
-				  				  	  			<div class="col mb-3">
-													
-													<div class="test">
-						                       <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" 
-													   
-													   type="button">Print</button>
-														</div>
-			     </div>
+<%- include('../Partials/Bottom_Buttons') -%>	
+							  
               </div> 
       
 			  
@@ -640,7 +624,8 @@ pallets, broken, moldy or dirty boxes</label>
 			  
 
     </div>
-
+<%- include('../Partials/Weekly_Cold_Rooms_Print_Table') -%>
+	  <%- include('../Partials/Excel_Export') -%>
 <%- include('../Partials/ScriptDataOnLoad') -%>
   </body>
 </html>

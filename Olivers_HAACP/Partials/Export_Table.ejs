@@ -852,6 +852,171 @@
 	
 <!-------------------------------------------------------------------------------------------------------------->	
 	
+
+<!-------------Thermometer Calibration--------------------------------------------------------------------------------->	
+  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Thermometer_Calibration" ){
+        %>
+	
+  <table id="data-table" hidden >
+    <tr>
+		
+			  
+		
+		
+		
+
+      <td>Room Location</td>
+		<td>Therm. Or probe #</td>
+		<td>Date</td>
+		<td>Time</td>
+<td>Temperature Registered ˚F</td>
+<td>NIST Temperature ˚F (Optional)</td>
+<td>Corrective Action</td>
+<td>Corrected By:(initials)</td>
+		
+    </tr>
+	  
+	     <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Date %></td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_7 %></td>
+				<%
+        if(data.Column_7!=0){
+         T++; 
+
+        %>
+		<td><%=data.Column_8 %></td>
+		
+		           <% } else{ %>
+           
+                <td></td>
+           
+        <% } %>
+		
+    </tr>
+	          <%  i++; }) %>
+        <% }
+	  
+	  
+	  else{ %>
+              
+            
+        <% } %>
+  </table>
+	
+	<% } %>
+	
+<!-------------------------------------------------------------------------------------------------------------->	
+	
+<!-------------Raw Product--------------------------------------------------------------------------------->	
+  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Raw_Product" ){
+        %>
+	
+  <table id="data-table" hidden >
+    <tr>
+
+				
+
+			  <%
+        if(userData2.length!=0){
+        var i=1;
+        userData2.forEach(function(data2){
+        %>
+	<td><%=data2.Question %></td>
+			          <%  i++; }) %>
+        <% } else{ %>
+            
+        <% } %>
+		<td>Date</td>
+		<td>Corrective Action Taken for Rejected Conditions</td>
+		<td>Corrected By</td>
+		<td>Corrected Date</td>
+    </tr>
+	  
+	     <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_6 %></td>
+		<td><%=data.Column_7 %></td>
+		<td><%=data.Column_8 %></td>
+		<td><%=data.Column_9 %></td>
+		<td><%=data.Column_10 %></td>
+	    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+			     <%
+        if(data3.Corection_29!=0){
+         T++; 
+
+        %>
+        <td>"<%=data3.Date %>"</td>
+	    <td><%=data3.Corection_29 %></td>
+		<td><%=data3.Corection_32 %></td>
+		<td>"<%=data3.Corection_30 %>"</td>		
+	<% } else{ %>
+	  
+		
+	    <td></td>
+		<td></td>
+		<td></td>
+		<td></td>	
+
+          <% } %>
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+		
+    </tr>
+	          <%  i++; }) %>
+        <% }
+	  
+	  
+	  else{ %>
+           			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+			<p>No Data Found</p>
+	</div>
+		
+	
+		</div>
+              
+            
+        <% } %>
+  </table>
+	
+	<% } %>
+	
+<!-------------------------------------------------------------------------------------------------------------->		
+	
+	
 <!-------------Incoming Materials--------------------------------------------------------------------------------->	
 	
 	  	     <%

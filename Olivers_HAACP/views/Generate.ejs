@@ -21,7 +21,7 @@
 
 <body>
 <%- include('../Partials/NavBar') -%>
-			    
+		    
 	
 	<div class="container noPrint">
 
@@ -167,7 +167,7 @@
 <!-- Bottom Buttons --> 
 		<div class="row" >
 			<div class="col mb-3">
-		<input type="submit" class="btn btn-primary btn-lg btn-block Grey2" value="Export" onclick="doit('xlsx');">
+		<input type="button" class="btn btn-primary btn-lg btn-block Grey2" value="Export" onclick="doit('xlsx');">
 				</div>
 			
 				  			<div class="col mb-3">
@@ -209,7 +209,7 @@
 	</div>
 	
 	<%- include('../Partials/Print_Table') -%>	
-	
+	<%- include('../Partials/Excel_Export') -%>	
 	</body>
 </html>
 

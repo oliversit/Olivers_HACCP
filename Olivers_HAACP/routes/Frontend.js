@@ -712,13 +712,25 @@ router.post('/Cold_Rooms_Form', function(req, res, next) {
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
-	var Title= "Cold Rooms";	
+	var Title= "Cold Rooms";
+	var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     if (err) throw err;
         connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+	connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {		
     if (err) throw err;
-                res.render('Cold_Rooms_Form', { title: 'Cold_Rooms_Form', userData: data, userName: user, userRole: datausr, userDataCor: dataCor, userId: datauserId, userStore: datastore, FormTitle: Title});
+                res.render('Cold_Rooms_Form', { title: 'Cold_Rooms_Form', userData: data, userName: user, userRole: datausr, userDataCor: dataCor, userData3: dataCor, userData2: data2, FormBox: box, userId: datauserId, userStore: datastore, FormTitle: Title});
+  });
   });
   });
 });
@@ -761,11 +773,21 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Brittle Plastics";
+			var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Brittle_Plastics_Form', { title: 'Brittle_Plastics_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Brittle_Plastics_Form', { title: 'Brittle_Plastics_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
