@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <%- include('../Partials/MetaData') -%>
-
+<%- include('../Partials/Print_Style') -%>
   <body >
 	  
 
@@ -10,7 +10,7 @@
 	  
 	  
 	  
-    <div class="container">
+    <div class="container noPrint">
   	  	  	  <%
         if(userData.length!=0){
         var Corection_Number=0;
@@ -1212,7 +1212,7 @@
 			  
 
     </div>
-
+<%- include('../Partials/Weekly_Processing_Print_Table') -%>
 <%- include('../Partials/ScriptDataOnLoad') -%>
 	  
   </body>

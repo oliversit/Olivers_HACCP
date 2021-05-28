@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <%- include('../Partials/MetaData') -%>
-
+<%- include('../Partials/Print_Style') -%>
   <body >
 	  
 <%- include('../Partials/NavBar') -%>
@@ -14,7 +14,7 @@
         %>
 	   
 	  
-    <div class="container">
+    <div class="container noPrint">
   
 
       <div class="row " >
@@ -522,7 +522,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_sanitized">Corrected By</label>
 													<p class="form-control"><%=dataCor.Corection_24 %></P>
-                <input type="hidden" class="form-control" name="Corection_24" id="Corrected_sanitized"  value=<%=dataCor.Corection_24 %>>
+                <input type="hidden" class="form-control" name="Corection_24" id="Corrected_sanitized"  value="<%=dataCor.Corection_24 %>">
 			     </div>
               </div> 
 			
@@ -811,7 +811,7 @@ be replaced by less dangerous materials will be included in this registry. This 
 			  
 
     </div>
-
+<%- include('../Partials/Print_Table') -%>
 <%- include('../Partials/ScriptDataOnLoad') -%>
 	  
   </body>

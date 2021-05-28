@@ -17,7 +17,7 @@
 			<form class="needs-validation" action="/List" method="post">
 				  <%- include('../Partials/Global_Variables') -%>
 			<input id="Name" name="Type" type="hidden" value="<%=formName %>">
-				<input id="Form_Title" name="Form_Title" type="hidden" value=<%=formName %>>
+				<input id="Form_Title" name="Form_Title" type="hidden" value="<%=formName %>">
            			<div class="row " >
 			
 							
@@ -98,7 +98,7 @@
 				  <%- include('../Partials/Global_Variables') -%>
 					<input id="Id_Value" name="Id" type="hidden" value="<%=data.Id %>">
 					<input id="Name_Form_Delete" name="Type" type="hidden" value="<%=formName %>">
-				<input id="Form_Title2" name="Form_Title" type="hidden" value=<%=formName %>>
+				<input id="Form_Title2" name="Form_Title" type="hidden" value="<%=formName %>">
 				     <button Class="btn btn-primary btn-lg btn-block Grey" Id= "the_Edit_Button" type="submit" value="$Actual_Id" > Edit</button>
 				</form>
 	</div>
@@ -111,7 +111,7 @@
 											  <%- include('../Partials/Global_Variables') -%>
 											<input id="Id_Value" name="Id" type="hidden" value="<%=data.Id %>">
 											<input id="Name_Form_Delete2" name="Type" type="hidden" value="<%=formName %>">
-											<input id="Form_Title3" name="Form_Title" type="hidden" value=<%=formName %>>
+											<input id="Form_Title3" name="Form_Title" type="hidden" value="<%=formName %>">
         <button Class="btn btn-primary btn-lg btn-block Grey" Id= "the_Edit_Buttonw" type="submit" value="$Actual_Id" > Delete</button>
 											</form>
 </div>
@@ -184,7 +184,7 @@
               <div class="col mb-3">
 				  
 				  <form action="../Frontend/Dashboard" class="button_height" method="post">
-					    <input id="username1" name="username" type="hidden" value=<%=userName %>>
+					    <input id="username1" name="username" type="hidden" value="<%=userName %>">
 					  <input id="Form_Title13" name="Form_Title" type="hidden" value="Forms">
 					  <br>
                        <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Dashboard</button>

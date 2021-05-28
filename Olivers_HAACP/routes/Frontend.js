@@ -256,6 +256,7 @@ var datastore =req.body.userstore;
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
+		var ReportLocation=req.body.Report_Location
 		var Title= req.body.Form_Title;	
 		var box=req.body.Form_Name;
 			if (box=="Raw_Product") {box="Raw Product"}
@@ -267,11 +268,28 @@ var datastore =req.body.userstore;
 		if (box=="Foreign_Materials") {box="Foreign Materials"}
 		if (box=="Released_Material") {box="Rejected/Released"}
 		if (box=="Work_Order") {box="Work Order"}		
-    connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ?', [req.body.Form_Name, req.body.Date] ,function (err, data, fields) {
+		
+		 if (ReportLocation=="All") { 
+		    connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ?', [req.body.Form_Name, req.body.Date] ,function (err, data, fields) {
 		
     if (err) throw err;
     res.render('Main_Result', { title: 'Main_Result', userData: data, userName: user, userId: datauserId, userStore: datastore, userRole: datausr, FormTitle: Title, FormBox: box});	
   });
+		 }
+	
+//---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----->		
+	else
+	
+	{
+		    connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and store= ? and Date = ?', [req.body.Form_Name, ReportLocation, req.body.Date] ,function (err, data, fields) {
+		
+    if (err) throw err;
+    res.render('Main_Result', { title: 'Main_Result', userData: data, userName: user, userId: datauserId, userStore: datastore, userRole: datausr, FormTitle: Title, FormBox: box});	
+  });
+		
+}
+//---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----->		
+	
 });
 
 
@@ -280,12 +298,14 @@ var datastore =req.body.userstore;
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
+		var Excel_Form= req.body.Form_Name;
 		var AForm_Name= req.body.Form_Name;
 		var Form_Type = req.body.Form_Name;
 		var D1 = req.body.Date1;
 		var D2 = req.body.Date2;
 		var Title= req.body.Form_Title;	
 		var box= req.body.Form_Name;
+		var ReportLocation=req.body.Report_Location;
 		var Report_Select= req.body.Report_Type;
 		if (Report_Select=="Range") {
 		Form_Type= req.body.Form_Name1;
@@ -303,7 +323,8 @@ var datastore =req.body.userstore;
 		if (box=="Released_Material") {box="Rejected/Released"}
 		if (box=="Work_Order") {box="Work Order"}
 		if (datausr=="Store Level") {AForm_Name=AForm_Name+"_Standard"}
-   connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
+     if (ReportLocation=="All") { 
+		   connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
    connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [Form_Type] ,function (err, data2, fields) {
    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data3, fields) {
 		
@@ -311,27 +332,28 @@ var datastore =req.body.userstore;
 	   if (Report_Select=="Weekly") { 
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Weekly_Generate', { title: 'Weekly_Generate', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, Dateone: D1, Datetwo: D2, ReportType: Report_Select});
+		   res.render('Weekly_Generate', { title: 'Weekly_Generate', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, Astore: ReportLocation});
 	   }
 	   
 	   else {
-		   
+	
+		  	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, Astore: ReportLocation}); 
 		   
 	   }
-	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, Dateone: D1, Datetwo: D2, ReportType: Report_Select});
+
 	   
 	   }
 	   	  
 	   if (Report_Select=="Range") {    
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name});
+		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});
 		   }
 		   
 		   
 		   else {
 			   
-					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name});   
+					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});   
 			   
 		   }
 	   
@@ -341,6 +363,58 @@ var datastore =req.body.userstore;
   });
   });
   });
+	 }
+		
+//---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----->		
+		else
+			
+			{
+				
+				
+				   connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and store= ? and Date >= ? and Date <= ?', [Form_Type, ReportLocation, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
+   connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [Form_Type] ,function (err, data2, fields) {
+   connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and store= ? and Date >= ? and Date <= ?', [Form_Type, ReportLocation, req.body.Date1, req.body.Date2] ,function (err, data3, fields) {
+		
+    if (err) throw err;
+	   if (Report_Select=="Weekly") { 
+		   
+		   if (datausr=="Administrator"){
+		   res.render('Weekly_Generate', { title: 'Weekly_Generate', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, Astore: ReportLocation });
+	   }
+	   
+	   else {
+	
+		  	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, Astore: ReportLocation}); 
+		   
+	   }
+
+	   
+	   }
+	   	  
+	   if (Report_Select=="Range") {    
+		   
+		   if (datausr=="Administrator"){
+		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});
+		   }
+		   
+		   
+		   else {
+			   
+					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});   
+			   
+		   }
+	   
+	   
+	   }
+	
+  });
+  });
+  });
+				
+				
+				
+			}
+//---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----->		
 });
 
 
@@ -349,6 +423,7 @@ router.post('/Export', function(req, res, next) {
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
+			var Excel_Form= req.body.Form_Name;
 		var AForm_Name= req.body.Form_Name;
 		var Form_Type = req.body.Form_Name;
 		var D1 = req.body.Date1;
@@ -356,8 +431,9 @@ var datastore =req.body.userstore;
 	var Action_Type=req.body.Action;
 		var Title= req.body.Form_Title;	
 		var box= req.body.Form_Name;
+		var ReportLocation=req.body.Report_Location
 		var Report_Select= req.body.Report_Type;
-		if (Report_Select=="Range") {
+		if (Report_Select=="Range") {  
 		Form_Type= req.body.Form_Name1;
 		box= req.body.Form_Name1;
 		AForm_Name= req.body.Form_Name1;
@@ -373,7 +449,8 @@ var datastore =req.body.userstore;
 		if (box=="Released_Material") {box="Rejected/Released"}
 		if (box=="Work_Order") {box="Work Order"}
 		if (datausr=="Store Level") {AForm_Name=AForm_Name+"_Standard"}
-   connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
+ if (ReportLocation=="All") {
+    connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
    connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [Form_Type] ,function (err, data2, fields) {
    connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date >= ? and Date <= ?', [Form_Type, req.body.Date1, req.body.Date2] ,function (err, data3, fields) {
 		
@@ -381,27 +458,27 @@ var datastore =req.body.userstore;
 	   if (Report_Select=="Weekly") { 
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select});
+		   res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select, Astore: ReportLocation});
 	   }
 	   
 	   else {
-		   
+		     res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, ActionType: Action_Type, Astore: ReportLocation});
 		   
 	   }
-	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, Dateone: D1, Datetwo: D2, ActionType: Action_Type});
+	   		 
 	   
 	   }
 	   	  
 	   if (Report_Select=="Range") {    
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name});
+		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, ReportType: Report_Select, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});
 		   }
 		   
 		   
 		   else {
 			   
-					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name});   
+					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, ReportType: Report_Select,  Astore: ReportLocation});   
 			   
 		   }
 	   
@@ -411,6 +488,56 @@ var datastore =req.body.userstore;
   });
   });
   });
+ 
+ 
+ }
+
+	
+//---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----->	
+	else {  
+	   connection.query('SELECT * FROM Submitted_Forms Where Form_Name= ? and store= ? and Date >= ? and Date <= ?', [Form_Type,ReportLocation, req.body.Date1, req.body.Date2] ,function (err, data, fields) {
+   connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [Form_Type] ,function (err, data2, fields) {
+   connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and store= ? and Date >= ? and Date <= ?', [Form_Type, ReportLocation, req.body.Date1, req.body.Date2] ,function (err, data3, fields) {
+		
+    if (err) throw err;
+	   if (Report_Select=="Weekly") { 
+		   
+		   if (datausr=="Administrator"){
+		   res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select, Astore: ReportLocation});
+	   }
+	   
+	   else {
+		    res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select, Astore: ReportLocation}); 
+		   
+	   }
+	   		 
+	   
+	   }
+	   	  
+	   if (Report_Select=="Range") {    
+		   
+		   if (datausr=="Administrator"){
+		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});
+		   }
+		   
+		   
+		   else {
+			   
+					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});   
+			   
+		   }
+	   
+	   
+	   }
+	
+  });
+  });
+  });
+	
+	}
+//---++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++----->	
+	
+	
 });
 
 
@@ -458,7 +585,7 @@ var datastore =req.body.userstore;
 		   
 		   
 	   }
-	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, Dateone: D1, Datetwo: D2, ActionType: Action_Type});
+	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select});
 	   
 	   }
 	   	  
@@ -622,7 +749,17 @@ var user= req.body.username;
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
-	var Title= req.body.Form_Title;	
+	var Title= req.body.Form_Title;
+					var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     res.render('Foreign_Materials_Form_New', { title: 'Foreign_Materials_Form_New', FormTitle: Title, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title });		
 });
 //-------------------------------------------Submitted Forms ------------------------------------------------------------>
@@ -634,14 +771,26 @@ router.post('/Packing_Form', function(req, res, next) {
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
-	var Title= req.body.Form_Title;	
+	var Title= req.body.Form_Title;
+					var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+		connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {		
     if (err) throw err;
-    res.render('Packing_Form', { title: 'Packing_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Packing_Form', { title: 'Packing_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userData2: data2, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
+		});
 });
 
 
@@ -650,14 +799,24 @@ router.post('/Cooler_Form', function(req, res, next) {
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
-	var Title= req.body.Form_Title;	
+	var Title= req.body.Form_Title;
+				var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
 		
     connection.query('SELECT * FROM Item_Maint Where Type="Commodity"',function (err, data2, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-        res.render('Cooler_Form', { title: 'Cooler_Form', userData: data, userData2: data2, userId: datauserId, userStore: datastore, userDataCor: dataCor, userName: user, userRole: datausr, FormTitle: Title});
+        res.render('Cooler_Form', { title: 'Cooler_Form', userData: data, userData2: data2, userId: datauserId, userStore: datastore, userDataCor: dataCor, userData3: dataCor, FormBox: box, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 					
@@ -670,37 +829,59 @@ router.post('/Processing_Form', function(req, res, next) {
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
-	var Title= req.body.Form_Title;	
+	var Title= req.body.Form_Title;
+					var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+				connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {	
     if (err) throw err;
-    res.render('Processing_Form', { title: 'Processing_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Processing_Form', { title: 'Processing_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userData2: data2, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
-
+});
 
 router.post('/Raw_Product_Form', function(req, res, next) {
 	var user= req.body.username;
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
-	var Title= "Raw Product";	
+	var Title= "Raw Product";
+					var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
+			connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {
     if (err) throw err;
     connection.query('SELECT * FROM Item_Maint Where Type="Commodity"',function (err, data2, fields) {
     if (err) throw err;
-    connection.query('SELECT * FROM Item_Maint Where Type="Vendor"',function (err, data3, fields) {
+    connection.query('SELECT * FROM Item_Maint Where Type="Vendor"',function (err, data4, fields) {
     if (err) throw err;
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-                res.render('Raw_Product_Form', { title: 'Raw_Product_Form', userData: data, userData2: data2, userDataCor: dataCor, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title});
+                res.render('Raw_Product_Form', { title: 'Raw_Product_Form', userData: data, userData2: data2, userDataCor: dataCor, userData3: dataCor, FormBox: box, userData4: data4, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title});
   });
 		
   });
-		
+	  });	
   });
   });
 });
@@ -729,7 +910,7 @@ var datastore =req.body.userstore;
         connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
 	connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {		
     if (err) throw err;
-                res.render('Cold_Rooms_Form', { title: 'Cold_Rooms_Form', userData: data, userName: user, userRole: datausr, userDataCor: dataCor, userData3: dataCor, userData2: data2, FormBox: box, userId: datauserId, userStore: datastore, FormTitle: Title});
+                res.render('Cold_Rooms_Form', { title: 'Cold_Rooms_Form', userData: data, userName: user, userRole: datausr, userDataCor: dataCor, userData3: dataCor, FormBox: box, userData2: data2, FormBox: box, userId: datauserId, userStore: datastore, FormTitle: Title});
   });
   });
   });
@@ -741,13 +922,23 @@ router.post('/Thermometer_Calibration_Form', function(req, res, next) {
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
-	var Title= "Thermometer Calibration";	
+	var Title= "Thermometer Calibration";
+					var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     if (err) throw err;
         connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-                res.render('Thermometer_Calibration_Form', { title: 'Thermometer_Calibration_Form', userId: datauserId, userData: data, userDataCor: dataCor, userName: user, userStore: datastore, userRole: datausr, FormTitle: Title});
+                res.render('Thermometer_Calibration_Form', { title: 'Thermometer_Calibration_Form', userId: datauserId, userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userName: user, userStore: datastore, userRole: datausr, FormTitle: Title});
   });
   });
 });
@@ -758,13 +949,25 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Incoming Materials";
+					var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+	connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {
     if (err) throw err;
-    res.render('Incoming_Materials_Form', { title: 'Incoming_Materials_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Incoming_Materials_Form', { title: 'Incoming_Materials_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userData2: data2, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
+		});
 });
 
 router.post('/Brittle_Plastics_Form', function(req, res, next) {
@@ -798,11 +1001,21 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Preventative Maintenance";
+					var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Preventative_Maintenance_Form', { title: 'Preventative_Maintenance_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Preventative_Maintenance_Form', { title: 'Preventative_Maintenance_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
@@ -812,12 +1025,22 @@ router.post('/NUOCA_Form', function(req, res, next) {
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
-	var Title= req.body.Form_Title;	
+	var Title= req.body.Form_Title
+					var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"};	
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('NUOCA_Form', { title: 'NUOCA_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('NUOCA_Form', { title: 'NUOCA_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
@@ -828,11 +1051,21 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Work Order";
+					var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Work_Order_Form', { title: 'Work_Order_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Work_Order_Form', { title: 'Work_Order_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
@@ -843,11 +1076,21 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Released Material";
+					var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Released_Material_Form', { title: 'Released_Material_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Released_Material_Form', { title: 'Released_Material_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
@@ -858,11 +1101,21 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Foreign Materials";
+					var box= req.body.Form_Name;
+		if (box=="Raw_Product") {box="Raw Product"}
+		if (box=="Cold_Rooms") {box="Cold Rooms"}
+		if (box=="Thermometer_Calibration") {box="Thermometer Calibration"}
+		if (box=="Incoming_Materials") {box="Incoming Materials"}
+		if (box=="Brittle_Plastics") {box="Brittle Plastics"}
+		if (box=="Preventative_Maintenance") {box="Preventative Maintenance"}
+		if (box=="Foreign_Materials") {box="Foreign Materials"}
+		if (box=="Released_Material") {box="Rejected/Released"}
+		if (box=="Work_Order") {box="Work Order"}
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Foreign_Materials_Form', { title: 'Foreign_Materials_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Foreign_Materials_Form', { title: 'Foreign_Materials_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
@@ -878,13 +1131,16 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= req.body.Form_Title;	
+	var box= req.body.Form_Name;	
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+				connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {	
     if (err) throw err;
-    res.render('Packing_Standard_Form', { title: 'Packing_Standard_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Packing_Standard_Form', { title: 'Packing_Standard_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userData2: data2, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
+		});
 });
 
 router.post('/Cooler_Standard_Form', function(req, res, next) {
@@ -893,16 +1149,18 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= req.body.Form_Title;	
+	var box= req.body.Form_Name;
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
 		
     connection.query('SELECT * FROM Item_Maint Where Type="Commodity"',function (err, data2, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+				connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {	
     if (err) throw err;
-        res.render('Cooler_Standard_Form', { title: 'Cooler_Standard_Form', userData: data, userData2: data2, userId: datauserId, userStore: datastore, userDataCor: dataCor, userName: user, userRole: datausr, FormTitle: Title});
+        res.render('Cooler_Standard_Form', { title: 'Cooler_Standard_Form', userData: data, userData2: data2, userId: datauserId, userStore: datastore, userDataCor: dataCor, userData3: dataCor, FormBox: box, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
-					
+	});				
   });
 });
 
@@ -913,13 +1171,16 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= req.body.Form_Title;	
+	var box= req.body.Form_Name;
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+				connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {	
     if (err) throw err;
-    res.render('Processing_Standard_Form', { title: 'Processing_Standard_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Processing_Standard_Form', { title: 'Processing_Standard_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userData2: data2, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
+		});
 });
 
 
@@ -929,20 +1190,22 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Raw Product";	
+	var box= "Raw Product";
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
+				connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {	
     if (err) throw err;
     connection.query('SELECT * FROM Item_Maint Where Type="Commodity"',function (err, data2, fields) {
     if (err) throw err;
-    connection.query('SELECT * FROM Item_Maint Where Type="Vendor"',function (err, data3, fields) {
+    connection.query('SELECT * FROM Item_Maint Where Type="Vendor"',function (err, data4, fields) {
     if (err) throw err;
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-                res.render('Raw_Product_Standard_Form', { title: 'Raw_Product_Standard_Form', userData: data, userData2: data2, userDataCor: dataCor, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title});
+                res.render('Raw_Product_Standard_Form', { title: 'Raw_Product_Standard_Form', userData: data, userData2: data2, userDataCor: dataCor, userData3: dataCor, FormBox: box, userData4: data4, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title});
   });
 		
   });
-		
+	});		
   });
   });
 });
@@ -954,15 +1217,18 @@ router.post('/Cold_Rooms_Standard_Form', function(req, res, next) {
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
-	var Title= "Cold Rooms";	
+	var Title= "Cold Rooms";
+	var box= "Cold Rooms";
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     if (err) throw err;
         connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+					connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {	
     if (err) throw err;
-                res.render('Cold_Rooms_Standard_Form', { title: 'Cold_Rooms_Standard_Form', userData: data, userName: user, userRole: datausr, userDataCor: dataCor, userId: datauserId, userStore: datastore, FormTitle: Title});
+                res.render('Cold_Rooms_Standard_Form', { title: 'Cold_Rooms_Standard_Form', userData: data, userName: user, userRole: datausr, userDataCor: dataCor, userData3: dataCor, FormBox: box, userData2: data2, userId: datauserId, userStore: datastore, FormTitle: Title});
   });
   });
+		});
 });
 
 
@@ -971,13 +1237,14 @@ router.post('/Thermometer_Calibration_Standard_Form', function(req, res, next) {
 var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
-	var Title= "Thermometer Calibration";	
+	var Title= "Thermometer Calibration";
+	var box= "Thermometer Calibration";
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     if (err) throw err;
         connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-                res.render('Thermometer_Calibration_Standard_Form', { title: 'Thermometer_Calibration_Standard_Form', userId: datauserId, userData: data, userDataCor: dataCor, userName: user, userStore: datastore, userRole: datausr, FormTitle: Title});
+                res.render('Thermometer_Calibration_Standard_Form', { title: 'Thermometer_Calibration_Standard_Form', userId: datauserId, userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userName: user, userStore: datastore, userRole: datausr, FormTitle: Title});
   });
   });
 });
@@ -988,13 +1255,16 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Incoming Materials";
+	var box= "Incoming Materials";
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
+				connection.query('SELECT * FROM Question_Table Where Form_Name= ?', [req.body.Form_Name] ,function (err, data2, fields) {	
     if (err) throw err;
-    res.render('Incoming_Materials_Standard_Form', { title: 'Incoming_Materials_Standard_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Incoming_Materials_Standard_Form', { title: 'Incoming_Materials_Standard_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userData2: data2, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
+		});
 });
 
 router.post('/Brittle_Plastics_Standard_Form', function(req, res, next) {
@@ -1003,11 +1273,12 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Brittle Plastics";
+	var box= "Brittle Plastics";
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Brittle_Plastics_Standard_Form', { title: 'Brittle_Plastics_Standard_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Brittle_Plastics_Standard_Form', { title: 'Brittle_Plastics_Standard_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
@@ -1018,11 +1289,12 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Preventative Maintenance";
+	var box= "Preventative Maintenance";
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Preventative_Maintenance_Standard_Form', { title: 'Preventative_Maintenance_Standard_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Preventative_Maintenance_Standard_Form', { title: 'Preventative_Maintenance_Standard_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
@@ -1033,11 +1305,12 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= req.body.Form_Title;	
+	var box= req.body.Form_Name;
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('NUOCA_Standard_Form', { title: 'NUOCA_Standard_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('NUOCA_Standard_Form', { title: 'NUOCA_Standard_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
@@ -1048,11 +1321,12 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Work Order";
+	var box= "Work Order";
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Work_Order_Standard_Form', { title: 'Work_Order_Standard_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Work_Order_Standard_Form', { title: 'Work_Order_Standard_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
@@ -1063,11 +1337,12 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Released Material";
+	var box= "Released Material";
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Released_Material_Standard_Form', { title: 'Released_Material_Standard_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Released_Material_Standard_Form', { title: 'Released_Material_Standard_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
@@ -1078,11 +1353,12 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= "Foreign Materials";
+	var box= "Foreign Materials";
     var sql='SELECT * FROM Submitted_Forms Where Form_Name= ? and Date = ? and Id= ?';
     connection.query(sql, [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, data, fields) {
     connection.query('SELECT * FROM Corrective_Actions Where Form_Name= ? and Date = ? and Id= ?', [req.body.Form_Name, req.body.Date, req.body.Id] ,function (err, dataCor, fields) {
     if (err) throw err;
-    res.render('Foreign_Materials_Standard_Form', { title: 'Foreign_Materials_Standard_Form', userData: data, userDataCor: dataCor, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
+    res.render('Foreign_Materials_Standard_Form', { title: 'Foreign_Materials_Standard_Form', userData: data, userDataCor: dataCor, userData3: dataCor, FormBox: box, userId: datauserId, userStore: datastore, userName: user, userRole: datausr, FormTitle: Title});
   });
 	});
 });
@@ -1146,8 +1422,18 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= req.body.Form_Title;	
+	if (datausr=="Administrator") {
     res.render('Reports', { title: 'Reports', userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title});
-
+	}
+	
+	else {
+	
+		    res.render('Reports_Standard', { title: 'Reports_Standard', userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title});
+		
+	}
+		
+		
+		
 });
 
 router.post('/Previous_Form_Selection', function(req, res, next) {
@@ -1217,10 +1503,10 @@ var datastore =req.body.userstore;
 	var password = req.body.password;
 	var Title= req.body.Form_Title;
 	if (user && password) {
-		connection.query('SELECT * FROM Users WHERE userName = ? AND passwd = ?', [user, password], function(error, results, fields) {
+		connection.query('SELECT * FROM Users WHERE userName = ? AND passwd = BINARY ?', [user, password], function(error, results, fields) {
 			
 			if (results.length > 0) {
-							connection.query('SELECT Id, role, store FROM Users WHERE userName = ? AND passwd = ?', [user, password], function(error, data, fields) {
+							connection.query('SELECT Id, role, store FROM Users WHERE userName = ? AND passwd = BINARY ?', [user, password], function(error, data, fields) {
 					res.render('Dashboard', { title: 'Dashboard', FormTitle: Title, userName: user, userStore: data[0].store, userId: data[0].Id, userRole: data[0].role});	
 		
 		});

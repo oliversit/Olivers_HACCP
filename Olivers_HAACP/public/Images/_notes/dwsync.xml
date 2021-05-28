@@ -138,4 +138,6 @@
 <file name="Thermometer.png" server="192.168.75.61//var/www/Haccp/" local="132598909489865864" remote="132642031790000000" Dst="2" />
 <file name="User.png" server="192.168.75.61//var/www/Haccp/" local="132598909489925349" remote="132642031790000000" Dst="2" />
 <file name="Work_Order.png" server="192.168.75.61//var/www/Haccp/" local="132624646118928793" remote="132642031790000000" Dst="2" />
+<file name="logo_Icon_32.png" server="192.168.75.61//var/www/Haccp/" local="132667115260841901" remote="132667117260000000" Dst="2" />
+<file name="logo_Icon_64.png" server="192.168.75.61//var/www/Haccp/" local="132667115549967468" remote="132667117270000000" Dst="2" />
 </dwsync>

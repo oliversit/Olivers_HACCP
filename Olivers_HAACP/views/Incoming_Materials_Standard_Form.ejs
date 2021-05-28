@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <%- include('../Partials/MetaData') -%>
-
+<%- include('../Partials/Print_Style') -%>
   <body >
 	  
 <%- include('../Partials/NavBar') -%>
@@ -14,7 +14,7 @@
         %>	  
 	  
 	  
-    <div class="container">
+    <div class="container noPrint">
   
 
       <div class="row">
@@ -244,7 +244,7 @@
 			  
 
     </div>
-
+<%- include('../Partials/Print_Table') -%>
 <%- include('../Partials/ScriptDataOnLoad') -%>
 	  
   </body>

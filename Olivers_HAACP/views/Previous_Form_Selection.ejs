@@ -13,27 +13,45 @@
 
 				
 				
-			 <div class="row ">
-              <div class="col-md-12 mb-3">
-                <label for="Date">Date</label>
-                <input type="Date" class="form-control input4" id="Date" name="Date" value="<%=TodaysDate %>" required>
-                <div class="invalid-feedback">
-                  Valid Date is required.
-                </div>
-              </div>
-					   
-					   
-              <div class="col-md-6 mb-3">
-              </div>
-				</div>	   
+  
            
 	
 	
+			  <div class="row"  >
 
+				  
+				  
+
+				
+			<div class="col">	
+                <label for="Date">Date</label>
+				 
+                <input type="Date" class="form-control input4" id="Date" name="Date" value="<%=TodaysDate %>" required>
+			
+					  </div>
+				
+					  
+					  
+					  
+				  
+				  				  	  			<div class="col">	
+						<label for="Floor_Ground">Store Locations</label>
+													<div  id="Report_Placement" style="display:none">
+                                   <select class="custom-select d-block w-100" id="Range_Select"  name="Report_Location" required>
+                   <option Value="All">All</option>   
+					   <option Value="Cotati">Cotati</option>
+					   <option Value="Montecito">Montecito</option>
+					   <option Value="Stony Point">Stony Point</option>
+					   <option Value="Windsor">Windsor</option>
+					  
+                </select>
+			     </div>
+					  </div>
+              </div> 
 		
 		
 		
-<div class="row content_continter" >
+<div class="row content_center" >
 	
 	
 <div class="col d-flex justify-content-center"  >
@@ -190,6 +208,7 @@
 	
 	
 
-	
+		<%- include('../Partials/ScriptData') -%>
+
 	</body>
 </html>

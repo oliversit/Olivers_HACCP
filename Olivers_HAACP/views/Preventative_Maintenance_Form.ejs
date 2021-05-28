@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <%- include('../Partials/MetaData') -%>
-
+<%- include('../Partials/Print_Style') -%>
   <body >
 	  
 <%- include('../Partials/NavBar') -%>
@@ -13,7 +13,7 @@
         userData.forEach(function(data){
         %>	  
 	  
-    <div class="container">
+    <div class="container noPrint">
   
 
       <div class="row " >
@@ -118,7 +118,7 @@ All maintenance of ROP units performed according to manufacturer’s instruction
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_By_Floor_Ground">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground"  value=<%=userName %> >
+                <input type="text" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground"   >
 			     </div>
               </div> 
 			
@@ -175,7 +175,7 @@ All maintenance of ROP units performed according to manufacturer’s instruction
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_Pest">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_8" id="Corrected_Pest"  value=<%=userName %> >
+                <input type="text" class="form-control" name="Corection_8" id="Corrected_Pest"   >
 			     </div>
               </div> 
 			
@@ -233,7 +233,7 @@ All maintenance of ROP units performed according to manufacturer’s instruction
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_Debris">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_12" id="Corrected_Debris"  value=<%=userName %> >
+                <input type="text" class="form-control" name="Corection_12" id="Corrected_Debris"   >
 			     </div>
               </div> 
 			
@@ -290,7 +290,7 @@ All maintenance of ROP units performed according to manufacturer’s instruction
 			     </div>
 				  				  	  			<div class="col mb-3 mt-3">	
 						<label for="Corrected_Covered">Corrected By</label>
-                <input type="text" class="form-control" name="Corection_16" id="Corrected_Covered"  value=<%=userName %> >
+                <input type="text" class="form-control" name="Corection_16" id="Corrected_Covered"   >
 			     </div>
               </div> 
 			
@@ -322,26 +322,10 @@ All maintenance of ROP units performed according to manufacturer’s instruction
 			  <hr class="mb-4">
 			
 			  			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3 mt-3">	
-				
-	                                      <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" type="button">Export</button>
-					
-			     </div>
-		
-				  				  	  			<div class="col mb-3 mt-3">
-													
-													<div class="test">
-						                       <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" 
-													   
-													   type="button">Print</button>
-														</div>
-			     </div>
-              </div> 
+							  
+<%- include('../Partials/Bottom_Buttons') -%>
+              
+			  </div> 
       
 			  
 			  
@@ -360,7 +344,8 @@ All maintenance of ROP units performed according to manufacturer’s instruction
 			  
 
     </div>
-
+<%- include('../Partials/Print_Table') -%>
+<%- include('../Partials/Excel_Export') -%>
 <%- include('../Partials/ScriptData') -%>
 	  
   </body>

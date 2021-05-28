@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <%- include('../Partials/MetaData') -%>
-
+<%- include('../Partials/Print_Style') -%>
   <body >
 	  
 
@@ -10,7 +10,7 @@
 	  
 	  
 	  
-    <div class="container">
+    <div class="container noPrint">
   	  	  	  <%
         if(userData.length!=0){
         var Corection_Number=0;
@@ -1137,7 +1137,7 @@
             <div class="row align-items-end">
               <div class="col-md-12 mb-3">
                 <label for="Gloves">All gloves and aprons need to be placed in a specific area prior to leaving the processing area</label>
-                  <select class="custom-select d-block w-100" id="Gloves" onchange="Hide_Option_Action_Gloves()" name="Column_16">
+                  <select class="custom-select d-block w-100" id="Gloves" onchange="Hide_Option_Action_Gloves()" name="Column_15">
                   <option value="<%=data.Column_15 %>"><%=data.Column_15 %></option>
                     <option Value="A">Acceptable</option>
 					<option Value="R">Rejected</option>
@@ -1221,26 +1221,11 @@
 			  <hr class="mb-4">
 			
 			  			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-				
-	                                      <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" type="button">Export</button>
-					
-			     </div>
-		
-				  				  	  			<div class="col mb-3">
-													
-													<div class="test">
-						                       <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" 
-													   
-													   type="button">Print</button>
-														</div>
-			     </div>
+							  
+<%- include('../Partials/Bottom_Buttons') -%>
+							  
               </div> 
+			  
       
 			  
 			  
@@ -1259,7 +1244,8 @@
 			  
 
     </div>
-
+<%- include('../Partials/Weekly_Processing_Print_Table') -%>
+<%- include('../Partials/Excel_Export') -%>
 <%- include('../Partials/ScriptDataOnLoad') -%>
 	  
   </body>

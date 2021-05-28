@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <%- include('../Partials/MetaData') -%>
-
+<%- include('../Partials/Print_Style') -%>
   <body >
 	  
 <%- include('../Partials/NavBar') -%>
@@ -15,7 +15,7 @@
         %>
 	  
 	  
-    <div class="container">
+    <div class="container noPrint">
   
 
       <div class="row">
@@ -80,7 +80,7 @@
 			  		<div class="col mb-3">	
 			<label for="Action_Taken1">Corrective Action </label>
 						<p class="form-control"><%=dataCor.Corection_1 %></p>
-                <input type="hidden" class="form-control" name="Corection_1" id="Action_Floor_Ground" placeholder="" value=<%=dataCor.Corection_1 %> >
+                <input type="hidden" class="form-control" name="Corection_1" id="Action_Floor_Ground" placeholder="" value="<%=dataCor.Corection_1 %>" >
 			     </div>
 				  
 			
@@ -100,17 +100,17 @@
 			<div class="col mb-3">	
 	                <label for="Date_Floor_Ground">Date</label>
 				<p class="form-control"><%=dataCor.Corection_2 %></p>
-                <input type="hidden" class="form-control" name="Corection_2" id="Date_Floor_Ground" placeholder="" value=<%=dataCor.Corection_2 %> >
+                <input type="hidden" class="form-control" name="Corection_2" id="Date_Floor_Ground" placeholder="" value="<%=dataCor.Corection_2 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Floor_Ground">Time</label>
 				<p class="form-control"><%=dataCor.Corection_3 %></p>
-                <input type="hidden" class="form-control" name="Corection_3" id="Time_Floor_Ground" placeholder="" value=<%=dataCor.Corection_3 %> >
+                <input type="hidden" class="form-control" name="Corection_3" id="Time_Floor_Ground" placeholder="" value="<%=dataCor.Corection_3 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_By_Floor_Ground">Corrected By</label>
 				<p class="form-control"><%=dataCor.Corection_4 %></p>
-                <input type="hidden" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground" placeholder="" value=<%=dataCor.Corection_4 %> >
+                <input type="hidden" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground" placeholder="" value="<%=dataCor.Corection_4 %>" >
 			     </div>
               </div> 
 			
@@ -157,7 +157,7 @@
 			  		<div class="col mb-3">	
 			<label for="Action_Pest">Corrective Action </label>
 						<p class="form-control"><%=dataCor.Corection_5 %></p>
-                <input type="hidden" class="form-control" name="Corection_5" id="Action_Pest" placeholder="" value=<%=dataCor.Corection_5 %> >
+                <input type="hidden" class="form-control" name="Corection_5" id="Action_Pest" placeholder="" value="<%=dataCor.Corection_5 %>" >
 			     </div>
 				  
 			
@@ -177,17 +177,17 @@
 			<div class="col mb-3">	
 	                <label for="Date_Pest">Date</label>
 				<p class="form-control"><%=dataCor.Corection_6 %></p>
-                <input type="hidden" class="form-control" name="Corection_6" id="Date_Pest" placeholder="" value=<%=dataCor.Corection_6 %> >
+                <input type="hidden" class="form-control" name="Corection_6" id="Date_Pest" placeholder="" value="<%=dataCor.Corection_6 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Pest">Time</label>
 				<p class="form-control"><%=dataCor.Corection_7 %></P>
-                <input type="hidden" class="form-control" name="Corection_7" id="Time_Pest" placeholder="" value=<%=dataCor.Corection_7 %> >
+                <input type="hidden" class="form-control" name="Corection_7" id="Time_Pest" placeholder="" value="<%=dataCor.Corection_7 %>" >
 			     </div>
 				 <div class="col mb-3">	
 			     <label for="Corrected_Pest">Corrected By</label>
 			    <p class="form-control"><%=dataCor.Corection_8 %></P>
-                <input type="hidden" class="form-control" name="Corection_8" id="Corrected_Pest" placeholder="" value=<%=dataCor.Corection_8 %> >
+                <input type="hidden" class="form-control" name="Corection_8" id="Corrected_Pest" placeholder="" value="<%=dataCor.Corection_8 %>" >
 			     </div>
               </div> 
 			
@@ -232,7 +232,7 @@
 			  		<div class="col mb-3">	
 			<label for="Action_Debris">Corrective Action </label>
 						<p class="form-control"><%=dataCor.Corection_9 %></P>
-                <input type="hidden" class="form-control" name="Corection_9" id="Action_Debris" placeholder="" value=<%=dataCor.Corection_9 %> >
+                <input type="hidden" class="form-control" name="Corection_9" id="Action_Debris" placeholder="" value="<%=dataCor.Corection_9 %>" >
 			     </div>
 				  
 			
@@ -252,17 +252,17 @@
 			<div class="col mb-3">	
 	                <label for="Date_Debris">Date</label>
 				<p class="form-control"><%=dataCor.Corection_10 %></P>
-                <input type="hidden" class="form-control" name="Corection_10" id="Date_Debris" placeholder="" value=<%=dataCor.Corection_10 %> >
+                <input type="hidden" class="form-control" name="Corection_10" id="Date_Debris" placeholder="" value="<%=dataCor.Corection_10 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Debris">Time</label>
 				<p class="form-control"><%=dataCor.Corection_11 %></P>
-                <input type="hidden" class="form-control" name="Corection_11" id="Time_Debris" placeholder="" value=<%=dataCor.Corection_11 %> >
+                <input type="hidden" class="form-control" name="Corection_11" id="Time_Debris" placeholder="" value="<%=dataCor.Corection_11 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Debris">Corrected By</label>
 													<p class="form-control"><%=dataCor.Corection_12 %></P>
-                <input type="hidden" class="form-control" name="Corection_12" id="Corrected_Debris" placeholder="" value=<%=dataCor.Corection_12 %> >
+                <input type="hidden" class="form-control" name="Corection_12" id="Corrected_Debris" placeholder="" value="<%=dataCor.Corection_12 %>" >
 			     </div>
               </div> 
 			
@@ -306,7 +306,7 @@
 			  		<div class="col mb-3">	
 			<label for="Action_Covered">Corrective Action </label>
 						<p class="form-control"><%=dataCor.Corection_13 %></P>
-                <input type="hidden" class="form-control" name="Corection_13" id="Action_Covered" placeholder="" value=<%=dataCor.Corection_13 %> >
+                <input type="hidden" class="form-control" name="Corection_13" id="Action_Covered" placeholder="" value="<%=dataCor.Corection_13 %>" >
 			     </div>
 				  
 			
@@ -326,17 +326,17 @@
 			<div class="col mb-3">	
 	                <label for="Date_Covered">Date</label>
 				<p class="form-control"><%=dataCor.Corection_14 %></P>
-                <input type="hidden" class="form-control" name="Corection_14" id="Date_Covered" placeholder="" value=<%=dataCor.Corection_14 %> >
+                <input type="hidden" class="form-control" name="Corection_14" id="Date_Covered" placeholder="" value="<%=dataCor.Corection_14 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Covered">Time</label>
 				<p class="form-control"><%=dataCor.Corection_15 %></P>
-                <input type="hidden" class="form-control" name="Corection_15" id="Time_Covered" placeholder="" value=<%=dataCor.Corection_15 %> >
+                <input type="hidden" class="form-control" name="Corection_15" id="Time_Covered" placeholder="" value="<%=dataCor.Corection_15 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Covered">Corrected By</label>
 				<p class="form-control"><%=dataCor.Corection_16 %></P>
-                <input type="hidden" class="form-control" name="Corection_16" id="Corrected_Covered" placeholder="" value=<%=dataCor.Corection_16 %> >
+                <input type="hidden" class="form-control" name="Corection_16" id="Corrected_Covered" placeholder="" value="<%=dataCor.Corection_16 %>" >
 			     </div>
               </div> 
 			
@@ -383,7 +383,7 @@
 			  		<div class="col mb-3">	
 			<label for="Action_Stored">Corrective Action </label>
 						<p class="form-control"><%=dataCor.Corection_17 %></P>
-                <input type="hidden" class="form-control" name="Corection_17" id="Action_Stored" placeholder="" value=<%=dataCor.Corection_17 %> >
+                <input type="hidden" class="form-control" name="Corection_17" id="Action_Stored" placeholder="" value="<%=dataCor.Corection_17 %>" >
 			     </div>
 				  
 			
@@ -403,17 +403,17 @@
 			<div class="col mb-3">	
 	                <label for="Date_Stored">Date</label>
 				<p class="form-control"><%=dataCor.Corection_18 %></P>
-                <input type="hidden" class="form-control" name="Corection_18" id="Date_Stored" placeholder="" value=<%=dataCor.Corection_18 %> >
+                <input type="hidden" class="form-control" name="Corection_18" id="Date_Stored" placeholder="" value="<%=dataCor.Corection_18 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Stored">Time</label>
 				<p class="form-control"><%=dataCor.Corection_19 %></P>
-                <input type="hidden" class="form-control" name="Corection_19" id="Time_Stored" placeholder="" value=<%=dataCor.Corection_19 %> >
+                <input type="hidden" class="form-control" name="Corection_19" id="Time_Stored" placeholder="" value="<%=dataCor.Corection_19 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Stored">Corrected By</label>
 													<p class="form-control"><%=dataCor.Corection_20 %></P>
-                <input type="hidden" class="form-control" name="Corection_20" id="Corrected_Stored" placeholder="" value=<%=dataCor.Corection_20 %> >
+                <input type="hidden" class="form-control" name="Corection_20" id="Corrected_Stored" placeholder="" value="<%=dataCor.Corection_20 %>" >
 			     </div>
               </div> 
 			
@@ -460,7 +460,7 @@
 			  		<div class="col mb-3">	
 			<label for="Action_sanitized">Corrective Action </label>
 						<p class="form-control"><%=dataCor.Corection_21 %></P>
-                <input type="hidden" class="form-control" name="Corection_21" id="Action_sanitized" placeholder="" value=<%=dataCor.Corection_21 %> >
+                <input type="hidden" class="form-control" name="Corection_21" id="Action_sanitized" placeholder="" value="<%=dataCor.Corection_21 %>" >
 			     </div>
 				  
 			
@@ -480,17 +480,17 @@
 			<div class="col mb-3">	
 	                <label for="Date_sanitized">Date</label>
 				<p class="form-control"><%=dataCor.Corection_22 %></P>
-                <input type="hidden" class="form-control" name="Corection_22" id="Date_sanitized" placeholder="" value=<%=dataCor.Corection_22 %> >
+                <input type="hidden" class="form-control" name="Corection_22" id="Date_sanitized" placeholder="" value="<%=dataCor.Corection_22 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_sanitized">Time</label>
 				<p class="form-control"><%=dataCor.Corection_23 %></P>
-                <input type="hidden" class="form-control" name="Corection_23" id="Time_sanitized" placeholder="" value=<%=dataCor.Corection_23 %> >
+                <input type="hidden" class="form-control" name="Corection_23" id="Time_sanitized" placeholder="" value="<%=dataCor.Corection_23 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_sanitized">Corrected By</label>
 													<p class="form-control"><%=dataCor.Corection_24 %></P>
-                <input type="hidden" class="form-control" name="Corection_24" id="Corrected_sanitized" placeholder="" value=<%=dataCor.Corection_24 %> >
+                <input type="hidden" class="form-control" name="Corection_24" id="Corrected_sanitized" placeholder="" value="<%=dataCor.Corection_24 %>" >
 			     </div>
               </div> 
 			
@@ -533,7 +533,7 @@
 			  		<div class="col mb-3">	
 			<label for="Action_Trash">Corrective Action </label>
 						<p class="form-control"><%=dataCor.Corection_25 %></P>
-                <input type="hidden" class="form-control" name="Corection_25" id="Action_Trash" placeholder="" value=<%=dataCor.Corection_25 %> >
+                <input type="hidden" class="form-control" name="Corection_25" id="Action_Trash" placeholder="" value="<%=dataCor.Corection_25 %>" >
 			     </div>
 				  
 			
@@ -553,17 +553,17 @@
 			<div class="col mb-3">	
 	                <label for="Date_Trash">Date</label>
 				<p class="form-control"><%=dataCor.Corection_26 %></P>
-                <input type="hidden" class="form-control" name="Corection_26" id="Date_Trash" placeholder="" value=<%=dataCor.Corection_26 %> >
+                <input type="hidden" class="form-control" name="Corection_26" id="Date_Trash" placeholder="" value="<%=dataCor.Corection_26 %>" >
 			     </div>
 			<div class="colmb-3">	
 				<label for="Time_Trash">Time</label>
 				<p class="form-control"><%=dataCor.Corection_27 %></P>
-                <input type="hidden" class="form-control" name="Corection_27" id="Time_Trash" placeholder="" value=<%=dataCor.Corection_27 %> >
+                <input type="hidden" class="form-control" name="Corection_27" id="Time_Trash" placeholder="" value="<%=dataCor.Corection_27 %>" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Trash">Corrected By</label>
 													<p class="form-control"><%=dataCor.Corection_28 %></P>
-                <input type="hidden" class="form-control" name="Corection_28" id="Corrected_Trash" placeholder="" value=<%=dataCor.Corection_28 %> >
+                <input type="hidden" class="form-control" name="Corection_28" id="Corrected_Trash" placeholder="" value="<%=dataCor.Corection_28 %>" >
 			     </div>
               </div> 
 			
@@ -608,7 +608,7 @@
 			  		<div class="col mb-3">	
 			<label for="Action_Health">Corrective Action Taken for Rejected Conditions </label>
 						<p class="form-control"><%=dataCor.Corection_29 %></P>
-                <input type="hidden" class="form-control" name="Corection_29" id="Action_Health" placeholder="" value=<%=dataCor.Corection_29 %> >
+                <input type="hidden" class="form-control" name="Corection_29" id="Action_Health" placeholder="" value="<%=dataCor.Corection_29 %>" >
 			     </div>
 				  
 			
@@ -628,13 +628,13 @@
 			<div class="col mb-3">	
 	                <label for="Date_Health">Corrected Date</label>
 				<p class="form-control"><%=dataCor.Corection_30 %></P>
-                <input type="hidden" class="form-control" name="Corection_30" id="Date_Health" placeholder="" value=<%=dataCor.Corection_30 %> >
+                <input type="hidden" class="form-control" name="Corection_30" id="Date_Health" placeholder="" value="<%=dataCor.Corection_30 %>" >
 				<input type="hidden" class="form-control" id="Time_Health" placeholder="" value="" >
 			     </div>
 				  				  	  			<div class="col mb-3">	
 						<label for="Corrected_Health">Corrected By</label>
 				<p class="form-control"><%=dataCor.Corection_32 %></P>
-                <input type="hidden" class="form-control" name="Corection_32" id="Corrected_Health" placeholder="" value=<%=dataCor.Corection_32 %> >
+                <input type="hidden" class="form-control" name="Corection_32" id="Corrected_Health" placeholder="" value="<%=dataCor.Corection_32 %>" >
 			     </div>
               </div> 
 			
@@ -711,10 +711,10 @@
           </form>
         
   
-			  
+	  </div>		  
 
     </div>
-
+	<%- include('../Partials/Print_Table') -%>
 <%- include('../Partials/ScriptDataOnLoad') -%>
   </body>
 </html>

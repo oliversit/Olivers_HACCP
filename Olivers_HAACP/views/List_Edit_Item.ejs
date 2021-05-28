@@ -22,9 +22,9 @@
 
 		<form class="needs-validation" action="/Frontend/List_Update" method="post">
 			  <%- include('../Partials/Global_Variables') -%>
-			<input id="Id_Value" name="Id" type="hidden" value=<%=data.Id %>>
-			<input id="Save" name="Type" type="hidden" value=<%=formName %>>
-			<input id="Form_Title" name="Form_Title" type="hidden" value=<%=formName %>>
+			<input id="Id_Value" name="Id" type="hidden" value="<%=data.Id %>">
+			<input id="Save" name="Type" type="hidden" value="<%=formName %>">
+			<input id="Form_Title" name="Form_Title" type="hidden" value="<%=formName %>">
            			<div class="row " >
 				
 		
@@ -50,7 +50,7 @@
 				<form class="needs-validation" action="/Frontend/List_Edit" method="post">	
 					  <%- include('../Partials/Global_Variables') -%>
 				<input id="Cancel" name="Type" type="hidden" value="<%=formName %>">
-					<input id="Form_Title2" name="Form_Title" type="hidden" value=<%=formName %>>
+					<input id="Form_Title2" name="Form_Title" type="hidden" value="<%=formName %>">
 		<br>
         <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Save_Button" type="submit" value="$Actual_Id" > Cancel</button>		
 		</form>	
@@ -76,7 +76,7 @@
               <div class="col mb-3">
 				  
 				  <form action="../Frontend/Dashboard" class="button_height" method="post">
-					    <input id="username1" name="username" type="hidden" value=<%=userName %>>
+					    <input id="username1" name="username" type="hidden" value="<%=userName %>">
 					  <input id="Form_Title13" name="Form_Title" type="hidden" value="Forms">
 					  <br>
                        <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Dashboard</button>

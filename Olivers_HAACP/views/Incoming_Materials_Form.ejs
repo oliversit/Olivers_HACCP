@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="en">
 <%- include('../Partials/MetaData') -%>
-
+<%- include('../Partials/Print_Style') -%>
   <body >
 	  
 <%- include('../Partials/NavBar') -%>
@@ -14,7 +14,7 @@
         %>	  
 	  
 	  
-    <div class="container">
+    <div class="container noPrint">
   
 
       <div class="row">
@@ -236,25 +236,9 @@
 			  <hr class="mb-4">
 			
 			  			  <div class="row"  >
-
-				  
-				  
-
-				  
-			<div class="col mb-3">	
-				
-	                                      <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" type="button">Export</button>
-					
-			     </div>
-		
-				  				  	  			<div class="col mb-3">
-													
-													<div class="test">
-						                       <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" 
-													    onclick="window.print();return false;"
-													   type="button">Print</button>
-														</div>
-			     </div>
+							  
+<%- include('../Partials/Bottom_Buttons') -%>	
+							  
               </div> 
       
 			  
@@ -274,7 +258,8 @@
 			  
 
     </div>
-
+<%- include('../Partials/Print_Table') -%>
+<%- include('../Partials/Excel_Export') -%>
 <%- include('../Partials/ScriptDataOnLoad') -%>
 	  
   </body>

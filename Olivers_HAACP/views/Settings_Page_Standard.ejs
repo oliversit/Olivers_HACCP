@@ -15,15 +15,14 @@
         userData2.forEach(function(data2){
         %>	
 		
-      <div class="py-5 text-center">
-        <img class="d-block mx-auto mb-4" src="../Images/User.png"  alt="" width="72" height="72">
+      <div class="py-3 text-center">
+        <img class="d-block mx-auto mb-3" src="../Images/User.png"  alt="" width="72" height="72">
         <h2><%=data2.userName %> </h2>
       </div>
 
       <div class="row">
         
         <div class="col-md-12 order-md-1">
-          <h4 class="mb-3">User Info</h4>
           <form class="needs-validation" novalidate action="/Frontend/User_List_Update" method="post">
           <input id="Id" name="Id"  type="hidden" value="<%=data2.Id %>">	
 			  <%- include('../Partials/Global_Variables') -%>
@@ -65,7 +64,7 @@
               </div>
             </div>
 
-            <div class="mb-3">
+           <!-- <div class="mb-3">
               <label for="address">Password</label>
               <input type="password" class="form-control" id="address" name="passwd" placeholder="********" >
               <div class="invalid-feedback">
@@ -76,7 +75,7 @@
             <div class="mb-3">
               <label for="address2">Confirm Password</label>
               <input type="password" class="form-control" id="address2" placeholder="********">
-            </div>
+            </div> -->
 
             <div class="row">
               <div class="col mb-3">

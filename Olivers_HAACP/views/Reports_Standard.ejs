@@ -107,23 +107,7 @@
   </div>
 		
 	
-					<div  id="Report_Placement" style="display:none">
-			 <div class="row">
-              <div class="col mb-3">
-				  <label for="Floor_Ground">Store Locations</label>
-                   <select class="custom-select d-block w-100" id="Range_Select"  name="Report_Location" >
-                   <option Value="All">All</option>   
-					   <option Value="Cotati">Cotati</option>
-					   <option Value="Montecito">Montecito</option>
-					   <option Value="Stony Point">Stony Point</option>
-					   <option Value="Windsor">Windsor</option> 
-                </select>
-              </div>
-					   
-					   
-
-				</div>	   
-			</div>		
+<input type="hidden"  id="Range_Select"  name="Report_Location" value="<%=userStore %>">	
 
 		
 					<!-- Bkank Row --> 
@@ -165,7 +149,6 @@
 	</div>
 		
 	
-	<%- include('../Partials/ScriptData') -%>
 
 	
 	</body>
