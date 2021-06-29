@@ -307,6 +307,10 @@ var datastore =req.body.userstore;
 		var box= req.body.Form_Name;
 		var ReportLocation=req.body.Report_Location;
 		var Report_Select= req.body.Report_Type;
+		var NumPage1=req.body.PageNum1;
+		var NumPage2=req.body.PageNum2;
+		var StartNum=NumPage1*10;
+		var EndNum=NumPage2*10;
 		if (Report_Select=="Range") {
 		Form_Type= req.body.Form_Name1;
 		box= req.body.Form_Name1;
@@ -332,12 +336,12 @@ var datastore =req.body.userstore;
 	   if (Report_Select=="Weekly") { 
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Weekly_Generate', { title: 'Weekly_Generate', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, Astore: ReportLocation});
+		   res.render('Weekly_Generate', { title: 'Weekly_Generate', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, Astore: ReportLocation, NumStart: StartNum, NumEnd: EndNum, Page_On: NumPage2});
 	   }
 	   
 	   else {
 	
-		  	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, Astore: ReportLocation}); 
+		  	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, Astore: ReportLocation, NumStart: StartNum, NumEnd: EndNum, Page_On: NumPage2}); 
 		   
 	   }
 
@@ -347,13 +351,13 @@ var datastore =req.body.userstore;
 	   if (Report_Select=="Range") {    
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});
+		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation, NumStart: StartNum, NumEnd: EndNum, Page_On: NumPage2});
 		   }
 		   
 		   
 		   else {
 			   
-					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});   
+					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation, NumStart: StartNum, NumEnd: EndNum, Page_On: NumPage2});   
 			   
 		   }
 	   
@@ -379,12 +383,12 @@ var datastore =req.body.userstore;
 	   if (Report_Select=="Weekly") { 
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Weekly_Generate', { title: 'Weekly_Generate', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, Astore: ReportLocation });
+		   res.render('Weekly_Generate', { title: 'Weekly_Generate', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, Astore: ReportLocation, NumStart: StartNum, NumEnd: EndNum, Page_On: NumPage2 });
 	   }
 	   
 	   else {
 	
-		  	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, Astore: ReportLocation}); 
+		  	   		   res.render('Weekly_Generate_Standard', { title: 'Weekly_Generate_Standard', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, Astore: ReportLocation, NumStart: StartNum, NumEnd: EndNum, Page_On: NumPage2}); 
 		   
 	   }
 
@@ -394,13 +398,13 @@ var datastore =req.body.userstore;
 	   if (Report_Select=="Range") {    
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});
+		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation, NumStart: StartNum, NumEnd: EndNum, Page_On: NumPage2});
 		   }
 		   
 		   
 		   else {
 			   
-					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});   
+					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation, NumStart: StartNum, NumEnd: EndNum, Page_On: NumPage2});   
 			   
 		   }
 	   
@@ -433,6 +437,8 @@ var datastore =req.body.userstore;
 		var box= req.body.Form_Name;
 		var ReportLocation=req.body.Report_Location
 		var Report_Select= req.body.Report_Type;
+			var NumPage1=req.body.PageNum1;
+		var NumPage2=req.body.PageNum2;
 		if (Report_Select=="Range") {  
 		Form_Type= req.body.Form_Name1;
 		box= req.body.Form_Name1;
@@ -458,11 +464,11 @@ var datastore =req.body.userstore;
 	   if (Report_Select=="Weekly") { 
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select, Astore: ReportLocation});
+		   res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select, Astore: ReportLocation, Page1_Num: NumPage1, Page2_Num: NumPage2});
 	   }
 	   
 	   else {
-		     res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, ActionType: Action_Type, Astore: ReportLocation});
+		     res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ReportType: Report_Select, ActionType: Action_Type, Astore: ReportLocation, Page1_Num: NumPage1, Page2_Num: NumPage2});
 		   
 	   }
 	   		 
@@ -472,13 +478,13 @@ var datastore =req.body.userstore;
 	   if (Report_Select=="Range") {    
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, ReportType: Report_Select, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});
+		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, ReportType: Report_Select, FormBox: box, AForm: AForm_Name, Astore: ReportLocation, Page1_Num: NumPage1, Page2_Num: NumPage2});
 		   }
 		   
 		   
 		   else {
 			   
-					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, ReportType: Report_Select,  Astore: ReportLocation});   
+					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, ReportType: Report_Select,  Astore: ReportLocation, Page1_Num: NumPage1, Page2_Num: NumPage2});   
 			   
 		   }
 	   
@@ -503,11 +509,11 @@ var datastore =req.body.userstore;
 	   if (Report_Select=="Weekly") { 
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select, Astore: ReportLocation});
+		   res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select, Astore: ReportLocation, Page1_Num: NumPage1, Page2_Num: NumPage2});
 	   }
 	   
 	   else {
-		    res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select, Astore: ReportLocation}); 
+		    res.render('Export', { title: 'Export', userData: data, userData2: data2, userData3: data3, userName: user, userRole: datausr, userId: datauserId, userStore: datastore, FormTitle: Title, FormBox: box, AForm: AForm_Name, ExcelForm: Excel_Form, Dateone: D1, Datetwo: D2, ActionType: Action_Type, ReportType: Report_Select, Astore: ReportLocation, Page1_Num: NumPage1, Page2_Num: NumPage2}); 
 		   
 	   }
 	   		 
@@ -517,13 +523,13 @@ var datastore =req.body.userstore;
 	   if (Report_Select=="Range") {    
 		   
 		   if (datausr=="Administrator"){
-		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});
+		   res.render('Generate', { title: 'Generate', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation, Page1_Num: NumPage1, Page2_Num: NumPage2});
 		   }
 		   
 		   
 		   else {
 			   
-					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation});   
+					   res.render('Generate_Standard', { title: 'Generate_Standard', userData: data, userId: datauserId, userStore: datastore, userData2: data2, userData3: data3, userName: user, userRole: datausr, FormTitle: Title, FormBox: box, AForm: AForm_Name, Astore: ReportLocation, Page1_Num: NumPage1, Page2_Num: NumPage2});   
 			   
 		   }
 	   
@@ -1501,6 +1507,31 @@ var datausr= req.body.userrole;
 var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var password = req.body.password;
+	var Title= req.body.Form_Title;
+	if (user && password) {
+		connection.query('SELECT * FROM Users WHERE userName = ? AND passwd = BINARY ?', [user, password], function(error, results, fields) {
+			
+			if (results.length > 0) {
+							connection.query('SELECT Id, role, store FROM Users WHERE userName = ? AND passwd = BINARY ?', [user, password], function(error, data, fields) {
+					res.render('Dashboard', { title: 'Dashboard', FormTitle: Title, userName: user, userStore: data[0].store, userId: data[0].Id, userRole: data[0].role});	
+		
+		});
+			} else {
+				res.render('Sign_Incorrect', { title: 'Sign_Incorrect', userName: user, FormTitle: Title});
+			}			
+		
+		});
+	}
+});
+
+
+
+router.get('/', function(req, res) {
+	var user= "Bob";
+var datausr= req.body.userrole;
+var datauserId =req.body.userid;
+var datastore =req.body.userstore;
+	var password = "test";
 	var Title= req.body.Form_Title;
 	if (user && password) {
 		connection.query('SELECT * FROM Users WHERE userName = ? AND passwd = BINARY ?', [user, password], function(error, results, fields) {

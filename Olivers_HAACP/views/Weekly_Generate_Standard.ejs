@@ -74,27 +74,7 @@
 			 <input id="Id" name="Id" type="hidden" value="<%=data.Id %>">			
  <input id="Form_Name" name="Form_Name" type="hidden" value="<%=data.Form_Name %>">
  <input id="Date" name="Date" type="hidden" value="<%=data.Date %>">
- <input id="Correction_Id" name="Correction_Id" type="hidden" value="<%=data.Correction_Id %>">
- <input id="Column_1" name="Column_1" type="hidden" value="<%=data.Column_1 %>">
- <input id="Column_2" name="Column_2" type="hidden" value="<%=data.Column_2 %>">
- <input id="Column_3" name="Column_3" type="hidden" value="<%=data.Column_3 %>">
- <input id="Column_4" name="Column_4" type="hidden" value="<%=data.Column_4 %>">
- <input id="Column_5" name="Column_5" type="hidden" value="<%=data.Column_5 %>">
- <input id="Column_6" name="Column_6" type="hidden" value="<%=data.Column_6 %>">
- <input id="Column_7" name="Column_7" type="hidden" value="<%=data.Column_7 %>">
- <input id="Column_8" name="Column_8" type="hidden" value="<%=data.Column_8 %>">
- <input id="Column_9" name="Column_9" type="hidden" value="<%=data.Column_9 %>">
- <input id="Column_10" name="Column_10" type="hidden" value="<%=data.Column_10 %>">
- <input id="Column_11" name="Column_11" type="hidden" value="<%=data.Column_11 %>">
- <input id="Column_12" name="Column_12" type="hidden" value="<%=data.Column_12 %>">
- <input id="Column_13" name="Column_13" type="hidden" value="<%=data.Column_13 %>">
- <input id="Column_14" name="Column_14" type="hidden" value="<%=data.Column_14 %>">
- <input id="Column_15" name="Column_15" type="hidden" value="<%=data.Column_15 %>">
- <input id="Column_16" name="Column_16" type="hidden" value="<%=data.Column_16 %>">
- <input id="Column_17" name="Column_17" type="hidden" value="<%=data.Column_17 %>">
- <input id="Column_18" name="Column_18" type="hidden" value="<%=data.Column_18 %>">
- <input id="Column_19" name="Column_19" type="hidden" value="<%=data.Column_19 %>">
- <input id="Column_20" name="Column_20" type="hidden" value="<%=data.Column_20 %>">
+
 
 			</form>
 	</div>
@@ -124,7 +104,109 @@
               
             
         <% } %>
+<!----------------------------------------------Page Selector------------------------------------------------------>
+					<div class="row justify-content-center" >
+			<div class="col-md-3 mb-3">
+				
+							<form action="../Frontend/Generate" class="button_height" method="post">
+					  	<%		
+if (Page_On!=1) {
+		%>
+                       <button class="btn  btn-primary btn-sm Grey2 button_height justify-content-center"  data-toggle="collapse" data-target="#Hide_Stored" type="submit"><-- Previous</button>
+					<%- include('../Partials/Global_Variables') -%>
+					<input id="Form_Title14" name="Form_Title" type="hidden" value="Reports">
+				 <input id="Form_Name" name="Form_Name" type="hidden" value="<%=ExcelForm %>">						
+					<input id="Form_Name1" name="Date1" type="hidden" value="<%=Dateone %>">
+					<input id="Form_Name2" name="Date2" type="hidden" value="<%=Datetwo %>">
+					<input id="Report1" name="Report_Type" type="hidden" value="<%=ReportType %>">
+					  <input type="hidden"  id="Range_Select"  name="Report_Location" value="<%=Astore %>">			
+					<input id="Action_Id" name="Action" type="hidden" value="Export">
+							<!-- Uncomment to Show Page Number Values	
+						   <p>Current Page <%=Page_On %></p>
+								<p>Start <%=NumStart %></p>
+								<p>End <%=NumEnd %></p>
 
+								--> 
+						   
+	                            <%  var startnext= NumStart/10 -1 %>
+								<%  var endnext= NumEnd/10 -1 %>
+						   
+						   
+						   <!-- Uncomment to Show Page Number Values
+<p>End Next <%=endnext %></p>
+<p>Start Next <%=startnext %></p>
+								--> 
+										 <input type="hidden"  id="PageNum1"  name="PageNum1" value="<%=startnext %>">	
+		 <input type="hidden"  id="PageNum2"  name="PageNum2" value="<%=endnext %>">	
+							<% } %>	
+						   </form>
+					</div>
+						
+		<div class="col-md-3 justify-content-center mb-3">
+
+			
+			<% var Total_Pages= Math.ceil(userData.length/10) %>
+<!-- Uncomment to Show Total Number Of Pages			
+<div><p><%=Total_Pages %> </p></div>
+-->
+										  	<%		
+if (Total_Pages!=1) {
+		%>
+			<div><p>		<%
+		var count=1
+		while (count <= Total_Pages) {
+		%>
+	<%		
+if (count == Page_On) {
+		%>
+		<strong><%=count %></strong>&nbsp;
+
+<% } else{ %>
+<%=count %>&nbsp;
+<% } %>
+
+		<%  count++; } %> </p></div>
+			<% } %>
+			     </div>
+						
+			
+				  			<div class="col-md-3 mb-3">
+													
+							<form action="../Frontend/Generate" class="button_height" method="post">
+					  					  	<%		
+if (Page_On!=Total_Pages && Total_Pages!=0) {
+		%>
+                       <button class="btn btn-primary btn-sm Grey2 button_height justify-content-center"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Next --></button>
+					<%- include('../Partials/Global_Variables') -%>
+					<input id="Form_Title14" name="Form_Title" type="hidden" value="Reports">
+				 <input id="Form_Name" name="Form_Name" type="hidden" value="<%=ExcelForm %>">						
+					<input id="Form_Name1" name="Date1" type="hidden" value="<%=Dateone %>">
+					<input id="Form_Name2" name="Date2" type="hidden" value="<%=Datetwo %>">
+					<input id="Report1" name="Report_Type" type="hidden" value="<%=ReportType %>">
+					  <input type="hidden"  id="Range_Select"  name="Report_Location" value="<%=Astore %>">			
+					<input id="Action_Id" name="Action" type="hidden" value="Export">
+								
+								
+								<!-- Uncomment to Show Page Number Values
+								<p>Current Page <%=Page_On %></p>
+								<p>Start <%=NumStart %></p>
+								<p>End <%=NumEnd %></p>
+--> 
+	                            <%  var startnext= NumStart/10 +1 %>
+								<%  var endnext= NumEnd/10 +1 %>
+								
+								<!-- Uncomment to Show Page Number Values
+												<p>Start Next <%=startnext %></p>
+								<p>End Next <%=endnext %></p>
+								--> 
+										 <input type="hidden"  id="PageNum1"  name="PageNum1" value="<%=startnext %>">	
+		 <input type="hidden"  id="PageNum2"  name="PageNum2" value="<%=endnext %>">
+								<% } %>
+								</form>
+			     </div>
+			</div>
+	
+<!-------------------------------------------------------------------------------------------------------------------> 
 		
 		
 		<!-- Bkank Row --> 

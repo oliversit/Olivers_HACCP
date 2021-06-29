@@ -11,7 +11,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 //app.use(express.urlencoded());
 //app.use(app.router);
 app.use(express.static('public'));
-
+ app.set('views', 'C:/wamp64/www/Haccp/Olivers_HAACP/views')
 app.set("view engine", "ejs"); 
 
 app.use('/Frontend', BringtoFront);
@@ -129,6 +129,11 @@ var datastore =req.body.userstore;
   });
 });
 
+
+
+app.get('/', function(req, res) {
+    res.render('index', { title: 'Sign In' });
+})
 
 
 app.get('/close', function(req,res){

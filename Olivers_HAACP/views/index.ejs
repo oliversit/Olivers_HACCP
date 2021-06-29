@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+ <meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="icon" type="image/png" sizes="64x64" href="http://192.168.75.201/Images/logo_Icon_64.png">
+	  <link rel="apple-touch-icon" sizes="180x180" href="http://192.168.75.201/Images/logo_Icon_64.png">
+	     <link rel="icon" href="http://192.168.75.201/Images/logo_Icon_64.png">
+<script>
+if (screen.width < 400) {
+    var mvp = document.getElementById('myViewport');
+    mvp.setAttribute('content','initial-scale=.75');
+}
+	
+
+</script>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title>Haccp</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="http://192.168.75.201/styles.css" rel="stylesheet">
+  </head>
+
+  <body class="text-center">
+    <form class="form-signin" action="/Frontend/auth" method="post">
+		<input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
+      <img class="mb-4" src="http://192.168.75.201/Images/logo_green.png"  alt="" width="315" height="153">
+      <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+      <label for="inputEmail" class="sr-only">Username</label>
+      <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Username" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+      <div class="checkbox mb-3">
+      </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+    </form>
+  </body>
+</html>

@@ -47,7 +47,11 @@
 					<input id="Report1" name="Report_Type" type="hidden" value="<%=ReportType %>">
 					  <input type="hidden"  id="Range_Select"  name="Report_Location" value="<%=Astore %>">			
 					<input id="Action_Id" name="Action" type="hidden" value="Export">
-					</form>
+								     <%  var Num_Start= Page1_Num-1 %>
+								<%  var Num_End= Page2_Num-1 %>
+		<input type="hidden"  id="PageNum1"  name="PageNum1" value="<%=Num_Start %>">	
+		 <input type="hidden"  id="PageNum2"  name="PageNum2" value="<%=Num_End %>">
+														</form>
 														</div>
 			     </div>
 
