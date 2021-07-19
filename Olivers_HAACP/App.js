@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 var express    = require('express');
 var app        = express();
 var mysql      = require('mysql');
@@ -116,7 +118,9 @@ var datauserId =req.body.userid;
 var datastore =req.body.userstore;
 	var Title= req.body.Form_Title;
 	var form= req.body.Type;
-    connection.query("INSERT INTO `Users` (firstname, lastname, userName, passwd, email, role, store) VALUES (?,?,?,?, ?, ?, ?)", [req.body.firstname, req.body.lastname, req.body.userName, req.body.passwd, req.body.email, req.body.role, req.body.store], function(err, result){
+var password = req.body.passwd;    
+var hash = bcrypt.hashSync(password, saltRounds);
+    connection.query("INSERT INTO `Users` (firstname, lastname, userName, passwd, email, role, store) VALUES (?,?,?,?, ?, ?, ?)", [req.body.firstname, req.body.lastname, req.body.userName, hash, req.body.email, req.body.role, req.body.store], function(err, result){
         if(err) throw err;
             console.log("1 record inserted");
         });

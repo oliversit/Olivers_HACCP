@@ -1,3 +1,5 @@
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 var express = require('express');
 var router = express.Router();
 var connection=require('../Database');
@@ -1509,13 +1511,18 @@ var datastore =req.body.userstore;
 	var password = req.body.password;
 	var Title= req.body.Form_Title;
 	if (user && password) {
-		connection.query('SELECT * FROM Users WHERE userName = ? AND passwd = BINARY ?', [user, password], function(error, results, fields) {
-			
+		connection.query('SELECT * FROM Users WHERE userName = ?', [user], function(error, results, fields) {
 			if (results.length > 0) {
-							connection.query('SELECT Id, role, store FROM Users WHERE userName = ? AND passwd = BINARY ?', [user, password], function(error, data, fields) {
+			const comparison = bcrypt.compareSync(password,results[0].passwd)
+			if (comparison) {
+							connection.query('SELECT Id, role, store FROM Users WHERE userName = ?', [user], function(error, data, fields) {
 					res.render('Dashboard', { title: 'Dashboard', FormTitle: Title, userName: user, userStore: data[0].store, userId: data[0].Id, userRole: data[0].role});	
 		
 		});
+			} else {
+				res.render('Sign_Incorrect', { title: 'Sign_Incorrect', userName: user, FormTitle: Title});
+			}			
+		
 			} else {
 				res.render('Sign_Incorrect', { title: 'Sign_Incorrect', userName: user, FormTitle: Title});
 			}			
@@ -1525,29 +1532,6 @@ var datastore =req.body.userstore;
 });
 
 
-
-router.get('/', function(req, res) {
-	var user= "Bob";
-var datausr= req.body.userrole;
-var datauserId =req.body.userid;
-var datastore =req.body.userstore;
-	var password = "test";
-	var Title= req.body.Form_Title;
-	if (user && password) {
-		connection.query('SELECT * FROM Users WHERE userName = ? AND passwd = BINARY ?', [user, password], function(error, results, fields) {
-			
-			if (results.length > 0) {
-							connection.query('SELECT Id, role, store FROM Users WHERE userName = ? AND passwd = BINARY ?', [user, password], function(error, data, fields) {
-					res.render('Dashboard', { title: 'Dashboard', FormTitle: Title, userName: user, userStore: data[0].store, userId: data[0].Id, userRole: data[0].role});	
-		
-		});
-			} else {
-				res.render('Sign_Incorrect', { title: 'Sign_Incorrect', userName: user, FormTitle: Title});
-			}			
-		
-		});
-	}
-});
 
 module.exports = router;
 

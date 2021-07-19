@@ -104,10 +104,10 @@
             
         <% } %>
 <!----------------------------------------------Page Selector------------------------------------------------------>
-					<div class="row justify-content-center" >
-			<div class="col-md-3 mb-3">
-				
-							<form action="../Frontend/Generate" class="button_height" method="post">
+<div class="row">
+    <div class="col mx-auto">
+        <div class="text-center">
+            						<form action="../Frontend/Generate" class="button_height" method="post">
 					  	<%		
 if (Page_On!=1) {
 		%>
@@ -139,13 +139,12 @@ if (Page_On!=1) {
 		 <input type="hidden"  id="PageNum2"  name="PageNum2" value="<%=endnext %>">	
 							<% } %>	
 						   </form>
-					</div>
-						
-		<div class="col-md-3 justify-content-center mb-3">
-
-			
+        </div>
+    </div>
+	    <div class="col mx-auto">
+        <div class="text-center">
 			<% var Total_Pages= Math.ceil(userData.length/10) %>
-				<!-- Uncomment to Show Total Number Of Pages
+<!-- Uncomment to Show Total Number Of Pages			
 <div><p><%=Total_Pages %> </p></div>
 -->
 										  	<%		
@@ -166,12 +165,11 @@ if (count == Page_On) {
 
 		<%  count++; } %> </p></div>
 			<% } %>
-			     </div>
-						
-			
-				  			<div class="col-md-3 mb-3">
-													
-							<form action="../Frontend/Generate" class="button_height" method="post">
+        </div>
+    </div>
+		    <div class="col mx-auto">
+        <div class="text-center">
+           							<form action="../Frontend/Generate" class="button_height" method="post">
 					  					  	<%		
 if (Page_On!=Total_Pages && Total_Pages!=0) {
 		%>
@@ -202,8 +200,9 @@ if (Page_On!=Total_Pages && Total_Pages!=0) {
 		 <input type="hidden"  id="PageNum2"  name="PageNum2" value="<%=endnext %>">
 								<% } %>
 								</form>
-			     </div>
-			</div>
+        </div>
+    </div>
+</div>
 	
 <!-------------------------------------------------------------------------------------------------------------------> 
 	

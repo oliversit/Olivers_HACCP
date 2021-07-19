@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8">
  <meta id="myViewport" name="viewport" content="width=device-width, initial-scale=1">
-	  <link rel="icon" type="image/png" sizes="64x64" href="http://192.168.75.201/Images/logo_Icon_64.png">
-	  <link rel="apple-touch-icon" sizes="180x180" href="http://192.168.75.201/Images/logo_Icon_64.png">
-	     <link rel="icon" href="http://192.168.75.201/Images/logo_Icon_64.png">
+	  <link rel="icon" type="image/png" sizes="64x64" href="<%- include('../Partials/Site_Address') -%>/Images/logo_Icon_64.png">
+	  <link rel="apple-touch-icon" sizes="180x180" href="<%- include('../Partials/Site_Address') -%>/Images/logo_Icon_64.png">
+	     <link rel="icon" href="<%- include('../Partials/Site_Address') -%>/Images/logo_Icon_64.png">
 <script>
 if (screen.width < 400) {
     var mvp = document.getElementById('myViewport');
@@ -20,19 +20,19 @@ if (screen.width < 400) {
 
     <title>Haccp</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/sign-in/">
+    <link rel="canonical" href="<%- include('../Partials/Site_Address') -%>:3000/">
 
     <!-- Bootstrap core CSS -->
     <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="http://192.168.75.201/styles.css" rel="stylesheet">
+    <link href="<%- include('../Partials/Site_Address') -%>/styles.css" rel="stylesheet">
   </head>
 
   <body class="text-center">
     <form class="form-signin" action="/Frontend/auth" method="post">
 		<input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
-      <img class="mb-4" src="http://192.168.75.201/Images/logo_green.png"  alt="" width="315" height="153">
+      <img class="mb-4" src="<%- include('../Partials/Site_Address') -%>/Images/logo_green.png"  alt="" width="315" height="153">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <label for="inputEmail" class="sr-only">Username</label>
       <input type="text" id="inputEmail" name="username" class="form-control" placeholder="Username" required autofocus>
@@ -41,6 +41,20 @@ if (screen.width < 400) {
       <div class="checkbox mb-3">
       </div>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+	  <br>
+	  <div id="google_translate_element"></div>
     </form>
+	
+	
+
+<script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+}
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
   </body>
+  
 </html>
