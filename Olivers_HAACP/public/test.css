@@ -36,7 +36,7 @@ body {
 }
 
 .Print_Table
-{
+{Pack
   border: 1px solid black;
   border-collapse: collapse;
   width:100%
@@ -473,6 +473,62 @@ margin-left:15px;
 
 }
 
+.Cold_Transfer {
+  background-image: url("Images/Cold_Transfer.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Inventory {
+  background-image: url("Images/Inventory.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Damaged_Discarded {
+  background-image: url("Images/Damaged_Discarded.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Deviation {
+  background-image: url("Images/Deviation.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Haccp_Monitoring {
+  background-image: url("Images/Haccp_Monitoring.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Receiving_Store {
+  background-image: url("Images/Receiving_Store.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Reheating {
+  background-image: url("Images/Reheating.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
+.Sanitation {
+  background-image: url("Images/Sanitation.png");
+  background-repeat: no-repeat;
+  background-position:center;
+
+}
+
 .Back_Button {
   background-image: url("Images/Back.png");
   background-repeat: no-repeat;
@@ -486,6 +542,7 @@ margin-left:15px;
   background-position:center;
 
 }
+
 
 /*------------------------------------------------------------------------------------------------------------------------ */
 

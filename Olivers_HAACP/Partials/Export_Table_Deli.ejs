@@ -1,0 +1,1186 @@
+<div id="container2">
+	  
+  <title>SheetJS Table Export</title>
+	
+<!-------------Cold Storage--------------------------------------------------------------------------------->	
+    	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Cold_Storage" ){
+        %>
+	
+  <table id="data-table" hidden >
+	  <tr>
+		  <td>Form Number</td>
+  <td>Date</td>
+		<td>Time</td>
+		  <td>Location</td>
+		  <td>Temp.</td>
+		  <td>Initial</td>
+		  <td>Corrective Action</td>
+    </tr>
+	  
+	     <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+					    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+			     <%
+        if(data3.Corection_17!=0){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_17 %></td>		
+	<% } else{ %>
+	  
+		
+	    <td></td>
+
+          <% } %>
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+    </tr>
+	          <%  i++; }) %>
+        <% }
+	  
+	  
+	  else{ %>
+
+        <% } %>
+	  
+  </table>
+	
+	<% } %>
+<!-------------------------------------------------------------------------------------------------------------->	
+
+<!-------------Damaged Discarded--------------------------------------------------------------------------------->	
+    	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Damaged_Discarded" ){
+        %>
+	
+  <table id="data-table" hidden >
+	  <tr>
+		  <td>Form Number</td>
+  <td>Date</td>
+		<td>Item to be Disposed</td>
+		  <td>Quantity to be Disposed Gallons</td>
+		  <td>Packaging Defaced Prior to Disposal?</td>
+		  <td>Reason for Disposal / Nature of Damage</td>
+		  <td>Person Disposing (Initials)</td>
+    </tr>
+	  
+	     <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+    </tr>
+	          <%  i++; }) %>
+        <% }
+	  
+	  
+	  else{ %>
+
+        <% } %>
+	  
+  </table>
+	
+	<% } %>
+<!-------------------------------------------------------------------------------------------------------------->
+<!-------------Receiving Commissary--------------------------------------------------------------------------------->	
+    	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Receiving_Commissary" ){
+        %>
+	
+  <table id="data-table" hidden >
+	  <tr>
+		  <td>Form Number</td>
+  <td>Date</td>
+		<td>Time</td>
+		  <td>Location</td>
+		  <td>Supplier/Vendor</td>
+		  <td>Product Description</td>
+		  <td>Receiving Temp. (ºF)</td>
+		  <td>Evidence of Damage or Contamination?</td>
+		  <td>Shipment Accepted?</td>
+		  <td>Corrective Actions (as necessary) or Comments</td>
+		  <td>Receiver Initial</td>
+    </tr>
+	  
+	     <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_6 %></td>
+		<td><%=data.Column_7 %></td>
+						    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+			     <%
+        if(data3.Corection_25!=0){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_25 %></td>		
+	<% } else{ %>
+	  
+		
+	    <td></td>
+
+          <% } %>
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+		<td><%=data.Column_8 %></td>
+    </tr>
+	          <%  i++; }) %>
+        <% }
+	  
+	  
+	  else{ %>
+
+        <% } %>
+	  
+  </table>
+	
+	<% } %>
+<!-------------------------------------------------------------------------------------------------------------->	
+
+<!-------------Receiving Stores--------------------------------------------------------------------------------->	
+    	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Receiving_Stores" ){
+        %>
+	
+  <table id="data-table" hidden >
+	  <tr>
+		  <td>Form Number</td>
+  <td>Date</td>
+		<td>Time</td>
+		  <td>Location</td>
+		  <td>Delivery Driver</td>
+		  <td>Labels Present & Accurate</td>
+		  <td>Items Within Shelf-Life?</td>
+		  <td>Packages Sealed & Intact?</td>
+		  <td>Receiving Temp. (°F)</td>
+		  <td>Corrective Actions (as necessary) or Comments</td>
+		  <td>Receiver Initial</td>
+    </tr>
+	  
+	     <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_6 %></td>
+		<td><%=data.Column_7 %></td>
+						    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+			     <%
+        if(data3.Corection_25!=0){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_25 %></td>		
+	<% } else{ %>
+	  
+		
+	    <td></td>
+
+          <% } %>
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+		<td><%=data.Column_8 %></td>
+    </tr>
+	          <%  i++; }) %>
+        <% }
+	  
+	  
+	  else{ %>
+
+        <% } %>
+	  
+  </table>
+	
+	<% } %>
+<!-------------------------------------------------------------------------------------------------------------->	
+	
+
+<!-------------Haccp Monitoring--------------------------------------------------------------------------------->	
+    	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Haccp_Monitoring" ){
+        %>
+	
+  <table id="data-table" hidden >
+	  <tr>
+		  <td>Form Number</td>
+  <td>Date</td>
+		<td>Food Item</td>
+		  <td>Vegetarian Food Item?</td>
+		  <td>Packaging Start Time</td>
+		  <td>Food Temp. at Packaging</td>
+		  <td>Label & Seal Check Performed?</td>
+		  <td>Quantity Packages Created in</td>
+		  <td>Cooling Start Time</td>
+		  <td>Food Temp. at 1 Hr</td>
+		  <td>Food Temp. at 2 Hr</td>
+		  <td>Food Temp. at 6 Hr</td>
+		  <td>Finished Storage?</td>
+		  <td>Corrective Actions (as necessary) or Comments</td>
+		  <td>Receiver Initial</td>
+    </tr>
+	  
+	     <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_6 %></td>
+		<td><%=data.Column_7 %></td>
+		<td><%=data.Column_8 %></td>
+		<td><%=data.Column_9 %></td>
+		<td><%=data.Column_10 %></td>
+		<td><%=data.Column_11 %></td>
+						    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+			     <%
+        if(data3.Corection_45!=0){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_45 %></td>	
+		<td><%=data3.Corection_47 %></td>		
+	<% } else{ %>
+	  
+		
+	    <td></td>
+		<td><%=data3.Corection_47 %></td>
+
+          <% } %>
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+    </tr>
+	          <%  i++; }) %>
+        <% }
+	  
+	  
+	  else{ %>
+
+        <% } %>
+	  
+  </table>
+	
+	<% } %>
+<!-------------------------------------------------------------------------------------------------------------->	
+<!-------------Reheating--------------------------------------------------------------------------------->	
+    	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Reheating" ){
+        %>
+	
+  <table id="data-table" hidden >
+	  <tr>
+		  <td>Form Number</td>
+  <td>Date</td>
+		<td>Food Item</td>
+		  <td>Reheating Start Time</td>
+		  <td>Food Item Start Temp.</td>
+		  <td>Reheating End Time (Time of Service)</td>
+		  <td>Food Item End Temp.</td>
+		  <td>Did Food Reach ≥165ºF within 2 Hours</td>
+		  <td>Corrective Actions (as necessary) or Comments</td>
+		  <td>Receiver Initial</td>
+    </tr>
+	  
+	     <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_6 %></td>
+						    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+			     <%
+        if(data3.Corection_45!=0){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_45 %></td>	
+		<td><%=data3.Corection_47 %></td>		
+	<% } else{ %>
+	  
+		
+	    <td></td>
+		<td><%=data3.Corection_47 %></td>
+
+          <% } %>
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+    </tr>
+	          <%  i++; }) %>
+        <% }
+	  
+	  
+	  else{ %>
+
+        <% } %>
+	  
+  </table>
+	
+	<% } %>
+<!-------------------------------------------------------------------------------------------------------------->			
+	
+	
+<!-------------Inventory--------------------------------------------------------------------------------->	
+    	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Inventory" ){
+        %>
+	
+  <table id="data-table" hidden >
+	  <tr>
+		  <td>Form Number</td>
+  <td>Date</td>
+		<td>Product</td>
+		  <td>Quantity</td>
+		  <td>Oldest Expire Date</td>
+		  <td>Reheating End Time (Time of Service)</td>
+		  <td>Food Item End Temp.</td>
+		  <td>Corrective Actions (as necessary)</td>
+		  <td>Receiver Initial</td>
+    </tr>
+	  
+	     <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+    <tr>
+      <td><%=i; %></td>
+		<td>"<%=data.Date %>"</td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+						    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+			     <%
+        if(data3.Corection_45!=0){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_21 %></td>	
+		<td><%=data3.Corection_24 %></td>		
+	<% } else{ %>
+	  
+		
+	    <td></td>
+		<td><%=data3.Corection_24 %></td>
+
+          <% } %>
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+    </tr>
+	          <%  i++; }) %>
+        <% }
+	  
+	  
+	  else{ %>
+
+        <% } %>
+	  
+  </table>
+	
+	<% } %>
+<!-------------------------------------------------------------------------------------------------------------->
+	
+<!-------------Brittle Plastics--------------------------------------------------------------------------------->	
+	
+	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Brittle_Plastics" )
+		{
+        %>
+ 
+		  
+		    <table id="data-table" hidden >
+			
+<tr>
+<td>Description</td>
+<td>Location</td>
+<td>Status</td>
+<td>Corrective Action</td>
+<td>Corrected By</td>
+<td>Correction Date</td>
+<td>Correction Time</td>
+<td>Correction Review By</td>
+<td>Status</td>
+</tr>		
+			
+		<%
+		var T=1
+		userData.forEach(function(data){
+			
+        %>				
+<!--++++++++++++++++++++++++++++++++++Row 1+++++++++++++++++++++++++++++++++++++++++++++-->
+    <tr>
+		<td>Overhead Lights</td>
+		<td><%=data.Column_1 %></td>
+		<td><strong><%=data.Column_2 %></strong></td>	
+	    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_1 %></td>
+		<td><%=data3.Corection_4 %></td>
+		<td><%=data3.Corection_2 %></td>
+		<td><%=data3.Corection_3 %></td>
+		<td></td>
+		<td></td>
+		
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+</tr>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+
+<!--++++++++++++++++++++++++++++++++++Row 2+++++++++++++++++++++++++++++++++++++++++++++-->
+    <tr>
+		<td>Clocks</td>
+		<td><%=data.Column_3 %></td>
+		<td><strong><%=data.Column_4 %></strong></td>	
+	    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_5 %></td>
+		<td><%=data3.Corection_8 %></td>
+		<td><%=data3.Corection_6 %></td>
+		<td><%=data3.Corection_7 %></td>
+		<td></td>
+		<td></td>
+		
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+</tr>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->		
+		
+<!--++++++++++++++++++++++++++++++++++Row 3+++++++++++++++++++++++++++++++++++++++++++++-->
+    <tr>
+		<td>Windows</td>
+		<td><%=data.Column_5 %></td>
+		<td><strong><%=data.Column_6 %></strong></td>	
+	    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_9 %></td>
+		<td><%=data3.Corection_12 %></td>
+		<td><%=data3.Corection_10 %></td>
+		<td><%=data3.Corection_11 %></td>
+		<td></td>
+		<td></td>
+		
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+</tr>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->	
+		
+<!--++++++++++++++++++++++++++++++++++Row 4+++++++++++++++++++++++++++++++++++++++++++++-->
+    <tr>
+		<td>Doors</td>
+		<td><%=data.Column_7 %></td>
+		<td><strong><%=data.Column_8 %></strong></td>	
+	    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_13 %></td>
+		<td><%=data3.Corection_16 %></td>
+		<td><%=data3.Corection_14 %></td>
+		<td><%=data3.Corection_15 %></td>
+		<td></td>
+		<td></td>
+		
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+</tr>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->	
+		
+<!--++++++++++++++++++++++++++++++++++Row 5+++++++++++++++++++++++++++++++++++++++++++++-->
+    <tr>
+		<td>Hand Sanitizers</td>
+		<td><%=data.Column_9 %></td>
+		<td><strong><%=data.Column_10 %></strong></td>	
+	    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_17 %></td>
+		<td><%=data3.Corection_20 %></td>
+		<td><%=data3.Corection_18 %></td>
+		<td><%=data3.Corection_19 %></td>
+		<td></td>
+		<td></td>
+		
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+</tr>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->	
+		
+<!--++++++++++++++++++++++++++++++++++Row 6+++++++++++++++++++++++++++++++++++++++++++++-->
+      <tr>
+		<td>Machine Guards</td>
+		<td><%=data.Column_11 %></td>
+		<td><strong><%=data.Column_12 %></strong></td>	
+	    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_21 %></td>
+		<td><%=data3.Corection_24 %></td>
+		<td><%=data3.Corection_22 %></td>
+		<td><%=data3.Corection_23 %></td>
+		<td></td>
+		<td></td>
+		
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+</tr>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->	
+		
+<!--++++++++++++++++++++++++++++++++++Row 7+++++++++++++++++++++++++++++++++++++++++++++-->
+      <tr>
+		<td>Scale Faces</td>
+		<td><%=data.Column_13 %></td>
+		<td><strong><%=data.Column_14 %></strong></td>	
+	    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_25 %></td>
+		<td><%=data3.Corection_28 %></td>
+		<td><%=data3.Corection_26 %></td>
+		<td><%=data3.Corection_27 %></td>
+		<td></td>
+		<td></td>
+		
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+</tr>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->	
+		
+<!--++++++++++++++++++++++++++++++++++Row 8+++++++++++++++++++++++++++++++++++++++++++++-->
+      <tr>
+		<td>Display Cases</td>
+		<td><%=data.Column_15 %></td>
+		<td><strong><%=data.Column_16 %></strong></td>	
+	    <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+				<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_29 %></td>
+		<td><%=data3.Corection_32 %></td>
+		<td><%=data3.Corection_30 %></td>
+		<td><%=data3.Corection_31 %></td>
+		<td></td>
+		<td></td>
+		
+		           <% } else{ %>
+          <% } %>
+	<%  T++; }) %>
+</tr>
+<!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->	
+	
+				
+			<%  T++; }) %>
+				</table>
+	<% } %>	
+	
+<!-------------------------------------------------------------------------------------------------------------->	
+	
+<!-------------Preventative Maintenance--------------------------------------------------------------------------------->	
+	
+	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Preventative_Maintenance" ){
+        %>
+ 
+		  
+		    <table id="data-table" hidden >
+			
+		    <tr>
+      <td>ROP Equipment</td>
+		<td>Maintenance Required/Instruction</td>
+<td>Date Completed</td>
+<td>Comments/Corrective Actions</td>
+<td>Completed By</td>
+
+    </tr>		
+				
+				
+		<%
+		userData.forEach(function(data){
+        %>
+    <tr>
+		<td><%=data.Column_1%></td>
+		<td><%=data.Column_2 %></td>
+										<td>		<%
+        if(data.Column_3!=0){
+  
+
+        %>
+		"<%=data.Column_3 %>"
+		
+		           <% } else{ %>
+           
+        
+           
+        <% } %>                </td>
+		<td><%=data.Column_4 %></td>
+								 
+		<%
+        if(data.Column_4!=0){
+        
+
+        %>
+		<td><%=data.Column_5 %></td>
+		
+		           <% } else{ %>
+           
+                <td></td>
+           
+        <% } %>
+	</tr>
+	          <% }) %>
+	
+			</table>	
+				
+	<% } %>	
+	
+<!-------------------------------------------------------------------------------------------------------------->	
+
+<!-------------NUOCA--------------------------------------------------------------------------------->	
+	
+	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="NUOCA" ){
+        %>
+ 
+		  
+		    <table id="data-table" hidden >
+				
+			    <tr class="Row_Tall">
+      <td>Date</td>
+		<td>Description of Occurrence</td>
+<td>Corrective Actions</td>
+<td>Date completed</td>
+<td>Preventative Actions</td>
+<td>Reported By</td>
+    </tr>	
+				
+		<%
+		userData.forEach(function(data){
+        %>
+    <tr class="Row_Tall">
+						<td>		<%
+        if(data.Date!=0){
+  
+
+        %>
+		"<%=data.Date %>"
+		
+		           <% } else{ %>
+           
+        
+           
+        <% } %>                </td>
+		<td><%=data.Column_1%></td>
+		<td><%=data.Column_2 %></td>
+								<td>		<%
+        if(data.Column_3!=0){
+  
+
+        %>
+		"<%=data.Column_3 %>"
+		
+		           <% } else{ %>
+           
+        
+           
+        <% } %>                </td>
+		<td><%=data.Column_4 %></td>
+								 
+		<%
+        if(data.Column_1!=0){
+         
+
+        %>
+		<td><%=data.Column_5 %></td>
+		
+		           <% } else{ %>
+           
+                <td></td>
+           
+        <% } %>
+		
+		
+				 
+	</tr>
+	          <%  }) %>
+	
+			</table>	
+				
+	<% } %>	
+	
+<!-------------------------------------------------------------------------------------------------------------->	
+	
+<!-------------Work Order--------------------------------------------------------------------------------->	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Work_Order" ){
+        var i=1;        %>
+	
+	<table id="data-table" hidden>
+    <tr>
+      <td>Requested By:</td>
+		<td>Location:</td>
+        <td>Date:</td>
+        <td>Time:</td>
+        <td>Problem or Concern:</td>
+        <td>Priority:</td>
+        <td>Dept. Responsible:</td>
+		<td>Category</td>
+        <td>Start Date:</td>
+        <td>Time:</td>
+        <td>Complete Date:</td>
+        <td>Time:</td>
+		<td>All tools and parts accounted for?</td>
+		<td>Explanation:</td>
+		<td>All guards in place and safety devices tested?</td>
+		<td>All tools cleaned</td>
+		<td>Area cleaned and ready for production?</td>
+		<td>Area sanitized and ready for production?</td>
+		<td>Initials</td>
+		<td>Corrective Action:</td>
+		</tr>
+		
+		<%
+		userData.forEach(function(data){
+        %>
+    <tr>
+		<td><%=data.Column_2%></td>
+		<td><%=data.store %></td>
+		<td>		<%
+        if(data.Date!=0){
+  
+
+        %>
+		"<%=data.Date %>"
+		
+		           <% } else{ %>
+           
+        
+           
+        <% } %>                </td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_3 %></td>
+		<td><%=data.Column_4 %></td>
+		<td><%=data.Column_5 %></td>
+	    <td>		<%
+        if(data.Column_6=="R"){
+  
+
+        %>
+		<%=data.Column_19 %>
+		
+		           <% } else{ %>
+           
+                <%=data.Column_6 %>
+           
+        <% } %>              </td>
+		<td>		<%
+        if(data.Column_7!=0){
+  
+
+        %>
+		"<%=data.Column_7 %>"
+		
+		           <% } else{ %>
+           
+        
+           
+        <% } %>                </td>
+		<td><%=data.Column_8 %></td>
+		<td>		<%
+        if(data.Column_9!=0){
+  
+
+        %>
+		"<%=data.Column_9 %>"
+		
+		           <% } else{ %>
+           
+        
+           
+        <% } %>   
+	
+	</td>
+		
+		<td><%=data.Column_10 %></td>
+		
+	    <td>
+			
+<!--=========================Yes No Check===============================-->			
+			<%
+        if(data.Column_11=="R"){
+  
+
+        %>
+		No
+		
+		           <% } else{ %>
+           
+                			<%
+        if(data.Column_11=="A"){
+  
+
+        %>
+		Yes
+		
+		           <% } else{ %>
+           
+                <%=data.Column_11 %>
+           
+        <% } %>   
+           
+        <% } %>              
+<!--=================================================================-->	
+		</td>
+		
+		<td><%=data.Column_18 %> </td>
+		<td><%=data.Column_12 %></td>
+		<td><%=data.Column_13 %></td>
+		<td><%=data.Column_14 %></td>
+		<td><%=data.Column_15 %></td>
+		<td><%=data.Column_16 %></td>
+		<td><%=data.Column_17 %></td>
+	</tr>
+	          <%  i++; }) %>
+		
+
+</table>
+	
+	 <% } %>
+<!------------------------------------------------------------------------------------------------------------------------->	
+	
+	
+<!-------------Released_Material--------------------------------------------------------------------------------->	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Released_Material" ){
+        var i=1;        %>
+	
+	<table id="data-table" hidden>
+ <tr>
+<td>Product</td>
+<td>Supplier</td>
+<td>Lot Code</td>
+<td>On-Hold Date</td>
+<td>Time</td>
+<td>Amount of product</td>
+<td>Rejection Date</td>
+<td>Hold By</td>
+<td>Reason for Hold/Rejection</td>
+<td>Corrective Actions (including Release or Disposal details)</td>
+<td>Release Date</td>
+<td>Released By</td>
+<td>Certificate of Destruction on File Y / N</td>
+<td>Comments:</td>
+ </tr>
+		
+		<%
+		userData.forEach(function(data){
+        %>
+    <tr>
+		<td><%=data.Column_1%></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+				<td>		<%
+        if(data.Column_4!=0){
+  
+
+        %>
+		"<%=data.Column_4 %>"
+		
+		           <% } else{ %>
+           
+        
+           
+        <% } %>                </td>
+		<td><%=data.Column_5 %></td>
+		<td><%=data.Column_6 %></td>
+				<td>		<%
+        if(data.Column_7!=0){
+  
+
+        %>
+		"<%=data.Column_7 %>"
+		
+		           <% } else{ %>
+           
+        
+           
+        <% } %>                </td>
+		<td><%=data.Column_8 %></td>
+		<td><%=data.Column_9%></td>
+		<td><%=data.Column_14 %></td>
+						<td>		<%
+        if(data.Column_10!=0){
+  
+
+        %>
+		"<%=data.Column_10 %>"
+		
+		           <% } else{ %>
+           
+        
+           
+        <% } %>                </td>
+		<td><%=data.Column_11%></td>
+		<td><%=data.Column_12 %></td>
+		<td><%=data.Column_13 %></td>
+	</tr>
+	          <%  i++; }) %>
+		
+
+</table>
+	
+	 <% } %>
+<!------------------------------------------------------------------------------------------------------------------------->	
+	
+<!-------------Foreign Materials--------------------------------------------------------------------------------->	
+	
+	  	     <%
+        if(userData.length!=0 && userData[0].Form_Name=="Foreign_Materials" ){
+        %>
+ 
+		  
+		    <table id="data-table" hidden >
+				
+			    <tr class="Row_Tall">
+<td>Date</td>
+<td>Time</td>
+<td>Product</td>
+<td>Describe Foreign Material found</td>
+<td>Corrective Action</td>
+<td>Corrected By (Name)</td>
+    </tr>	
+				
+		<%
+		userData.forEach(function(data){
+        %>
+    <tr class="Row_Tall">
+						<td>		<%
+        if(data.Date!=0){
+  
+
+        %>
+		"<%=data.Date %>"
+		
+		           <% } else{ %>
+           
+        
+           
+        <% } %>                </td>
+		<td><%=data.Column_1 %></td>
+		<td><%=data.Column_2 %></td>
+		<td><%=data.Column_3 %></td>
+		
+		   <%
+		var T=1;
+        userData3.forEach(function(data3){
+	    %>
+		
+						<%
+        if(data.Id==data3.Id){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_9 %></td>
+		<%
+        if(data3.Corection_9!=0){
+         T++; 
+
+        %>
+		<td><%=data3.Corection_12 %></td>
+		
+      <% } else{ %>
+           
+                <td></td>
+           
+            <% } %>	
+		
+		    <% } 
+		
+		else{ %>
+          <% } %>
+		
+<%  T++; }) %>
+		
+				 
+	</tr>
+	          <%  }) %>
+	
+			</table>	
+				
+	<% } %>	
+	
+<!-------------------------------------------------------------------------------------------------------------->
+	
+</div>

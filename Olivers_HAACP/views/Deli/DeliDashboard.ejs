@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<%- include('../../Partials/MetaData') -%>
+
+<body>
+
+	<%- include('../../Partials/NavBar') -%>
+	<br>
+	 <p class="bg-Grey content_continter2" >&nbsp; Welcome <%=userName %></p>
+	<div class="container content_continter">
+		
+		       
+		
+<div class="row Colum_Properties" >
+	
+	
+<div class="col d-flex justify-content-center"  >
+<form action="/DeliForms/Cold_Storage_Form_New" method="post">
+	 <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title1" name="Form_Title" type="hidden" value="Cold Storage">
+	<button  Id= "Button_1" class="Form_Buttons mt-5 Pink Cold_Room Button_Index2"  type="submit"  ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Cold Storage</P>
+    </form>	 
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="/DeliForms/Cold_Transfer_Form_New" method="post">
+	 <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title2" name="Form_Title" type="hidden" value="Cold Transfer">
+	<button  Id= "Button_2" class="Form_Buttons mt-5 Purple Cold_Transfer" type="submit" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Cold Transfer</P>	
+    </form>	  
+</div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="/DeliForms/Haccp_Monitoring_Form_New" method="post">
+	 <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title3" name="Form_Title" type="hidden" value="HACCP Monitoring">
+	<button  Id= "Button_3" class="Form_Buttons mt-5 Orange Haccp_Monitoring" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">HACCP Monitoring</P>	
+    </form>	 
+</div>
+										
+				
+  </div>
+		
+
+		<div class="row " >
+	
+	
+<div class="col  d-flex justify-content-center"   >
+<form action="/DeliForms/Reheating_Form_New" method="post">
+	 <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title4" name="Form_Title" type="hidden" value="Reheating">
+	<button  Id= "Button_4" class="Form_Buttons mt-5 Green Reheating" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Reheating</P>
+    </form>	 
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="/DeliForms/Inventory_Form_New" method="post">
+	 <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title5" name="Form_Title" type="hidden" value="Inventory">
+	<button  Id= "Button_5" class="Form_Buttons mt-5 Yellow Inventory" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Inventory</P>	
+    </form>	  
+</div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="/DeliForms/Sanitation_Form_New" method="post" >
+	 <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title6" name="Form_Title" type="hidden" value="Sanitation">
+	<button  Id= "Button_6" class="Form_Buttons mt-5 Green2 Sanitation" type="submit"  ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Sanitation</P>
+    </form>	 
+</div>
+										
+				
+  </div>
+		
+		
+		<div class="row " >
+	
+	
+<div class="col d-flex justify-content-center"  >
+<form action="/DeliForms/Damaged_Discarded_Form_New" method="post">
+	  <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title7" name="Form_Title" type="hidden" value="Damaged/Discarded">
+	<button  Id= "Button_7" class="Form_Buttons mt-5 Damaged_Discarded Blue" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Damaged/ Discarded</P>	
+    </form>	 
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="/DeliForms/Deviation_Record_Form_New" method="post">
+	  <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title8" name="Form_Title" type="hidden" value="Deviation Record">
+	<button  Id= "Button_8" class="Form_Buttons mt-5 Deviation Blue2" name="Var7" type="submit"  
+			></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Deviation Record</P>	
+    </form>	  
+</div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="/Frontend/Dashboard2" method="post">
+	  <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title9" name="Form_Title" type="hidden" value="Forms">
+	<button  Id= "Button_9" class="Form_Buttons mt-5 Next_Button Red" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Next<br>Page </P>	
+    </form>	 
+</div>
+										
+				
+  </div>
+		
+		
+	
+		
+	
+
+		
+<!-- Blank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+		
+		<!-- Blank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+		
+		
+		<!-- Blank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+
+				
+</div>
+		
+<!-- Bottom Buttons --> 
+		<div class="row fixed-bottom" >
+              <div class="col mb-3">
+				  
+				  <form action="/DeliForms/Previous_Form_Selection" class="button_height" method="post">
+					    <%- include('../../Partials/Global_Variables') -%>
+					  <input id="Form_Title13" name="Form_Title" type="hidden" value="Previous Forms">
+					  <br>
+					  
+                       <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Previous Forms</button>
+					  </form>
+      
+              </div>
+		
+              <div class="col  mb-3">
+				 
+				  <form action="/Frontend/Reports" class="button_height" method="post">
+					    <%- include('../../Partials/Global_Variables') -%>
+					  <input id="Form_Title14" name="Form_Title" type="hidden" value="Reports">
+					<br>
+                       <button class="btn btn-block btn-primary btn-lg button_height Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>
+       </form>
+              </div>
+		
+		
+	</div>
+	
+	
+
+	
+	</body>
+</html>

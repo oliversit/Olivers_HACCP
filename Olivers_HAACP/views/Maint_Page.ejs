@@ -33,6 +33,8 @@
 			<form class="needs-validation" action="/Frontend/List_Edit" method="post">
 				<input id="Name_1" name="Type" type="hidden" value="Vendor">
 				<%- include('../Partials/Global_Variables') -%>
+				<input id="Department" name="DeptLocation" type="hidden" value="<%=userDepartment %>">
+				<input id="Store" name="StoreLocation" type="hidden" value="All">
 				<input id="Form_Title" name="Form_Title" type="hidden" value="Vendor">
         <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Edit_Button" type="submit" value="$Actual_Id" > Edit</button>		
 		</form>						
@@ -57,7 +59,7 @@
 										<br>
 										<br>
 		
-                <p class="form-control" id="Name_selectio_2" >Commodity</p>
+                <p class="form-control" id="Name_selection_2" >Commodity</p>
 	</div>
 	
 						
@@ -67,6 +69,8 @@
 			<form class="needs-validation" action="/Frontend/List_Edit" method="post" >
 				<input id="Name_2" name="Type" type="hidden" value="Commodity">
 				<%- include('../Partials/Global_Variables') -%>
+				<input id="Department" name="DeptLocation" type="hidden" value="<%=userDepartment %>">
+				<input id="Store" name="StoreLocation" type="hidden" value="All">
 				<input id="Form_Title2" name="Form_Title" type="hidden" value="Commodity">
         <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Edit_Button_2" type="submit" value="$Actual_Id" > Edit</button>		
 		</form>						
@@ -76,7 +80,36 @@
 						
 </div>
 		
+		
+		           			<div class="row align-items-end" >
 			
+			
+	
+		
+								<div class="col-md-3"  >
+										<br>
+										<br>
+		
+                <p class="form-control" id="Name_selection_3" >Locations</p>
+	</div>
+	
+						
+						
+						
+			<div class="col-md-3 mb-3"  >
+			<form class="needs-validation" action="/Frontend/List_Edit" method="post" >
+				<input id="Name_2" name="Type" type="hidden" value="Locations">
+				<%- include('../Partials/Global_Variables') -%>
+				<input id="Department" name="DeptLocation" type="hidden" value="<%=userDepartment %>">
+				<input id="Store" name="StoreLocation" type="hidden" value="All">
+				<input id="Form_Title2" name="Form_Title" type="hidden" value="Locations">
+        <button Class="btn btn-primary btn-lg btn-block Grey2" Id= "the_Edit_Button_2" type="submit" value="$Actual_Id" > Edit</button>		
+		</form>						
+			</div>
+					
+						
+						
+</div>			
  					
 		
 		<!-- Bkank Row --> 

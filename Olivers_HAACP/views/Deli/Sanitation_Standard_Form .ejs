@@ -1,0 +1,1202 @@
+
+<!doctype html>
+<html lang="en">
+<%- include('../../Partials/MetaData') -%>
+<%- include('../../Partials/Print_Style') -%>
+  <body >
+	  
+
+<%- include('../../Partials/NavBar') -%>
+	  
+	  
+	  
+    <div class="container noPrint">
+  	  	  	  <%
+        if(userData.length!=0){
+        var Corection_Number=0;
+	
+        userData.forEach(function(data){
+        %>
+	  
+
+      <div class="row " >
+
+        <div class="col-md-10 mb-3" >
+
+Oliver’s Market thoroughly cleans and sanitizes all food contact surfaces (equipment, utensils, etc.), food contact adjacent surfaces, and storage areas to ensure all necessary areas are safe for food preparation. All equipment is thoroughly cleaned following use and at the end of operations each day. <br><br>
+
+
+<strong><u>Pre-Operational Sanitation Procedure:</strong></u> Prior to the beginning of operations, all areas must be visually inspected as clean and unsoiled then sanitized using Buckeye SANI-Q. The HACCP trained personnel performing pre-operational check and sanitation must indicate through initialing that each area is confirmed as clean and sanitized in the appropriate space.<br><br>
+			
+<strong><u>Operational Sanitation Procedure:</strong></u> During operations, each area is cleaned as frequently as necessary to meet the standards of safe and sanitary food production. For each cleaning, a member of the HACCP Team must verify operational areas as clean through initialing. Areas not cleaned during operations should be marked “N/A.” Areas requiring sanitation should be cleaned as needed and sanitized using Buckeye SANI-Q. Gloves must be changed regularly to prevent contamination and checks of proper utilization should be performed throughout the day and marked in the appropriate area below	
+
+
+</p>
+
+			<p id="collapsetext2" style="display:none" >Expand Instructions...</p>
+			</div>
+
+
+
+		  <div class="col-md-2 mb-3">
+
+  <button class= "btn btn-primary btn-lg Grey2" type="button" id="Up" style="display:Block" onclick="Hidetext()" >▲
+
+  </button>
+
+
+
+  <button class= "btn btn-primary btn-lg Grey2" type="button" Id="Down" style="display:none"  onclick="Showtext()" >▼
+
+  </button>
+			</div>
+
+		    </div>
+		
+		
+          <form class="needs-validation" action="../../Frontend/Dashboard" method="post">
+			 <input id="Form_Name" name="Form_Name" type="hidden" value="Sanitation">
+			  <%- include('../../Partials/Global_Variables') -%>
+			  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
+<input id="Form_Id" name="Id" type="hidden" value="<%=data.Id %>">	
+		  
+		 <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="Date">Date</label>
+				  <p class="form-control"><%=data.Date %></p>
+                <input type="hidden" class="form-control" id="Date" placeholder="" name="Date" value="<%=data.Date %>" >
+                <div class="invalid-feedback">
+                  Valid Date is .
+                </div>
+              </div>
+					   
+					   
+              <div class="col-md-6 mb-3">
+				 <label for="country">Store Location</label>
+				  <p class="form-control"><%=data.store %></p>
+                <input type="hidden" class="custom-select d-block w-100" id="country" name="FormStore" value="<%=data.store %>">
+              </div>
+					   
+            </div>
+			  
+			  
+			 
+<!-------Time-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Floor_Ground">Time</label>
+				  <p class="form-control"><%=data.Column_1 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1" value="<%=data.Column_1 %>">
+              </div>
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+	
+			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  <div  id="Hide_Floor_Ground" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Taken1">Corrective Action </label>
+						<p class="form-control"><%=dataCor.Corection_1 %></p>
+                <input type="hidden" class="form-control" name="Corection_1" id="Action_Floor_Ground" placeholder="" value="<%=dataCor.Corection_1 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Floor_Ground">Date</label>
+				<p class="form-control"><%=dataCor.Corection_2 %></p>
+                <input type="hidden" class="form-control" name="Corection_2" id="Date_Floor_Ground" placeholder="" value="<%=dataCor.Corection_2 %>" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Floor_Ground">Time</label>
+				<p class="form-control"><%=dataCor.Corection_3 %></p>
+                <input type="hidden" class="form-control" name="Corection_3" id="Time_Floor_Ground" placeholder="" value="<%=dataCor.Corection_3 %>" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_By_Floor_Ground">Corrected By</label>
+													<p class="form-control"><%=dataCor.Corection_4 %></p>
+                <input type="hidden" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground" placeholder="" value="<%=dataCor.Corection_4 %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+		 <div class="row">
+              <div class="col-md-6 mb-3">
+
+
+				  <p><strong>Beginning of Shift</strong></p>
+
+
+			 </div>
+			  </div>
+
+<!-------Time of Entry-------------------------------------------------------------------------------------------------------->
+            <div class="row ">
+              <div class="col mb-3">
+                <label for="Pest">Time of Entry</label>
+				  <p class="form-control"><%=data.Column_2 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" name="Column_2" value="<%=data.Column_2 %>">
+
+              </div>
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  <div  id="Hide_Pest" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Pest">Corrective Action </label>
+						<p class="form-control"><%=dataCor.Corection_5 %></p>
+                <input type="hidden" class="form-control" name="Corection_5" id="Action_Pest" placeholder="" value="<%=dataCor.Corection_5 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Pest">Date</label>
+				<p class="form-control"><%=dataCor.Corection_6 %></p>
+                <input type="hidden" class="form-control" name="Corection_6" id="Date_Pest" placeholder="" value="<%=dataCor.Corection_6 %>" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Pest">Time</label>
+				<p class="form-control"><%=dataCor.Corection_7 %></p>
+                <input type="hidden" class="form-control" name="Corection_7" id="Time_Pest" placeholder="" value="<%=dataCor.Corection_7 %>" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Pest">Corrected By</label>
+													<p class="form-control"><%=dataCor.Corection_8 %></p>
+                <input type="hidden" class="form-control" name="Corection_8" id="Corrected_Pest" placeholder="" value="<%=dataCor.Corection_8 %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+			  
+<!-------Trash Area Tidy/Empty-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Debris">Trash Area Tidy/Empty</label>
+				  <p class="form-control"><%=data.Column_3 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3" value="<%=data.Column_3 %>">
+
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+<!-- Ambient Storage Areas --------------------------------------------------------------------------------------------------------->			  
+
+						  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+
+
+				  
+
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Debris">Ambient Storage Areas</label>
+						<p class="form-control"><%=dataCor.Corection_9 %></p>
+                <input type="hidden" class="form-control" name="Corection_9" id="Action_Debris" placeholder="" value="<%=dataCor.Corection_9 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+<!--Tables & Work Stations--------------------------------------------------------------------------------------------------------->
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Debris">Tables & Work Stations</label>
+                <input type="hidden" class="form-control" name="Corection_10" id="Date_Debris" placeholder="" value="<%=dataCor.Corection_10 %>" >
+			     </div>
+			  
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+  
+ 
+<!-------Knives & Utensils-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Covered">Knives & Utensils</label>
+				  <p class="form-control"><%=data.Column_4 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4" value="<%=data.Column_4 %>">
+              </div>
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!--Bag Sealer-------------------------------------------------------------------------------------------------------->
+
+					  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+
+				  
+			  <div class="row "  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Covered">Bag Sealer</label>
+						<p class="form-control"><%=dataCor.Corection_13 %></p>
+                <input type="hidden" class="form-control" name="Corection_13" id="Action_Covered" placeholder="" value="<%=dataCor.Corection_13 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+ <!--Processing Equipment-------------------------------------------------------------------------------------------------------->
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Covered">Processing Equipment</label>
+				<p class="form-control"><%=dataCor.Corection_14 %></p>
+                <input type="hidden" class="form-control" name="Corection_14" id="Date_Covered" placeholder="" value="<%=dataCor.Corection_14 %>" >
+			     </div>
+			  
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+ 
+<!-------Hand/ Dish/Prep Sinks----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Stored">Hand/ Dish/Prep Sinks</label>
+				  <p class="form-control"><%=data.Column_5 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5" value="<%=data.Column_5 %>">
+
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+<!--Coolers & Freezers--------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  
+			  
+
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Stored">Coolers & Freezers</label>
+						<p class="form-control"><%=dataCor.Corection_17 %></p>
+                <input type="hidden" class="form-control" name="Corection_17" id="Action_Stored" placeholder="" value="<%=dataCor.Corection_17 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+<!--Walls & Floors--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Stored">Walls & Floors</label>
+				<p class="form-control"><%=dataCor.Corection_18 %></p>
+                <input type="hidden" class="form-control" name="Corection_18" id="Date_Stored" placeholder="" value="<%=dataCor.Corection_18 %>" >
+			     </div>
+
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+			  
+			  			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_sanitized">Corrective Action </label>
+						<p class="form-control"><%=dataCor.Corection_21 %></p>
+                <input type="hidden" class="form-control" name="Corection_21" id="Action_sanitized" placeholder="" value="<%=dataCor.Corection_21 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+ <!--Time of Entry--------------------------------------------------------------------------------------------------------->
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	        <label for="Date_sanitized">Time of Entry</label>
+				<p class="form-control"><%=dataCor.Corection_22 %></p>
+                <input type="hidden" class="form-control" name="Corection_22" id="Date_sanitized" placeholder="" value="<%=dataCor.Corection_22 %>" >
+			     </div>
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+			  
+<!-------Trash cans empty, clean and lined----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Trash">Trash cans empty, clean and lined</label>
+				  <p class="form-control"><%=data.Column_7 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7" value="<%=data.Column_7 %>" >
+              </div>
+
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  
+			  
+ <!--Staging Areas--------------------------------------------------------------------------------------------------------->
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Trash">Staging Areas</label>
+						<p class="form-control"><%=dataCor.Corection_25 %></p>
+                <input type="hidden" class="form-control" name="Corection_25" id="Action_Trash" placeholder="" value="<%=dataCor.Corection_25 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+	<!-------Tables & Work Stations----------->
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Trash">Tables & Work Stations</label>
+                <input type="hidden" class="form-control" name="Corection_26" id="Date_Trash" placeholder="" value="<%=dataCor.Corection_26 %>" >
+			     </div>
+   </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  
+<!-------Stove Top/ Oven----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Health">Stove Top/ Oven</label>
+				  <p class="form-control"><%=data.Column_8 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_8" value="<%=data.Column_8 %>">
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  
+			  
+			   <!--Knives & Utensils--------------------------------------------------------------------------------------------------------->
+
+	
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+
+			<label for="Action_Health">Knives & Utensils</label>
+						<p class="form-control"><%=dataCor.Corection_29 %></p>
+                <input type="hidden" class="form-control" name="Corection_29" id="Action_Health" placeholder="" name="Column_9" value="<%=dataCor.Corection_29 %>">
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+<!--Bag Sealer--------------------------------------------------------------------------------------------------------->
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Health">Bag Sealer</label>
+				<p class="form-control"><%=dataCor.Corection_30 %></p>
+                <input type="hidden" class="form-control" name="Corection_30" id="Date_Health" placeholder="" value="<%=dataCor.Corection_30 %>" >
+			     </div>
+ </div>
+				  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  
+<!-------Processing Equipment----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="GMP">Processing Equipment</label>
+				  <p class="form-control"><%=data.Column_9 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="GMP" onchange="Hide_Option_GMP()" name="Column_9" value="<%=data.Column_9 %>">
+
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  
+<!--Hand/ Dish/Prep Sinks--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_GMP">Hand/ Dish/Prep Sinks</label>
+						<p class="form-control"><%=dataCor.Corection_33 %></p>
+                <input type="hidden" class="form-control" name="Corection_33" id="Action_GMP" placeholder="" value="<%=dataCor.Corection_33 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+<!--Coolers & Freezers--------------------------------------------------------------------------------------------------------->
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+
+	                <label for="Date_GMP">Coolers & Freezers</label>
+				<p class="form-control"><%=dataCor.Corection_34 %></p>
+                <input type="hidden" class="form-control" name="Corection_34" id="Date_GMP" placeholder="" value="<%=dataCor.Corection_34 %>" >
+			     </div>
+				 </div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  
+<!-------Initial----------->
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="Belongings">Initial</label>
+				  <p class="form-control"><%=data.Column_10 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Belongings" onchange="Hide_Option_Belongings()" name="Column_10" value="<%=data.Column_10 %>" >
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+				  
+				  
+<!-------End of Shift Check----------->
+            <div class="row">
+              <div class="col-md-12 mb-3">
+<strong><P>End of Shift Check</P></strong>
+              </div>
+
+
+
+			  </div>				  
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  
+			  
+			   <!--Time of Entry
+
+--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Belongings">Time of Entry</label>
+						<p class="form-control"><%=dataCor.Corection_37 %></p>
+                <input type="hidden" class="form-control" name="Corection_37" id="Action_Belongings" placeholder="" value="<%=dataCor.Corection_37 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+ <!--Use of Gloves
+
+--------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Belongings">Use of Gloves </label>
+				<p class="form-control"><%=dataCor.Corection_38 %></p>
+                <input type="hidden" class="form-control" name="Corection_38" id="Date_Belongings" placeholder="" value="<%=dataCor.Corection_38 %>" >
+			     </div>
+
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  
+<!-------Staging Areas----------->
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="Repairs">Staging Areas</label>
+				  <p class="form-control"><%=data.Column_11 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Repairs" onchange="Hide_Option_Repairs()" name="Column_11" value="<%=data.Column_11 %>">
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  
+			   <!--Tables & Work Stations--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Repairs">Tables & Work Stations</label>
+						<p class="form-control"><%=dataCor.Corection_41 %></p>
+                <input type="hidden" class="form-control" name="Corection_41" id="Action_Repairs" placeholder="" value="<%=dataCor.Corection_41 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			<!------------------------------------------Stove Top/ Oven------------------------------------------------------------------->
+
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Repairs">Stove Top/ Oven</label>
+				<p class="form-control"><%=dataCor.Corection_42 %></p>
+                <input type="hidden" class="form-control" name="Corection_42" id="Date_Repairs" placeholder="" value="<%=dataCor.Corection_42 %>" >
+			     </div>
+  
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  
+<!------------------------------------Knives & Utensils-------------------------------------------------------------->
+            <div class="row ">
+              <div class="col-md-12 mb-3">
+                <label for="Signage">Knives & Utensils</label>
+				  <p class="form-control"><%=data.Column_12 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Signage" onchange="Hide_Option_Signage()" name="Column_12" value="<%=data.Column_12 %>">
+              </div>  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+	  
+	  
+	   <!--Bag Sealer--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Signage">Bag Sealer</label>
+						<p class="form-control"><%=dataCor.Corection_45 %></p>
+                <input type="hidden" class="form-control" name="Corection_45" id="Action_Signage" placeholder="" value="<%=dataCor.Corection_45 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+ <!--Processing Equipment--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Signage">Processing Equipment</label>
+				<p class="form-control"><%=dataCor.Corection_46 %></p>
+                <input type="hidden" class="form-control" name="Corection_46" id="Date_Signage" placeholder="" value="<%=dataCor.Corection_46 %>" >
+			     </div>
+
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  
+<!-------Hand/ Dish/Prep Sinks----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Walls">Hand/ Dish/Prep Sinks</label>
+				  <p class="form-control"><%=data.Column_13 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Walls" onchange="Hide_Option_Walls()" name="Column_13" value="<%=data.Column_13 %>" >
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  <div  id="Hide_Walls" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Walls">Corrective Action </label>
+						<p class="form-control"><%=dataCor.Corection_49 %></p>
+                <input type="hidden" class="form-control" name="Corection_49" id="Action_Walls" placeholder="" value="<%=dataCor.Corection_49 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Walls">Date</label>
+				<p class="form-control"><%=dataCor.Corection_50 %></p>
+                <input type="hidden" class="form-control" name="Corection_50"id="Date_Walls" placeholder="" value="<%=dataCor.Corection_50 %>" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Walls">Time</label>
+				<p class="form-control"><%=dataCor.Corection_51 %></p>
+                <input type="hidden" class="form-control" name="Corection_51" id="Time_Walls" placeholder="" value="<%=dataCor.Corection_51 %>" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Walls">Corrected By</label>
+									<p class="form-control"><%=dataCor.Corection_52 %></p>				
+                <input type="hidden" class="form-control" name="Corection_52" id="Corrected_Walls" placeholder="" value="<%=dataCor.Corection_52 %>">
+			     </div>
+              </div> 
+			
+			  
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  
+<!-------Coolers & Freezers----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Floor">Coolers & Freezers</label>
+				  <p class="form-control"><%=data.Column_14 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Floor" onchange="Hide_Option_Floor()" name="Column_14" value="<%=data.Column_14 %>">
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  <div  id="Hide_Floor" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Floor">Corrective Action </label>
+						<p class="form-control"><%=dataCor.Corection_53 %></p>
+                <input type="hidden" class="form-control" name="Corection_53" id="Action_Floor" placeholder="" value="<%=dataCor.Corection_53 %>" onchange="Hide_Option_Action_Floor()" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Floor">Date</label>
+				<p class="form-control"><%=dataCor.Corection_54 %></p>
+                <input type="hidden" class="form-control" name="Corection_54" id="Date_Floor" placeholder="" value="<%=dataCor.Corection_54 %>" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Floor">Time</label>
+				<p class="form-control"><%=dataCor.Corection_55 %></p>
+                <input type="hidden" class="form-control" name="Corection_55" id="Time_Floor" placeholder="" value="<%=dataCor.Corection_55 %>" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Floor">Corrected By</label>
+								<p class="form-control"><%=dataCor.Corection_56 %></p>					
+                <input type="hidden" class="form-control" name="Corection_56" id="Corrected_Floor" placeholder="" value="<%=dataCor.Corection_56 %>">
+			     </div>
+              </div> 
+			
+			  
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  
+<!-------Initial----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Gloves">Initial</label>
+				  <p class="form-control"><%=data.Column_15 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Gloves" onchange="Hide_Option_Action_Gloves()" name="Column_16" value="<%=data.Column_15 %>" >
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  <div  id="Hide_Gloves" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Gloves">Corrective Action </label>
+						<p class="form-control"><%=dataCor.Corection_57 %></p>
+                <input type="hidden" class="form-control" name="Corection_57" id="Action_Gloves" placeholder="" value="<%=dataCor.Corection_57 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Gloves">Date</label>
+				<p class="form-control"><%=dataCor.Corection_58 %></p>
+                <input type="hidden" class="form-control" name="Corection_58" id="Date_Gloves" placeholder="" value="<%=dataCor.Corection_58 %>" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Gloves">Time</label>
+				<p class="form-control"><%=dataCor.Corection_59 %></p>
+                <input type="hidden" class="form-control" name="Corection_59" id="Time_Gloves" placeholder="" value="<%=dataCor.Corection_59 %>" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Gloves">Corrected By</label>
+											<p class="form-control"><%=dataCor.Corection_60 %></p>		
+                <input type="hidden" class="form-control" name="Corection_60" id="Corrected_Gloves" placeholder="" value="<%=dataCor.Corection_60 %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+				          <%  Corection_Number++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>		  
+			  
+<!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
+			  <br>
+			  <hr class="mb-4">
+			
+			  			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+				
+	                                      <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" type="submit">Dashboard</button>
+					
+			     </div>
+		
+				  				  	  			<div class="col mb-3">
+													
+													<div class="test">
+						                       <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" 
+											   type="button" 
+											   onclick="window.print();return false;">Print</button>
+														</div>
+			     </div>
+              </div> 
+			  
+          </form>
+        
+  
+			  
+
+    </div>
+<%- include('../../Partials/Weekly_Processing_Print_Table') -%>
+<%- include('../../Partials/ScriptDataOnLoad') -%>
+	  
+  </body>
+</html>

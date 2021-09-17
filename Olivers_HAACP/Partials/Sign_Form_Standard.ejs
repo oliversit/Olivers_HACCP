@@ -1,0 +1,52 @@
+
+  	  	  	  <%
+        if(userData.length!=0){
+        var i=1;
+        userData.forEach(function(data){
+        %>
+
+<!-------Reviewed By:-------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col">
+				  <p>Reviewed By Department Manager:</p>
+                  <input type="hidden" class="form-control" id="Pest" onchange="Hide_Option_Pest()" name="Sign1" value="<%=data.Sign1 %>">
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+          
+				              <div class="col">
+				  <p>Date:</p>
+                  <input type="hidden" class="form-control" id="Pest" onchange="Hide_Option_Pest()" name="SignDate1" value="<%=data.SignDate1 %>">
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+			  
+			  </div>
+
+<!------Verified By:-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col mb-3">
+				  <p>Reviewed By HACCP Certified Manager:</p>
+                  <input type="hidden" class="form-control" id="Pest" onchange="Hide_Option_Pest()" name="Sign2" value="<%=data.Sign2 %>">
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+				
+								              <div class="col">
+				  <p>Date:</p>
+                  <input type="hidden" class="form-control" id="Pest" onchange="Hide_Option_Pest()" name="SignDate2" value="<%=data.SignDate2 %>">
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+          
+			  
+			  </div>
+
+			  				          <%  i++; }) %>
+        <% } else{ %>
+
+        <% } %>	

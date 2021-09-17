@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('../../Partials/MetaData') -%>
+
+
+<body>
+<%- include('../../Partials/NavBar') -%>
+			    <form class="needs-validation" action="/Frontend/Generate" method="post">
+					<%- include('../../Partials/Global_Variables') -%>
+					<input id="Form_Title13" name="Form_Title" type="hidden" value="Reports">
+	<div class="container">
+		
+			 <div class="row">
+              <div class="col mb-3">
+				  <label for="Floor_Ground2">Report Type</label>
+                  <select class="custom-select d-block w-100" id="Report_Type" onchange="Hide_Form_Type()" name="Report_Type" >       
+                    <option Value="Weekly">Weekly</option>
+					<option Value="Range">Range</option>
+                </select>
+				    </div>
+					   
+					   
+
+				</div>	   
+           
+				
+		<div  id="Weekly_Form" style="display:block">
+			 <div class="row">
+              <div class="col mb-3">
+				  <label for="Floor_Ground">Form</label>
+                   <select class="custom-select d-block w-100" id="Weekly_Select"  name="Form_Name" >
+                  <option value="Range">Choose...</option>
+                    <option Value="Packing">Packing materials</option>
+					<option Value="Processing">Processing Room</option>
+					   <option Value="Cold_Rooms">Cold Rooms</option>
+					   
+                </select>
+              </div>
+					   
+					   
+
+				</div>	   
+			</div>	
+           
+				<div  id="Range_Form" style="display:none">
+			 <div class="row mb-3">
+              <div class="col mb-3">
+				  <label for="Floor_Ground">Form</label>
+                   <select class="custom-select d-block w-100" id="Range_Select"  name="Form_Name1" >
+                  <option value="A">Choose...</option>
+					   <option Value="Thermometer_Calibration">Thermometer Calibration</option>
+					   <option Value="Raw_Product">Raw Product</option>
+					   <option Value="Cooler">Cooler/Display Case Temp</option>
+					   <option Value="Incoming_Materials">Incoming Materials</option>
+					   <option Value="Brittle_Plastics">Glass/Plastics</option>
+					   <option Value="Preventative_Maintenance">Preventative Maintenance</option>
+					   <option Value="NUOCA">NUOCA</option>
+					   <option Value="Work_Order">Work Order</option>
+					   <option Value="Released_Material">Rejected/Released</option>
+					   <option Value="Foreign_Materials">Foreign Materials</option>
+					   
+                </select>
+              </div>
+					   
+					   
+
+				</div>	   
+			</div>	
+	
+	
+
+		
+		
+		
+<div class="row mb-3" >
+	
+	
+<div class="col justify-content-center"  >
+
+         <label for="Date_From">Date From</label>
+                <input type="Date" class="form-control" id="Date_From" name="Date1" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid Date is required.
+                </div>
+
+    </div>
+								
+
+										
+  </div>
+		
+
+		<div class="row mb-3" >
+	
+	
+<div class="col justify-content-center"   >
+
+                <label for="Date_To">Date To</label>
+                <input type="Date" class="form-control" id="Date_To" name="Date2" placeholder="" value="" required>
+                <div class="invalid-feedback">
+                  Valid Date is required.
+                </div>
+
+    </div>
+								
+										
+  </div>
+		
+	
+<input type="hidden"  id="Range_Select"  name="Report_Location" value="<%=userStore %>">	
+
+		
+					<!-- Bkank Row --> 
+			<div class="row" >
+			
+		<div class="col  justify-content-center mt-5"  >
+</script>
+	</div>
+		
+				<div class="col  justify-content-center mt-5"   >
+		</div>
+		</div>
+				
+</div>
+	
+<!-- Bottom Buttons --> 
+	
+		<div class="row fixed-bottom" >
+              <div class="col mb-3">
+				  
+		
+					  <br>
+                       <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Generate</button>
+							 <input type="hidden"  id="PageNum1"  name="PageNum1" value="0">	
+		 <input type="hidden"  id="PageNum2"  name="PageNum2" value="1">
+				  </form>
+      
+              </div>
+		
+              <div class="col mb-3">
+				 
+				  <form action="../../Frontend/Dashboard" class="button_height" method="post">
+					  <%- include('../../Partials/Global_Variables') -%>
+					  <input id="Form_Title13" name="Form_Title" type="hidden" value="Forms">
+					  <br>
+                       <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Dashboard</button>
+					  </form>
+              </div>
+		
+		
+	</div>
+		
+	
+
+	
+	</body>
+</html>

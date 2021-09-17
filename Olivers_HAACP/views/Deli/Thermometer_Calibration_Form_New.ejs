@@ -1,0 +1,260 @@
+
+<!doctype html>
+<html lang="en">
+<%- include('../../Partials/MetaData') -%>
+
+  <body >
+	  
+<%- include('../../Partials/NavBar') -%>
+	  
+	  
+	  
+    <div class="container">
+  
+
+      <div class="row " >
+        
+        <div class="col-md-10 mb-3" >
+      <p id="collapsetext">
+		  
+		Calibration will be performed at least weekly. The employee will record the calibration check and any necessary corrective actions each time a thermometer is calibrated. Management will verify that employees are using and calibrating thermometers correctly through visual observation of calibration activities at least monthly. Retain this log for 2 years minimum  <br><br>
+		  
+		  <strong>How to Calibrate a Thermometer</strong><br><br>
+
+1.	Fill a container with ice (crushed ice works best) and add water. There should be more ice than water.<br>
+2.	Place the thermometer in the water so it is submerged past the indication on the stem (the indent). For infrared thermometers, point at the surface of the water.<br> 
+3.	Wait at least 1 minute for the thermometer to adjust.<br>
+4.	Read the thermometer and record the temperature.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a.	If thermometer reads 32°F +/- 2°F thermometer is calibrated. If not, adjustment is necessary.
+</p>
+			
+			<p id="collapsetext2" style="display:none" >Expand Instructions...</p>
+			</div> 
+		          
+	
+		  
+		  <div class="col-md-2 mb-3">
+			
+  <button class= "btn btn-primary btn-lg Grey2" type="button" id="Up" style="display:Block" onclick="Hidetext()" >▲   
+
+  </button>
+			
+				  
+				  				  
+  <button class= "btn btn-primary btn-lg Grey2" type="button" Id="Down" style="display:none"  onclick="Showtext()" >▼
+
+  </button>
+			</div>
+		  
+		    </div>
+		
+		
+          <form class="needs-validation" action="/data" method="post">
+			 <input id="Form_Name" name="Form_Name" type="hidden" value="Thermometer_Calibration">
+			  <%- include('../../Partials/Global_Variables') -%>
+			  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
+
+		  
+		 <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="Date">Date</label>
+                <input type="Date" class="form-control" id="Date" placeholder="" value="" name="Date">
+                <div class="invalid-feedback">
+                  Valid Date is .
+                </div>
+              </div>
+			 
+			   <div class="col-md-6 mb-3">
+				                  <label for="country">Store Location</label>
+                <select class="custom-select d-block w-100" id="country" name="FormStore" required>
+                 <option value="<%=userStore %>"><%=userStore %></option>
+                  <option value="Cotati">Cotati</option>
+					<option value="Montecito">Montecito</option>
+					<option value="Stony Point">Stony Point</option>
+					<option value="Windsor">Windsor</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid Store.
+          
+              </div>
+              </div>
+					   
+					   
+				  
+              </div>
+					   
+
+
+
+<!-------Thermometer Type -------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Pest">Thermometer Type </label>
+                  <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" name="Column_3" >
+                  <option value="Choose...">Choose...</option>
+                    <option Value="Digital">Digital</option>
+					<option Value="Analog">Analog</option>
+		            <option Value="Infrared">Infrared</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+          
+			  
+			  </div>
+			  
+			
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Pest" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Pest">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_5" id="Action_Pest" placeholder="" value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Pest">Date</label>
+                <input type="Date" class="form-control" name="Corection_6" id="Date_Pest" placeholder="" value="" >
+			     </div>
+			<div class="colmb-3">	
+				<label for="Time_Pest">Time</label>
+                <input type="time" class="form-control" name="Corection_7" id="Time_Pest" placeholder="" value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Pest">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_8" id="Corrected_Pest" placeholder="" value="<%=userName %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+			  
+<!-------Temperature Reading-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Debris">Temperature Reading</label>
+<input type="number" class= "form-control" id="Debris" name="Column_4">
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+          
+			  
+			  </div>
+			  			  
+<!-------Corrective Action Needed?----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Stored">Corrective Action Needed?</label>
+                  <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A">No</option>
+					<option Value="R">Yes</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Stored" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Stored">Corrective Action </label>
+               <select class="custom-select d-block w-100" name="Corection_21" id="Action_Stored" placeholder="" value="" >
+				      <option value="Choose...">Choose...</option>
+                    <option Value="Manually Calibrate">Manually Calibrate</option>
+					<option Value="R">Yes</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+                <input type="hidden" class="form-control" id="Date_Stored" placeholder="" value="" >
+	
+		
+                <input type="hidden" class="form-control"  id="Time_Stored" placeholder="" value="" >
+			     </div>
+				  
+				  				  
+		
+			   
+				 	  				  	  			<div class="col mb-3">	
+
+                <input type="hidden" class="form-control" id="Corrected_Stored" placeholder="" value="<%=userName %>" >
+			     </div> 
+			
+			  </div>
+			  
+
+	
+			
+			  
+</div>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+			  
+<!-------Initial-------------------------------------------------------------------------------------------------------->
+			  <label for="Covered">Initial</label>
+<input type="text" class= "form-control" id="Covered" value="" name="Column_6">
+			  			  
+			 			  
+			  
+<!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
+			  <br>
+			  <hr class="mb-4">
+			
+      
+			  
+			  
+			           <div class="row"  >
+            <div class="col mb-3">	
+            
+           
+            <button class="btn btn-primary btn-lg btn-block Green_Button" type="submit">Save</button>
+				
+				   </div> 
+			   </div> 
+			  
+          </form>
+        
+  
+			  
+
+    </div>
+
+<%- include('../../Partials/ScriptData') -%>
+	  
+  </body>
+</html>

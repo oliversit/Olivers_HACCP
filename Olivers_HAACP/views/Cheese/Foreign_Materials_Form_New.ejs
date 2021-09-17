@@ -1,0 +1,248 @@
+
+<!doctype html>
+<html lang="en">
+<%- include('../../Partials/MetaData') -%>
+
+  <body >
+	  
+<%- include('../../Partials/NavBar') -%>
+	  
+	  
+	  
+    <div class="container">
+  
+
+        <div class="row " >
+        
+        <div class="col-md-10 mb-3" >
+      <p id="collapsetext">There is no tolerance for foreign materials. Continuous visual inspection must be performed by processing and packaging personnel. Problems must be reported to the supervisor and cease to continue until clearance given. Supervisors will document all findings and corrective actions.</p>
+			
+			<p id="collapsetext2" style="display:none" >Expand Instructions...</p>
+			</div> 
+		          
+	
+		  
+		  <div class="col-md-2 mb-3">
+			
+  <button class= "btn btn-primary btn-lg Grey2" type="button" id="Up" style="display:Block" onclick="Hidetext()" >▲   
+
+  </button>
+			
+				  
+				  				  
+  <button class= "btn btn-primary btn-lg Grey2" type="button" Id="Down" style="display:none"  onclick="Showtext()" >▼
+
+  </button>
+			</div>
+		  
+		    </div>
+		
+		
+          <form class="needs-validation" action="/data" method="post">
+			 <input id="Form_Name" name="Form_Name" type="hidden" value="Foreign_Materials">
+<%- include('../../Partials/Global_Variables') -%>
+			  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
+
+		  
+		 <div class="row">
+              <div class="col-md-6 mb-3 mt-3">
+                <label for="Date">Date</label>
+                <input type="Date" class="form-control" id="Date"  name="Date" >
+                <div class="invalid-feedback">
+                  Valid Date is .
+                </div>
+              </div>
+					   
+					   
+              <div class="col-md-6 mb-3 mt-3">
+				  				                  <label for="country">Store Location</label>
+                <select class="custom-select d-block w-100" id="country" name="FormStore" required>
+                 <option value="<%=userStore %>"><%=userStore %></option>
+                  <option value="Cotati">Cotati</option>
+					<option value="Montecito">Montecito</option>
+					<option value="Stony Point">Stony Point</option>
+					<option value="Windsor">Windsor</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid Store.
+          
+              </div>
+              </div>
+					   
+            </div>
+			  
+			  
+			 
+<!-------Time-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3 mt-3">
+                <label for="Floor_Ground">Time</label>
+                  <input type="time" class="form-control d-block w-100" id="Floor_Ground" name="Column_1" >
+              </div>
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Floor_Ground" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3 mt-3">	
+			<label for="Action_Taken1">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_1" id="Action_Taken_Floor_Ground"  value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3 mt-3">	
+	                <label for="Date_Floor_Ground">Date</label>
+                <input type="Date" class="form-control" name="Corection_2" id="Date_Floor_Ground"  value="" >
+			     </div>
+			<div class="colmb-3 mt-3">	
+				<label for="Time_Floor_Ground">Time</label>
+                <input type="time" class="form-control" name="Corection_3" id="Time_Floor_Ground"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3 mt-3">	
+						<label for="Corrected_By_Floor_Ground">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground"  value="<%=userName %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-------Product-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3 mt-3">
+				  				  			<label for="Action_Taken1">Product</label>
+                <input type="text" class="form-control" name="Column_2" id="Column_2"  value="" >
+              </div>
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Pest" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3 mt-3">	
+			<label for="Action_Pest">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_5" id="Action_Pest"  value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3 mt-3">	
+	                <label for="Date_Pest">Date</label>
+                <input type="Date" class="form-control" name="Corection_6" id="Date_Pest"  value="" >
+			     </div>
+			<div class="colmb-3 mt-3">	
+				<label for="Time_Pest">Time</label>
+                <input type="time" class="form-control" name="Corection_7" id="Time_Pest"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3 mt-3">	
+						<label for="Corrected_Pest">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_8" id="Corrected_Pest"  value="<%=userName %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+			  
+<!-------Describe Foreign Material found-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3 mt-3">
+                <label for="Date">Describe Foreign Material found</label>
+                <input type="Text" class="form-control" id="Column_3"  name="Column_3" >
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+
+			  
+			  
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3 mt-3">	
+			<label for="Action_Debris">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_9" id="Action_Debris"  value="" >
+			     </div>
+				 	  				  	  			<div class="col mb-3 mt-3">	
+						<label for="Corrected_Debris">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_12" id="Corrected_Debris"  value="<%=userName %>" >
+			     </div> 
+			
+			  </div>
+			  	
+			  
+<!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
+			  <br>
+			  <hr class="mb-4">
+			
+      
+			  
+			  
+			           <div class="row"  >
+            <div class="col mb-3 mt-3">	
+            
+           
+            <button class="btn btn-primary btn-lg btn-block Green_Button" type="submit">Save</button>
+				
+				   </div> 
+			   </div> 
+			  
+          </form>
+        
+  
+			  
+
+    </div>
+
+<%- include('../../Partials/ScriptData') -%>
+	  
+  </body>
+</html>

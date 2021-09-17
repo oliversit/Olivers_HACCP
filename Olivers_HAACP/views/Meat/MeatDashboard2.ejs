@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+<%- include('../../Partials/MetaData') -%>
+
+<body>
+
+	<%- include('../../Partials/NavBar') -%>
+
+
+	<br>
+	 <p class="bg-Grey content_continter2" >&nbsp; Welcome <%=userName %></p>
+	<div class="container content_continter">
+		
+		
+		<div class="row" >
+	
+	
+<div class="col d-flex justify-content-center">
+<form action="/MeatForms/Preventative_Maintenance_Form_New" method="post">
+	  <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title10" name="Form_Title" type="hidden" value="Preventative Maintenance">
+	<button  Id= "Button_10" class="Form_Buttons mt-5 Preventative_Maintenance Yellow " name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Preventative Maintenance</P>	
+    </form>	 
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="/MeatForms/NUOCA_Form_New" method="post">
+	  <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title11" name="Form_Title" type="hidden" value="NUOCA">
+	<button  Id= "Button_11" class="Form_Buttons mt-5 NUOCA Purple2" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">NUOCA</P>	
+    </form>	  
+</div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="/MeatForms/Work_Order_Form_New" method="post">
+	  <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title12" name="Form_Title" type="hidden" value="Work Order">
+	<button  Id= "Button_12" class="Form_Buttons mt-5 Work_Order Blue" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Work<br>Order</P>	
+    </form>	 
+</div>
+
+				
+  </div>
+	
+		
+		<div class="row" >
+	<div class="col d-flex justify-content-center"  >
+<form action="/MeatForms/Released_Material_Form_New" method="post">
+	  <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title13" name="Form_Title" type="hidden" value="Rejected/Released">
+	<button  Id= "Button_13" class="Form_Buttons mt-5 Rejected_Material Pink " name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Rejected/<br>Released</P>	
+    </form>	 
+    </div>
+								
+<div class="col d-flex justify-content-center" >
+<form action="/MeatForms/Foreign_Materials_Form_New" method="post">
+	  <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title14" name="Form_Title" type="hidden" value="Foreign Materials">
+	<button  Id= "Button_14" class="Form_Buttons mt-5 Foreign_Materials Purple" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Foreign<br>Materials</P>	
+    </form>	  
+</div>
+	
+			<div class="col d-flex justify-content-center" >
+<form action="/Frontend/Dashboard" method="post">
+	  <%- include('../../Partials/Global_Variables') -%>
+	<input id="Form_Title14" name="Form_Title" type="hidden" value="Forms">
+	<button  Id= "Button_14" class="Form_Buttons mt-5 Back_Button Red" name="Var7" type="submit" value="$Actual_Id" ></button>
+	<P  Id= "Button_13" class=" Form_text Button_Index1" name="Var7">Previous<br>Page</P>	
+    </form>	  
+</div>
+	
+				
+  </div>
+
+		
+<!-- Blank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+		
+		<!-- Blank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+		
+		
+		<!-- Blank Row --> 
+			<div class="row" >
+			
+		<div class="col d-flex justify-content-center mt-5"  >
+
+	</div>
+		
+				<div class="col d-flex justify-content-center mt-5"   >
+		</div>
+		</div>
+		
+
+				
+</div>
+		
+<!-- Bottom Buttons --> 
+		<div class="row fixed-bottom" >
+              <div class="col mb-3">
+				  
+				  <form action="/MeatForms/Previous_Form_Selection" class="button_height" method="post">
+					    <%- include('../../Partials/Global_Variables') -%>
+					  <input id="Form_Title13" name="Form_Title" type="hidden" value="Previous Forms">
+					  <br>
+					  
+                       <button class="btn btn-block btn-primary btn-lg Light_Green_Button button_height "  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Previous Forms</button>
+					  </form>
+      
+              </div>
+		
+              <div class="col  mb-3">
+				 
+				  <form action="/Frontend/Reports" class="button_height" method="post">
+					    <%- include('../../Partials/Global_Variables') -%>
+					  <input id="Form_Title14" name="Form_Title" type="hidden" value="Reports">
+					<br>
+                       <button class="btn btn-block btn-primary btn-lg button_height Green_Button"  data-toggle="collapse" data-target="#Hide_Stored" type="submit">Reports</button>
+       </form>
+              </div>
+		
+		
+	</div>
+	
+	
+
+	
+	</body>
+</html>

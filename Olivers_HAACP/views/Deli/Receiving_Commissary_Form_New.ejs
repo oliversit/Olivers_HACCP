@@ -1,0 +1,561 @@
+
+<!doctype html>
+<html lang="en">
+<%- include('../../Partials/MetaData') -%>
+
+  <body >
+	  
+<%- include('../../Partials/NavBar') -%>
+	  
+	  
+	  
+    <div class="container">
+  
+
+      <div class="row " >
+        
+        <div class="col-md-10 mb-3" >
+      <p id="collapsetext">
+		  
+		  
+
+
+
+
+All ingredients used in conjunction with the Oliver’s Market HACCP Plans must be recorded each time they are received into the commissary. For PHF, a representative sample must be verified to be received at ≤41ºF if refrigerated, 0ºF if frozen and recorded on this Receiving Log. Only HACCP trained employees may receive ingredients used in conjunction with the HACCP Program and Management will verify that employees are correctly receiving product through visual observation of receiving activities at least monthly. Retain this log for 90 days minimum past the most recent entry.<br><br>
+
+<strong><u>Corrective Action:</u></strong>PHF received >41ºF or >0ºF, as applicable, must be rejected and returned to supplier or discarded. Additionally, any ingredients received damaged or without proper labeling must be rejected and returned to supplier or discarded.
+		
+			
+			
+			
+			
+			</p>
+			
+			<p id="collapsetext2" style="display:none" >Expand Instructions...</p>
+			</div> 
+		          
+	
+		  
+		  <div class="col-md-2 mb-3">
+			
+  <button class= "btn btn-primary btn-lg Grey2" type="button" id="Up" style="display:Block" onclick="Hidetext()" >▲   
+
+  </button>
+			
+				  
+				  				  
+  <button class= "btn btn-primary btn-lg Grey2" type="button" Id="Down" style="display:none"  onclick="Showtext()" >▼
+
+  </button>
+			</div>
+		  
+		    </div>
+		
+		
+          <form class="needs-validation" action="/data" method="post">
+			 <input id="Form_Name" name="Form_Name" type="hidden" value="Receiving_Commissary">
+<%- include('../../Partials/Global_Variables') -%>
+			  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
+
+		  
+		 <div class="row">
+              <div class="col-md mb-3">
+                <label for="Date">Date</label>
+                <input type="Date" class="form-control" id="Date"  name="Date" >
+                <div class="invalid-feedback">
+                  Valid Date is .
+                </div>
+				  
+				  <input type="hidden" class="custom-select d-block w-100" id="country" name="FormStore" value="Stony Point">
+				  
+              </div>
+					   
+					   
+					   
+            </div>
+			  
+			  
+			 
+<!-------Time-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Floor_Ground">Time</label>
+                  <input type="time" class="form-control" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1" >
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Floor_Ground" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Taken1">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_1" id="Action_Floor_Ground"  value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Floor_Ground">Date</label>
+                <input type="Date" class="form-control" name="Corection_2" id="Date_Floor_Ground"  value="" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Floor_Ground">Time</label>
+                <input type="time" class="form-control" name="Corection_3" id="Time_Floor_Ground"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_By_Floor_Ground">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground"  value="<%=userName %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-------Supplier/Vendor-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Pest">Supplier/Vendor</label>
+                  <select class="custom-select d-block w-100" id="Pest" onchange="Hide_Option_Pest()" name="Column_2">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A" >Acceptable</option>
+					<option Value="R" >Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Pest" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Pest">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_5" id="Action_Pest"  value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Pest">Date</label>
+                <input type="Date" class="form-control" name="Corection_6" id="Date_Pest"  value="" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Pest">Time</label>
+                <input type="time" class="form-control" name="Corection_7" id="Time_Pest"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Pest">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_8" id="Corrected_Pest"  value="<%=userName %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+			  
+<!-------Product Description-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Debris">Product Description</label>
+                  <input type="text" class="form-control" id="Debris" onchange="Hide_Option_Debris()" name="Column_3">
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Debris" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Debris">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_9" id="Action_Debris"  value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Debris">Date</label>
+                <input type="Date" class="form-control" name="Corection_10" id="Date_Debris"  value="" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Debris">Time</label>
+                <input type="time" class="form-control" name="Corection_11" id="Time_Debris"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Debris">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_12" id="Corrected_Debris"  value="<%=userName %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+  
+ 
+<!-------Receiving Temp. (ºF)-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Covered">Receiving Temp. (ºF)</label>
+                  <input type="number" class="form-control" id="Covered" onchange="Hide_Option_Covered()" name="Column_4">
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Covered" style="display:none">
+			  <div class="row "  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Covered">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_13" id="Action_Covered"  value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Covered">Date</label>
+                <input type="Date" class="form-control" name="Corection_14" id="Date_Covered"  value="" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Covered">Time</label>
+                <input type="time" class="form-control" name="Corection_15" id="Time_Covered"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Covered">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_16" id="Corrected_Covered"  value="<%=userName %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+ 
+<!-------Evidence of Damage or Contamination?----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Stored">Evidence of Damage or Contamination?</label>
+                  <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="No">No</option>
+					<option Value="Yes">Yes</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Stored" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Stored">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_17" id="Action_Stored"  value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Stored">Date</label>
+                <input type="Date" class="form-control" name="Corection_18" id="Date_Stored"  value="" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Stored">Time</label>
+                <input type="time" class="form-control" name="Corection_19" id="Time_Stored"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Stored">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_20" id="Corrected_Stored"  value="<%=userName %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+			  
+<!-------Shipment Accepted?----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="sanitized">Shipment Accepted?</label>
+                  <select class="custom-select d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" name="Column_6">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="Yes">Yes</option>
+					<option Value="No">No</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_sanitized" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_sanitized">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_21" id="Action_sanitized"  value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_sanitized">Date</label>
+                <input type="Date" class="form-control" name="Corection_22" id="Date_sanitized"  value="" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_sanitized">Time</label>
+                <input type="time" class="form-control" name="Corection_23" id="Time_sanitized"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_sanitized">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_24" id="Corrected_sanitized"  value="<%=userName %>">
+			     </div>
+              </div> 
+			
+			  
+</div>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+			  
+<!-------Corrective Action Necessary?----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Trash">Corrective Action Necessary?</label>
+                  <select class="custom-select d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A">No</option>
+					<option Value="R">Yes</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  
+			  <div  id="Hide_Trash" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Trash">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_25" id="Action_Trash"  value="" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+
+                <input type="hidden" class="form-control" name="Corection_26" id="Date_Trash"  value="" >
+                <input type="hidden" class="form-control" name="Corection_27" id="Time_Trash"  value="" >
+                <input type="hidden" class="form-control" name="Corection_28" id="Corrected_Trash"  value="<%=userName %>" >
+			  
+				  </div>
+              </div> 
+			
+			  
+</div>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			  
+<!-------Receiver Initial----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Health">Receiver Initial</label>
+                  <select class="custom-select d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_8">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A">No</option>
+					<option Value="R">Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+          
+			  
+			  </div>
+			  
+
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+			
+	
+			  
+			  
+<!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
+			  <br>
+			  <hr class="mb-4">	
+      
+			  
+			  
+			           <div class="row"  >
+            <div class="col mb-3">	
+            
+           
+            <button class="btn btn-primary btn-lg btn-block Green_Button" type="submit">Save</button>
+				
+				   </div> 
+			   </div> 
+			  
+          </form>
+        
+  
+			  
+
+    </div>
+
+<%- include('../../Partials/ScriptData') -%>
+	  
+  </body>
+</html>

@@ -1,0 +1,1067 @@
+
+<!doctype html>
+<html lang="en">
+<%- include('../../Partials/MetaData') -%>
+
+  <body >
+
+<%- include('../../Partials/NavBar') -%>
+
+
+
+    <div class="container">
+
+      <div class="row " >
+
+        <div class="col-md-10 mb-3" >
+
+Oliver’s Market thoroughly cleans and sanitizes all food contact surfaces (equipment, utensils, etc.), food contact adjacent surfaces, and storage areas to ensure all necessary areas are safe for food preparation. All equipment is thoroughly cleaned following use and at the end of operations each day. <br><br>
+
+
+<strong><u>Pre-Operational Sanitation Procedure:</strong></u> Prior to the beginning of operations, all areas must be visually inspected as clean and unsoiled then sanitized using Buckeye SANI-Q. The HACCP trained personnel performing pre-operational check and sanitation must indicate through initialing that each area is confirmed as clean and sanitized in the appropriate space.<br><br>
+			
+<strong><u>Operational Sanitation Procedure:</strong></u> During operations, each area is cleaned as frequently as necessary to meet the standards of safe and sanitary food production. For each cleaning, a member of the HACCP Team must verify operational areas as clean through initialing. Areas not cleaned during operations should be marked “N/A.” Areas requiring sanitation should be cleaned as needed and sanitized using Buckeye SANI-Q. Gloves must be changed regularly to prevent contamination and checks of proper utilization should be performed throughout the day and marked in the appropriate area below			
+
+</p>
+
+			<p id="collapsetext2" style="display:none" >Expand Instructions...</p>
+			</div>
+
+
+
+		  <div class="col-md-2 mb-3">
+
+  <button class= "btn btn-primary btn-lg Grey2" type="button" id="Up" style="display:Block" onclick="Hidetext()" >▲
+
+  </button>
+
+
+
+  <button class= "btn btn-primary btn-lg Grey2" type="button" Id="Down" style="display:none"  onclick="Showtext()" >▼
+
+  </button>
+			</div>
+
+		    </div>
+
+
+
+          <form class="needs-validation" action="/data" method="post">
+			 <input id="Form_Name" name="Form_Name" type="hidden" value="Sanitation">
+<%- include('../../Partials/Global_Variables') -%>
+			  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
+
+
+
+
+
+
+		 <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="Date">Date</label>
+                <input type="Date" class="form-control" id="Date"  name="Date" >
+                <div class="invalid-feedback">
+                  Valid Date is .
+                </div>
+              </div>
+
+			               <div class="col-md-6 mb-3">
+				<label for="country">Store Location</label>
+                <select class="custom-select d-block w-100" id="country" name="FormStore" required>
+				  <option value="<%=userStore %>"><%=userStore %></option>
+                  <option value="Cotati">Cotati</option>
+					<option value="Montecito">Montecito</option>
+					<option value="Stony Point">Stony Point</option>
+					<option value="Windsor">Windsor</option>
+                </select>
+                <div class="invalid-feedback">
+                  Please select a valid Store.
+          
+              </div>
+              </div>
+
+
+            </div>
+
+
+
+<!-------Time-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Floor_Ground">Time</label>
+                  <input type="time" class="form-control" id="Floor_Ground" onchange="Hide_Option_Floor_Ground()" name="Column_1" >
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+			  </div>
+
+
+
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+
+			  <div  id="Hide_Floor_Ground" style="display:none">
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Taken1">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_1" id="Action_Floor_Ground"  value="" >
+			     </div>
+
+
+			  </div>
+
+
+
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Floor_Ground">Date</label>
+                <input type="Date" class="form-control" name="Corection_2" id="Date_Floor_Ground"  value="" >
+			     </div>
+			<div class="colmb-3">
+				<label for="Time_Floor_Ground">Time</label>
+                <input type="time" class="form-control" name="Corection_3" id="Time_Floor_Ground"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">
+						<label for="Corrected_By_Floor_Ground">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_4" id="Corrected_By_Floor_Ground"  value="<%=userName %>" >
+			     </div>
+              </div>
+
+
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+		 <div class="row">
+              <div class="col-md-6 mb-3">
+
+
+				  <p><strong>Beginning of Shift</strong></p>
+
+
+			 </div>
+			  </div>
+
+<!-------Time of Entry-------------------------------------------------------------------------------------------------------->
+            <div class="row ">
+              <div class="col mb-3">
+                <label for="Pest">Time of Entry</label>
+                  <input type="time" class="form-control" id="Pest" onchange="Hide_Option_Pest()" name="Column_2">
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+			  </div>
+
+
+
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+
+			  <div  id="Hide_Pest" style="display:none">
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Pest">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_5" id="Action_Pest"  value="" >
+			     </div>
+
+
+			  </div>
+
+
+
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Pest">Date</label>
+                <input type="Date" class="form-control" name="Corection_6" id="Date_Pest"  value="" >
+			     </div>
+			<div class="colmb-3">
+				<label for="Time_Pest">Time</label>
+                <input type="time" class="form-control" name="Corection_7" id="Time_Pest"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">
+						<label for="Corrected_Pest">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_8" id="Corrected_Pest"  value="<%=userName %>" >
+			     </div>
+              </div>
+
+
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-------Trash Area Tidy/Empty-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Debris">Trash Area Tidy/Empty</label>
+                  <select class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A" >Acceptable</option>
+					<option Value="R" >Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+
+			  </div>
+
+
+
+ <!-- Ambient Storage Areas --------------------------------------------------------------------------------------------------------->
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Debris">Ambient Storage Areas</label>
+                <select class="custom-select d-block w-100" name="Corection_9" id="Action_Debris"  value="" >
+					                  <option value="Choose...">Choose...</option>
+                    <option Value="A" >Acceptable</option>
+					<option Value="R" >Rejected</option>
+                </select>
+			     </div>
+
+
+			  </div>
+
+
+
+
+         <!--Tables & Work Stations--------------------------------------------------------------------------------------------------------->
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Debris">Tables & Work Stations</label>
+                <select class="custom-select d-block w-100" name="Corection_10" id="Date_Debris"  value="" >
+			        <option value="Choose...">Choose...</option>
+                    <option Value="A" >Acceptable</option>
+					<option Value="R" >Rejected</option>
+                </select>
+					</div>
+
+              </div>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-------Knives & Utensils-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Covered">Knives & Utensils</label>
+                  <select class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+			  </div>
+
+
+
+ <!--Bag Sealer-------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row "  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Covered">Bag Sealer</label>
+                <select class="custom-select d-block w-100" name="Corection_13" id="Action_Covered"  value="" >
+			        <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+			      </div>
+
+
+			  </div>
+
+
+ <!--Processing Equipment-------------------------------------------------------------------------------------------------------->
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Covered">Processing Equipment</label>
+                <select class="custom-select d-block w-100" name="Corection_14" id="Date_Covered"  value="" >
+					<option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+			     </div>
+
+              </div>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+<!-------Hand/ Dish/Prep Sinks----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Stored">Hand/ Dish/Prep Sinks</label>
+                  <select class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+
+			  </div>
+
+
+
+ <!--Coolers & Freezers--------------------------------------------------------------------------------------------------------->
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Stored">Coolers & Freezers</label>
+                <select class="custom-select d-block w-100" name="Corection_17" id="Action_Stored"  value="" >
+			        <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+					</div>
+
+
+			  </div>
+
+
+
+ <!--Walls & Floors--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Stored">Walls & Floors</label>
+                <select class="custom-select d-block w-100" name="Corection_18" id="Date_Stored"  value="" >
+					<option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+			     </div>
+
+              </div>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+			  
+
+ <!--Initial--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_sanitized">Initial</label>
+                <select class="custom-select d-block w-100" name="Corection_21" id="Action_sanitized"  value="" >
+					<option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+			     </div>
+
+
+			  </div>
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+ <!--Throughout Shift--------------------------------------------------------------------------------------------------------->
+
+
+
+			  <div class="row"  >
+
+<p><strong>Throughout Shift</strong></p>
+
+              </div>
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+ <!--Time of Entry--------------------------------------------------------------------------------------------------------->
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	        <label for="Date_sanitized">Time of Entry</label>
+                <input type="Time" class="form-control" name="Corection_22" id="Date_sanitized"  value="" >
+			     </div>
+
+              </div>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+<!-------Use of Gloves ----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Trash">Use of Gloves </label>
+                  <select class="custom-select d-block w-100" id="Trash" onchange="Hide_Option_Trash()" name="Column_7">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+			  </div>
+
+
+
+ <!--Staging Areas--------------------------------------------------------------------------------------------------------->
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Trash">Staging Areas</label>
+                <select class="custom-select d-block w-100" name="Corection_25" id="Action_Trash"  value="" >
+					<option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+			     </div>
+
+
+			  </div>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+<!-------Tables & Work Stations----------->
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Trash">Tables & Work Stations</label>
+                <select class="custom-select d-block w-100" name="Corection_26" id="Date_Trash"  value="" >
+					<option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+			     </div>
+
+              </div>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-------Stove Top/ Oven----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Health">Stove Top/ Oven</label>
+                  <select class="custom-select d-block w-100" id="Health" onchange="Hide_Option_Health()" name="Column_8">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+
+			  </div>
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+ <!--Knives & Utensils--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+
+			<label for="Action_Health">Knives & Utensils</label>
+               <select class="custom-select d-block w-100" name="Corection_29" id="Action_Health"  name="Action_Health">
+				    <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+
+			     </div>
+
+
+			  </div>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+<!--Bag Sealer--------------------------------------------------------------------------------------------------------->
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Health">Bag Sealer</label>
+                 <select class="custom-select d-block w-100" name="Corection_30" id="Date_Health"  value="" >
+					<option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+			     </div>
+
+              </div>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-------Processing Equipment----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="GMP">Processing Equipment</label>
+                  <select class="custom-select d-block w-100" id="GMP" onchange="Hide_Option_GMP()" name="Column_9">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+
+			  </div>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+ <!--Hand/ Dish/Prep Sinks--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_GMP">Hand/ Dish/Prep Sinks</label>
+                <select class="custom-select d-block w-100" name="Corection_33" id="Action_GMP"  value="" >
+					<option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+			     </div>
+
+
+			  </div>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+ <!--Coolers & Freezers--------------------------------------------------------------------------------------------------------->
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+
+	                <label for="Date_GMP">Coolers & Freezers</label>
+                <select class="custom-select d-block w-100" name="Corection_34" id="Date_GMP"  value="" >
+					<option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+			     </div>
+
+              </div>
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-------Initial----------->
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="Belongings">Initial</label>
+                  <input type="text" class="form-control" id="Belongings" onchange="Hide_Option_Belongings()" name="Column_10">
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+
+			  </div>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-------End of Shift Check----------->
+            <div class="row">
+              <div class="col-md-12 mb-3">
+<strong><P>End of Shift Check</P></strong>
+              </div>
+
+
+
+			  </div>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+ <!--Time of Entry
+
+--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Belongings">Time of Entry
+
+</label>
+                <input type="time" class="form-control" name="Corection_37" id="Action_Belongings"  value="" >
+			     </div>
+
+
+			  </div>
+
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+ <!--Use of Gloves
+
+--------------------------------------------------------------------------------------------------------->
+
+
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Belongings">Use of Gloves </label>
+                <select class="custom-select d-block w-100" name="Corection_38" id="Date_Belongings"  value="" >
+			        <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+					</div>
+
+              </div>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-------Staging Areas----------->
+            <div class="row">
+              <div class="col-md-12 mb-3">
+                <label for="Repairs">Staging Areas</label>
+                  <select class="custom-select d-block w-100" id="Repairs" onchange="Hide_Option_Repairs()" name="Column_11">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+
+			  </div>
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+ <!--Tables & Work Stations--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Repairs">Tables & Work Stations</label>
+                <select class="custom-select d-block w-100" name="Corection_41" id="Action_Repairs"  value="" >
+				    <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+			     </div>
+
+
+			  </div>
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!------------------------------------------Stove Top/ Oven------------------------------------------------------------------->
+
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Repairs">Stove Top/ Oven</label>
+                <select class="custom-select d-block w-100" name="Corection_42"id="Date_Repairs"  value="" >
+				    <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+			     </div>
+
+              </div>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!------------------------------------Knives & Utensils-------------------------------------------------------------->
+            <div class="row ">
+              <div class="col-md-12 mb-3">
+                <label for="Signage">Knives & Utensils</label>
+                  <select class="custom-select d-block w-100" id="Signage" onchange="Hide_Option_Signage()" name="Column_12">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+			  </div>
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+ <!--Bag Sealer--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Signage">Bag Sealer</label>
+                <select class="custom-select d-block w-100" class="form-control" name="Corection_45" id="Action_Signage"  value="" >
+				    <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+			     </div>
+
+
+			  </div>
+
+
+
+	<!----------------------------------------------------------------------------------------------------------------------------------->
+
+ <!--Processing Equipment--------------------------------------------------------------------------------------------------------->
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Signage">Processing Equipment</label>
+                <select class="custom-select d-block w-100" name="Corection_46" id="Date_Signage"  value="" >
+                <option value="Choose...">Choose...</option>
+                  <option Value="A">Acceptable</option>
+        <option Value="R">Rejected</option>
+              </select>
+			     </div>
+
+              </div>
+
+
+
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-------Hand/ Dish/Prep Sinks----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Walls">Hand/ Dish/Prep Sinks</label>
+                  <select class="custom-select d-block w-100" id="Walls" onchange="Hide_Option_Walls()" name="Column_13">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+
+			  </div>
+
+
+
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+
+			  <div  id="Hide_Walls" style="display:none">
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Walls">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_49" id="Action_Walls"  value="" >
+			     </div>
+
+
+			  </div>
+
+
+
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Walls">Date</label>
+                <input type="Date" class="form-control" name="Corection_50" id="Date_Walls"  value="" >
+			     </div>
+			<div class="colmb-3">
+				<label for="Time_Walls">Time</label>
+                <input type="time" class="form-control" name="Corection_51" id="Time_Walls"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">
+						<label for="Corrected_Walls">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_52" id="Corrected_Walls"  value="<%=userName %>" >
+			     </div>
+              </div>
+
+
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-------Coolers & Freezers----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Floor">Coolers & Freezers</label>
+                  <select class="custom-select d-block w-100" id="Floor" onchange="Hide_Option_Floor()" name="Column_14">
+                  <option value="Choose...">Choose...</option>
+                    <option Value="A">Acceptable</option>
+					<option Value="R">Rejected</option>
+                </select>
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+
+			  </div>
+
+
+
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+
+			  <div  id="Hide_Floor" style="display:none">
+			  <div class="row"  >
+
+
+
+			  		<div class="col mb-3">
+			<label for="Action_Floor">Corrective Action </label>
+                <input type="text" class="form-control" name="Corection_53" id="Action_Floor"  value="" onchange="Hide_Option_Action_Floor()" >
+			     </div>
+
+
+			  </div>
+
+
+
+
+
+
+			  <div class="row"  >
+
+
+
+
+
+			<div class="col mb-3">
+	                <label for="Date_Floor">Date</label>
+                <input type="Date" class="form-control" name="Corection_54" id="Date_Floor"  value="" >
+			     </div>
+			<div class="colmb-3">
+				<label for="Time_Floor">Time</label>
+                <input type="time" class="form-control" name="Corection_55" id="Time_Floor"  value="" >
+			     </div>
+				  				  	  			<div class="col mb-3">
+						<label for="Corrected_Floor">Corrected By</label>
+                <input type="text" class="form-control" name="Corection_56" id="Corrected_Floor"  value="<%=userName %>" >
+			     </div>
+              </div>
+
+
+</div>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+
+
+<!-------Initial----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Gloves">Initial</label>
+                  <input type="text" class="form-control" id="Gloves" onchange="Hide_Option_Action_Gloves()" name="Column_15">
+				         <div class="invalid-feedback">
+                  Please select a valid Condition.
+                </div>
+              </div>
+
+
+
+			  </div>
+
+
+
+
+
+
+<!---------------Bottom Buttons------------------------------------------------------------------------------------------------------>
+			  <br>
+			  <hr class="mb-4">
+
+
+
+			           <div class="row"  >
+            <div class="col mb-3">
+
+
+            <button class="btn btn-primary btn-lg btn-block Green_Button" type="submit">Save</button>
+
+				   </div>
+			   </div>
+
+          </form>
+
+
+
+
+    </div>
+
+<%- include('../../Partials/ScriptData') -%>
+
+  </body>
+</html>

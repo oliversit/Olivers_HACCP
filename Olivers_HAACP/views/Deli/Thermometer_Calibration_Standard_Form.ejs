@@ -1,0 +1,359 @@
+
+<!doctype html>
+<html lang="en">
+<%- include('../../Partials/MetaData') -%>
+<%- include('../../Partials/Print_Style') -%>
+  <body >
+	  
+
+<%- include('../../Partials/NavBar') -%>
+	  
+	  
+	  
+    <div class="container noPrint">
+  	  	  	  <%
+        if(userData.length!=0){
+        var Corection_Number=0;
+	
+        userData.forEach(function(data){
+        %>
+	  
+
+      <div class="row " >
+        
+        <div class="col-md-10 mb-3" >
+      <p id="collapsetext">
+		  
+		Calibration will be performed at least weekly. The employee will record the calibration check and any necessary corrective actions each time a thermometer is calibrated. Management will verify that employees are using and calibrating thermometers correctly through visual observation of calibration activities at least monthly. Retain this log for 2 years minimum  <br><br>
+		  
+		  <strong>How to Calibrate a Thermometer</strong><br><br>
+
+1.	Fill a container with ice (crushed ice works best) and add water. There should be more ice than water.<br>
+2.	Place the thermometer in the water so it is submerged past the indication on the stem (the indent). For infrared thermometers, point at the surface of the water.<br> 
+3.	Wait at least 1 minute for the thermometer to adjust.<br>
+4.	Read the thermometer and record the temperature.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;a.	If thermometer reads 32°F +/- 2°F thermometer is calibrated. If not, adjustment is necessary.
+</p>
+			
+			<p id="collapsetext2" style="display:none" >Expand Instructions...</p>
+			</div> 
+		          
+	
+		  
+		  <div class="col-md-2 mb-3">
+			
+  <button class= "btn btn-primary btn-lg Grey2" type="button" id="Up" style="display:Block" onclick="Hidetext()" >▲   
+
+  </button>
+			
+				  
+				  				  
+  <button class= "btn btn-primary btn-lg Grey2" type="button" Id="Down" style="display:none"  onclick="Showtext()" >▼
+
+  </button>
+			</div>
+		  
+		    </div>
+		
+		
+          <form class="needs-validation" action="../../Frontend/Dashboard" method="post">
+			 <input id="Form_Name" name="Form_Name" type="hidden" value="Thermometer_Calibration">
+			  <%- include('../../Partials/Global_Variables') -%>
+			  <input id="Form_Title" name="Form_Title" type="hidden" value="Forms">
+<input id="Form_Id" name="Id" type="hidden" value="<%=data.Id %>">	
+		  
+		 <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="Date">Date</label>
+				  <p class="form-control"><%=data.Date %></p>
+                <input type="hidden" class="form-control" id="Date" placeholder="" name="Date" value="<%=data.Date %>" >
+                <div class="invalid-feedback">
+                  Valid Date is .
+                </div>
+              </div>
+					   
+					   
+              <div class="col-md-6 mb-3">
+				 <label for="country">Store Location</label>
+				  <p class="form-control"><%=data.store %></p>
+                <input type="hidden" class="custom-select d-block w-100" id="country" name="FormStore" value="<%=data.store %>">
+              </div>
+					   
+            </div>
+
+			  
+<!-------Floors swept (clean and free of debris). Floor clean-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Debris">Floors swept (clean and free of debris). Floor clean</label>
+				  <p class="form-control"><%=data.Column_3 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Debris" onchange="Hide_Option_Debris()" name="Column_3" value="<%=data.Column_3 %>">
+
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+						  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  <div  id="Hide_Debris" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Debris">Corrective Action </label>
+						<p class="form-control"><%=dataCor.Corection_9 %></p>
+                <input type="hidden" class="form-control" name="Corection_9" id="Action_Debris" placeholder="" value="<%=dataCor.Corection_9 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Debris">Date</label>
+				<p class="form-control"><%=dataCor.Corection_10 %></p>
+                <input type="hidden" class="form-control" name="Corection_10" id="Date_Debris" placeholder="" value="<%=dataCor.Corection_10 %>" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Debris">Time</label>
+				<p class="form-control"><%=dataCor.Corection_11 %></p>
+                <input type="hidden" class="form-control" name="Corection_11" id="Time_Debris" placeholder="" value="<%=dataCor.Corection_11 %>" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Debris">Corrected By</label>
+													<p class="form-control"><%=dataCor.Corection_12 %></p>
+                <input type="hidden" class="form-control" name="Corection_12" id="Corrected_Debris" placeholder="" value="<%=dataCor.Corection_12 %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+  
+ 
+<!-------Temperature Reading-------------------------------------------------------------------------------------------------------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Debris">Temperature Reading</label>
+				  <p class="form-control"><%=data.Column_4 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Covered" onchange="Hide_Option_Covered()" name="Column_4" value="<%=data.Column_4 %>">
+              </div>
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+					  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  <div  id="Hide_Covered" style="display:none">
+			  <div class="row "  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Covered">Corrective Action </label>
+						<p class="form-control"><%=dataCor.Corection_13 %></p>
+                <input type="hidden" class="form-control" name="Corection_13" id="Action_Covered" placeholder="" value="<%=dataCor.Corection_13 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	                <label for="Date_Covered">Date</label>
+				<p class="form-control"><%=dataCor.Corection_14 %></p>
+                <input type="hidden" class="form-control" name="Corection_14" id="Date_Covered" placeholder="" value="<%=dataCor.Corection_14 %>" >
+			     </div>
+			<div class="col mb-3">	
+				<label for="Time_Covered">Time</label>
+				<p class="form-control"><%=dataCor.Corection_15 %></p>
+                <input type="hidden" class="form-control" name="Corection_15" id="Time_Covered" placeholder="" value="<%=dataCor.Corection_15 %>" >
+			     </div>
+				  				  	  			<div class="col mb-3">	
+						<label for="Corrected_Covered">Corrected By</label>
+													<p class="form-control"><%=dataCor.Corection_16 %></p>
+                <input type="hidden" class="form-control" name="Corection_16" id="Corrected_Covered" placeholder="" value="<%=dataCor.Corection_16 %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!----------------------------------------------------------------------------------------------------------------------------------->
+ 
+<!-------Corrective Action Needed?----------->
+            <div class="row align-items-end">
+              <div class="col-md-12 mb-3">
+                <label for="Stored">Corrective Action Needed?</label>
+				  <p class="form-control"><%=data.Column_5 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="Stored" onchange="Hide_Option_Stored()" name="Column_5" value="<%=data.Column_5 %>">
+
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+			  
+ <!-- hidden Row --------------------------------------------------------------------------------------------------------->
+			  			  			  	  <%
+        if(userDataCor.length!=0){
+        var T=1;
+        userDataCor.forEach(function(dataCor){
+        %>	  
+			  
+			  <div  id="Hide_Stored" style="display:none">
+			  <div class="row"  >
+				  
+				  
+				  
+			  		<div class="col mb-3">	
+			<label for="Action_Stored">Corrective Action </label>
+						<p class="form-control"><%=dataCor.Corection_21 %></p>
+                <input type="hidden" class="form-control" name="Corection_17" id="Action_Stored" placeholder="" value="<%=dataCor.Corection_21 %>" >
+			     </div>
+				  
+			
+			  </div>
+			  
+
+	
+	
+              
+			  
+			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+	
+                <input type="hidden" class="form-control" name="Corection_18" id="Date_Stored" placeholder="" value="<%=dataCor.Corection_22 %>" >
+
+                <input type="hidden" class="form-control" name="Corection_19" id="Time_Stored" placeholder="" value="<%=dataCor.Corection_23 %>" >
+
+                <input type="hidden" class="form-control" name="Corection_20" id="Corrected_Stored" placeholder="" value="<%=dataCor.Corection_24 %>" >
+			     </div>
+              </div> 
+			
+			  
+</div>
+			  
+			  			  			  			          <%  T++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+			  
+<!-------Initial-------------------------------------------------------------------------------------------------------->
+			  <label for="Covered">Initial</label>
+<input type="text" class= "form-control"
+				  <p class="form-control"><%=data.Column_6 %></p>
+                  <input type="hidden" class="custom-select d-block w-100" id="sanitized" onchange="Hide_Option_sanitized()" name="Column_6" value="<%=data.Column_6 %>">
+              </div>
+
+          
+			  
+			  </div>
+			  
+			 
+<!-----------------------------------------------------------------------------------------------------------------------------------> 
+	
+				          <%  Corection_Number++; }) %>
+        <% } else{ %>
+            <tr>
+                
+            </tr>
+        <% } %>		  
+			  
+<!---------------Bottom Buttons------------------------------------------------------------------------------------------------------> 
+			  <br>
+			  <hr class="mb-4">
+			
+			  			  <div class="row"  >
+
+				  
+				  
+
+				  
+			<div class="col mb-3">	
+				
+	                                      <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" type="submit">Dashboard</button>
+					
+			     </div>
+		
+				  				  	  			<div class="col mb-3">
+													
+													<div class="test">
+						                       <button class="btn btn-primary btn-lg btn-block Grey2"  data-toggle="collapse" data-target="#Hide_row_Floor_Ground" 
+											   type="button" 
+											   onclick="window.print();return false;">Print</button>
+														</div>
+			     </div>
+              </div> 
+			  
+          </form>
+        
+  
+			  
+
+    </div>
+<%- include('../../Partials/Weekly_Processing_Print_Table') -%>
+<%- include('../../Partials/ScriptDataOnLoad') -%>
+	  
+  </body>
+</html>
